@@ -49,14 +49,14 @@ Blog
 			
 			<!-- start filter -->
 			<div class="row">
-				<div class="col-sm-12 col-xs-12">
+				<div class="blog col-sm-12 col-xs-12">
 					<div class="aqura-filter-content">
 						<ul class="clearfix">
 							<li class="col-sm-4 col-xs-12 news gallery">
 								<div class="blogBox">	
 									<div class="owl-carousel">
-									    <div class="item"><img src="assets/img/blog/galPostGrid.png" alt=""></div>
-									    <div class="item"><img src="assets/img/blog/galPostGrid.png" alt=""></div>
+									    <div class="item"><img src="img/blog/galPostGrid.png" alt=""></div>
+									    <div class="item"><img src="img/blog/galPostGrid.png" alt=""></div>
 									</div>	
 									<div class="blogBoxContent">
 										<div class="blogHeader">
@@ -124,7 +124,7 @@ Blog
 
 							<li class="col-sm-4 col-xs-12 standard ">
 								<div class="blogBox">	
-									<div class="imgBox"><img src="assets/img/blog/gridPost.png" alt="box-img"></div>
+									<div class="imgBox"><img src="img/blog/gridPost.png" alt="box-img"></div>
 									<div class="blogBoxContent">
 										<div class="blogHeader">
 											<h1><a href="blogSingle.html">Last Show Post</a></h1>

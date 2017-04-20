@@ -10,7 +10,7 @@ Events
             <div class="col-sm-12">
             	<div class="breadcrumb-fullscreen-parent phone-menu-bg">
 					<div class="breadcrumb breadcrumb-fullscreen alignleft small-description overlay almost-black-overlay" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
-						<div id="bgndVideo" class="player" data-property="{videoURL:'TT6VndrijlU',containment:'.player',autoPlay:true, mute:true, startAt:0, opacity:1}">
+						<div id="bgndVideo" class="player" data-property="{videoURL:'https://youtu.be/1tT2GYLKHLw',containment:'.player',autoPlay:true, mute:true, startAt:0, opacity:1}">
                     	    
                     	</div>
 					</div>

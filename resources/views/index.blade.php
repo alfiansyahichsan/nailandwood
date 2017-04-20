@@ -11,8 +11,8 @@ Home
 					<div class="breadcrumb breadcrumb-fullscreen alignleft small-description overlay almost-black-overlay" style="background-image: url('img/header/koc.jpg');" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
 						<div id="home" style="position: absolute;left: 0;top: 0;">
 							<div class="intro-header">
-								<div class="js-height-full star" style="height: 955px;">
-									<div class="star-pattern-1 js-height-full" style="height: 1080px;"></div>
+								<div class="js-height-full " style="height: 955px;">
+									<div class="js-height-full" style="height: 1080px;"></div>
 										<div class="grid_item center" style="width: 100%;">
 											<div>
 												<h1 class="link link-yaku" href="{{URL::Route('music')}}">
