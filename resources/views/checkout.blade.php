@@ -1,4 +1,7 @@
 @extends('shared.layouts')
+@section('halaman')
+Checkout
+@endsection
 @section('content')
 <section class="no-mb" id="top">
 	<div class="row">
