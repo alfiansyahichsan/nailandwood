@@ -10289,6 +10289,20 @@ body {
 /***********************************************************************************************/
 /* END HOME-ALBUM-COVER */
 /***********************************************************************************************/
+.rmButton a{
+  color: white;
+}
+.rmButton a:hover{
+  text-decoration: none; 
+  background-color: #bb9b69;
+  border-radius: 3rem;
+  padding: 5px 16px;
+  text-align: center;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
 .quotation{
   height: 150px;
   width: 100%;
@@ -12450,11 +12464,30 @@ body > div.fusion-fullwidth.fullwidth-box.fusion-fullwidth-2.fusion-parallax-lef
 /***********************************************************************************************/
 .social-iconsss{
   position: relative;
-  padding-right: 50px;
+  padding-right: 90px;
+  transform: translatez(0);
 }
 .social-iconsss nav{
   float: right;
   margin-right: 500px;
+}
+.social-iconsss i:hover{
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  transform: rotate(360deg);
+}
+.social-iconsss a:hover{
+  text-decoration: none; 
+  background-color: #bb9b69;
+  border-radius: 3rem;
+  text-align: center;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  display: inline-block;
 }
 .header {
   position: relative;
@@ -12482,7 +12515,7 @@ body > div.fusion-fullwidth.fullwidth-box.fusion-fullwidth-2.fusion-parallax-lef
 }
 .logo-container-top {
   z-index: 1;
-  top: 3px;
+  top: 2px;
   float: left;
   position: relative;
 }
@@ -13034,8 +13067,8 @@ body > div.fusion-fullwidth.fullwidth-box.fusion-fullwidth-2.fusion-parallax-lef
   display: block;
   background: #fff;
   height: 2px;
-  width: 17px;
-  margin-bottom: 3px;
+  width: 20px;
+  margin-bottom: 4px;
   transform-origin: 0% 0%;
   -ms-transform-origin: 0% 0%;
   -webkit-transform-origin: 0% 0%;

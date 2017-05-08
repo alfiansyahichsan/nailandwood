@@ -7,7 +7,7 @@ Checkout
 		<div class="tableEvents">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-12" style="margin-top: -50px;">
+					<div class="col-sm-12" style="margin-top: 50px;">
 						<div class="sectionTitle paddingBottom">
 							<span class="heading-t3"></span>
 							<h2><a>Checkout</a></h2>

@@ -21,8 +21,8 @@ Home
 														<span>P</span><span>R</span><span>O</span><span>P</span><span>E</span><span>R</span> <span>P</span><span>A</span><span>U</span><span>S</span><span>E</span><span>(EP)</span>
 													</a>
 										        </h1>
-										        <div class="rmButton" style="padding-top: 10px;">
-													<span> <a href="{{URL::Route('music')}}">Order</a></span>
+										        <div class="rmButton link" style="padding-top: 10px;">
+													<a href="{{URL::Route('music')}}">Order</a>
 												</div>
 											</div>
 						                </div>

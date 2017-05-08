@@ -21,12 +21,12 @@ Events
 	<!-- =============== END BREADCRUMB ================ -->
 
 	<!-- =============== START EVENTS SECTION-1 ================ -->
-	<section style="background-image: url(assets/img/subHeader/header.png);" class="background-properties padding">
+	<section style="background-image: url(img/subHeader/headeer.png);" class="background-properties padding">
 		<div class="tableEvents">
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12">
-						<div class="sectionTitle paddingBottom">
+						<div class="sectionTitle paddingBottom" style="margin-top: 50px;">
 							<span class="heading-t3"></span>
 							<h2><a href="albums.html">Events</a></h2>
 							<span class="heading-b3"></span>
@@ -34,6 +34,7 @@ Events
 						<table>
 							<tr class="tableEventsTitle">
 								<th class="date">Date</th>
+								<th class="city">Event Name</th>
 								<th class="venue">Venue</th>
 								<th class="location">Location</th>
 								<th class="tickets">Tickets</th>
@@ -41,31 +42,31 @@ Events
 							</tr>
 							<tr>
 								<td class="aqura-date"><a href="singleEvent.html"><i class="fa fa-plus"></i></a><a href="singleEvent.html">Mar 06</a></td>
+								<td class="aqura-city"><a href="">Festival</a></td>
 								<td class="aqura-location"><a href="singleEvent.html">Central Park</a></td>
 								<td class="aqura-city"><a href="singleEvent.html">Cluj Napoca, Bontida Romania</a></td>
 								<td class="aqura-tickets"><a href="singleEvent.html">Tickets</a></td>
-								<td class="aqura-vip"><a href="singleEvent.html">Ticket</a></td>
 							</tr>
 							<tr>
 								<td class="aqura-date"><a href="singleEvent.html"><i class="fa fa-plus"></i></a><a href="singleEvent.html">Mar 06</a></td>
+								<td class="aqura-city"><a href="">Festival</a></td>
 								<td class="aqura-location"><a href="singleEvent.html">Central Park</a></td>
 								<td class="aqura-city"><a href="singleEvent.html">Cluj Napoca, Bontida Romania</a></td>
 								<td class="aqura-tickets"><a href="singleEvent.html">Tickets</a></td>
-								<td class="aqura-vip"><a href="singleEvent.html">Ticket</a></td>
 							</tr>
 							<tr>
 								<td class="aqura-date"><a href="singleEvent.html"><i class="fa fa-plus"></i></a><a href="singleEvent.html">Mar 06</a></td>
+								<td class="aqura-city"><a href="">Festival</a></td>
 								<td class="aqura-location"><a href="singleEvent.html">Central Park</a></td>
 								<td class="aqura-city"><a href="singleEvent.html">Cluj Napoca, Bontida Romania</a></td>
 								<td class="aqura-tickets"><a href="singleEvent.html">Tickets</a></td>
-								<td class="aqura-vip"><a href="singleEvent.html">Ticket</a></td>
 							</tr>
 							<tr>
 								<td class="aqura-date"><a href="singleEvent.html"><i class="fa fa-plus"></i></a><a href="singleEvent.html">Mar 06</a></td>
+								<td class="aqura-city"><a href="">Festival</a></td>
 								<td class="aqura-location"><a href="singleEvent.html">Central Park</a></td>
 								<td class="aqura-city"><a href="singleEvent.html">Cluj Napoca, Bontida Romania</a></td>
 								<td class="aqura-tickets"><a href="singleEvent.html">Tickets</a></td>
-								<td class="aqura-vip"><a href="singleEvent.html">Ticket</a></td>
 							</tr>
 						</table>
 					</div><!-- end col-sm-12 -->
