@@ -60,7 +60,7 @@ Blog
 									</div>	
 									<div class="blogBoxContent">
 										<div class="blogHeader">
-											<h1><a href="blogSingle.html">Gallery Post</a></h1>
+											<h1><a href="{{URL::route('blogsingle')}}">Gallery Post</a></h1>
 										</div>
 										<div class="admin-list clearfix">
 											<ul>
@@ -72,7 +72,7 @@ Blog
 											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
 										</div><!--end blogParagraph  -->
 										<div class="rmButton">
-											<a href="blogSingle.html">Read More</a>
+											<a href="{{URL::route('blogsingle')}}">Read More</a>
 										</div>			
 									</div><!-- end blogBoxContent -->
 								</div><!-- end blogBox -->
@@ -82,7 +82,7 @@ Blog
 									<iframe src="https://player.vimeo.com/video/73340128" width="500" height="281"   ></iframe>
 									<div class="blogBoxContent">
 										<div class="blogHeader">
-											<h1><a href="blogSingle.html">VIdeo Post</a></h1>
+											<h1><a href="{{URL::route('blogsingle')}}">VIdeo Post</a></h1>
 										</div>
 										<div class="admin-list clearfix">
 											<ul>
@@ -94,7 +94,7 @@ Blog
 											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
 										</div><!--end blogParagraph  -->
 										<div class="rmButton">
-											<a href="blogSingle.html">Read More</a>
+											<a href="{{URL::route('blogsingle')}}">Read More</a>
 										</div>			
 									</div><!-- end blogBoxContent -->
 								</div><!-- end blogBox -->
@@ -104,7 +104,7 @@ Blog
 									<iframe height="200" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/73595878&amp;color=bb9b69&amp;show_artwork=false&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false"></iframe>
 									<div class="blogBoxContent">
 										<div class="blogHeader">
-											<h1><a href="blogSingle.html">Soundcloud Post</a></h1>
+											<h1><a href="{{URL::route('blogsingle')}}">Soundcloud Post</a></h1>
 										</div>
 										<div class="admin-list clearfix">
 											<ul>
@@ -116,7 +116,7 @@ Blog
 											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
 										</div><!--end blogParagraph  -->
 										<div class="rmButton">
-											<a href="blogSingle.html">Read More</a>
+											<a href="{{URL::route('blogsingle')}}">Read More</a>
 										</div>			
 									</div><!-- end blogBoxContent -->
 								</div><!-- end blogBox -->
@@ -127,7 +127,7 @@ Blog
 									<div class="imgBox"><img src="img/blog/gridPost.png" alt="box-img"></div>
 									<div class="blogBoxContent">
 										<div class="blogHeader">
-											<h1><a href="blogSingle.html">Last Show Post</a></h1>
+											<h1><a href="{{URL::route('blogsingle')}}">Last Show Post</a></h1>
 										</div>
 										<div class="admin-list clearfix">
 											<ul>
@@ -139,7 +139,7 @@ Blog
 											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
 										</div><!--end blogParagraph  -->
 										<div class="rmButton">
-											<a href="blogSingle.html">Read More</a>
+											<a href="{{URL::route('blogsingle')}}">Read More</a>
 										</div>			
 									</div><!-- end blogBoxContent -->
 								</div><!-- end blogBox -->

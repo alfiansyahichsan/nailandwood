@@ -30,7 +30,7 @@ Shop
 
 	<!-- =============== START SHOP SECTION ================ -->
 	<section id="content">
-            <div class="container-fluid">
+            <div class="yess container-fluid">
                 <div class="row" style="padding-bottom:0!important;">
                     <div class="col-sm-12">
                         <div class="row">

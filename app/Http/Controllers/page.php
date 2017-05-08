@@ -23,6 +23,10 @@ class page extends Controller
 		return view('gallery');
 	}
 
+	public function GallerySingle(){
+		return view('gallerysingle');
+	}
+
 	public function Music(){
 		return view('music');
 	}
@@ -39,6 +43,10 @@ class page extends Controller
 		return view('detailshop');
 	}
 
+	public function DetailEvent(){
+		return view('detailevent');
+	}
+
 	public function Blog(){
 		return view('blog');
 	}
@@ -53,5 +61,9 @@ class page extends Controller
 
 	public function ViewCart(){
 		return view('viewcart');
+	}
+
+	public function BlogSingle(){
+		return view('blogsingle');
 	}
 }

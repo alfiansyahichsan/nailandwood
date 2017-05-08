@@ -74,7 +74,7 @@ Music
 	<!-- =============== END BREADCRUMB ================ -->
 
 	<!-- =============== START ALBUM SINGLE ================ -->
-	<section class="albumSingle padding background-properties" style="margin-top: -100px;">
+	<section class="albumSingle padding background-properties">
 		<div class="container">
 			<div class="sectionTitle paddingBottom">
 				<span class="heading-t3"></span>
@@ -88,8 +88,8 @@ Music
 							<span class="about-name">NAME</span>
 							<span class="about-length">LENGTH</span>
 						</div>
-						<div class="trak-item" data-audio="audio/2.mp3" data-artist="Jack U ft. Kiesza" data-thumbnail="img/albums/thumbnail.png">
-							<audio preload="metadata" src="audio/2.mp3" title="Take You There"></audio>
+						<div class="trak-item" data-audio="" data-artist="Paku dan Kayu" data-thumbnail="img/albums/thumbnail.png">
+							<audio preload="metadata" src="" title="Not Stay Within"></audio>
 							<div class="play-pause-button">
 								<div class="center-y-table">
 									<i class="fa fa-play"></i>
@@ -106,8 +106,8 @@ Music
 								00:00
 							</time>
 						</div>
-						<div class="trak-item" data-audio="audio/3.mp3" data-artist="Bob Sinclair" data-thumbnail="img/albums/thumbnail.png">
-							<audio preload="metadata" src="audio/3.mp3" title="Ciderella"></audio>
+						<div class="trak-item" data-audio="audio/pakukayu2.mp3" data-artist="Paku dan Kayu" data-thumbnail="img/albums/thumbnail.png">
+							<audio preload="metadata" src="audio/pakukayu2.mp3" title="Wake Up, Alaska"></audio>
 							<div class="play-pause-button">
 								<div class="center-y-table">
 									<i class="fa fa-play"></i>
@@ -124,8 +124,8 @@ Music
 								00:00
 							</time>
 						</div>
-						<div class="trak-item" data-audio="audio/4.mp3" data-artist="Yuna" data-thumbnail="img/albums/thumbnail.png">
-							<audio preload="metadata" src="audio/4.mp3" title="Lullabies"></audio>
+						<div class="trak-item" data-audio="audio/pakukayu1.mp3" data-artist="Paku dan Kayu" data-thumbnail="img/albums/thumbnail.png">
+							<audio preload="metadata" src="audio/pakukayu1.mp3" title="Fly You Up"></audio>
 							<div class="play-pause-button">
 								<div class="center-y-table">
 									<i class="fa fa-play"></i>
@@ -143,8 +143,8 @@ Music
 							</time>
 						</div>
 
-						<div class="trak-item" data-audio="audio/flute.mp3" data-artist="Tensnake" data-thumbnail="img/albums/thumbnail.png">
-							<audio preload="metadata" src="audio/flute.mp3" title="See Right Through ft. Fiora"></audio>
+						<div class="trak-item" data-audio="" data-artist="Paku dan Kayu" data-thumbnail="img/albums/thumbnail.png">
+							<audio preload="metadata" src="" title="Kelabu"></audio>
 							<div class="play-pause-button">
 								<div class="center-y-table">
 									<i class="fa fa-play"></i>
@@ -161,8 +161,8 @@ Music
 								00:00
 							</time>
 						</div>
-						<div class="trak-item" data-audio="audio/2.mp3" data-artist="Jack U ft. Kiesza" data-thumbnail="img/albums/thumbnail.png">
-							<audio preload="metadata" src="audio/2.mp3" title="Take You There"></audio>
+						<div class="trak-item" data-audio="" data-artist="Paku dan Kayu" data-thumbnail="img/albums/thumbnail.png">
+							<audio preload="metadata" src="" title="Limitation"></audio>
 							<div class="play-pause-button">
 								<div class="center-y-table">
 									<i class="fa fa-play"></i>
@@ -186,10 +186,9 @@ Music
 						<div class="widget">
 							<h3>Details</h3>
 							<ul>
-								<li>Release Date:<span>december 15, 2015 </span></li>
-								<li>Catalog:<span>aqura 0150813 </span></li>
-								<li>Label:<span>aqura sound </span></li>
-								<li>Fomat:<span>vinyl,cd </span></li>
+								<li>Release Date:<span>September 5, 2016 </span></li>
+								<li>Label:<span>Why Production </span></li>
+								<li>Fomat:<span>cd </span></li>
 							</ul>
 						</div><!-- end widget -->
 						<div class="widget">
@@ -203,19 +202,13 @@ Music
 							<section>
 							  <ul id='services'>
 							    <li>
-							      <a href="#"><div><i class="fa fa-lastfm"></i></div></a>
+							    	<a href="https://soundcloud.com/user-346971553"><div><i class="fa fa-soundcloud"></i></div></a>
 							    </li>
 							    <li>
-							    	<a href="#"><div><i class="fa fa-soundcloud"></i></div></a>
+							    	<a href="https://itunes.apple.com/id/album/proper-pause-ep/id1151893533"><div><i class="fa fa-apple"></i></div></a>
 							    </li>
 							    <li>
-							    	<a href="#"><div><i class="fa fa-apple"></i></div></a>
-							    </li>
-							    <li>
-							    	<a href="#"><div><i class="fa fa-spotify"></i></div></a>
-							    </li>
-							    <li>
-							    	<a href="#"><div><i class="fa fa-amazon"></i></div></a>
+							    	<a href="https://play.spotify.com/album/3DzhBDFILzJjyvf4lcGmq7?play=true&utm_source=open.spotify.com&utm_medium=open"><div><i class="fa fa-spotify"></i></div></a>
 							    </li>
 							  </ul>
 							</section>
@@ -228,7 +221,7 @@ Music
 	<!-- =============== END ALBUM SINGLE ================ -->
 
 	<!-- =============== START PAGINATION ================ -->
-	<div class="section-block  bkg-grey-ultralight pagination-2">
+	<!-- <div class="section-block  bkg-grey-ultralight pagination-2">
 		<div class="row full-width ">
 			<div class="col-sm-6 leftHover" style="background-image: url('img/albums/albFooter.jpg');">
 				<a href="albumsSingle3.html" class="pagination-previous">
@@ -243,7 +236,7 @@ Music
 				</a>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<!-- =============== END PAGINATION ================ -->
 	
 @endsection()

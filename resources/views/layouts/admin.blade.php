@@ -72,13 +72,31 @@
                     <ul class="nav" id="side-menu">
                         
                         <li>
-                            <a href="{{URL::Route('dashboards')}}" @yield("nav1")><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="{{URL::Route('dashboard')}}" @yield("nav1")><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
                             <a href="{{URL::Route('slider')}}" @yield("nav2")><i class="fa fa-dashboard fa-fw"></i> Slider</a>
                         </li>
                         <li>
                             <a href="{{URL::Route('socmed')}}" @yield("nav3")><i class="fa fa-dashboard fa-fw"></i> Socmed</a>
+                        </li>
+                        <li>
+                            <a href="{{URL::Route('musicalbum')}}" @yield("nav4")><i class="fa fa-dashboard fa-fw"></i> Music Album</a>
+                        </li>
+                        <li>
+                            <a href="{{URL::Route('event')}}" @yield("nav5")><i class="fa fa-dashboard fa-fw"></i> Events</a>
+                        </li>
+                        <li>
+                            <a href="{{URL::Route('news')}}" @yield("nav6")><i class="fa fa-dashboard fa-fw"></i> News</a>
+                        </li>
+                        <li>
+                            <a href="{{URL::Route('videos')}}" @yield("nav7")><i class="fa fa-dashboard fa-fw"></i> Video</a>
+                        </li>
+                        <li>
+                            <a href="{{URL::Route('playlist')}}" @yield("nav8")><i class="fa fa-dashboard fa-fw"></i> Playlist</a>
+                        </li>
+                        <li>
+                            <a href="{{URL::Route('home')}}" @yield("nav9")><i class="fa fa-dashboard fa-fw"></i> Home</a>
                         </li>
 
                         

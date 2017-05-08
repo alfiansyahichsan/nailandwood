@@ -18,9 +18,9 @@
 						<nav>
 							<a href="#">Back to Shopping</a>
 							<i class="fa fa-angle-double-right"></i>
-							<a href="#">Hoodie Theme-Brothers</a>
+							<a href="#">Air Jordan</a>
 						</nav>
-						<h1>Theme-Brothers Hoodie</h1>
+						<h1>Air Jordan</h1>
 						<div class="productRating">
 							
 							<div class="starRate">
@@ -113,7 +113,7 @@
 	<!-- =============== END SHOP TAB ================ -->
 
 	<!-- =============== START SINGLE SHOP PRODUCTS ================ -->
-	<section class="shopHomePage paddingTop">
+	<section class="shopHomePage paddingTop" style="padding-bottom: 50px;">
 		<div class="shopSection">
 			<div class="container-fluid">
 			<div class="shopContent">

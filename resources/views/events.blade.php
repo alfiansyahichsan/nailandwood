@@ -44,70 +44,28 @@ Events
 								<td class="aqura-location"><a href="singleEvent.html">Central Park</a></td>
 								<td class="aqura-city"><a href="singleEvent.html">Cluj Napoca, Bontida Romania</a></td>
 								<td class="aqura-tickets"><a href="singleEvent.html">Tickets</a></td>
-								<td class="aqura-vip"><a href="singleEvent.html">RSVP</a></td>
+								<td class="aqura-vip"><a href="singleEvent.html">Ticket</a></td>
 							</tr>
 							<tr>
 								<td class="aqura-date"><a href="singleEvent.html"><i class="fa fa-plus"></i></a><a href="singleEvent.html">Mar 06</a></td>
 								<td class="aqura-location"><a href="singleEvent.html">Central Park</a></td>
 								<td class="aqura-city"><a href="singleEvent.html">Cluj Napoca, Bontida Romania</a></td>
 								<td class="aqura-tickets"><a href="singleEvent.html">Tickets</a></td>
-								<td class="aqura-vip"><a href="singleEvent.html">RSVP</a></td>
+								<td class="aqura-vip"><a href="singleEvent.html">Ticket</a></td>
 							</tr>
 							<tr>
 								<td class="aqura-date"><a href="singleEvent.html"><i class="fa fa-plus"></i></a><a href="singleEvent.html">Mar 06</a></td>
 								<td class="aqura-location"><a href="singleEvent.html">Central Park</a></td>
 								<td class="aqura-city"><a href="singleEvent.html">Cluj Napoca, Bontida Romania</a></td>
 								<td class="aqura-tickets"><a href="singleEvent.html">Tickets</a></td>
-								<td class="aqura-vip"><a href="singleEvent.html">RSVP</a></td>
+								<td class="aqura-vip"><a href="singleEvent.html">Ticket</a></td>
 							</tr>
 							<tr>
 								<td class="aqura-date"><a href="singleEvent.html"><i class="fa fa-plus"></i></a><a href="singleEvent.html">Mar 06</a></td>
 								<td class="aqura-location"><a href="singleEvent.html">Central Park</a></td>
 								<td class="aqura-city"><a href="singleEvent.html">Cluj Napoca, Bontida Romania</a></td>
 								<td class="aqura-tickets"><a href="singleEvent.html">Tickets</a></td>
-								<td class="aqura-vip"><a href="singleEvent.html">RSVP</a></td>
-							</tr>
-							<tr>
-								<td class="aqura-date"><a href="singleEvent.html"><i class="fa fa-plus"></i></a><a href="singleEvent.html">Mar 06</a></td>
-								<td class="aqura-location"><a href="singleEvent.html">Central Park</a></td>
-								<td class="aqura-city"><a href="singleEvent.html">Cluj Napoca, Bontida Romania</a></td>
-								<td class="aqura-tickets"><a href="singleEvent.html">Tickets</a></td>
-								<td class="aqura-vip"><a href="singleEvent.html">RSVP</a></td>
-							</tr>
-							<tr>
-								<td class="aqura-date"><a href="singleEvent.html"><i class="fa fa-plus"></i></a><a href="singleEvent.html">Mar 06</a></td>
-								<td class="aqura-location"><a href="singleEvent.html">Central Park</a></td>
-								<td class="aqura-city"><a href="singleEvent.html">Cluj Napoca, Bontida Romania</a></td>
-								<td class="aqura-tickets"><a href="singleEvent.html">Tickets</a></td>
-								<td class="aqura-vip"><a href="singleEvent.html">RSVP</a></td>
-							</tr>
-							<tr>
-								<td class="aqura-date"><a href="singleEvent.html"><i class="fa fa-plus"></i></a><a href="singleEvent.html">Mar 06</a></td>
-								<td class="aqura-location"><a href="singleEvent.html">Central Park</a></td>
-								<td class="aqura-city"><a href="singleEvent.html">Cluj Napoca, Bontida Romania</a></td>
-								<td class="aqura-tickets"><a href="singleEvent.html">Tickets</a></td>
-								<td class="aqura-vip"><a href="singleEvent.html">RSVP</a></td>
-							</tr>
-							<tr>
-								<td class="aqura-date"><a href="singleEvent.html"><i class="fa fa-plus"></i></a><a href="singleEvent.html">Mar 06</a></td>
-								<td class="aqura-location"><a href="singleEvent.html">Central Park</a></td>
-								<td class="aqura-city"><a href="singleEvent.html">Cluj Napoca, Bontida Romania</a></td>
-								<td class="aqura-tickets"><a href="singleEvent.html">Tickets</a></td>
-								<td class="aqura-vip"><a href="singleEvent.html">RSVP</a></td>
-							</tr>
-							<tr>
-								<td class="aqura-date"><a href="singleEvent.html"><i class="fa fa-plus"></i></a><a href="singleEvent.html">Mar 06</a></td>
-								<td class="aqura-location"><a href="singleEvent.html">Central Park</a></td>
-								<td class="aqura-city"><a href="singleEvent.html">Cluj Napoca, Bontida Romania</a></td>
-								<td class="aqura-tickets"><a href="singleEvent.html">Tickets</a></td>
-								<td class="aqura-vip"><a href="singleEvent.html">RSVP</a></td>
-							</tr>
-							<tr>
-								<td class="aqura-date"><a href="singleEvent.html"><i class="fa fa-plus"></i></a><a href="singleEvent.html">Mar 06</a></td>
-								<td class="aqura-location"><a href="singleEvent.html">Central Park</a></td>
-								<td class="aqura-city"><a href="singleEvent.html">Cluj Napoca, Bontida Romania</a></td>
-								<td class="aqura-tickets"><a href="singleEvent.html">Tickets</a></td>
-								<td class="aqura-vip"><a href="singleEvent.html">RSVP</a></td>
+								<td class="aqura-vip"><a href="singleEvent.html">Ticket</a></td>
 							</tr>
 						</table>
 					</div><!-- end col-sm-12 -->

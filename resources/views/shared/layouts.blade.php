@@ -127,12 +127,6 @@
 									</li>
 									<!-- Menu Fixed Item -->
 									<li>
-										<a href="contact.html">
-											contact
-										</a>
-									</li>
-									<!-- Menu Fixed Item -->
-									<li>
 										<a href="{{URL::route('shop')}}">
 											shop
 										</a>
@@ -160,22 +154,27 @@
 	<section style="background-color:#eeeeee;" class="hide-section">
 		<div class="footer footerPadding">
 			<div class="container">
+				<div class="subscribefooter">
+					<a>Join our mailing list for the latest news, upcoming events</a>
+					<form action="#" method="post" class="comment-form">
+						<input id="email" name="email" type="text" value="" aria-required="true" required placeholder="Email...">
+						<p class="form-submit">
+							<input name="submit" type="submit" id="submit" value="Submit">
+						</p>
+					</form>
+				</div>
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="copyFooter">
 							<a href="#">&copy; Paku dan Kayu 2017</a>
 						</div>
 					</div>
-					<div class="col-sm-4">
+					<div class="beuh col-sm-4">
 						<nav class="social-icons">
 							<ul class="clearfix">
-								<li><a href="#" class="icon-button shopIcon"><i class="fa fa-twitter"></i><span></span></a></li>
-								<li><a href="#" class="icon-button shopIcon"><i class="fa fa-facebook"></i><span></span></a></li>
-								<li><a href="#" class="icon-button shopIcon"><i class="fa fa-apple"></i><span></span></a></li>
-								<li><a href="#" class="icon-button shopIcon"><i class="fa fa-lastfm"></i><span></span></a></li>
-								<li><a href="#" class="icon-button shopIcon"><i class="fa fa-soundcloud"></i><span></span></a></li>
-								<li><a href="#" class="icon-button shopIcon"><i class="fa fa-youtube-play"></i><span></span></a></li>
-								<li><a href="#" class="icon-button shopIcon"><i class="fa fa-vimeo"></i><span></span></a></li>  
+								<li><a href="https://itunes.apple.com/id/album/proper-pause-ep/id1151893533" class="icon-button shopIcon"><i class="fa fa-apple"></i><span></span></a></li>
+								<li><a href="https://soundcloud.com/user-346971553" class="icon-button shopIcon"><i class="fa fa-soundcloud"></i><span></span></a></li>
+								<li><a href="https://www.youtube.com/channel/UCiNGrKZJI5ET_NHk94bxnJQ" class="icon-button shopIcon"><i class="fa fa-youtube-play"></i><span></span></a></li>
 							</ul>
 						</nav>
 					</div>

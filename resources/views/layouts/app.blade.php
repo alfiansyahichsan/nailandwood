@@ -60,7 +60,7 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        <a href="{{URL::route('dashboards')}}">
+                                        <a href="{{URL::route('dashboard')}}">
                                             Dashboard
                                         </a>
                                     </li>

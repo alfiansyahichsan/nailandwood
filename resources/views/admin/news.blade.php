@@ -3,7 +3,7 @@
 
 
 @section('judul')
-News
+News - Home
 @stop
 
 @section('nav6')
@@ -88,12 +88,12 @@ class="active"
 									
 									<td>
 
-									<a href="{{URL::Route('apernews',$ne['idnews'])}}"><input class="btn btn-warning" id="edit" type="button" value="Edit"></a>
+									<a href="#"><input class="btn btn-warning" id="edit" type="button" value="Edit"></a>
 
 									<a href="#"
                                         onclick="hapus({{$ne['idnews']}})"><input class="btn btn-danger" id="delete" type="button" value="Hapus">                                  
 
-                                    <form id="delete-form{{$ne['idnews']}}" action="{{ URL::Route('apdnews',$ne['idnews']) }}" method="POST" style="display: none;">
+                                    <form id="delete-form{{$ne['idnews']}}" action="#" method="POST" style="display: none;">
                                         {{ csrf_field() }}
                                     </form>
 										
@@ -105,8 +105,7 @@ class="active"
 							<tr>
 								<td colspan="3">
 									<center>
-									<a href="{{URL::Route('atnews')}}">
-										<input type="button" class="btn btn-default" id="add" value="Tambah">
+									<a href="#tn btn-default" id="add" value="Tambah">
 									</a>
 									</center>
 								</td>

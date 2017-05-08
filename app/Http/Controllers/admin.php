@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class admin extends Controller
 {
-	public function Dashboards(){
-		return view('admin.dashboards');
+	public function Dashboard(){
+		return view('admin.dashboard');
 	}
 
 	public function Slider(){
@@ -16,5 +16,25 @@ class admin extends Controller
 
 	public function Socmed(){
 		return view('admin.socmed');
+	}
+
+	public function MusicAlbum(){
+		return view('admin.musicalbum');
+	}
+
+	public function Event(){
+		return view('admin.events');
+	}
+
+	public function News(){
+		return view('admin.news');
+	}
+
+	public function Videos(){
+		return view('admin.video');
+	}
+
+	public function Playlist(){
+		return view('admin.playlist');
 	}
 }

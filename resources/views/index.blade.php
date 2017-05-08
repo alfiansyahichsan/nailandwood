@@ -6,19 +6,15 @@ Home
 
 	<!-- =============== START BREADCRUMB ================ -->
 	<section class="no-mb">
+	@foreach(\App\Slider::imageSlider() as $slider)
 		<div class="row">
 				<div class="breadcrumb-fullscreen-parent phone-menu-bg">
-					<div class="breadcrumb breadcrumb-fullscreen alignleft small-description overlay almost-black-overlay" style="background-image: url('img/header/koc.jpg');" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
+					<div class="breadcrumb breadcrumb-fullscreen alignleft small-description overlay almost-black-overlay" style="background-image: url('{{asset('img/header/'.$slider['imagepathslider'])}}');" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
 						<div id="home" style="position: absolute;left: 0;top: 0;">
 							<div class="intro-header">
-								<div class="js-height-full " style="height: 955px;">
-									<div class="js-height-full" style="height: 1080px;"></div>
-										<div class="grid_item center" style="width: 100%;">
-											<div>
-												<h1 class="link link-yaku" href="{{URL::Route('music')}}">
-													<img width="250" height="250" src="img/logo/pakukayu.png">
-									        	</h1>
-											</div>
+								<div class="js-height-full star" style="height: 955px;">
+									<div class="star-pattern-1 js-height-full" style="height: 1080px;"></div>
+										<div class="grid_item" style="width: 100%;">
 											<div>
 												<h1>
 								                	<a class="link link-yaku" href="{{URL::Route('music')}}" style="text-decoration: none;">
@@ -26,7 +22,7 @@ Home
 													</a>
 										        </h1>
 										        <div class="rmButton" style="padding-top: 10px;">
-													<button class="button button1"><a href="#">Order</a></button>
+													<span> <a href="{{URL::Route('music')}}">Order</a></span>
 												</div>
 											</div>
 						                </div>
@@ -37,6 +33,7 @@ Home
 					</div>
 				</div>
 		</div>
+	@endforeach
 	</section>
 	<!-- =============== END BREADCRUMB ================ -->
 
@@ -46,7 +43,7 @@ Home
 			<i class="fa fa-plus"></i>
 			<i class="fa fa-minus"></i>
 		</a>
-		<div id="mesh-main-player" class="jp-jplayer" data-audio-src="audio/flute.mp3" data-title="See right through ft. Fiora" data-artist="Tensnake"></div>
+		<div id="mesh-main-player" class="jp-jplayer" data-audio-src="audio/pakukayu1.mp3" data-title="Fly You Up" data-artist="Paku dan Kayu"></div>
 		
 		<div id="mesh-main-player-content" class="mesh-main-player" role="application" aria-label="media player">
 			<div class="container">
@@ -103,8 +100,8 @@ Home
 				<span class="about-length">LENGTH</span>
 				<span class="about-available">AVAILABLE ON</span>
 			</div>
-			<div class="trak-item" data-audio="audio/flute.mp3" data-artist="Tensnake" data-thumbnail="img/player/thumbnail.png" data-id="trak-200">
-				<audio preload="metadata" src="audio/flute.mp3" title="See right through ft. Fiora"></audio>
+			<div class="trak-item" data-audio="audio/pakukayu1.mp3" data-artist="Paku dan Kayu" data-thumbnail="img/player/thumbnail.png" data-id="trak-200">
+				<audio preload="metadata" src="audio/pakukayu1.mp3" title="Fly You Up"></audio>
 				<div class="additional-button">
 					<div class="center-y-table">
 						<a href="#">
@@ -123,7 +120,7 @@ Home
 				<div class="name-artist">
 					<div class="center-y-table">
 						<h2>
-							Tensnake - See Right Through Ft. Fiora
+							Fly You Up
 						</h2>
 					</div>
 				</div>
@@ -131,8 +128,8 @@ Home
 					00:00
 				</time>
 			</div>
-			<div class="trak-item" data-audio="audio/2.mp3" data-artist="Jack U ft. Kiesza" data-thumbnail="img/player/thumbnail.png" data-id="trak-201">
-				<audio preload="metadata" src="audio/2.mp3" title="Take You There"></audio>
+			<div class="trak-item" data-audio="audio/pakukayu2.mp3" data-artist="Paku dan Kayu" data-thumbnail="img/player/thumbnail.png" data-id="trak-201">
+				<audio preload="metadata" src="audio/pakukayu2.mp3" title="Wake Up, Alaska"></audio>
 				<div class="additional-button">
 					<div class="center-y-table">
 						<a href="#">
@@ -151,63 +148,7 @@ Home
 				<div class="name-artist">
 					<div class="center-y-table">
 						<h2>
-							Jack U ft. Kiesza - Take You There
-						</h2>
-					</div>
-				</div>
-				<time class="trak-duration">
-					00:00
-				</time>
-			</div>
-			<div class="trak-item" data-audio="audio/3.mp3" data-artist="Bob Sinclair" data-thumbnail="img/player/thumbnail.png" data-id="trak-201">
-				<audio preload="metadata" src="audio/3.mp3" title="Cinderella"></audio>
-				<div class="additional-button">
-					<div class="center-y-table">
-						<a href="#">
-							<i class="fa fa-apple"></i>
-						</a>
-						<a href="#">
-							<i class="fa fa-soundcloud"></i>
-						</a>
-					</div>
-				</div>
-				<div class="play-pause-button">
-					<div class="center-y-table">
-						<i class="fa fa-play"></i>
-					</div>
-				</div>
-				<div class="name-artist">
-					<div class="center-y-table">
-						<h2>
-							Bob Sinclair - Cinderella
-						</h2>
-					</div>
-				</div>
-				<time class="trak-duration">
-					00:00
-				</time>
-			</div>
-			<div class="trak-item" data-audio="audio/4.mp3" data-artist="Yuna" data-thumbnail="img/player/thumbnail.png" data-id="trak-201">
-				<audio preload="metadata" src="audio/4.mp3" title="Lullabies"></audio>
-				<div class="additional-button">
-					<div class="center-y-table">
-						<a href="#">
-							<i class="fa fa-apple"></i>
-						</a>
-						<a href="#">
-							<i class="fa fa-soundcloud"></i>
-						</a>
-					</div>
-				</div>
-				<div class="play-pause-button">
-					<div class="center-y-table">
-						<i class="fa fa-play"></i>
-					</div>
-				</div>
-				<div class="name-artist">
-					<div class="center-y-table">
-						<h2>
-							Yuna - Lullabies
+							Wake Up, Alaska
 						</h2>
 					</div>
 				</div>
@@ -218,10 +159,55 @@ Home
 		</div>
 	</div>
 	<!-- =============== END PLAYLIST ================ -->
+
+	<!-- =============== START QUOTATION ================ -->
+	<div class="quote">
+	  <div class="row">
+	    <div class="col-md-12" >
+	      <div class="carousel slide" data-ride="carousel" id="quote-carousel">
+	        <!-- Carousel Slides / Quotes -->
+	        <div class="carousel-inner">
+	          <!-- Quote 1 -->
+	          <div class="item active">
+	              <div class="row">
+	                <div class="col-sm-12">
+	                  <p>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit!"</p>
+	                  <small>Someone famous - DAMN</small>
+	                </div>
+	              </div>
+	          </div>
+	          <!-- Quote 2 -->
+	          <div class="item">
+	              <div class="row">
+	                <div class="col-sm-12">
+	                  <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam auctor nec lacus ut tempor. Mauris."</p>
+	                  <small>Someone famous</small>
+	                </div>
+	              </div>
+	          </div>
+	          <!-- Quote 3 -->
+	          <div class="item">
+	              <div class="row">
+	                <div class="col-sm-12">
+	                  <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut rutrum elit in arcu blandit, eget pretium nisl accumsan. Sed ultricies commodo tortor, eu pretium mauris."</p>
+	                  <small>Someone famous</small>
+	                </div>
+	              </div>
+	          </div>
+	        </div>
+	        
+	        <!-- Carousel Buttons Next/Prev -->
+	        <a data-slide="prev" href="#quote-carousel" class="left carousel-control"><i class="fa fa-chevron-left"></i></a>
+	        <a data-slide="next" href="#quote-carousel" class="right carousel-control"><i class="fa fa-chevron-right"></i></a>
+	      </div>                          
+	    </div>
+	  </div>
+	</div>
+	<!-- =============== END QUOTATION ================ -->
 	
-	<!-- =============== START ALBUM COVER SECTION ================ -->
+	<!-- =============== END PLAYLIST ================ -->
 	<section class="padding albumsHome hide-section">
-		<div class="container" style="margin-top: -100px;">
+		<div class="container" style="margin-top: -35px;">
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="sectionTitle paddingBottom">
@@ -236,9 +222,10 @@ Home
 					<li class="col-md-3 col-sm-3 col-xs-12">
 						<div class="album-icon">
 							<span class="thumbs-album">
-								<a href="albumsSingle1.html"><img width="270" height="270" src="img/albums/album.png" class="attachment-album-thumbnail wp-post-image" alt="album-cover-1"></a>
+								<a href="{{URL::Route('music')}}"><img width="270" height="270" src="img/albums/album.png" class="attachment-album-thumbnail wp-post-image" alt="album-cover-1"></a>
+
 							</span>
-							<span class="disk"></span>
+							<span class="disk"><img src="img/albums/qwe.png"></span>
 						</div><!-- END ALBUM ICON -->
 						<div class="name">
 							<h3>Proper Pause(EP)</h3>						
@@ -288,7 +275,7 @@ Home
 	<!-- =============== START EVENTS SECTION-1 ================ -->
 	<section class="background-properties hide-section paddingHomeEvents">
 		<div class="tableEvents">
-			<div class="container" style="margin-top: -250px;">
+			<div class="container">
 				<div class="row">
 					<div class="col-sm-12">
 						<div class="sectionTitle paddingBottom">
@@ -299,6 +286,7 @@ Home
 						<table>
 							<tr class="tableEventsTitle">
 								<th class="date">Date</th>
+								<th class="city">Event Name</th>
 								<th class="venue">Venue</th>
 								<th class="location">Location</th>
 								<th class="tickets">Tickets</th>
@@ -306,38 +294,39 @@ Home
 							</tr>
 							<tr>
 								<td class="aqura-date"><a href="#"><i class="fa fa-plus"></i></a><a href="singleEvent.html">Mar 06</a></td>
-								<td class="aqura-location"><a href="singleEvent.html">Central Park</a></td>
-								<td class="aqura-city"><a href="singleEvent.html">Cluj Napoca, Bontida Romania</a></td>
-								<td class="aqura-tickets"><a href="singleEvent.html">Tickets</a></td>
-								<td class="aqura-vip"><a href="singleEvent.html">RSVP</a></td>
+								<td class="aqura-city"><a href="">Festival</a></td>
+								<td class="aqura-location"><a href="">Central Park</a></td>
+								<td class="aqura-city"><a href="">Cluj Napoca, Bontida Romania</a></td>
+								<td class="aqura-tickets"><a href="">Tickets</a></td>
+								<!-- <td class="aqura-vip"><a href="">RSVP</a></td> -->
 							</tr>
 							<tr>
 								<td class="aqura-date"><a href="#"><i class="fa fa-plus"></i></a><a href="singleEvent.html">Mar 06</a></td>
+								<td class="aqura-city"><a href="">Festival</a></td>
 								<td class="aqura-location"><a href="singleEvent.html">Central Park</a></td>
 								<td class="aqura-city"><a href="singleEvent.html">Cluj Napoca, Bontida Romania</a></td>
 								<td class="aqura-tickets"><a href="singleEvent.html">Tickets</a></td>
-								<td class="aqura-vip"><a href="singleEvent.html">RSVP</a></td>
 							</tr>
 							<tr>
 								<td class="aqura-date"><a href="#"><i class="fa fa-plus"></i></a><a href="singleEvent.html">Mar 06</a></td>
+								<td class="aqura-city"><a href="">Festival</a></td>
 								<td class="aqura-location"><a href="singleEvent.html">Central Park</a></td>
 								<td class="aqura-city"><a href="singleEvent.html">Cluj Napoca, Bontida Romania</a></td>
 								<td class="aqura-tickets"><a href="singleEvent.html">Tickets</a></td>
-								<td class="aqura-vip"><a href="singleEvent.html">RSVP</a></td>
 							</tr>
 							<tr>
 								<td class="aqura-date"><a href="#"><i class="fa fa-plus"></i></a><a href="singleEvent.html">Mar 06</a></td>
+								<td class="aqura-city"><a href="">Festival</a></td>
 								<td class="aqura-location"><a href="singleEvent.html">Central Park</a></td>
 								<td class="aqura-city"><a href="singleEvent.html">Cluj Napoca, Bontida Romania</a></td>
 								<td class="aqura-tickets"><a href="singleEvent.html">Tickets</a></td>
-								<td class="aqura-vip"><a href="singleEvent.html">RSVP</a></td>
 							</tr>
 							<tr>
 								<td class="aqura-date"><a href="#"><i class="fa fa-plus"></i></a><a href="singleEvent.html">Mar 06</a></td>
+								<td class="aqura-city"><a href="">Festival</a></td>
 								<td class="aqura-location"><a href="singleEvent.html">Central Park</a></td>
 								<td class="aqura-city"><a href="singleEvent.html">Cluj Napoca, Bontida Romania</a></td>
 								<td class="aqura-tickets"><a href="singleEvent.html">Tickets</a></td>
-								<td class="aqura-vip"><a href="singleEvent.html">RSVP</a></td>
 							</tr>
 						</table>
 					</div><!-- end col-sm-12 -->
@@ -354,7 +343,7 @@ Home
 				<div class="col-sm-12">
 					<div class="countdownTitle">
 						<h4>Next Event</h4>
-						<a href="singleEvent.html"><img src="img/events/box.png" alt="Event"></a>
+						<a href=""><img src="img/events/box.png" alt="Event"></a>
 					</div>
 					<div class="sm-countdown sm_content_element sm-style2" id="sm_countdown-19" data-date="2016/10/23">
 						<div class="displayCounter">
@@ -399,12 +388,12 @@ Home
 					<h2><a href="blogGrid.html">News</a></h2>
 					<span class="heading-b3"></span>
 				</div><!-- end sectionTtile -->
-				<div class="col-sm-4">
+				<div class="aduh col-sm-4">
 					<div class="blogBox">	
 						<div class="imgBox"><img src="img/blog/homeGalPost.png" alt="box-img"></div>
 						<div class="blogBoxContent">
 							<div class="blogHeader">
-								<h1><a href="blogSingle.html">Gallery Post</a></h1>
+								<h1><a href="{{URL::route('blogsingle')}}">Gallery Post</a></h1>
 							</div>
 							<div class="admin-list clearfix">
 								<ul>
@@ -421,9 +410,9 @@ Home
 						</div><!-- end blogBoxContent -->
 					</div><!-- end blogBox -->
 				</div><!-- end col-sm-4 -->	
-				<div class="col-sm-4">
+				<div class="aduh col-sm-4">
 					<div class="blogBox">	
-						<div class="videoBox"><iframe src="https://player.vimeo.com/video/145837856" width="600" height="410"  ></iframe></div>
+						<div class="videoBox"><iframe width="600" height="410" src="https://www.youtube.com/embed/kYNRSa2DYp4" frameborder="0" allowfullscreen></iframe></div>
 						<div class="blogBoxContent">
 							<div class="blogHeader">
 								<h1><a href="blogSingle.html">Video Post</a></h1>
@@ -443,9 +432,9 @@ Home
 						</div><!-- end blogBoxContent -->
 					</div><!-- end blogBox -->
 				</div><!-- end col-sm-4 -->	
-				<div class="col-sm-4">
+				<div class="aduh col-sm-4">
 					<div class="blogBox">	
-						<div class="soundcloudBox"><iframe height="203" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/73595878&amp;color=bb9b69&amp;show_artwork=false&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false"></iframe></div>
+						<div class="soundcloudBox"><iframe height="203" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/286037966&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe></div>
 						<div class="blogBoxContent">
 							<div class="blogHeader">
 								<h1><a href="blogSingle.html">Soundcloud Post</a></h1>
@@ -471,33 +460,37 @@ Home
 	<!-- =============== END HOME-NLOG SECTION ================ -->	
 
 	<!-- =============== START VIDEO SECTION ================ -->
-	<section class="videoHome hide-section padding">
+	<section class="videoHome hide-section">
 		<div class="container">
 			<div class="row">
 				<div class="sectionTitle">
 					<span class="heading-t3"></span>
-					<h2><a href="video.html">Upload Video</a></h2>
+					<h2><a href="video.html">Video</a></h2>
 					<span class="heading-b3"></span>
-					<p>Check out my latest videos and follow me on <a href="#">Youtube</a> & <a href="#">Vimeo</a> to view more.</p>
+					<p>Check out my latest videos and follow me on <a href="https://www.youtube.com/channel/UCiNGrKZJI5ET_NHk94bxnJQ">Youtube</a> to view more.</p>
 				</div><!-- end sectionTtile -->
-				<div class="col-sm-4">
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/VV-Q-aRHTDE"  allowfullscreen></iframe>
+				<div class="col-sm-2"></div>
+				<div class="col-sm-8">
+					<iframe width="854" height="480" src="https://www.youtube.com/embed/UVa_PALV_hY" frameborder="0" allowfullscreen></iframe>
 				</div><!-- end col-sm-4 -->
-				<div class="col-sm-4">
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/VxG5C4q_rEs"  allowfullscreen></iframe>
-				</div><!-- end col-sm-4 -->
-				<div class="col-sm-4">
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/OkbuRa1o1wA"  allowfullscreen></iframe>
-				</div><!-- end col-sm-4 -->
+				<!-- <div class="col-sm-4">
+					<iframe width="854" height="480" src="https://www.youtube.com/embed/kYNRSa2DYp4" frameborder="0" allowfullscreen></iframe>
+				</div> --><!-- end col-sm-4 -->
+				<!-- <div class="col-sm-4">
+					<iframe width="854" height="480" src="https://www.youtube.com/embed/UVa_PALV_hY" frameborder="0" allowfullscreen></iframe>
+				</div> --><!-- end col-sm-4 -->
+				<div class="col-sm-2"></div>
 			</div>
 		</div>
 	</section>
 	<!-- =============== END VIDEO SECTION ================ -->
 
+
+
 	<!-- =============== START GALLERY SECTION ================ -->
-	<section style="padding-bottom:0; padding-top:0;" class="hide-section">
+	<section class="padding hide-section" style="padding-top: 15rem;">
 		<div class="gallerySection">
-			<div class="container-fluid" style="padding:0;">
+			<div class="container-fluid">
 				<div class="col-sm-12">
 					<!-- Content Container -->
 					<div class="content-container clearfix">
@@ -512,9 +505,9 @@ Home
 										<figcaption>
 											<!-- Single Album Image -->
 											<div class="hovereffect">
-												<img class="img-responsive" src="img/gallery/wideGal.png" alt="">
+												<a><img class="img-responsive" src="img/header/s.jpg" alt=""></a>
 												<div class="overlay">
-												   <a class="info lightbox" href="img/gallery/wideGal.png"></a>
+												   <a class="info lightbox" href="img/header/s.jpg"></a>
 												</div>
 											</div>
 										</figcaption>
@@ -529,9 +522,9 @@ Home
 										<!-- Single Album Image -->
 										<figcaption>
 											<div class="hovereffect">
-											<img class="img-responsive" src="img/gallery/squareGal.png" alt="">
+											<img class="img-responsive" src="img/header/sd1.jpg" alt="">
 											<div class="overlay">
-											   <a class="info lightbox" href="img/gallery/wideGal.png"></a>
+											   <a class="info lightbox" href="img/header/sd.jpg"></a>
 											</div>
 										</div>
 										</figcaption>
@@ -544,9 +537,9 @@ Home
 										<!-- Single Album Image -->
 										<figcaption>
 											<div class="hovereffect">
-											<img class="img-responsive" src="img/gallery/squareGal.png" alt="">
+											<img class="img-responsive" src="img/header/sd1.jpg" alt="">
 											<div class="overlay">
-											   <a class="info lightbox" href="img/gallery/wideGal.png"></a>
+											   <a class="info lightbox" href="img/header/sd.jpg"></a>
 											</div>
 										</div>
 										</figcaption>
@@ -559,9 +552,9 @@ Home
 										<!-- Single Album Image -->
 										<figcaption>
 											<div class="hovereffect">
-											<img class="img-responsive" src="img/gallery/squareGal.png" alt="">
+											<img class="img-responsive" src="img/header/sd1.jpg" alt="">
 											<div class="overlay">
-											   <a class="info lightbox" href="img/gallery/wideGal.png"></a>
+											   <a class="info lightbox" href="img/header/sd.jpg"></a>
 											</div>
 										</div>
 										</figcaption>
@@ -574,9 +567,9 @@ Home
 										<!-- Single Album Image -->
 										<figcaption>
 											<div class="hovereffect">
-											<img class="img-responsive" src="img/gallery/squareGal.png" alt="">
+											<img class="img-responsive" src="img/header/sd1.jpg" alt="">
 											<div class="overlay">
-											   <a class="info lightbox" href="img/gallery/wideGal.png"></a>
+											   <a class="info lightbox" href="img/header/sd.jpg"></a>
 											</div>
 										</div>
 										</figcaption>
@@ -589,9 +582,9 @@ Home
 										<!-- Single Album Image -->
 										<figcaption>
 											<div class="hovereffect">
-											<img class="img-responsive" src="img/gallery/wideGal.png" alt="">
+											<img class="img-responsive" src="img/header/s.jpg" alt="">
 											<div class="overlay">
-											   <a class="info lightbox" href="img/gallery/wideGal.png"></a>
+											   <a class="info lightbox" href="img/header/s.jpg"></a>
 											</div>
 										</div>
 										</figcaption>
@@ -604,108 +597,55 @@ Home
 			</div><!-- end container -->
 		</div>
 	</section>
+	
 	<!-- =============== END GALLERY SECTION ================ -->
 
+
+
 	<!-- =============== START HOME-SHOP SECTION ================ -->
-	<section class="shopHomePage shopHomePadding hide-section">
+	<!-- <section class="shopHomePage shopHomePadding hide-section">
 		<div class="shopSection">
 			<div class="container-fluid">
 			<div class="shopContent">
 				<div class="sectionTitle paddingBottom">
 					<span class="heading-t3"></span>
 					<h2><a href="shop.html">Shop Online</a></h2>
-					<span class="heading-b3"></span>
-				</div><!-- end sectionTtile -->	
+					<span class="heading-b3"></span> -->
+				<!-- </div> --><!-- end sectionTtile -->	
+				<!-- @foreach($products->chunk(4) as $productChunk)
 				<div class="row">
-					<nav class="shop-products">
+					<nav class="shop-products col-sm-12">
 						<ul class="clearfix">
+						@foreach($productChunk as $product)
 							<li class="col-sm-3">
 								<figure>
 									<figcaption>
-										<img src="img/shop/shopProduct.png" alt="">
+										<img src="{{asset('img/shop/'.$product->imagepath)}}" alt="" style="max-width: 480; max-height: 475;">
 									</figcaption>
 									<div class="content">
 										<div class="shopHover">
 											<div class="price">
-												&pound; 15,99
+												{{$product->price}}
 											</div>
 											<div  class="proTitle">
-												<a href="shopSingle.html">Original T. Brothers</a>
+												<a href="{{URL::route('detailshop')}}">{{$product->title}}</a>
 											</div>
 											<div class="product">Hoodie Aqura</div>
-											<a href="shopSingle.html" class="icon-button shopIcon"><i class="fa fa-shopping-cart"></i><span></span></a>
+											<a href="{{ route('product.addToCart', ['id' => $product->id]) }}" class="icon-button shopIcon"><i class="fa fa-shopping-cart"></i><span></span></a>
 											 <a href="shopSingle.html" class="icon-button shopIcon"><i class="fa fa-info"></i><span></span></a>
 										</div>
 									</div>
 								</figure>
 							</li>
-							<li class="col-sm-3">
-								<figure>
-									<figcaption>
-										<img src="img/shop/shopProduct.png" alt="">
-									</figcaption>
-									<div class="content">
-										<div class="shopHover">
-											<div class="price">
-												&pound; 15,99
-											</div>
-											<div  class="proTitle">
-												<a href="shopSingle.html">Original T. Brothers</a>
-											</div>
-											<div class="product">Hoodie Aqura</div>
-											<a href="shopSingle.html" class="icon-button shopIcon"><i class="fa fa-shopping-cart"></i><span></span></a>
-											 <a href="shopSingle.html" class="icon-button shopIcon"><i class="fa fa-info"></i><span></span></a>
-										</div>
-									</div>
-								</figure>
-							</li>
-							<li class="col-sm-3">
-								<figure>
-									<figcaption>
-										<img src="img/shop/shopProduct.png" alt="">
-									</figcaption>
-									<div class="content">
-										<div class="shopHover">
-											<div class="price">
-												&pound; 15,99
-											</div>
-											<div  class="proTitle">
-												<a href="shopSingle.html">Original T. Brothers</a>
-											</div>
-											<div class="product">Hoodie Aqura</div>
-											<a href="shopSingle.html" class="icon-button shopIcon"><i class="fa fa-shopping-cart"></i><span></span></a>
-											 <a href="shopSingle.html" class="icon-button shopIcon"><i class="fa fa-info"></i><span></span></a>
-										</div>
-									</div>
-								</figure>
-							</li>
-							<li class="col-sm-3">
-								<figure>
-									<figcaption>
-										<img src="img/shop/shopProduct.png" alt="">
-									</figcaption>
-									<div class="content">
-										<div class="shopHover">
-											<div class="price">
-												&pound; 15,99
-											</div>
-											<div  class="proTitle">
-												<a href="shopSingle.html">Original T. Brothers</a>
-											</div>
-											<div class="product">Hoodie Aqura</div>
-											<a href="shopSingle.html" class="icon-button shopIcon"><i class="fa fa-shopping-cart"></i><span></span></a>
-											 <a href="shopSingle.html" class="icon-button shopIcon"><i class="fa fa-info"></i><span></span></a>
-										</div>
-									</div>
-								</figure>
-							</li>
-						</ul>
-					</nav><!-- end shop-products -->
-				</div><!-- end row -->
-			</div><!-- end shopContent -->
+						@endforeach
+						</ul> -->
+					<!-- </nav> --><!-- end shop-products -->
+				<!-- </div> --><!-- end row -->
+				<!-- @endforeach -->
+			<!-- </div> --><!-- end shopContent -->
+		<!-- </div>
 		</div>
-		</div>
-	</section>
+	</section> -->
 	<!-- =============== END HOME-SHOP SECTION ================ -->
 
 @section('script')

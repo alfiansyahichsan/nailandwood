@@ -18,17 +18,18 @@
   src: url(../fonts/codeLight.otf);
 }
 .padding {
-  padding: 18rem 0;
+  padding: 8rem 0;
 }
 .paddingBottom {
   padding-bottom: 14rem;
 }
 .shopHomePadding {
   padding-bottom: 8rem;
-  padding-top: 18rem;
+  padding-top: 2rem;
 }
 .paddingHomeEvents {
-  padding: 18rem 0;
+  /*padding: 4rem 0;*/
+  padding-bottom: 8rem;
 }
 .paddingShopSingle {
   padding: 10rem 0;
@@ -432,11 +433,12 @@ th {
     text-decoration: none;
     display: inline-block;
     font-size: 14px;
-    margin: 4px 2px;
+    margin: 0px 2px;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     cursor: pointer;
     font-family: 'Karla', sans-serif;
+    border-radius: .2rem;
 }
 
 .buttonheader{
@@ -450,7 +452,6 @@ th {
 
 .button1 {
     background-color: white; 
-    color: black; 
     text-decoration: none;
     font-family: 'Karla', sans-serif;
 }
@@ -1820,6 +1821,12 @@ pre code {
   padding-left: 15px;
   padding-right: 15px;
 }
+.yess, .container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0px;
+  padding-right: 0px;
+}
 .row {
   margin-left: 0px;
   margin-right: 0px;
@@ -1831,7 +1838,14 @@ pre code {
 .blog .col-sm-12, .col-xs-12{
   padding-left: 15px;
   padding-right: 15px;
-
+}
+.aduh, .col-sm-4{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.beuh, .col-sm-4 nav a {
+    align-content: center;
+    text-align: center;
 }
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   float: left;
@@ -10201,7 +10215,6 @@ body {
   width: 193px;
   height: 194px;
   float: left;
-  background: url(../img/albums/qwe.png) no-repeat center center;
   z-index: 9;
 }
 .list-albums .list-feature li .albumIcon1 .disk {
@@ -10213,7 +10226,6 @@ body {
   width: 193px;
   height: 194px;
   float: left;
-  background: url(../img/content/disk2.png) no-repeat center center;
   z-index: 9;
 }
 .list-albums .list-feature li .albumIcon2 .disk {
@@ -10225,7 +10237,6 @@ body {
   width: 193px;
   height: 194px;
   float: left;
-  background: url(../img/content/disk1.png) no-repeat center center;
   z-index: 9;
 }
 .list-albums .list-feature li .albumIcon3 .disk {
@@ -10237,7 +10248,6 @@ body {
   width: 193px;
   height: 194px;
   float: left;
-  background: url(../img/content/disk3.png) no-repeat center center;
   z-index: 9;
 }
 @media only screen and (max-width: 1025px) {
@@ -10279,6 +10289,126 @@ body {
 /***********************************************************************************************/
 /* END HOME-ALBUM-COVER */
 /***********************************************************************************************/
+.quotation{
+  height: 150px;
+  width: 100%;
+  background-color: #F8F8FF;
+}
+/* carousel */
+#quote-carousel 
+{
+  margin-top: 0;
+}
+.carousel-inner, .item p{
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  align-content: center;
+  padding-right: 40px;
+  padding-left: 40px;
+  vertical-align: middle;
+  display: flex;
+  justify-content:center;
+}
+.item p{
+  margin-top: 40px;
+}
+/* Control buttons  */
+#quote-carousel .carousel-control
+{
+  background: none;
+  color: #222;
+  font-size: 1.4em;
+  text-shadow: none;
+  margin-top: 60px;
+}
+
+/* Previous button  */
+#quote-carousel .carousel-control.left 
+{
+  left: -12px;
+}
+/* Next button  */
+#quote-carousel .carousel-control.right 
+{
+  right: -12px !important;
+}
+/* Changes the position of the indicators */
+#quote-carousel .carousel-indicators 
+{
+  right: 50%;
+  top: auto;
+  bottom: 0px;
+  margin-right: -19px;
+}
+/* Changes the color of the indicators */
+#quote-carousel .carousel-indicators li 
+{
+  background: #c0c0c0;
+}
+#quote-carousel .carousel-indicators .active 
+{
+  background: #333333;
+}
+#quote-carousel img
+{
+  width: 250px;
+  height: 100px
+}
+/* End carousel */
+
+.item blockquote {
+    border-left: none; 
+    margin: 0;
+}
+
+.item blockquote img {
+    margin-bottom: 10px;
+}
+
+.item blockquote p:before {
+    content: "\f10d";
+    font-family: 'Fontawesome';
+    float: left;
+    margin-right: 10px;
+}
+
+
+
+/**
+  MEDIA QUERIES
+*/
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    #quote-carousel 
+    {
+      margin-bottom: 0;
+      padding: 0 40px 30px 40px;
+    }
+    
+}
+
+/* Small devices (tablets, up to 768px) */
+@media (max-width: 768px) { 
+    
+    /* Make the indicators larger for easier clicking with fingers/thumb on mobile */
+    
+    #quote-carousel .carousel-indicators {
+        bottom: -20px !important;  
+    }
+    #quote-carousel .carousel-indicators li {
+        display: inline-block;
+        margin: 0px 5px;
+        width: 15px;
+        height: 15px;
+    }
+    #quote-carousel .carousel-indicators li.active {
+        margin: 0px 5px;
+        width: 20px;
+        height: 20px;
+    }
+}
 /***********************************************************************************************/
 /* START TABLE EVENTS */
 /***********************************************************************************************/
@@ -10295,6 +10425,10 @@ body {
   padding: 1.5rem 0;
   border-bottom: 1px solid rgba(206, 206, 206, 0.3);
   font-family: 'Montserrat', sans-serif;
+}
+.sikat td{
+  border: none;
+  margin-right: 50px;
 }
 .tableEvents table td a {
   text-decoration: none;
@@ -10325,7 +10459,34 @@ body {
 .tableEvents table .aqura-tickets a {
   padding: 0.4rem 1.5rem;
   border-radius: 1.3rem;
+  float: right;
+  color: white;
 }
+.aqura-vips td{
+  padding: 10px 1px 10px 5px;
+}
+.tableEvents table .aqura-vips a{
+  padding: 0.4rem 1.5rem;
+  border-radius: 1.3rem;
+}
+
+.tableEvents table .aqura-vips a {
+  -webkit-transition-delay: 0;
+  transition-delay: 0;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  color: #fff;
+  background-color: #000;
+}
+.tableEvents table .aqura-vips a:hover {
+  color: #fff;
+  background: #bb9b69;
+}
+
 .tableEvents table .aqura-vip {
   text-align: center;
 }
@@ -10349,6 +10510,7 @@ body {
   text-align: center;
 }
 .tableEvents table .aqura-tickets a {
+  background-color: black;
   -webkit-transition-delay: 0;
   transition-delay: 0;
   -webkit-transition-property: all;
@@ -10654,8 +10816,9 @@ body {
 /***********************************************************************************************/
 /* START CONTACT */
 /***********************************************************************************************/
-.contactSingle .singleBlogForm {
+.contactSingle .singleBlogForm, .col-sm-6 {
   padding-top: 0;
+  padding-left: 20px;
 }
 .contactSingle .singleBlogForm h2 {
   font-size: 2rem;
@@ -10780,6 +10943,44 @@ body {
 .footer .social-icons ul li a:hover {
   width: 3.8rem;
   height: 3.8rem;
+}
+.subscribefooter{
+  padding-top: 10px;
+  padding-bottom: 20px;
+  text-align: center;
+  align-content: center;
+}
+.subscribefooter form{
+  text-align: center;
+  align-content: center;
+  margin-top: 20px;
+}
+.subscribefooter a{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #9a9a9a;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.subscribefooter input{
+  width: 30%;
+  vertical-align: middle;
+  margin: 0 auto;
+}
+.subscribefooter .form-submit input {
+  font-family: 'Karla', sans-serif;
+  font-size: 1.1rem;
+  color: #fff;
+  background-color: #000;
+  border-color: #000;
+  padding: 1rem 2rem;
+  font-weight: 600;
+}
+.subscribefooter .form-submit input:hover {
+  background-color: #bb9b69;
+  border-color: #bb9b69;
+  color: #fff;
 }
 .copyFooter,
 .goTop {
@@ -11292,6 +11493,9 @@ body > div.fusion-fullwidth.fullwidth-box.fusion-fullwidth-2.fusion-parallax-lef
   }
 }
 @media (max-width: 500px) {
+  .social-iconsss{
+    display: none;
+  }
   .tableEvents table th {
     font-size: 0.6rem;
   }
@@ -11341,6 +11545,7 @@ body > div.fusion-fullwidth.fullwidth-box.fusion-fullwidth-2.fusion-parallax-lef
     display: none;
   }
   .topHeader {
+    padding-top: 6rem;
     padding-bottom: 2.8rem!important;
   }
   .sm-countdown.sm-style2 .unit {
@@ -12243,6 +12448,14 @@ body > div.fusion-fullwidth.fullwidth-box.fusion-fullwidth-2.fusion-parallax-lef
 /***********************************************************************************************/
 /* END MEDIA QUERY */
 /***********************************************************************************************/
+.social-iconsss{
+  position: relative;
+  padding-right: 50px;
+}
+.social-iconsss nav{
+  float: right;
+  margin-right: 500px;
+}
 .header {
   position: relative;
 }
@@ -12253,8 +12466,8 @@ body > div.fusion-fullwidth.fullwidth-box.fusion-fullwidth-2.fusion-parallax-lef
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 1.8rem 5rem;
   z-index: 4;
+  padding: 1.8rem 5rem;
   -webkit-transition-delay: 0;
   transition-delay: 0;
   -webkit-transition-property: all;
@@ -12268,13 +12481,13 @@ body > div.fusion-fullwidth.fullwidth-box.fusion-fullwidth-2.fusion-parallax-lef
   background-color: #fdfdfd;
 }
 .logo-container-top {
-  float: left;
   z-index: 1;
   top: 3px;
+  float: left;
   position: relative;
 }
 .logo-container-top img {
-  max-height: 75px;
+  max-height: 37px;
   max-width: 100%;
 }
 .breadcrumb-fullscreen-parent.affix .ava-slider-container {
@@ -12293,9 +12506,10 @@ body > div.fusion-fullwidth.fullwidth-box.fusion-fullwidth-2.fusion-parallax-lef
 }
 
 .grid_item {
-  top: 10%;
+  top: 45%;
   padding-bottom: 10px;
   text-align: center;
+  margin: auto;
   position: fixed;
   z-index: 1;
   justify-content: center;
@@ -12813,7 +13027,7 @@ body > div.fusion-fullwidth.fullwidth-box.fusion-fullwidth-2.fusion-parallax-lef
   padding: 0 8px;
   cursor: pointer;
   z-index: 6;
-  top: 11px;
+  top: 5px;
   position: relative;
 }
 .open-menu span {
@@ -12860,11 +13074,11 @@ body > div.fusion-fullwidth.fullwidth-box.fusion-fullwidth-2.fusion-parallax-lef
   display: inline-flex;
   float: right;
   position: relative;
+  top: 3px;
 }
 .rightTopHeader .cartContainer {
   position: relative;
   color: #fff;
-  top: 3px;
   -webkit-transition-delay: 0;
   transition-delay: 0;
   -webkit-transition-property: all;
@@ -14786,31 +15000,31 @@ section #services li div i:hover {
   background-color: #bb9b69;
 }
 .fa-apple {
-  background-color: #CACACA;
+  background-color: #525252;
 }
 .fa-soundcloud {
-  background-color: #CACACA;
+  background-color: #525252;
 }
 .fa-lastfm {
-  background-color: #CACACA;
+  background-color: #525252;
 }
 .fa-facebook {
-  background-color: #CACACA;
+  background-color: #525252;
 }
 .fa-twitter {
-  background-color: #CACACA;
+  background-color: #525252;
 }
 .fa-instagram {
-  background-color: #CACACA;
+  background-color: #525252;
 }
 .fa-youtube {
-  background-color: #CACACA;
+  background-color: #525252;
 }
 .fa-spotify {
-  background-color: #CACACA;
+  background-color: #525252;
 }
 .fa-amazon {
-  background-color: #CACACA;
+  background-color: #525252;
 }
 /***********************************************************************************************/
 /* END INGLE ALBUM */
@@ -15084,6 +15298,8 @@ body.boxed .pagination-2 {
 .leftHover a:hover span,
 .leftHover a:hover small {
   visibility: hidden;
+  background-color: #bb9b69;
+  border-color: #bb9b69;
 }
 .rightHover {
   padding: 0;
@@ -15098,6 +15314,8 @@ body.boxed .pagination-2 {
 .rightHover a:hover span,
 .rightHover a:hover small {
   visibility: hidden;
+  background-color: #bb9b69;
+  border-color: #bb9b69;
 }
 .bottomSection {
   padding: 18rem 0;
@@ -15115,14 +15333,16 @@ body.boxed .pagination-2 {
 .quote {
   font-weight: 500;
   font-style: italic;
-  font-size: 1rem;
+  font-size: 1.4rem;
   font-family: 'Raleway', sans-serif;
   color: #9e9e9e;
-  padding-bottom: 2.7rem;
+  height: 150px;
+  width: 100%;
+  margin-top: 20px;
 }
 p {
   font-weight: 500;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-family: 'Raleway', sans-serif;
   color: #9e9e9e;
 }
