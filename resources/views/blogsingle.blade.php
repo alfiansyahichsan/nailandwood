@@ -1,43 +1,22 @@
 @extends('shared.layouts')
 @section('halaman')
-Blog
+BlogSingle
 @endsection
 @section('content')
 
 	<!-- =============== START BREADCRUMB ================ -->
-	<!-- <section class="no-mb">
-		<div class="row">
-			<div class="col-sm-12">
-				<div class="before-FullscreenSlider"></div>
-				<div class="breadcrumb-fullscreen-parent phone-menu-bg">
-					<div class="breadcrumb breadcrumb-fullscreen alignleft small-description overlay almost-black-overlay" style="background-image: url('img/header/koc.jpg');" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
-						<div class="breadTxt">
-                            <h1>
-                                Blog Single
-                            </h1>
-                            <p>
-								Strength does not come from winning. Your struggles develop your strengths. <br> When you go through hardships and decide not to surrender,<br> that is strength. The worst thing I can be is the same<br> as everybody else. I hate that.
-							</p>
-                            <a href="#content" data-easing="easeInOutQuint" data-scroll="" data-speed="900" data-url="false">
-                                View More <i class="fa fa-angle-down"></i>
-                            </a>
-                        </div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section> -->
+	
 	<!-- =============== END BREADCRUMB ================ -->
 
-	<!-- =============== START BLOG SINGLE ================ -->
+	<!-- =============== START BLOG FILTER ================ -->
 	<section class="blogSingle padding" id="content">
 		<div class="container">
 			<div class="row">
 				<div class="blog-left">
 					<div class="col-sm-8">
 						<div class="owl-carousel">
-						    <div class="item"><img src="img/blog/galPost.png" alt=""></div>
-						    <div class="item"><img src="img/blog/galPost.png" alt=""></div>
+						    <div class="item"><img src="img/blog/1.png" alt=""></div>
+						    <div class="item"><img src="img/blog/1.png" alt=""></div>
 						</div>
 						<div class="admin-list clearfix">
 							<ul>
@@ -64,20 +43,6 @@ Blog
 								<a href="#">Party</a>&nbsp;/&nbsp;
 								<a href="#">Music</a>&nbsp;/&nbsp;
 								<a href="#">Dj</a>
-							</div>
-						</div>
-
-						<div class="author-info">
-							<div class="left-author-info">
-								<figure>
-									<img src="img/blog/blg1.png" alt="">
-								</figure>
-							</div>
-							<div class="right-author-info">
-								<h1>
-									By Admin
-								</h1>
-								<p>Literally slow-carb umami, mixtape bicycle rights salvia skateboard. Selfies squid normcore chillwave, slow-carb cred Austin small batch leggings umami cliche trust fund Echo.</p>
 							</div>
 						</div>
 
@@ -166,17 +131,31 @@ Blog
 				<div class="blog-right">
 					<div class="col-sm-3 col-sm-offset-1">
 						<div class="blogSidebar">
-							<div class="widget">
-								<h3 class="widget-title">Categories</h3>
-								<ul>
-									<li>Audio<span>(2)</span></li>
-									<li>News<span>(3)</span></li>
-									<li>Standard<span>(5)</span></li>
-									<li>Video<span>(1)</span></li>
-									<li>Soundcloud<span>(6)</span></li>
-									<li>Gallery<span>(3)</span></li>
-								</ul>
+							<div class="widget kotak">
+								<p class="photoborder"><img src="img/header/koc.jpg"></p>
+									<h3 class="widget-title blogParagraph" style="padding-top: 20px;">About Me</h3>
+									<ul class="blogParagraph" style="padding-left: 20px; padding-right: 20px;"><a>Literally slow-carb umami, mixtape bicycle rights salvia skateboard. Selfies squid normcore chillwave, slow-carb cred Austin small batch leggings umami cliche trust fund Echo Park Pinterest 8-bit. PBR and B church-key keffiyehLiterally slow-carb umami</a>
+										
+									</ul>
+									<h3></h3>
+									<nav class="socials" style="padding-top: 25px; padding-left: 25px;">
+										<ul>
+											<a href="https://itunes.apple.com/id/album/proper-pause-ep/id1151893533" class="icon-button shopIcon"><i class="fa fa-apple" style="font-size: 17px; width: 50px; background-color: transparent; text-align: center; color: black;"></i><span></span></a>
+											<a href="https://www.youtube.com/channel/UCiNGrKZJI5ET_NHk94bxnJQ" class="icon-button shopIcon"><i class="fa fa-youtube-play" style="font-size: 17px; width: 50px; background-color: transparent; text-align: center; color: black;"></i><span></span></a>
+											<a href="https://soundcloud.com/user-346971553" class="icon-button shopIcon"><i class="fa fa-instagram" style="font-size: 17px; width: 50px; background-color: transparent; text-align: center; color: black;"></i><span></span></a>
+											<a href="https://soundcloud.com/user-346971553" class="icon-button shopIcon"><i class="fa fa-soundcloud" style="font-size: 17px; width: 50px; background-color: transparent; text-align: center; color: black;"></i><span></span></a>
+										</ul>
+									</nav>
 							</div><!-- end widget -->
+							<div class="widget" style="text-align: center; padding-top: 20px; margin-top: 20px;">
+							<h3>Instagram</h3>
+							<span class="headen"></span>
+								<div class="instagram-widgets">
+									<ul id="instagram-sidebar-widget" class="clearfix">
+										<iframe src="http://instaembedder.com/gallery-v2.php?width=80&cols=3&rows=3&margin=8&color=gray&image_border=8&frame_color=white&cid=3877&" frameborder="0" width="315" height="289" ></iframe>
+									</ul>
+								</div>
+							</div>
 							<div class="widget">
 								<h3 class="widget-title">Recent Posts</h3>
 								<ul>
@@ -234,8 +213,6 @@ Blog
 		</div>
 	</div>
 	<!-- =============== END PAGINATION ================ -->
+	<!-- =============== END BLOG FILTER ================ -->
 
-@section('script')
-@endsection()
-@endsection()
-	
+@endsection

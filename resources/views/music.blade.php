@@ -194,7 +194,9 @@ Music
 						<div class="widget">
 							<h3>Instagram</h3>
 							<div class="instagram-widget">
-								<ul id="instagram-sidebar-widget" class="clearfix"></ul>
+								<ul id="instagram-sidebar-widget" class="clearfix">
+									<iframe src="http://instaembedder.com/gallery-v2.php?width=80&cols=3&rows=3&margin=8&color=gray&image_border=8&frame_color=white&cid=3877&" frameborder="0" width="315" height="289" ></iframe>
+								</ul>
 							</div>
 						</div><!-- end widget -->
 						<div class="widget">

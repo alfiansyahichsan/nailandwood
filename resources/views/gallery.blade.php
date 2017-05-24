@@ -1,13 +1,13 @@
-@extends('shared.layout')
+@extends('shared.layouts')
 @section('halaman')
 Gallery
 @endsection
 @section('content')
 
     <!-- =============== START BREADCRUMB ================ -->
-    <section class="no-mb">
+    <!-- <section class="no-mb">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-12" style="margin-bottom: 50px;">
                 <div class="before-FullscreenSlider"></div>
                 <div class="breadcrumb-fullscreen-parent phone-menu-bg">
                     <div class="breadcrumb breadcrumb-fullscreen alignleft small-description overlay almost-black-overlay" style="background-image: url('img/header/koc.jpg');" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
@@ -22,13 +22,13 @@ Gallery
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- =============== END BREADCRUMB ================ -->
 
     <!-- =============== START GALLERY SECTION ================ -->
     <section id="content">
-        <div class="gallerySection">
-            <div class="container-fluid" style="padding-left:0; padding-right:0;">
+        <div class="gallerySection" style="margin-top: 120px;">
+            <div class="container-fluid">
                 <div class="col-sm-12">
                     <!-- Content Container -->
                     <div class="content-container clearfix">
@@ -36,16 +36,16 @@ Gallery
                         <div class="single-photo-album-container">
                             <div class="row">
                                 <!-- Single Album Article -->
-                                <article class="col-sm-12 col-md-6 col-xs-12">
+                                <article class="col-sm-4 col-xs-12">
                                     <!-- Single Album Contant Container -->
                                     <figure>
                                         <!-- Single Album Image -->
                                         <figcaption>
                                             <!-- Single Album Image -->
                                             <div class="hovereffect">
-                                                <img class="img-responsive" src="img/gallery/wideGal.png" alt="">
+                                                <img class="img-responsive" src="img/blog/1.png" alt="">
                                                 <div class="overlay">
-                                                   <a class="info lightbox" href="img/gallery/wideGal.png"></a>
+                                                   <a class="info lightbox" href="img/blog/1.png"></a>
                                                 </div>
                                             </div>
                                         </figcaption>
@@ -54,128 +54,68 @@ Gallery
                                     </figure>
                                 </article>
                                 <!-- Single Album Article -->
-                                <article class="col-sm-3 col-xs-6">
+                                <article class="col-sm-4 col-xs-12">
                                     <!-- Single Album Contant Container -->
                                     <figure>
                                         <!-- Single Album Image -->
                                         <figcaption>
                                             <div class="hovereffect">
-                                            <img class="img-responsive" src="img/gallery/squareGal.png" alt="">
+                                            <img class="img-responsive" src="img/blog/2.jpg" alt="">
                                             <div class="overlay">
-                                               <a class="info lightbox" href="img/gallery/wideGal.png"></a>
+                                               <a class="info lightbox" href="img/blog/2.jpg"></a>
                                             </div>
                                         </div>
                                         </figcaption>
                                     </figure>
                                 </article>
                                 <!-- Single Album Article -->
-                                <article class="col-sm-3 col-xs-6">
+                                <article class="col-sm-4 col-xs-12">
                                     <!-- Single Album Contant Container -->
                                     <figure>
                                         <!-- Single Album Image -->
                                         <figcaption>
                                             <div class="hovereffect">
-                                            <img class="img-responsive" src="img/gallery/squareGal.png" alt="">
+                                            <img class="img-responsive" src="img/blog/3.jpg" alt="">
                                             <div class="overlay">
-                                               <a class="info lightbox" href="img/gallery/wideGal.png"></a>
+                                               <a class="info lightbox" href="img/blog/3.jpg"></a>
                                             </div>
                                         </div>
                                         </figcaption>
                                     </figure>
                                 </article>
                                 <!-- Single Album Article -->
-                                <article class="col-sm-3 col-xs-6">
+                                <!-- Single Album Article -->
+                                <article class="col-sm-4 col-xs-12">
                                     <!-- Single Album Contant Container -->
                                     <figure>
                                         <!-- Single Album Image -->
                                         <figcaption>
                                             <div class="hovereffect">
-                                            <img class="img-responsive" src="img/gallery/squareGal.png" alt="">
+                                            <img class="img-responsive" src="img/blog/4.jpg" alt="">
                                             <div class="overlay">
-                                               <a class="info lightbox" href="img/gallery/wideGal.png"></a>
+                                               <a class="info lightbox" href="img/blog/4.jpg"></a>
                                             </div>
                                         </div>
                                         </figcaption>
                                     </figure>
                                 </article>
                                 <!-- Single Album Article -->
-                                <article class="col-sm-3 col-xs-6">
+                                <article class="col-sm-4 col-xs-12">
                                     <!-- Single Album Contant Container -->
                                     <figure>
                                         <!-- Single Album Image -->
                                         <figcaption>
                                             <div class="hovereffect">
-                                            <img class="img-responsive" src="img/gallery/squareGal.png" alt="">
+                                            <img class="img-responsive" src="img/blog/5.png" alt="">
                                             <div class="overlay">
-                                               <a class="info lightbox" href="img/gallery/wideGal.png"></a>
-                                            </div>
-                                        </div>
-                                        </figcaption>
-                                    </figure>
-                                </article>
-                                <!-- Single Album Article -->
-                                <article class="col-sm-12 col-md-6 col-xs-12">
-                                    <!-- Single Album Contant Container -->
-                                    <figure>
-                                        <!-- Single Album Image -->
-                                        <figcaption>
-                                            <div class="hovereffect">
-                                            <img class="img-responsive" src="img/gallery/wideGal.png" alt="">
-                                            <div class="overlay">
-                                               <a class="info lightbox" href="img/gallery/wideGal.png"></a>
+                                               <a class="info lightbox" href="img/blog/5.png"></a>
                                             </div>
                                         </div>
                                         </figcaption>
                                     </figure>
                                 </article>  
                                 <!-- Single Album Article -->
-                                <article class="col-sm-12 col-md-6 col-xs-12">
-                                    <!-- Single Album Contant Container -->
-                                    <figure>
-                                        <!-- Single Album Image -->
-                                        <figcaption>
-                                            <!-- Single Album Image -->
-                                            <div class="hovereffect">
-                                                <img class="img-responsive" src="img/gallery/wideGal.png" alt="">
-                                                <div class="overlay">
-                                                   <a class="info lightbox" href="img/gallery/wideGal.png"></a>
-                                                </div>
-                                            </div>
-                                        </figcaption>
-                                        <!-- Single Album View Button -->
-                                        
-                                    </figure>
-                                </article>
-                                <!-- Single Album Article -->
-                                <article class="col-sm-3 col-xs-6">
-                                    <!-- Single Album Contant Container -->
-                                    <figure>
-                                        <!-- Single Album Image -->
-                                        <figcaption>
-                                            <div class="hovereffect">
-                                            <img class="img-responsive" src="img/gallery/squareGal.png" alt="">
-                                            <div class="overlay">
-                                               <a class="info lightbox" href="img/gallery/wideGal.png"></a>
-                                            </div>
-                                        </div>
-                                        </figcaption>
-                                    </figure>
-                                </article>
-                                <!-- Single Album Article -->
-                                <article class="col-sm-3 col-xs-6">
-                                    <!-- Single Album Contant Container -->
-                                    <figure>
-                                        <!-- Single Album Image -->
-                                        <figcaption>
-                                            <div class="hovereffect">
-                                            <img class="img-responsive" src="img/gallery/squareGal.png" alt="">
-                                            <div class="overlay">
-                                               <a class="info lightbox" href="img/gallery/wideGal.png"></a>
-                                            </div>
-                                        </div>
-                                        </figcaption>
-                                    </figure>
-                                </article>                          
+                                 
                             </div>
                         </div>
                     </div>

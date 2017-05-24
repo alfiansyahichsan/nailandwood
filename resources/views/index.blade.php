@@ -209,91 +209,50 @@ Home
 	<section class="padding albumsHome hide-section">
 		<div class="container" style="margin-top: -35px;">
 			<div class="row">
-				<div class="col-sm-12">
+				<div class="col-sm-6" style="margin-bottom: 30px;">
 					<div class="sectionTitle paddingBottom">
 						<span class="heading-t3"></span>
 						<h2><a href="{{URL::route('music')}}">music</a></h2>
 						<span class="heading-b3"></span>
 					</div><!-- end sectionTtile -->
+					<div class="list-albums">
+						<ul class="list-feature col-md-12 col-xs-12 col-sm-12">
+
+							<li class="col-md-3 col-sm-3 col-xs-12">
+								<div class="album-icon">
+									<span class="thumbs-album">
+										<a href="{{URL::Route('music')}}"><img width="270" height="270" src="img/albums/album.png" class="attachment-album-thumbnail wp-post-image" alt="album-cover-1"></a>
+
+									</span>
+									<span class="disk"><img src="img/albums/qwe.png"></span>
+								</div><!-- END ALBUM ICON -->
+								<div class="name">
+									<h3>Proper Pause(EP)</h3>						
+									<p>Chillout</p>								
+								</div><!-- end name -->
+							</li>
+
+						</ul>
+					</div><!-- end list-albums -->
 				</div><!-- end col-sm-12 -->
-			</div>
-			<div class="list-albums" style="margin-top: -50px;">
-				<ul class="list-feature col-md-12 col-xs-12 col-sm-12">
-					<li class="col-md-3 col-sm-3 col-xs-12">
-						<div class="album-icon">
-							<span class="thumbs-album">
-								<a href="{{URL::Route('music')}}"><img width="270" height="270" src="img/albums/album.png" class="attachment-album-thumbnail wp-post-image" alt="album-cover-1"></a>
 
-							</span>
-							<span class="disk"><img src="img/albums/qwe.png"></span>
-						</div><!-- END ALBUM ICON -->
-						<div class="name">
-							<h3>Proper Pause(EP)</h3>						
-							<p>Chillout</p>								
-						</div><!-- end name -->
-					</li>
-									
-					<li class="col-md-3 col-sm-3 col-xs-12">
-						<div class="album-icon albumIcon1">
-							<span class="thumbs-album">
-								<a href="albumsSingle3.html"><img width="270" height="270" src="img/albums/albumCover.png" class="attachment-album-thumbnail wp-post-image" alt="album-cover-1"></a>
-							</span>
-							<span class="disk"></span>
-						</div>
-						<div class="name">
-							<h3>Stunt Vibe</h3>									<p>Chillout</p>								
-						</div>
-						</li>
-						<li class="col-md-3 col-sm-3 col-xs-12">
-							<div class="album-icon albumIcon2">
-								<span class="thumbs-album">
-									<a href="albumsSingle4.html"><img width="270" height="270" src="img/albums/albumCover.png" class="attachment-album-thumbnail wp-post-image" alt="album-cover-1"></a>
-									</span>
-								<span class="disk"></span>
-							</div>
-							<div class="name">
-								<h3>Strange Clouds</h3>								<p>Chillout</p>								
-							</div>
-						</li>
-						<li class="col-md-3 col-sm-3 col-xs-12">
-							<div class="album-icon albumIcon3">
-								<span class="thumbs-album">
-									<a href="albumsSingle2.html"><img width="270" height="270" src="img/albums/albumCover.png" class="attachment-album-thumbnail wp-post-image" alt="album-cover-1"></a>
-									</span>
-								<span class="disk"></span>
-							</div>
-							<div class="name">
-								<h3>Natural Earth</h3>								<p>Chillout</p>								
-							</div>
-						</li>	
-				</ul>
-			</div><!-- end list-albums -->
-		</div><!-- end container -->
-	</section>
-	<!-- =============== END ALBUM COVER SECTION ================ -->
-
-	<!-- =============== START EVENTS SECTION-1 ================ -->
-	<section class="background-properties hide-section paddingHomeEvents">
-		<div class="tableEvents">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-12">
-						<div class="sectionTitle paddingBottom">
+				<div class="tableEvents col-sm-6" >
+						<div class="sectionTitle" style="padding-bottom: 110px;">
 							<span class="heading-t3"></span>
 							<h2><a href="{{URL::route('events')}}">Events</a></h2>
 							<span class="heading-b3"></span>
 						</div><!-- end sectionTtile -->
-						<table>
+						<table style="margin-top: -30px;">
 							<tr class="tableEventsTitle">
 								<th class="date">Date</th>
-								<th class="city">Event Name</th>
+								<th class="city">Event</th>
 								<th class="venue">Venue</th>
 								<th class="location">Location</th>
 								<th class="tickets">Tickets</th>
 								<th></th>
 							</tr>
 							<tr>
-								<td class="aqura-date"><a href="#"><i class="fa fa-plus"></i></a><a href="singleEvent.html">Mar 06</a></td>
+								<td class="aqura-date"><a href="#"></a><a href="singleEvent.html">Mar 06</a></td>
 								<td class="aqura-city"><a href="">Festival</a></td>
 								<td class="aqura-location"><a href="">Central Park</a></td>
 								<td class="aqura-city"><a href="">Cluj Napoca, Bontida Romania</a></td>
@@ -301,28 +260,21 @@ Home
 								<!-- <td class="aqura-vip"><a href="">RSVP</a></td> -->
 							</tr>
 							<tr>
-								<td class="aqura-date"><a href="#"><i class="fa fa-plus"></i></a><a href="singleEvent.html">Mar 06</a></td>
+								<td class="aqura-date"><a href="#"></a><a href="singleEvent.html">Mar 06</a></td>
 								<td class="aqura-city"><a href="">Festival</a></td>
 								<td class="aqura-location"><a href="singleEvent.html">Central Park</a></td>
 								<td class="aqura-city"><a href="singleEvent.html">Cluj Napoca, Bontida Romania</a></td>
 								<td class="aqura-tickets"><a href="singleEvent.html">Tickets</a></td>
 							</tr>
 							<tr>
-								<td class="aqura-date"><a href="#"><i class="fa fa-plus"></i></a><a href="singleEvent.html">Mar 06</a></td>
+								<td class="aqura-date"><a href="#"></a><a href="singleEvent.html">Mar 06</a></td>
 								<td class="aqura-city"><a href="">Festival</a></td>
 								<td class="aqura-location"><a href="singleEvent.html">Central Park</a></td>
 								<td class="aqura-city"><a href="singleEvent.html">Cluj Napoca, Bontida Romania</a></td>
 								<td class="aqura-tickets"><a href="singleEvent.html">Tickets</a></td>
 							</tr>
 							<tr>
-								<td class="aqura-date"><a href="#"><i class="fa fa-plus"></i></a><a href="singleEvent.html">Mar 06</a></td>
-								<td class="aqura-city"><a href="">Festival</a></td>
-								<td class="aqura-location"><a href="singleEvent.html">Central Park</a></td>
-								<td class="aqura-city"><a href="singleEvent.html">Cluj Napoca, Bontida Romania</a></td>
-								<td class="aqura-tickets"><a href="singleEvent.html">Tickets</a></td>
-							</tr>
-							<tr>
-								<td class="aqura-date"><a href="#"><i class="fa fa-plus"></i></a><a href="singleEvent.html">Mar 06</a></td>
+								<td class="aqura-date"><a href="#"></a><a href="singleEvent.html">Mar 06</a></td>
 								<td class="aqura-city"><a href="">Festival</a></td>
 								<td class="aqura-location"><a href="singleEvent.html">Central Park</a></td>
 								<td class="aqura-city"><a href="singleEvent.html">Cluj Napoca, Bontida Romania</a></td>
@@ -330,10 +282,23 @@ Home
 							</tr>
 						</table>
 					</div><!-- end col-sm-12 -->
-				</div><!-- end row -->
-			</div><!-- end container -->
-		</div><!-- end tableEvents -->
+
+			</div>
+			
+		</div><!-- end container -->
 	</section>
+	<!-- =============== END ALBUM COVER SECTION ================ -->
+
+	<!-- =============== START EVENTS SECTION-1 ================ -->
+	<!-- <section class="background-properties hide-section paddingHomeEvents">
+		<div class="tableEvents">
+			<div class="container">
+				<div class="row">
+					
+				</div>
+			</div>
+		</div>
+	</section> -->
 	<!-- =============== END EVENTS SECTION-1 ================ -->
 
 	<!-- =============== START EVENTS SECTION-2 ================ -->
@@ -381,7 +346,7 @@ Home
 
 	<!-- =============== START HOME-BLOG SECTION ================ -->	
 	<section class="padding hide-section background-properties blogHomeSection">	
-		<div class="container">
+		<div class="container" style="margin-top: -20px;">
 			<div class="row">
 				<div class="sectionTitle paddingBottom">
 					<span class="heading-t3"></span>
@@ -412,7 +377,7 @@ Home
 				</div><!-- end col-sm-4 -->	
 				<div class="aduh col-sm-4">
 					<div class="blogBox">	
-						<div class="videoBox"><iframe width="600" height="410" src="https://www.youtube.com/embed/kYNRSa2DYp4" frameborder="0" allowfullscreen></iframe></div>
+						<div class="videoBox"><iframe width="600" height="410" src="https://www.youtube.com/embed/01jcwGApTWA" frameborder="0" allowfullscreen></iframe></div>
 						<div class="blogBoxContent">
 							<div class="blogHeader">
 								<h1><a href="blogSingle.html">Video Post</a></h1>
@@ -460,7 +425,7 @@ Home
 	<!-- =============== END HOME-NLOG SECTION ================ -->	
 
 	<!-- =============== START VIDEO SECTION ================ -->
-	<section class="videoHome hide-section">
+	<section class="videoHome hide-section" style="margin-bottom: 150px;">
 		<div class="container">
 			<div class="row">
 				<div class="sectionTitle">
@@ -471,7 +436,7 @@ Home
 				</div><!-- end sectionTtile -->
 				<div class="col-sm-2"></div>
 				<div class="col-sm-8">
-					<iframe width="854" height="480" src="https://www.youtube.com/embed/UVa_PALV_hY" frameborder="0" allowfullscreen></iframe>
+					<iframe width="854" height="480" src="https://www.youtube.com/embed/01jcwGApTWA" frameborder="0" allowfullscreen></iframe>
 				</div><!-- end col-sm-4 -->
 				<!-- <div class="col-sm-4">
 					<iframe width="854" height="480" src="https://www.youtube.com/embed/kYNRSa2DYp4" frameborder="0" allowfullscreen></iframe>
@@ -484,122 +449,6 @@ Home
 		</div>
 	</section>
 	<!-- =============== END VIDEO SECTION ================ -->
-
-
-
-	<!-- =============== START GALLERY SECTION ================ -->
-	<section class="padding hide-section" style="padding-top: 15rem;">
-		<div class="gallerySection">
-			<div class="container-fluid">
-				<div class="col-sm-12">
-					<!-- Content Container -->
-					<div class="content-container clearfix">
-						<!-- Single Album Container -->
-						<div class="single-photo-album-container">
-							<div class="row">
-								<!-- Single Album Article -->
-								<article class="col-sm-12 col-md-6 col-xs-12">
-									<!-- Single Album Contant Container -->
-									<figure>
-										<!-- Single Album Image -->
-										<figcaption>
-											<!-- Single Album Image -->
-											<div class="hovereffect">
-												<a><img class="img-responsive" src="img/header/s.jpg" alt=""></a>
-												<div class="overlay">
-												   <a class="info lightbox" href="img/header/s.jpg"></a>
-												</div>
-											</div>
-										</figcaption>
-										<!-- Single Album View Button -->
-										
-									</figure>
-								</article>
-								<!-- Single Album Article -->
-								<article class="col-sm-3 col-xs-6">
-									<!-- Single Album Contant Container -->
-									<figure>
-										<!-- Single Album Image -->
-										<figcaption>
-											<div class="hovereffect">
-											<img class="img-responsive" src="img/header/sd1.jpg" alt="">
-											<div class="overlay">
-											   <a class="info lightbox" href="img/header/sd.jpg"></a>
-											</div>
-										</div>
-										</figcaption>
-									</figure>
-								</article>
-								<!-- Single Album Article -->
-								<article class="col-sm-3 col-xs-6">
-									<!-- Single Album Contant Container -->
-									<figure>
-										<!-- Single Album Image -->
-										<figcaption>
-											<div class="hovereffect">
-											<img class="img-responsive" src="img/header/sd1.jpg" alt="">
-											<div class="overlay">
-											   <a class="info lightbox" href="img/header/sd.jpg"></a>
-											</div>
-										</div>
-										</figcaption>
-									</figure>
-								</article>
-								<!-- Single Album Article -->
-								<article class="col-sm-3 col-xs-6">
-									<!-- Single Album Contant Container -->
-									<figure>
-										<!-- Single Album Image -->
-										<figcaption>
-											<div class="hovereffect">
-											<img class="img-responsive" src="img/header/sd1.jpg" alt="">
-											<div class="overlay">
-											   <a class="info lightbox" href="img/header/sd.jpg"></a>
-											</div>
-										</div>
-										</figcaption>
-									</figure>
-								</article>
-								<!-- Single Album Article -->
-								<article class="col-sm-3 col-xs-6">
-									<!-- Single Album Contant Container -->
-									<figure>
-										<!-- Single Album Image -->
-										<figcaption>
-											<div class="hovereffect">
-											<img class="img-responsive" src="img/header/sd1.jpg" alt="">
-											<div class="overlay">
-											   <a class="info lightbox" href="img/header/sd.jpg"></a>
-											</div>
-										</div>
-										</figcaption>
-									</figure>
-								</article>
-								<!-- Single Album Article -->
-								<article class="col-sm-12 col-md-6 col-xs-12">
-									<!-- Single Album Contant Container -->
-									<figure>
-										<!-- Single Album Image -->
-										<figcaption>
-											<div class="hovereffect">
-											<img class="img-responsive" src="img/header/s.jpg" alt="">
-											<div class="overlay">
-											   <a class="info lightbox" href="img/header/s.jpg"></a>
-											</div>
-										</div>
-										</figcaption>
-									</figure>
-								</article>								
-							</div>
-						</div>
-					</div>
-				</div>
-			</div><!-- end container -->
-		</div>
-	</section>
-	
-	<!-- =============== END GALLERY SECTION ================ -->
-
 
 
 	<!-- =============== START HOME-SHOP SECTION ================ -->

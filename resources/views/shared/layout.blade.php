@@ -2,7 +2,7 @@
 @section('layout')
 	<!-- =============== START TOP HEADER ================ -->
 	<div class="row">
-		<div class="topHeader col-md-12">
+		<div class="topHeader col-md-12" style="height: 67px;">
 			<div class="header">
 				<div class="rightTopHeader">
 					<nav class="social-iconsss">
@@ -84,11 +84,11 @@
 									</a>
 								</li>
 								<!-- Menu Fixed Item -->
-								<li>
+								<!-- <li>
 									<a href="{{URL::route('events')}}">
 										events
 									</a>
-								</li>
+								</li> -->
 								<!-- Menu Fixed Item -->
 								<li>
 									<a href="{{URL::route('blog')}}">
@@ -119,7 +119,16 @@
 										shop
 									</a>
 								</li>
+								
 							</ul>
+								<nav class="social-iconssss" style="text-align: center; margin: auto; display: block;">
+									<ul>
+										<a href="https://itunes.apple.com/id/album/proper-pause-ep/id1151893533" class="icon-button shopIcon"><i class="fa fa-apple" style="font-size: 17px; width: 50px; background-color: transparent; text-align: center; color: #bb9b69;"></i><span></span></a>
+										<a href="https://www.youtube.com/channel/UCiNGrKZJI5ET_NHk94bxnJQ" class="icon-button shopIcon"><i class="fa fa-youtube-play" style="font-size: 17px; width: 50px; background-color: transparent; text-align: center; color: #bb9b69;"></i><span></span></a>
+										<a href="https://soundcloud.com/user-346971553" class="icon-button shopIcon"><i class="fa fa-instagram" style="font-size: 17px; width: 50px; background-color: transparent; text-align: center; color: #bb9b69;"></i><span></span></a>
+										<a href="https://soundcloud.com/user-346971553" class="icon-button shopIcon"><i class="fa fa-soundcloud" style="font-size: 17px; width: 50px; background-color: transparent; text-align: center; color: #bb9b69;"></i><span></span></a>
+									</ul>
+								</nav>
 							<!-- Menu Fixed Close Button -->
 							<div class="x-filter">
 								<span></span>
@@ -139,6 +148,7 @@
 	<!-- =============== END TOP HEADER ================ -->
 	
 @yield('content')
+
 
 <!-- =============== START FOOTER ================ -->
 	<section style="background-color:#eeeeee;" class="hide-section">
