@@ -10,13 +10,13 @@ Blog
 			<div class="col-sm-12">
 				<div class="before-FullscreenSlider"></div>
 				<div class="breadcrumb-fullscreen-parent phone-menu-bg">
-					<div class="breadcrumb breadcrumb-fullscreen alignleft small-description overlay almost-black-overlay" style="background-image: url('img/header/koc.jpg');" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
+					<div class="breadcrumb breadcrumb-fullscreen alignleft small-description overlay almost-black-overlay" style="background-image: url('img/blog/2.jpg');" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
 						<div class="breadTxt">
                             <h1>
                                 Blog List
                             </h1>
                             <p>
-                                Your time is limited, don’t waste it living someone else’s life. Don’t be trapped<br>by dogma, which is living the result of other people’s thinking.<br> Don’t let the noise of other opinions drown<br> your own inner voice.
+                                There's an old saying, 'That what doesn't kill you, makes you stronger' I don't believe that. <br> I think the things that try to kill you make you angry and sad. Strength comes<br> from the good things - your family, your friends,<br> the satisfaction of hard work.
                             </p>
                             <a href="#content" data-easing="easeInOutQuint" data-scroll="" data-speed="900" data-url="false">
                                 View More <i class="fa fa-angle-down"></i>
@@ -27,19 +27,17 @@ Blog
 			</div>
 		</div>
 	</section>
+	
 	<!-- =============== END BREADCRUMB ================ -->
 
 	<!-- =============== START BLOG SIDEBAR-RIGHT ================ -->
-	<section class="blogSidebarRight padding" id="content">
+	<section class="blogSidebarRight" id="content">
 		<div class="container">
 			<div class="row">
 				<div class="blog-sidebar-right">
 					<div class="col-sm-8">
 						<div class="blogBox">	
-							<div class="owl-carousel">
 							    <div class="item"><img src="img/blog/1.png" alt=""></div>
-							    <div class="item"><img src="img/blog/1.png" alt=""></div>
-							</div>	
 							<div class="blogBoxContent">
 								<div class="blogHeader">
 									<h1><a href="blogSingle.html">Gallery Post</a></h1>
@@ -47,10 +45,7 @@ Blog
 								<div class="admin-list clearfix">
 									<ul>
 										<li><a href="#">08 dec 2016</a>&nbsp;/&nbsp;</li>
-										<li><a href="#">By Admin</a>&nbsp;/&nbsp;</li>
-										<li><a href="#">Categories</a>&nbsp;/&nbsp;</li>
-										<li><a href="#">Gallery</a>&nbsp;/&nbsp;</li>
-										<li><a href="#">2 Comments</a></li>
+										<li><a href="#">By Admin</a>&nbsp;&nbsp;</li>
 									</ul>
 								</div>
 								<div class="blogParagraph">
@@ -70,10 +65,7 @@ Blog
 									<div class="admin-list clearfix">
 										<ul>
 											<li><a href="#">08 dec 2016</a>&nbsp;/&nbsp;</li>
-											<li><a href="#">By Admin</a>&nbsp;/&nbsp;</li>
-											<li><a href="#">Categories</a>&nbsp;/&nbsp;</li>
-											<li><a href="#">Gallery</a>&nbsp;/&nbsp;</li>
-											<li><a href="#">2 Comments</a></li>
+											<li><a href="#">By Admin</a>&nbsp;&nbsp;</li>
 										</ul>
 									</div>
 									<div class="blogParagraph">
@@ -85,7 +77,7 @@ Blog
 								</div><!-- end blogBoxContent -->
 							</div><!-- end blogBox -->
 						<div class="blogBox">	
-							<iframe width="100" height="53"  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/156842497&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+							<iframe width="100" height="53" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/286037966&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
 							<div class="blogBoxContent">
 								<div class="blogHeader">
 									<h1><a href="blogSingle.html">Soundcloud Post</a></h1>
@@ -93,10 +85,7 @@ Blog
 								<div class="admin-list clearfix">
 							<ul>
 								<li><a href="#">08 dec 2016</a>&nbsp;/&nbsp;</li>
-								<li><a href="#">By Admin</a>&nbsp;/&nbsp;</li>
-								<li><a href="#">Categories</a>&nbsp;/&nbsp;</li>
-								<li><a href="#">Gallery</a>&nbsp;/&nbsp;</li>
-								<li><a href="#">2 Comments</a></li>
+								<li><a href="#">By Admin</a>&nbsp;&nbsp;</li>
 							</ul>
 						</div>
 								<div class="blogParagraph">
@@ -115,10 +104,7 @@ Blog
 								<div class="admin-list clearfix">
 									<ul>
 										<li><a href="#">08 dec 2016</a>&nbsp;/&nbsp;</li>
-										<li><a href="#">By Admin</a>&nbsp;/&nbsp;</li>
-										<li><a href="#">Categories</a>&nbsp;/&nbsp;</li>
-										<li><a href="#">Gallery</a>&nbsp;/&nbsp;</li>
-										<li><a href="#">2 Comments</a></li>
+										<li><a href="#">By Admin</a>&nbsp;&nbsp;</li>
 									</ul>
 								</div>
 								<div class="blogParagraph">
@@ -160,7 +146,7 @@ Blog
 									</ul>
 								</div>
 							</div>
-								<h3 class="widget-title">Categories</h3>
+								<!-- <h3 class="widget-title">Categories</h3>
 								<ul>
 									<li>Audio<span>(2)</span></li>
 									<li>News<span>(3)</span></li>
@@ -168,7 +154,7 @@ Blog
 									<li>Video<span>(1)</span></li>
 									<li>Soundcloud<span>(6)</span></li>
 									<li>Gallery<span>(3)</span></li>
-								</ul>
+								</ul> -->
 							</div><!-- end widget -->
 							<div class="widget">
 								<h3 class="widget-title">Recent Posts</h3>
@@ -187,7 +173,7 @@ Blog
 								<a class="twitter-timeline" href="https://twitter.com/UntoldFestival" data-widget-id="716220714324467712">Tweets by @UntoldFestival</a>
 								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 							</div><!-- end widget -->
-							<div class="widget tagCloud">
+							<!-- <div class="widget tagCloud">
 								<h3 class="widget-title">Tag Cloud</h3>
 								<ul>
 									<li><a href="">Audio</a>&nbsp;/&nbsp;</li>
@@ -201,7 +187,7 @@ Blog
 									<li><a href="#">Bands</a>&nbsp;/&nbsp;</li>
 									<li><a href="#">Concert</a>&nbsp;/&nbsp;</li>
 								</ul>
-							</div><!-- end widget -->
+							</div> --><!-- end widget -->
 						</div><!-- end blogSidebar -->
 					</div><!-- end col-sm03 -->
 				</div><!-- end blog-right -->

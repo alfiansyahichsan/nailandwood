@@ -9,49 +9,35 @@ BlogSingle
 	<!-- =============== END BREADCRUMB ================ -->
 
 	<!-- =============== START BLOG FILTER ================ -->
-	<section class="blogSingle padding" id="content">
+	<section class="blogSingle padding" id="content" style="margin-top: 20px;">
 		<div class="container">
 			<div class="row">
 				<div class="blog-left">
 					<div class="col-sm-8">
-						<div class="owl-carousel">
-						    <div class="item"><img src="img/blog/1.png" alt=""></div>
+						<div class="owl-carousels">
 						    <div class="item"><img src="img/blog/1.png" alt=""></div>
 						</div>
 						<div class="admin-list clearfix">
 							<ul>
 								<li><a href="#">08 dec 2016</a>&nbsp;/&nbsp;</li>
 								<li><a href="#">By Admin</a>&nbsp;/&nbsp;</li>
-								<li><a href="#">Categories</a>&nbsp;/&nbsp;</li>
-								<li><a href="#">Gallery</a>&nbsp;/&nbsp;</li>
-								<li><a href="#">2 Comments</a></li>
 							</ul>
 						</div>
 						<div class="title">
 							<h2>About Last Night</h2>
 						</div>
-						<div class="paragraph">
+						<div class="paragraph"  style="margin-bottom: 30px;">
 							<p>Chillwave forage Echo Park butcher banh mi, street art cred locavore kale chips. Before they sold out YOLO street art drinking vinegar, umami hella XOXO Terry Richardson lomo craft beer Tumblr tousled jean shorts tofu squid. Selvage Vice gastropub Tonx Thundercats four loko. Selfies before they sold out ethical shabby chic raw denim. Vice DIY Marfa Echo Park, paleo Terry Richardson post-ironic salvia. Mustache occupy hoodie, letterpress irony cliche food truck seitan four loko. Occupy flexitarian meh cred, tousled Austin kale chips jean shorts shabby chic Echo Park narwhal artisan Wes Anderson fap.</p>
 							<p>Chillwave forage Echo Park butcher banh mi, street art cred locavore kale chips. Before they sold out YOLO street art drinking vinegar, umami hella XOXO Terry Richardson lomo craft beer Tumblr tousled jean shorts tofu squid. Selvage Vice gastropub Tonx Thundercats four loko. Selfies before they sold out ethical shabby chic raw denim. Vice DIY Marfa Echo Park, paleo Terry Richardson post-ironic salvia. Mustache occupy hoodie, letterpress irony cliche food truck seitan four loko. Occupy flexitarian meh cred, tousled Austin kale chips jean shorts shabby chic Echo Park narwhal artisan Wes Anderson fap.</p>
 							<p>Chillwave forage Echo Park butcher banh mi, street art cred locavore kale chips. Before they sold out YOLO street art drinking vinegar, umami hella XOXO Terry Richardson lomo craft beer Tumblr tousled jean shorts tofu squid. Selvage Vice gastropub Tonx Thundercats four loko. Selfies before they sold out ethical shabby chic raw denim. Vice DIY Marfa Echo Park, paleo Terry Richardson post-ironic salvia. Mustache occupy hoodie, letterpress irony cliche food truck seitan four loko. Occupy flexitarian meh cred, tousled Austin kale chips jean shorts shabby chic Echo Park narwhal artisan Wes Anderson fap.</p>
-						</div>
-						<div class="tagBlogSingle">
-							<div class="content">
-								<p>Tag Cloud:</p>
-								<a href="#">Festival</a>&nbsp;/&nbsp;
-								<a href="#">Photography</a>&nbsp;/&nbsp;
-								<a href="#">Party</a>&nbsp;/&nbsp;
-								<a href="#">Music</a>&nbsp;/&nbsp;
-								<a href="#">Dj</a>
-							</div>
 						</div>
 
-						<div class="comment-container">
+						<!-- <div class="comment-container">
 							<h1 class="title-comments">
 								3 Comments
-							</h1>
+							</h1> -->
 							<!-- ============== COMMENTS ============= -->
-							<ul class="comments">
+							<!-- <ul class="comments">
 								<li>
 									<div class="comment depth-1">
 										<div class="left-section">
@@ -112,9 +98,9 @@ BlogSingle
 									</div>
 								</li>		
 							</ul>
-						</div><!-- Comments -->
+						</div> --><!-- Comments -->
 
-						<div class="singleBlogForm">
+						<!-- <div class="singleBlogForm">
 							<h1>Leave a comment</h1>
 							<form action="#" method="post" class="comment-form">
 								<input id="author" name="author" type="text" value="" aria-required="true" required placeholder="Name...">
@@ -126,7 +112,7 @@ BlogSingle
 								</p>
 							</form>
 						</div>
-					</div><!-- end col-sm-8 -->
+					</div> --><!-- end col-sm-8 -->
 				</div><!-- end blog-left -->
 				<div class="blog-right">
 					<div class="col-sm-3 col-sm-offset-1">
@@ -152,7 +138,7 @@ BlogSingle
 							<span class="headen"></span>
 								<div class="instagram-widgets">
 									<ul id="instagram-sidebar-widget" class="clearfix">
-										<iframe src="http://instaembedder.com/gallery-v2.php?width=80&cols=3&rows=3&margin=8&color=gray&image_border=8&frame_color=white&cid=3877&" frameborder="0" width="315" height="289" ></iframe>
+										<iframe src="http://instaembedder.com/gallery-v2.php?width=80&cols=3&rows=3&margin=0&color=gray&image_border=8&frame_color=white&cid=3877&" frameborder="0" width="300" height="300" ></iframe>
 									</ul>
 								</div>
 							</div>
@@ -172,21 +158,7 @@ BlogSingle
 								<a class="twitter-timeline" href="https://twitter.com/UntoldFestival" data-widget-id="716220714324467712">Tweets by @UntoldFestival</a>
 								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 							</div><!-- end widget -->
-							<div class="widget tagCloud">
-								<h3 class="widget-title">Tag Cloud</h3>
-								<ul>
-									<li><a href="">Audio</a>&nbsp;/&nbsp;</li>
-									<li><a href="#">Best Event</a>&nbsp;/&nbsp;</li>
-									<li><a href="#">Festival</a>&nbsp;/&nbsp;</li>
-									<li><a href="#">Albums</a>&nbsp;/&nbsp;</li>
-									<li><a href="#">Soundcloud</a>&nbsp;/&nbsp;</li>
-									<li><a href="#">Video</a>&nbsp;/&nbsp;</li>
-									<li><a href="#">Summer</a>&nbsp;/&nbsp;</li>
-									<li><a href="#">People</a>&nbsp;/&nbsp;</li>
-									<li><a href="#">Bands</a>&nbsp;/&nbsp;</li>
-									<li><a href="#">Concert</a>&nbsp;/&nbsp;</li>
-								</ul>
-							</div><!-- end widget -->
+							<!-- end widget -->
 						</div><!-- end blogSidebar -->
 					</div><!-- end col-sm03 -->
 				</div><!-- end blog-right -->

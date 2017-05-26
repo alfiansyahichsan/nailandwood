@@ -9,7 +9,7 @@ Home
 	@foreach(\App\Slider::imageSlider() as $slider)
 		<div class="row">
 				<div class="breadcrumb-fullscreen-parent phone-menu-bg">
-					<div class="breadcrumb breadcrumb-fullscreen alignleft small-description overlay almost-black-overlay" style="background-image: url('{{asset('img/header/'.$slider['imagepathslider'])}}');" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
+					<div class="breadcrumb breadcrumb-fullscreen alignleft small-description overlay almost-black-overlay" style="background-image: url('img/blog/2.jpg');" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
 						<div id="home" style="position: absolute;left: 0;top: 0;">
 							<div class="intro-header">
 								<div class="js-height-full star" style="height: 955px;">
@@ -199,7 +199,7 @@ Home
 	        <!-- Carousel Buttons Next/Prev -->
 	        <a data-slide="prev" href="#quote-carousel" class="left carousel-control"><i class="fa fa-chevron-left"></i></a>
 	        <a data-slide="next" href="#quote-carousel" class="right carousel-control"><i class="fa fa-chevron-right"></i></a>
-	      </div>                          
+	      </div> <hr>                         
 	    </div>
 	  </div>
 	</div>
@@ -217,7 +217,9 @@ Home
 					</div><!-- end sectionTtile -->
 					<div class="list-albums">
 						<ul class="list-feature col-md-12 col-xs-12 col-sm-12">
-
+						<li class="col-md-2" style="margin-left: 18px;">
+							
+						</li>
 							<li class="col-md-3 col-sm-3 col-xs-12">
 								<div class="album-icon">
 									<span class="thumbs-album">

@@ -25,6 +25,24 @@
 <!-- =============== START BREACRUMB OPTIONS ================ -->
 <!-- ================================================== -->
 
+var per = 0;
+$(document).ready(function(){
+  $("#persoff").css("height", $(document).height()).hide();
+  $(document).click(function(e) {
+  if(($(event.srcElement||e.srcElement).attr('class') != 'switch') && per == 1) {
+    $("#persoff").toggle();
+    per = 0;
+  }
+  });
+  $(".switch").click(function(){
+    $("#persoff").toggle();
+  per += 1;
+    if (per == 2) {
+    per = 0;
+  }
+  });
+});
+
 jQuery(function(){
 
     "use strict";
