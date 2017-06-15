@@ -9,7 +9,7 @@ Home
 	@foreach(\App\Slider::imageSlider() as $slider)
 		<div class="row">
 				<div class="breadcrumb-fullscreen-parent phone-menu-bg">
-					<div class="breadcrumb breadcrumb-fullscreen alignleft small-description overlay almost-black-overlay" style="background-image: url('img/blog/2.jpg');" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
+					<div class="breadcrumb breadcrumb-fullscreen alignleft small-description overlay almost-black-overlay" style="background-image: url({{asset('img/header/'.$slider->imagepathslider)}});" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
 						<div id="home" style="position: absolute;left: 0;top: 0;">
 							<div class="intro-header">
 								<div class="js-height-full star" style="height: 955px;">
@@ -18,11 +18,13 @@ Home
 											<div>
 												<h1>
 								                	<a class="link link-yaku" href="{{URL::Route('music')}}" style="text-decoration: none;">
-														<span>P</span><span>R</span><span>O</span><span>P</span><span>E</span><span>R</span> <span>P</span><span>A</span><span>U</span><span>S</span><span>E</span><span>(EP)</span>
+								                		@foreach(explode(' ', $slider->text) as $text) 
+													    <span>{{$text}}</span>
+													  	@endforeach
 													</a>
 										        </h1>
 										        <div class="rmButton link" style="padding-top: 10px;">
-													<a href="{{URL::Route('music')}}">Order</a>
+													<a href="{{URL::Route('shop')}}">{{$slider->textbutton}}</a>
 												</div>
 											</div>
 						                </div>
@@ -43,7 +45,7 @@ Home
 			<i class="fa fa-plus"></i>
 			<i class="fa fa-minus"></i>
 		</a>
-		<div id="mesh-main-player" class="jp-jplayer" data-audio-src="audio/pakukayu1.mp3" data-title="Fly You Up" data-artist="Paku dan Kayu"></div>
+		<div id="mesh-main-player" class="jp-jplayer" data-audio-src="audio" data-title="" data-artist="Paku dan Kayu"></div>
 		
 		<div id="mesh-main-player-content" class="mesh-main-player" role="application" aria-label="media player">
 			<div class="container">
@@ -100,15 +102,20 @@ Home
 				<span class="about-length">LENGTH</span>
 				<span class="about-available">AVAILABLE ON</span>
 			</div>
-			<div class="trak-item" data-audio="audio/pakukayu1.mp3" data-artist="Paku dan Kayu" data-thumbnail="img/player/thumbnail.png" data-id="trak-200">
-				<audio preload="metadata" src="audio/pakukayu1.mp3" title="Fly You Up"></audio>
+
+			@foreach(\App\Playlists::Playlists() as $playlist)
+			<div class="trak-item" data-audio="{{asset('audio/'.$playlist->audiopath)}}" data-artist="Paku dan Kayu" data-thumbnail="{{asset('img/player/'.$playlist->imgthumbnailpath)}}" data-id="{{$playlist->id}}">
+				<audio preload="metadata" src="{{asset('audio/'.$playlist->audiopath)}}" title="{{$playlist->title}}"></audio>
 				<div class="additional-button">
 					<div class="center-y-table">
-						<a href="#">
+						<!-- <a href="#">
 							<i class="fa fa-apple"></i>
 						</a>
 						<a href="#">
 							<i class="fa fa-soundcloud"></i>
+						</a> -->
+						<a href="#">
+							<i class="fa fa-spotify"></i>
 						</a>
 					</div>
 				</div>
@@ -120,7 +127,7 @@ Home
 				<div class="name-artist">
 					<div class="center-y-table">
 						<h2>
-							Fly You Up
+							{{$playlist->title}}
 						</h2>
 					</div>
 				</div>
@@ -128,86 +135,15 @@ Home
 					00:00
 				</time>
 			</div>
-			<div class="trak-item" data-audio="audio/pakukayu2.mp3" data-artist="Paku dan Kayu" data-thumbnail="img/player/thumbnail.png" data-id="trak-201">
-				<audio preload="metadata" src="audio/pakukayu2.mp3" title="Wake Up, Alaska"></audio>
-				<div class="additional-button">
-					<div class="center-y-table">
-						<a href="#">
-							<i class="fa fa-apple"></i>
-						</a>
-						<a href="#">
-							<i class="fa fa-soundcloud"></i>
-						</a>
-					</div>
-				</div>
-				<div class="play-pause-button">
-					<div class="center-y-table">
-						<i class="fa fa-play"></i>
-					</div>
-				</div>
-				<div class="name-artist">
-					<div class="center-y-table">
-						<h2>
-							Wake Up, Alaska
-						</h2>
-					</div>
-				</div>
-				<time class="trak-duration">
-					00:00
-				</time>
-			</div>
+			@endforeach
+	
 		</div>
 	</div>
 	<!-- =============== END PLAYLIST ================ -->
 
-	<!-- =============== START QUOTATION ================ -->
-	<div class="quote">
-	  <div class="row">
-	    <div class="col-md-12" >
-	      <div class="carousel slide" data-ride="carousel" id="quote-carousel">
-	        <!-- Carousel Slides / Quotes -->
-	        <div class="carousel-inner">
-	          <!-- Quote 1 -->
-	          <div class="item active">
-	              <div class="row">
-	                <div class="col-sm-12">
-	                  <p>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit!"</p>
-	                  <small>Someone famous - DAMN</small>
-	                </div>
-	              </div>
-	          </div>
-	          <!-- Quote 2 -->
-	          <div class="item">
-	              <div class="row">
-	                <div class="col-sm-12">
-	                  <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam auctor nec lacus ut tempor. Mauris."</p>
-	                  <small>Someone famous</small>
-	                </div>
-	              </div>
-	          </div>
-	          <!-- Quote 3 -->
-	          <div class="item">
-	              <div class="row">
-	                <div class="col-sm-12">
-	                  <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut rutrum elit in arcu blandit, eget pretium nisl accumsan. Sed ultricies commodo tortor, eu pretium mauris."</p>
-	                  <small>Someone famous</small>
-	                </div>
-	              </div>
-	          </div>
-	        </div>
-	        
-	        <!-- Carousel Buttons Next/Prev -->
-	        <a data-slide="prev" href="#quote-carousel" class="left carousel-control"><i class="fa fa-chevron-left"></i></a>
-	        <a data-slide="next" href="#quote-carousel" class="right carousel-control"><i class="fa fa-chevron-right"></i></a>
-	      </div> <hr>                         
-	    </div>
-	  </div>
-	</div>
-	<!-- =============== END QUOTATION ================ -->
-	
-	<!-- =============== END PLAYLIST ================ -->
+	<!-- =============== ALBUM COVER SECTION ================ -->
 	<section class="padding albumsHome hide-section">
-		<div class="container" style="margin-top: -35px;">
+		<div class="container">
 			<div class="row">
 				<div class="col-sm-6" style="margin-bottom: 30px;">
 					<div class="sectionTitle paddingBottom">
@@ -253,66 +189,34 @@ Home
 								<th class="tickets">Tickets</th>
 								<th></th>
 							</tr>
+							@foreach(\App\Event::Event() as $acara)
 							<tr>
-								<td class="aqura-date"><a href="#"></a><a href="singleEvent.html">Mar 06</a></td>
-								<td class="aqura-city"><a href="">Festival</a></td>
-								<td class="aqura-location"><a href="">Central Park</a></td>
-								<td class="aqura-city"><a href="">Cluj Napoca, Bontida Romania</a></td>
-								<td class="aqura-tickets"><a href="">Tickets</a></td>
-								<!-- <td class="aqura-vip"><a href="">RSVP</a></td> -->
+								<td class="aqura-date"><a>{{$acara->date}}</a></td>
+								<td class="aqura-city"><a>{{$acara->eventname}}</a></td>
+								<td class="aqura-location"><a>{{$acara->venue}}</a></td>
+								<td class="aqura-city"><a>{{$acara->location}}</td>
+								<td class="aqura-tickets"><a href="{{$acara->link}}">{{$acara->tickets}}</a></td>
 							</tr>
-							<tr>
-								<td class="aqura-date"><a href="#"></a><a href="singleEvent.html">Mar 06</a></td>
-								<td class="aqura-city"><a href="">Festival</a></td>
-								<td class="aqura-location"><a href="singleEvent.html">Central Park</a></td>
-								<td class="aqura-city"><a href="singleEvent.html">Cluj Napoca, Bontida Romania</a></td>
-								<td class="aqura-tickets"><a href="singleEvent.html">Tickets</a></td>
-							</tr>
-							<tr>
-								<td class="aqura-date"><a href="#"></a><a href="singleEvent.html">Mar 06</a></td>
-								<td class="aqura-city"><a href="">Festival</a></td>
-								<td class="aqura-location"><a href="singleEvent.html">Central Park</a></td>
-								<td class="aqura-city"><a href="singleEvent.html">Cluj Napoca, Bontida Romania</a></td>
-								<td class="aqura-tickets"><a href="singleEvent.html">Tickets</a></td>
-							</tr>
-							<tr>
-								<td class="aqura-date"><a href="#"></a><a href="singleEvent.html">Mar 06</a></td>
-								<td class="aqura-city"><a href="">Festival</a></td>
-								<td class="aqura-location"><a href="singleEvent.html">Central Park</a></td>
-								<td class="aqura-city"><a href="singleEvent.html">Cluj Napoca, Bontida Romania</a></td>
-								<td class="aqura-tickets"><a href="singleEvent.html">Tickets</a></td>
-							</tr>
+							@endforeach
 						</table>
 					</div><!-- end col-sm-12 -->
-
 			</div>
-			
 		</div><!-- end container -->
 	</section>
 	<!-- =============== END ALBUM COVER SECTION ================ -->
 
-	<!-- =============== START EVENTS SECTION-1 ================ -->
-	<!-- <section class="background-properties hide-section paddingHomeEvents">
-		<div class="tableEvents">
-			<div class="container">
-				<div class="row">
-					
-				</div>
-			</div>
-		</div>
-	</section> -->
-	<!-- =============== END EVENTS SECTION-1 ================ -->
 
 	<!-- =============== START EVENTS SECTION-2 ================ -->
-	<section class="padding hide-section countdownSection background-properties" style="background-image: url('img/header/koc.jpg');">
+	@foreach(\App\Nextevent::NextEvent() as $nEvent)
+	<section class="padding hide-section countdownSection background-properties" style="background-image: url({{asset('img/events/'.$nEvent->backgroundpic)}});">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="countdownTitle">
 						<h4>Next Event</h4>
-						<a href=""><img src="img/events/box.png" alt="Event"></a>
+						<a href="{{$nEvent->link}}"><img src="{{asset('img/events/'.$nEvent->logoeventpic)}}" style="width: 320px; height: 80px;" alt="Event"></a>
 					</div>
-					<div class="sm-countdown sm_content_element sm-style2" id="sm_countdown-19" data-date="2016/10/23">
+					<div class="sm-countdown sm_content_element sm-style2" id="sm_countdown-19" data-date="{{$nEvent->datemax}}">
 						<div class="displayCounter">
 							<div class="column">
 								<div class="sm_countdown_inner">
@@ -344,11 +248,12 @@ Home
 			</div>
 		</div>
 	</section>
+	@endforeach
 	<!-- =============== END EVENTS SECTION-2 ================ -->
 
 	<!-- =============== START HOME-BLOG SECTION ================ -->	
 	<section class="padding hide-section background-properties blogHomeSection">	
-		<div class="container" style="margin-top: -20px;">
+		<div class="container">
 			<div class="row">
 				<div class="sectionTitle paddingBottom">
 					<span class="heading-t3"></span>
@@ -357,7 +262,7 @@ Home
 				</div><!-- end sectionTtile -->
 				<div class="aduh col-sm-4">
 					<div class="blogBox">	
-						<div class="imgBox"><img src="img/blog/homeGalPost.png" alt="box-img"></div>
+						<div class="imgBox"><img src="img/blog/1.png" alt="box-img"></div>
 						<div class="blogBoxContent">
 							<div class="blogHeader">
 								<h1><a href="{{URL::route('blogsingle')}}">Gallery Post</a></h1>
@@ -365,11 +270,11 @@ Home
 							<div class="admin-list clearfix">
 								<ul>
 									<li><a href="#">08 dec 2016</a>&nbsp;/&nbsp;</li>
-									<li><a href="#">By Admin</a></li>
+									<li><a href="https://www.instagram.com/pakudankayu/">Paku & Kayu</a></li>
 								</ul>
 							</div><!-- end admin-list -->
 							<div class="blogParagraph">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+								<p>Chillwave forage Echo Park butcher banh mi, street art cred locavore kale chips. Before they sold out YOLO street art drinking vinegar, umami hella.</p>
 							</div><!--end blogParagraph  -->
 							<div class="rmButton">
 								<a href="#">Read More</a>
@@ -387,11 +292,11 @@ Home
 							<div class="admin-list clearfix">
 								<ul>
 									<li><a href="#">28 apr 2016</a>&nbsp;/&nbsp;</li>
-									<li><a href="#">By Admin</a></li>
+									<li><a href="https://www.instagram.com/pakudankayu/">Paku & Kayu</a></li>
 								</ul>
 							</div><!-- end admin-list -->
 							<div class="blogParagraph">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+								<p>Chillwave forage Echo Park butcher banh mi, street art cred locavore kale chips. Before they sold out YOLO street art drinking vinegar, umami hella.</p>
 							</div><!--end blogParagraph  -->
 							<div class="rmButton">
 								<a href="#">Read More</a>
@@ -409,11 +314,11 @@ Home
 							<div class="admin-list clearfix">
 								<ul>
 									<li><a href="#">08 dec 2016</a>&nbsp;/&nbsp;</li>
-									<li><a href="#">By Admin</a></li>
+									<li><a href="https://www.instagram.com/pakudankayu/">Paku & Kayu</a></li>
 								</ul>
 							</div><!-- end admin-list -->
 							<div class="blogParagraph">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+								<p>Chillwave forage Echo Park butcher banh mi, street art cred locavore kale chips. Before they sold out YOLO street art drinking vinegar, umami hella.</p>
 							</div><!--end blogParagraph  -->
 							<div class="rmButton">
 								<a href="#">Read More</a>
@@ -426,8 +331,43 @@ Home
 	</section>
 	<!-- =============== END HOME-NLOG SECTION ================ -->	
 
+	<!-- =============== START QUOTATION ================ -->
+	<div class="quote">
+	  <div class="row">
+	    <div class="col-md-12" >
+	      <div class="carousel slide" data-ride="carousel" id="quote-carousel">
+	        <!-- Carousel Slides / Quotes -->
+	        <div class="carousel-inner">
+	          <!-- Quote 1 -->
+	          <div class="item active">
+	              <div class="row">
+	                <div class="col-sm-12">
+	                  <p>"I don't listen to what art critics say. I don't know anybody who needs a critic to find out what art is."</p>
+	                  <small>Jean-Michel Basquiat</small>
+	                </div>
+	              </div>
+	          </div>
+	          <div class="item">
+	              <div class="row">
+	                <div class="col-sm-12">
+	                  <p>"Knowledge speaks, but wisdom listens."</p>
+	                  <small>Jimi Hendrix</small>
+	                </div>
+	              </div>
+	          </div>
+	        </div>
+	        
+	        <!-- Carousel Buttons Next/Prev -->
+	        <a data-slide="prev" href="#quote-carousel" class="left carousel-control"><i class="fa fa-chevron-left"></i></a>
+	        <a data-slide="next" href="#quote-carousel" class="right carousel-control"><i class="fa fa-chevron-right"></i></a>
+	      </div>                         
+	    </div>
+	  </div>
+	</div>
+	<!-- =============== END QUOTATION ================ -->
+
 	<!-- =============== START VIDEO SECTION ================ -->
-	<section class="videoHome hide-section" style="margin-bottom: 150px;">
+	<section class="videoHome hide-section" style="margin-bottom: 150px; margin-top: 50px;">
 		<div class="container">
 			<div class="row">
 				<div class="sectionTitle">
@@ -437,15 +377,13 @@ Home
 					<p>Check out my latest videos and follow me on <a href="https://www.youtube.com/channel/UCiNGrKZJI5ET_NHk94bxnJQ">Youtube</a> to view more.</p>
 				</div><!-- end sectionTtile -->
 				<div class="col-sm-2"></div>
+
+				@foreach(\App\Videohome::Videohome() as $video)
 				<div class="col-sm-8">
-					<iframe width="854" height="480" src="https://www.youtube.com/embed/01jcwGApTWA" frameborder="0" allowfullscreen></iframe>
-				</div><!-- end col-sm-4 -->
-				<!-- <div class="col-sm-4">
-					<iframe width="854" height="480" src="https://www.youtube.com/embed/kYNRSa2DYp4" frameborder="0" allowfullscreen></iframe>
-				</div> --><!-- end col-sm-4 -->
-				<!-- <div class="col-sm-4">
-					<iframe width="854" height="480" src="https://www.youtube.com/embed/UVa_PALV_hY" frameborder="0" allowfullscreen></iframe>
-				</div> --><!-- end col-sm-4 -->
+					<iframe width="854" height="480" src="{{$video->link}}" frameborder="0" allowfullscreen></iframe>
+				</div>
+				@endforeach
+
 				<div class="col-sm-2"></div>
 			</div>
 		</div>
@@ -496,7 +434,7 @@ Home
 			<!-- </div> --><!-- end shopContent -->
 		<!-- </div>
 		</div>
-	</section> -->
+	</section> 
 	<!-- =============== END HOME-SHOP SECTION ================ -->
 
 @section('script')

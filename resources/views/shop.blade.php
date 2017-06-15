@@ -29,19 +29,29 @@ Shop
 	<!-- =============== END BREADCRUMB ================ -->
 
 	<!-- =============== START SHOP SECTION ================ -->
-	<section id="content">
+	<section class="aquraFilter padding" id="content">
+	<div class="container">
+	<!-- start blog-filter-category -->
+			<div class="categories">
+					<ul class="clearfix" data-option-key="filter">
+						<li><a href="#"><i class="fa fa-filter"></i></a></li>
+						<li> <a href="#" data-option-value=".apparel">Apparel</a></li>
+						<li> <a href="#" data-option-value=".cd">Cd</a></li>
+					</ul>
+			</div><!--end categories-->
+			<!-- end blog-filter-category -->
             <div class="yess container-fluid" style="margin-bottom: 70px;">
-                <div class="row" style="padding-bottom:0!important;">
+                <div class="row aqura-filter-content" style="padding-bottom:0!important;">
                     <div class="col-sm-12">
                         <div class="row">
                             <nav class="shop-products">
                                 <ul class="clearfix">
-                                    <li class="col-sm-4">
+                                    <li class="col-sm-4 apparel">
 		                                <figure>
 		                                    <figcaption>
 		                                        <img src="img/shop/2.jpg" alt="">
 		                                    </figcaption>
-		                                    <div class="content">
+		                                    <div class="item content">
 		                                        <div class="shopHover">
 		                                            <div class="price">
 		                                                &pound; 15,99
@@ -49,14 +59,14 @@ Shop
 		                                            <div class="proTitle">
 		                                                <a href="{{URL::route('detailshop')}}">Adidas</a>
 		                                            </div>
-		                                            <div class="product">Hoodie Aqura</div>
+		                                            <div class="product"></div>
 		                                            <a href="{{URL::route('shop')}}" class="icon-button shopIcon"><i class="fa fa-shopping-cart"></i><span></span></a>
 		                                             <a href="shopSingle.html" class="icon-button shopIcon"><i class="fa fa-info"></i><span></span></a>
 		                                        </div>
 		                                    </div>
 		                                </figure>
 		                            </li>
-                                    <li class="col-sm-4">
+                                    <li class="col-sm-4 apparel">
 		                                <figure>
 		                                    <figcaption>
 		                                        <img src="img/shop/3.jpg" alt="">
@@ -76,7 +86,7 @@ Shop
 		                                    </div>
 		                                </figure>
 		                            </li>
-		                            <li class="col-sm-4">
+		                            <li class="col-sm-4 apparel">
 		                                <figure>
 		                                    <figcaption>
 		                                        <img src="img/shop/4.jpg" alt="">
@@ -96,7 +106,7 @@ Shop
 		                                    </div>
 		                                </figure>
 		                            </li>
-		                            <li class="col-sm-4">
+		                            <li class="col-sm-4 apparel">
 		                                <figure>
 		                                    <figcaption>
 		                                        <img src="img/shop/4.jpg" alt="">
@@ -116,7 +126,7 @@ Shop
 		                                    </div>
 		                                </figure>
 		                            </li>
-		                            <li class="col-sm-4">
+		                            <li class="col-sm-4 apparel">
 		                                <figure>
 		                                    <figcaption>
 		                                        <img src="img/shop/2.jpg" alt="">
@@ -136,7 +146,7 @@ Shop
 		                                    </div>
 		                                </figure>
 		                            </li>
-		                            <li class="col-sm-4">
+		                            <li class="col-sm-4 apparel">
 		                                <figure>
 		                                    <figcaption>
 		                                        <img src="img/shop/5.jpg" alt="">
@@ -157,12 +167,34 @@ Shop
 		                                </figure>
 		                            </li>
 
+		                            <li class="col-sm-4 cd">
+		                                <figure>
+		                                    <figcaption>
+		                                        <img src="img/shop/9.jpg" alt="">
+		                                    </figcaption>
+		                                    <div class="content">
+		                                        <div class="shopHover">
+		                                            <div class="price">
+		                                                &pound; 35000
+		                                            </div>
+		                                            <div class="proTitle">
+		                                                <a href="shopSingle.html">Adidas</a>
+		                                            </div>
+		                                            <div class="product">Hoodie Aqura</div>
+		                                            <a href="shopSingle.html" class="icon-button shopIcon"><i class="fa fa-shopping-cart"></i><span></span></a>
+		                                             <a href="shopSingle.html" class="icon-button shopIcon"><i class="fa fa-info"></i><span></span></a>
+		                                        </div>
+		                                    </div>
+		                                </figure>
+		                            </li>
+
                                 </ul>
                             </nav>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </section>
 	<!-- =============== END SHOP SECTION ================ -->
 	

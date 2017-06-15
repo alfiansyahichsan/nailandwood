@@ -32,22 +32,22 @@ Video
 					</div>
 					<div class="col-sm-8">
 						<div class="blogBox">	
-							    <iframe class="video" width="854" height="480" src="https://www.youtube.com/embed/oprHMhcpCqE" frameborder="0" allowfullscreen></iframe>
+							    <iframe width="600" height="410" src="https://www.youtube.com/embed/oprHMhcpCqE" frameborder="0" allowfullscreen></iframe>
 							<div class="blogBoxContent">
 								<div class="blogHeader">
 									<h1><a>Lights and Motion</a></h1>
 								</div>
-								<div class="blogParagraph read-more-wrap" style="margin-top: 5px;">
+								<div class="blogParagraph" style="margin-top: 5px;">
 									<input type="checkbox" class="read-more-state" id="post-1" />
 										<p class="read-more-wrap">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus hic nam voluptatem mollitia doloribus! Tempora neque pariatur saepe error esse soluta repellat laboriosam aperiam qui accusantium placeat, aspernatur maxime, 
 										<span class="read-more-target">Libero fuga facilis vel consectetur quos sapiente deleniti eveniet dolores tempore eos deserunt officia quis ab? Excepturi vero tempore minus beatae voluptatem!</span></p>
 
-									<label for="post-1" class="read-more-trigger rmButton" style="margin-top: 10px;"></label>
+									<!-- <label for="post-1" class="read-more-trigger rmButton" style="margin-top: 10px;"></label>
 									<button class="switch">Lights On</button>
 
 									<div id='persoff'></div>
 
-									<hr style="margin-bottom: -20px;">
+									<hr style="margin-bottom: -20px;"> -->
 									
 								</div><!--end blogParagraph  -->
 											

@@ -29,160 +29,31 @@ Gallery
     <section class="qqq hide-section background-properties blogHomeSection">    
         <div class="container">
             <div class="row">
-                <div class="aduh col-sm-4">
-                    <div class="blogBox">   
-                        <div class="gallerySection">
-                            <figure>
-                                        <!-- Single Album Image -->
-                                <figcaption>
+
+            @foreach(\App\Gallery::Gallery() as $pict)
+            <div class="aduh col-sm-4">
+                <div class="blogBox">   
+                    <div class="gallerySection">
+                        <figure>
                                     <!-- Single Album Image -->
-                                    <div class="hovereffect">
-                                        <img class="img-responsive" src="img/blog/1.png" alt="">
-                                        <div class="overlay">
-                                           <a class="info lightbox" href="img/blog/1.png"></a>
-                                        </div>
+                            <figcaption>
+                                <!-- Single Album Image -->
+                                <div class="hovereffect">
+                                    <img class="img-responsive" src="{{asset('img/blog/'.$pict->imgpath)}}" alt="{{$pict->title}}">
+                                    <div class="overlay">
+                                       <a class="info lightbox" href="{{asset('img/blog/'.$pict->imgpath)}}"></a>
                                     </div>
-                                </figcaption>
-                                <!-- Single Album View Button -->
-                                
-                            </figure>
-                        </div>
-                        
-                    </div><!-- end blogBox -->
-                </div><!-- end col-sm-4 --> 
-
-                <div class="aduh col-sm-4">
-                    <div class="blogBox">   
-                        <div class="gallerySection">
-                            <figure>
-                                        <!-- Single Album Image -->
-                                <figcaption>
-                                    <div class="hovereffect">
-                                        <img class="img-responsive" src="img/blog/2.jpg" alt="">
-                                        <div class="overlay">
-                                           <a class="info lightbox" href="img/blog/2.jpg"></a>
-                                        </div>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        
-                    </div><!-- end blogBox -->
-                </div><!-- end col-sm-4 --> 
-
-                <div class="aduh col-sm-4">
-                    <div class="blogBox">   
-                        <div class="gallerySection">
-                            <figure>
-                                        <!-- Single Album Image -->
-                                <figcaption>
-                                    <div class="hovereffect">
-                                        <img class="img-responsive" src="img/blog/3.jpg" alt="">
-                                        <div class="overlay">
-                                           <a class="info lightbox" href="img/blog/3.jpg"></a>
-                                        </div>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        
-                    </div><!-- end blogBox -->
-                </div><!-- end col-sm-4 --> 
-
-                <div class="aduh col-sm-4">
-                    <div class="blogBox">   
-                        <div class="gallerySection">
-                            <figure>
-                                        <!-- Single Album Image -->
-                                <figcaption>
-                                    <div class="hovereffect">
-                                    <img class="img-responsive" src="img/blog/4.jpg" alt="">
-                                        <div class="overlay">
-                                           <a class="info lightbox" href="img/blog/4.jpg"></a>
-                                        </div>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        
-                    </div><!-- end blogBox -->
-                </div><!-- end col-sm-4 -->
-
-                <div class="aduh col-sm-4">
-                    <div class="blogBox">   
-                        <div class="gallerySection">
-                            <figure>
-                                        <!-- Single Album Image -->
-                                <figcaption>
-                                    <div class="hovereffect">
-                                    <img class="img-responsive" src="img/blog/5.png" alt="">
-                                        <div class="overlay">
-                                           <a class="info lightbox" href="img/blog/5.png"></a>
-                                        </div>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        
-                    </div><!-- end blogBox -->
-                </div><!-- end col-sm-4 -->
-                
-                 <div class="aduh col-sm-4">
-                    <div class="blogBox">   
-                        <div class="gallerySection">
-                            <figure>
-                                        <!-- Single Album Image -->
-                                <figcaption>
-                                    <div class="hovereffect">
-                                        <img class="img-responsive" src="img/blog/3.jpg" alt="">
-                                        <div class="overlay">
-                                           <a class="info lightbox" href="img/blog/3.jpg"></a>
-                                        </div>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        
-                    </div><!-- end blogBox -->
-                </div><!-- end col-sm-4 --> 
-
-                <div class="aduh col-sm-4">
-                    <div class="blogBox">   
-                        <div class="gallerySection">
-                            <figure>
-                                        <!-- Single Album Image -->
-                                <figcaption>
-                                    <div class="hovereffect">
-                                    <img class="img-responsive" src="img/blog/4.jpg" alt="">
-                                        <div class="overlay">
-                                           <a class="info lightbox" href="img/blog/4.jpg"></a>
-                                        </div>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        
-                    </div><!-- end blogBox -->
-                </div><!-- end col-sm-4 -->
-
-                <div class="aduh col-sm-4">
-                    <div class="blogBox">   
-                        <div class="gallerySection">
-                            <figure>
-                                        <!-- Single Album Image -->
-                                <figcaption>
-                                    <div class="hovereffect">
-                                    <img class="img-responsive" src="img/blog/5.png" alt="">
-                                        <div class="overlay">
-                                           <a class="info lightbox" href="img/blog/5.png"></a>
-                                        </div>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        
-                    </div><!-- end blogBox -->
-                </div><!-- end col-sm-4 -->
+                                </div>
+                            </figcaption>
+                            <!-- Single Album View Button -->
+                            
+                        </figure>
+                    </div>
+                    
+                </div><!-- end blogBox -->
+            </div><!-- end col-sm-4 --> 
+            @endforeach
+                               
             </div><!-- end container -->    
         </div><!-- end row -->  
     </section>

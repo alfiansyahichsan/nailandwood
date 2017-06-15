@@ -10,7 +10,7 @@ Music
 		<i class="fa fa-plus"></i>
 		<i class="fa fa-minus"></i>
 	</a>
-	<div id="mesh-main-player" class="jp-jplayer" data-audio-src="audio/flute.mp3" data-title="See right through ft. Fiora" data-artist="Tensnake"></div>
+	<div id="mesh-main-player" class="jp-jplayer" data-audio-src="audio" data-title="" data-artist="Paku dan Kayu"></div>
 	
 	<div id="mesh-main-player-content" class="mesh-main-player" role="application" aria-label="media player">
 		<div class="container">
@@ -106,8 +106,9 @@ Music
 								00:00
 							</time>
 						</div>
-						<div class="trak-item" data-audio="audio/pakukayu2.mp3" data-artist="Paku dan Kayu" data-thumbnail="img/albums/thumbnail.png">
-							<audio preload="metadata" src="audio/pakukayu2.mp3" title="Wake Up, Alaska"></audio>
+						@foreach(\App\Playlists::Playlists() as $playlist)
+						<div class="trak-item" data-audio="{{asset('audio/'.$playlist->audiopath)}}" data-artist="Paku dan Kayu" data-thumbnail="{{asset('img/player/'.$playlist->imgthumbnailpath)}}" data-id="{{$playlist->id}}">
+							<audio preload="metadata" src="{{asset('audio/'.$playlist->audiopath)}}" title="{{$playlist->title}}"></audio>
 							<div class="play-pause-button">
 								<div class="center-y-table">
 									<i class="fa fa-play"></i>
@@ -116,7 +117,7 @@ Music
 							<div class="name-artist">
 								<div class="center-y-table">
 									<h2>
-										Wake Up, Alaska
+										{{$playlist->title}}
 									</h2>
 								</div>
 							</div>
@@ -124,24 +125,7 @@ Music
 								00:00
 							</time>
 						</div>
-						<div class="trak-item" data-audio="audio/pakukayu1.mp3" data-artist="Paku dan Kayu" data-thumbnail="img/albums/thumbnail.png">
-							<audio preload="metadata" src="audio/pakukayu1.mp3" title="Fly You Up"></audio>
-							<div class="play-pause-button">
-								<div class="center-y-table">
-									<i class="fa fa-play"></i>
-								</div>
-							</div>
-							<div class="name-artist">
-								<div class="center-y-table">
-									<h2>
-										Fly You Up
-									</h2>
-								</div>
-							</div>
-							<time class="trak-duration">
-								00:00
-							</time>
-						</div>
+						@endforeach
 
 						<div class="trak-item" data-audio="" data-artist="Paku dan Kayu" data-thumbnail="img/albums/thumbnail.png">
 							<audio preload="metadata" src="" title="Kelabu"></audio>
@@ -211,6 +195,9 @@ Music
 							    </li>
 							    <li>
 							    	<a href="https://play.spotify.com/album/3DzhBDFILzJjyvf4lcGmq7?play=true&utm_source=open.spotify.com&utm_medium=open"><div><i class="fa fa-spotify"></i></div></a>
+							    </li>
+							    <li>
+							    	<a href="https://www.instagram.com/pakudankayu/"><div><i class="fa fa-instagram"></i></div></a>
 							    </li>
 							  </ul>
 							</section>

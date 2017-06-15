@@ -9,7 +9,7 @@ BlogSingle
 	<!-- =============== END BREADCRUMB ================ -->
 
 	<!-- =============== START BLOG FILTER ================ -->
-	<section class="blogSingle padding" id="content" style="margin-top: 20px;">
+	<section class="blogSingle padding" id="content" style="margin-top: 40px;">
 		<div class="container">
 			<div class="row">
 				<div class="blog-left">

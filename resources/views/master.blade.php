@@ -23,7 +23,7 @@
 	<!-- ================================================== -->
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="jplayer/jplayer/jquery.jplayer.js"></script>
+	<script type="text/javascript" src="assets/jplayer/jplayer/jquery.jplayer.js"></script>
 	<script src="js/jPlayer.js"></script>
 	<script src="js/plugins.js"></script>
 	<script src="js/main.js"></script>

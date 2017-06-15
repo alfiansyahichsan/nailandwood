@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSlidersTable extends Migration
+class CreateEventsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateSlidersTable extends Migration
      */
     public function up()
     {
-        Schema::create('sliders', function (Blueprint $table) {
+        Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
-            $table->string('imagepathslider');
-            $table->string('imagepath2');
-            $table->string('text');
+            $table->string('date');
+            $table->string('eventname');
+            $table->string('venue');
+            $table->string('location');
+            $table->string('tickets');
             $table->string('link');
         });
     }

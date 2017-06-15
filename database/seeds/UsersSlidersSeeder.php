@@ -12,10 +12,9 @@ class UsersSlidersSeeder extends Seeder
     public function run()
     {
         $slider = new \App\Slider([
-            'imagepathslider' => 'albumpinkfloyd.jpg',
-            'imagepath2' => 'pakukayu.png',
-            'text' => 'proper pause',
-            'link' => '#'
+            'imagepathslider' => '2.jpg',
+            'text' => 'P R O P E R  P A U S E (EP)',
+            'textbutton' => 'Order'
             ]);
         $slider->save();
     }

@@ -7,10 +7,12 @@
 				<div class="rightTopHeader">
 					<nav class="social-iconsss">
 						<ul>
-							<a href="https://itunes.apple.com/id/album/proper-pause-ep/id1151893533" class="icon-button shopIcon"><i class="fa fa-apple" style="font-size: 17px; width: 50px; background-color: transparent; text-align: center; color: white;"></i><span></span></a>
+							<a href="https://itunes.apple.com/id/album/proper-pause-ep/id1151893533" class="icon-button shopIcon"><i class="fa fa-facebook" style="font-size: 17px; width: 50px; background-color: transparent; text-align: center; color: white;"></i><span></span></a>
+							<a href="https://itunes.apple.com/id/album/proper-pause-ep/id1151893533" class="icon-button shopIcon"><i class="fa fa-twitter" style="font-size: 17px; width: 50px; background-color: transparent; text-align: center; color: white;"></i><span></span></a>
+							<!-- <a href="https://itunes.apple.com/id/album/proper-pause-ep/id1151893533" class="icon-button shopIcon"><i class="fa fa-apple" style="font-size: 17px; width: 50px; background-color: transparent; text-align: center; color: white;"></i><span></span></a>
 							<a href="https://www.youtube.com/channel/UCiNGrKZJI5ET_NHk94bxnJQ" class="icon-button shopIcon"><i class="fa fa-youtube-play" style="font-size: 17px; width: 50px; background-color: transparent; text-align: center; color: white;"></i><span></span></a>
 							<a href="https://soundcloud.com/user-346971553" class="icon-button shopIcon"><i class="fa fa-instagram" style="font-size: 17px; width: 50px; background-color: transparent; text-align: center; color: white;"></i><span></span></a>
-							<a href="https://soundcloud.com/user-346971553" class="icon-button shopIcon"><i class="fa fa-soundcloud" style="font-size: 17px; width: 50px; background-color: transparent; text-align: center; color: white;"></i><span></span></a>
+							<a href="https://soundcloud.com/user-346971553" class="icon-button shopIcon"><i class="fa fa-soundcloud" style="font-size: 17px; width: 50px; background-color: transparent; text-align: center; color: white;"></i><span></span></a> -->
 						</ul>
 					</nav>
 					<div class="cartContainer">

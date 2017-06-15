@@ -18,7 +18,7 @@
   src: url(../fonts/codeLight.otf);
 }
 .padding {
-  padding: 8rem 0;
+  padding: 5rem 0;
 }
 .paddingBottom {
   padding-bottom: 8rem;
@@ -11533,7 +11533,7 @@ body > div.fusion-fullwidth.fullwidth-box.fusion-fullwidth-2.fusion-parallax-lef
     height: 0 !important;
   }
   .padding {
-    padding: 10rem 0!important;
+    padding: 6rem 0!important;
   }
   .paddingBottom {
     padding-bottom: 5rem!important;
@@ -11852,7 +11852,7 @@ body > div.fusion-fullwidth.fullwidth-box.fusion-fullwidth-2.fusion-parallax-lef
   font-size: 1.8rem;
 }
 .aqura-filter-content ul li.col-sm-4 {
-  margin-bottom: 3.4rem;
+  margin-bottom: 2rem;
 }
 /***********************************************************************************************/
 /* END BLOG GRID */
@@ -12544,6 +12544,7 @@ body > div.fusion-fullwidth.fullwidth-box.fusion-fullwidth-2.fusion-parallax-lef
   }
   .blogHomeSection .imgBox img {
     width: 100%!important;
+    overflow:hidden;
   }
   body > section.padding.background-properties.blogHomeSection > div > div > div:nth-child(4) > div {
     padding-bottom: 0!important;
