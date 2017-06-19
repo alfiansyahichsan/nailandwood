@@ -20,7 +20,8 @@ class CreateEventsTable extends Migration
             $table->string('venue');
             $table->string('location');
             $table->string('tickets');
-            $table->string('link');
+            $table->string('link')->nullable();
+            $table->timestamps();
         });
     }
 

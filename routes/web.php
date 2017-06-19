@@ -17,7 +17,6 @@ Route::get('/slider',array('as'=>'slider','uses'=>'admin@Slider'));
 Route::get('/socmed',array('as'=>'socmed','uses'=>'admin@Socmed'));
 Route::get('/musicalbum',array('as'=>'musicalbum','uses'=>'admin@MusicAlbum'));
 Route::get('/news',array('as'=>'news','uses'=>'admin@News'));
-Route::get('/event',array('as'=>'event','uses'=>'admin@Event'));
 Route::get('/videos',array('as'=>'videos','uses'=>'admin@Videos'));
 Route::get('/playlist',array('as'=>'playlist','uses'=>'admin@Playlist'));
 
@@ -43,3 +42,7 @@ Route::get('/admin',array('as'=>'login','uses'=>'page@Login'));
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::resource('acara','EventsController');
+Route::get('/acara',array('as'=>'acara','uses'=>'admin@Acara'));
+Route::post('acara','EventsController@store');

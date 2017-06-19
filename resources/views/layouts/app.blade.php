@@ -12,6 +12,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('sbadmin/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('sbadmin/vendor/metisMenu/metisMenu.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('sbadmin/dist/css/sb-admin-2.css') }}" rel="stylesheet">
+    <link href="{{ asset('sbadmin/vendor/morrisjs/morris.css') }}" rel="stylesheet">
+    <link href="{{ asset('sbadmin/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
 
     <!-- Scripts -->
     <script>
@@ -22,7 +27,7 @@
 </head>
 <body style="background-color: white;">
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top" style="background-color: black;">
+        <nav class="navbar-default navbar-static-top" style="background-color: black;">
             <div class="container">
                 <div class="navbar-header">
 
@@ -36,7 +41,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{URL::route('home')}}">
-                        <a href="{{URL::route('home')}}"><img src="img/logo/testpakukayu.png" alt="pakukayu" style="padding-top: 15px;"></a>
+                        <a href="{{URL::route('home')}}"><img src="img/logo/1.png" alt="pakukayu" style="max-height: 37px; max-width: 100%; margin-top: 10px;"></a>
                     </a>
                 </div>
 
@@ -51,7 +56,7 @@
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
-                            <!-- <li><a href="{{ route('register') }}">Register</a></li> -->
+                            <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -86,7 +91,23 @@
         @yield('content')
     </div>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <!-- jQuery -->
+    <script src="{{ asset('sbadmin/vendor/jquery/jquery.min.js') }}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ asset('sbadmin/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="{{ asset('sbadmin/vendor/metisMenu/metisMenu.min.js') }}"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="{{ asset('sbadmin/vendor/raphael/raphael.min.js') }}"></script>
+    <script src="{{ asset('sbadmin/vendor/morrisjs/morris.min.js') }}"></script>
+    <script src="{{ asset('sbadmin/data/morris-data.js') }}"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="sbadmin/dist/js/sb-admin-2.js') }}"></script>
+
+    @yield("js")
 </body>
 </html>

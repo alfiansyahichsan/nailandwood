@@ -22,8 +22,12 @@ class admin extends Controller
 		return view('admin.musicalbum');
 	}
 
-	public function Event(){
-		return view('admin.events');
+	public function Acara(){
+		return view('admin.Event.events');
+	}
+
+	public function Create(){
+		return view('admin.Event.create');
 	}
 
 	public function News(){

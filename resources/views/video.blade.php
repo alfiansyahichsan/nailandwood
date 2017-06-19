@@ -41,6 +41,8 @@ Video
 									<input type="checkbox" class="read-more-state" id="post-1" />
 										<p class="read-more-wrap">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus hic nam voluptatem mollitia doloribus! Tempora neque pariatur saepe error esse soluta repellat laboriosam aperiam qui accusantium placeat, aspernatur maxime, 
 										<span class="read-more-target">Libero fuga facilis vel consectetur quos sapiente deleniti eveniet dolores tempore eos deserunt officia quis ab? Excepturi vero tempore minus beatae voluptatem!</span></p>
+									<label for="post-1" class="read-more-trigger rmButton" style="margin-top: 10px;"></label>
+									<hr style="margin-bottom: -20px;">
 
 									<!-- <label for="post-1" class="read-more-trigger rmButton" style="margin-top: 10px;"></label>
 									<button class="switch">Lights On</button>
