@@ -12,8 +12,17 @@
 */
 
 /* admin */
-Route::get('/dashboard',array('as'=>'dashboard','uses'=>'admin@Dashboard'));
-Route::get('/slider',array('as'=>'slider','uses'=>'admin@Slider'));
+Route::get('/admin/dashboard',array('as'=>'dashboard','uses'=>'admin@Dashboard'));
+
+Route::resource('admin/acara','EventsController');
+Route::get('/admin/acara',array('as'=>'acara','uses'=>'admin@Acara'));
+Route::post ( '/admin/editItem', 'EventsController@editItem' );
+
+Route::resource('admin/slider','SlidersController');
+Route::get('/admin/slider',array('as'=>'slider','uses'=>'admin@Slider'));
+
+
+
 Route::get('/socmed',array('as'=>'socmed','uses'=>'admin@Socmed'));
 Route::get('/musicalbum',array('as'=>'musicalbum','uses'=>'admin@MusicAlbum'));
 Route::get('/news',array('as'=>'news','uses'=>'admin@News'));
@@ -22,6 +31,10 @@ Route::get('/playlist',array('as'=>'playlist','uses'=>'admin@Playlist'));
 
 Route::get('/',array('as'=>'home','uses'=>'ProductController@getIndex'));
 Route::get('/add-to-cart/{id}',array('as'=>'product.addToCart','uses'=>'ProductController@getAddToCart'));
+
+
+
+
 
 
 Route::get('/biography',array('as'=>'biography','uses'=>'page@Biography'));
@@ -43,6 +56,3 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::resource('acara','EventsController');
-Route::get('/acara',array('as'=>'acara','uses'=>'admin@Acara'));
-Route::post('acara','EventsController@store');

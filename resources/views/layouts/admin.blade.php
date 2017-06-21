@@ -15,16 +15,16 @@
                             <a href="{{URL::Route('dashboard')}}" @yield("nav1")><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="{{URL::Route('slider')}}" @yield("nav2")><i class="fa fa-dashboard fa-fw"></i> Slider</a>
+                            <a href="{{URL::Route('slider')}}" @yield("nav2")><i class="fa fa-dashboard fa-fw"></i> Slider - Home</a>
                         </li>
                         <li>
-                            <a href="{{URL::Route('socmed')}}" @yield("nav3")><i class="fa fa-dashboard fa-fw"></i> Socmed</a>
+                            <a href="{{URL::Route('acara')}}" @yield("nav3")><i class="fa fa-dashboard fa-fw"></i> Events - Home</a>
                         </li>
                         <li>
-                            <a href="{{URL::Route('musicalbum')}}" @yield("nav4")><i class="fa fa-dashboard fa-fw"></i> Music Album</a>
+                            <a href="{{URL::Route('socmed')}}" @yield("nav4")><i class="fa fa-dashboard fa-fw"></i> Socmed</a>
                         </li>
                         <li>
-                            <a href="{{URL::Route('acara')}}" @yield("nav5")><i class="fa fa-dashboard fa-fw"></i> Events - Home</a>
+                            <a href="{{URL::Route('musicalbum')}}" @yield("nav5")><i class="fa fa-dashboard fa-fw"></i> Music Album</a>
                         </li>
                         <li>
                             <a href="{{URL::Route('news')}}" @yield("nav6")><i class="fa fa-dashboard fa-fw"></i> News</a>

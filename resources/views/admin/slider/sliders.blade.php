@@ -2,10 +2,10 @@
 
 
 @section('judul')
-Event - Home
+Slider - Home
 @stop
 
-@section('nav3')
+@section('nav2')
 class="active"
 @stop
 
@@ -14,14 +14,14 @@ class="active"
 <meta name="_token" content="{!! csrf_token() !!}" />
 <script src="{{asset('js/meeepo.js')}}"></script>
 
-@include("admin.event.ajax")
+@include("admin.slider.ajax")
 
 
 
 @endsection
 
 @section('konten')
-<p>Form untuk input data Event yang akan ditampilkan pada tampilan HOME</p>
+<p>Ganti gambar dan text pada slider HOME</p>
 @if ($message = Session::get('success'))
 
         <div class="alert alert-success">
@@ -31,7 +31,6 @@ class="active"
         </div>
 
     @endif
-
 @if ($message = Session::get('hapus'))
 
         <div class="alert alert-success">
@@ -43,7 +42,7 @@ class="active"
     @endif
 <div class="row">
     <div class="col-md-12">
-        <div align="left" style=" margin-bottom: 20px;">
+        <div align="left" style="margin-bottom: 20px;">
             <button type="button" name="age" id="age" data-toggle="modal" data-target="#add_data_Modal" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add</button>
         </div>
     </div>
@@ -54,28 +53,22 @@ class="active"
       <table class="table table-borderless" id="table">
         <tr>
             <th>ID</th>
-            <th>Date</th>
-            <th>Event Name</th>
-            <th>Venue</th>
-            <th>Location</th>
-            <th>Ticket</th>
-            <th>Link</th>
+            <th>Image Path</th>
+            <th>Text</th>
+            <th>Text Button</th>
             <th colspan="3">Actions</th>
         </tr>
         {{ csrf_field() }}
 
         <?php $no=1; ?>
-        @foreach(\App\Event::Event() as $acara)
+        @foreach(\App\Slider::imageSlider() as $slider)
           <tr>
               <td>{{$no++}}</td>
-              <td>{{ $acara->date }}</td>
-              <td>{{ $acara->eventname }}</td>
-              <td>{{ $acara->venue }}</td>
-              <td>{{ $acara->location }}</td>
-              <td>{{ $acara->tickets }}</td>
-              <td>{{ $acara->link }}</td>
+              <td>{{ $slider->imagepathslider }}</td>
+              <td>{{ $slider->text }}</td>
+              <td>{{ $slider->textbutton }}</td>
               <td>
-              <button class="edit-modal btn btn-primary" data-id="{{$acara->id}}" data-date="{{$acara->date}}" data-eventname="{{$acara->eventname}}" data-venue="{{$acara->venue}}" data-location="{{$acara->location}}" data-tickets="{{$acara->tickets}}" data-link="{{$acara->link}}">Edit
+              <button class="edit-modal btn btn-primary" data-id="{{$slider->id}}" data-imagepathslider="{{$slider->imagepathslider}}" data-text="{{$slider->text}}" data-textbutton="{{$slider->textbutton}}">Edit
               </button>
               <button class="btn btn-danger" role="button" data-toggle="modal" data-target="#modal-delete">Delete
                                     </button>
@@ -91,29 +84,19 @@ class="active"
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Insert Data Event</h4>
+                <h4 class="modal-title">Insert Data Slider</h4>
             </div>
             <div class="modal-body" style="padding-left: 30px; padding-right: 35px;">
-                <form action="/acara" method="POST" id="insert_form">
+                <form action="/admin/slider" method="POST" id="insert_form">
                 {{ csrf_field() }}
-                    <label>Date</label>
-                    <input type="date" name="date" id="date" class="form-control" required/>
+                    {!! Form::file('image', array('class' => 'image')) !!}
                     <br />
-                    <label>Event Name</label>
-                    <input type="eventname" name="eventname" id="eventname" class="form-control" required></input>
+                    <label>Text</label>
+                    <input type="text" name="text" id="text" class="form-control" required></input>
                     <br />
-                    <label>Venue</label>
-                    <input type="venue" name="venue" id="venue" class="form-control" required></input>
+                    <label>Text Button</label>
+                    <input type="text" name="textbutton" id="textbutton" class="form-control" required></input>
                     <br />
-                    <label>Location</label>
-                    <input type="location" name="location" id="location" class="form-control" required />
-                    <br />  
-                    <label>Ticket/Free</label>
-                    <input type="tickets" name="tickets" id="tickets" class="form-control" required/>
-                    <br />
-                    <label>Link</label>
-                    <input type="link" name="link" id="link" class="form-control" />
-                    <br /> 
 
                     <input type="submit" value="Submit" class="btn btn-success" />
                 </form>
@@ -143,52 +126,27 @@ class="active"
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="date">Date</label>
+                    <label class="control-label col-sm-2" for="imagepathslider">Image Path</label>
                     <div class="col-sm-10">
-                        <input type="date" class="form-control" id="q">
+                        <input type="text" class="form-control" id="q">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="eventname">Event Name</label>
+                    <label class="control-label col-sm-2" for="text">Text</label>
                     <div class="col-sm-10">
                         <input type="name" class="form-control" id="t">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="venue">Venue</label>
+                    <label class="control-label col-sm-2" for="textbutton">Text Button</label>
                     <div class="col-sm-10">
                         <input type="name" class="form-control" id="d">
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="location">Location</label>
-                    <div class="col-sm-10">
-                        <input type="name" class="form-control" id="a">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="tickets">Tickets/Free</label>
-                    <div class="col-sm-10">
-                        <input type="name" class="form-control" id="s">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="link">Link</label>
-                    <div class="col-sm-10">
-                        <input type="name" class="form-control" id="e">
-                    </div>
-                </div>
-
                 </form>
-                <div class="deleteContent">
-                Are you Sure you want to delete <span class="eventname"></span> ?
-                <span class="hidden id"></span>
-                </div>
                 <div class="modal-footer">
                     <button type="button" class="btn actionBtn" data-dismiss="modal">
                     <span id="footer_action_button" class='glyphicon'> </span>
@@ -212,11 +170,11 @@ class="active"
             </div>
             <div class="modal-body" style="padding-left: 30px; padding-right: 35px;">
                 <p>  
-                    Are you sure you want to delete this Event?
+                    Are you sure you want to delete this data ?
                 </p>
           </div>
           <div class="modal-footer">
-            <form method="POST" action="{{ route('acara.destroy', $acara->id) }}">
+            <form method="POST" action="{{ route('slider.destroy', $slider->id) }}">
               <input type="hidden" name="_token" value="{{ csrf_token() }}">
               <input type="hidden" name="_method" value="DELETE">
               <button type="button" class="btn btn-default"
@@ -231,5 +189,6 @@ class="active"
   </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
 
 @endsection

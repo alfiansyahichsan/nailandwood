@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests;
 use App\Event;
+use Validator;
+use Response;
+use Illuminate\Support\Facades\Input;
 
 class EventsController extends Controller
 {
@@ -14,7 +18,24 @@ class EventsController extends Controller
      */
     public function index()
     {
-        //
+        $event = Event::all();
+        // show data to our view
+        return $event;
+    }
+
+    // edit data function
+    public function editItem(Request $req) {
+
+        $event = Event::find ($req->id);
+
+        $event->date = $req->date;
+        $event->eventname = $req->eventname;
+        $event->venue = $req->venue;
+        $event->location = $req->location;
+        $event->tickets = $req->tickets;
+        $event->link = $req->link;
+        $event->save();
+        return response()->json($event);
     }
 
     /**
@@ -27,6 +48,7 @@ class EventsController extends Controller
         //
     }
 
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -41,7 +63,6 @@ class EventsController extends Controller
             'venue' => 'required',
             'location' => 'required',
             'tickets' => 'required',
-            'link' => 'required',
         ]);
 
         $event = new Event;
@@ -65,7 +86,7 @@ class EventsController extends Controller
      */
     public function show($id)
     {
-        //
+        return response()->json($event);
     }
 
     /**
@@ -74,10 +95,35 @@ class EventsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
-    }
+
+    // public function edit(Request $id)
+    // {
+    //     $event = Event::find($id);
+    //     return view('acara.edit',compact('event'));
+
+    //     // $this->validate($request, [
+    //     //     'date' => 'required',
+    //     //     'eventname' => 'required',
+    //     //     'venue' => 'required',
+    //     //     'location' => 'required',
+    //     //     'tickets' => 'required',
+    //     // ]);
+
+    //     // $event = Event::find($request->id);
+    //     // $event->date = $request->date;
+    //     // $event->eventname = $request->eventname;
+    //     // $event->venue = $request->venue;
+    //     // $event->location = $request->location;
+    //     // $event->tickets = $request->tickets;
+    //     // $event->save();
+
+    //     // return response()->json($data);
+
+    //     // $event = Event::find($id);
+    //     // return view('admin.Event.edits');
+
+    //     // return redirect()->back()->with('hapus','Item updated successfully');
+    // }
 
     /**
      * Update the specified resource in storage.
@@ -88,7 +134,16 @@ class EventsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $event = Event::find ($req->id);
+
+        $event->date = $req->date;
+        $event->eventname = $req->eventname;
+        $event->venue = $req->venue;
+        $event->location = $req->location;
+        $event->tickets = $req->tickets;
+        $event->link = $req->link;
+        $event->save();
+        return response()->json($event);
     }
 
     /**
@@ -97,9 +152,11 @@ class EventsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function destroy($id)
     {
-        Event::find($id)->delete();
-        return redirect()->back()->with('success','Item deleted successfully');
+        $event = Event::find($id);
+        $event->delete();
+        return redirect()->back()->with('hapus','Item deleted successfully');
     }
 }

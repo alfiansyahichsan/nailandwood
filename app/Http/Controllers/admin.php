@@ -11,7 +11,7 @@ class admin extends Controller
 	}
 
 	public function Slider(){
-		return view('admin.slider');
+		return view('admin.Slider.sliders');
 	}
 
 	public function Socmed(){
@@ -26,9 +26,9 @@ class admin extends Controller
 		return view('admin.Event.events');
 	}
 
-	public function Create(){
-		return view('admin.Event.create');
-	}
+	// public function Create(){
+	// 	return view('admin.Event.create');
+	// }
 
 	public function News(){
 		return view('admin.news');

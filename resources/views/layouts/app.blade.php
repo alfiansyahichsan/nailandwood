@@ -40,7 +40,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{URL::route('home')}}">
+                    <a class="navbar-brand" href="#">
                         <a href="{{URL::route('home')}}"><img src="img/logo/1.png" alt="pakukayu" style="max-height: 37px; max-width: 100%; margin-top: 10px;"></a>
                     </a>
                 </div>

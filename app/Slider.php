@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Slider extends Model
 {
-    protected $fillable = ['imagepathslider','imagepath2','text','link'];
+    protected $table ='sliders';
 
     static function imageSlider()
     {

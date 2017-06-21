@@ -27,6 +27,8 @@
 	<script src="js/jPlayer.js"></script>
 	<script src="js/plugins.js"></script>
 	<script src="js/main.js"></script>
+	<!-- <script src="js/app.js"></script>
+    <script src="js/script.js"></script> -->
 	<!-- <script src="js/map.js"></script> -->
 	<!-- <script type='text/javascript' src='http://theme-fusion.com/avada/architecture/wp-content/themes/Avada/assets/js/main.min.js?ver=3.8.8' async></script> -->
     <!-- <script src="assets/js/mainScrollGalleryJs.js"></script> -->
