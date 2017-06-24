@@ -15,13 +15,13 @@ class CreateNewsTable extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('created_at');
             $table->string('date');
             $table->string('eventname');
             $table->string('venue');
             $table->string('location');
             $table->string('tickets');
             $table->string('link');
+            $table->timestamps();
         });
     }
 

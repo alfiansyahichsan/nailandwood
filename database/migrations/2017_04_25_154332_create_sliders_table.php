@@ -15,11 +15,10 @@ class CreateSlidersTable extends Migration
     {
         Schema::create('sliders', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
             $table->string('imagepathslider');
-            $table->string('imagepath2');
             $table->string('text');
-            $table->string('link');
+            $table->string('textbutton');
+            $table->timestamps();
         });
     }
 
@@ -30,6 +29,6 @@ class CreateSlidersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('events');
+        Schema::dropIfExists('sliders');
     }
 }

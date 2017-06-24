@@ -18,15 +18,15 @@ class SlidersController extends Controller
      */
     public function index()
     {
-        $slider = Slider::all();
+        $slider = Slider::get();
         // show data to our view
-        return $slider;
+        return view('admin.slider.sliders')->with('slider',$slider);
     }
 
     // edit data function
     public function editItem(Request $req) {
 
-        $slider = Slider::find ($req->id);
+        $slider = Slider::find ($req->input('id'));
 
         $slider->imagepathslider = $req->imagepathslider;
         $slider->text = $req->text;
@@ -54,28 +54,24 @@ class SlidersController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-
-        'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        'text' => 'required',
-        'textbutton' => 'required',
-
+            'imagepathslider' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'text' => 'required',
+            'textbutton' => 'required',
         ]);
 
+        $slider = new Slider;
 
-        $image = $request->file('image');
+        $slider->imagepathslider = $request->imagepathslider->getClientOriginalName();
+        $slider->text = $request->text;
+        $slider->textbutton = $request->textbutton;
 
-        $input['imagename'] = time().'.'.$image->getClientOriginalExtension();
+        $slider->save();
+        $imageName = $request->file('imagepathslider')->getClientOriginalName();
 
-        $destinationPath = public_path('/img/header/');
+        $request->file('imagepathslider')->move(
+            base_path() . '/public/img/header/', $imageName);
 
-        $image->move($destinationPath, $input['imagename']);
-
-
-        $this->postImage->add($input);
-
-
-        return back()->with('success','Image Upload successful');
-
+        return redirect()->back()->with('success','Data has been saved successfully')->with('imageName',$imageName);
     }
 
     /**
@@ -86,7 +82,7 @@ class SlidersController extends Controller
      */
     public function show($id)
     {
-        //
+        return response()->json($event);
     }
 
     /**
@@ -95,10 +91,10 @@ class SlidersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
-    }
+    // public function edit($id)
+    // {
+    //     //
+    // }
 
     /**
      * Update the specified resource in storage.
@@ -107,10 +103,10 @@ class SlidersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+    // public function update(Request $request, $id)
+    // {
+    //     //
+    // }
 
     /**
      * Remove the specified resource from storage.
@@ -118,10 +114,17 @@ class SlidersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        $slider = Slider::find($id);
-        $slider->delete();
-        return redirect()->back()->with('hapus','Item deleted successfully');
+
+    public function deleteItem(Request $req) {
+      $slider = Slider::find($req->id);
+      unlink(public_path('img/header/'.$slider->imagepathslider));
+      return response()->json();
     }
+
+    // public function destroy($id)
+    // {
+    //     $slider = Slider::find($id);
+    //     $slider->delete();
+    //     return redirect()->back()->with('hapus','Item deleted successfully');
+    // }
 }

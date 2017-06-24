@@ -18,15 +18,15 @@ class EventsController extends Controller
      */
     public function index()
     {
-        $event = Event::all();
+        $event = Event::get();
         // show data to our view
-        return $event;
+        return view('admin.event.events')->with('event',$event);    
     }
 
     // edit data function
     public function editItem(Request $req) {
 
-        $event = Event::find ($req->id);
+        $event = Event::find ($req->input('id'));
 
         $event->date = $req->date;
         $event->eventname = $req->eventname;
@@ -132,19 +132,19 @@ class EventsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        $event = Event::find ($req->id);
+    // public function update(Request $request, $id)
+    // {
+    //     $event = Event::find ($req->id);
 
-        $event->date = $req->date;
-        $event->eventname = $req->eventname;
-        $event->venue = $req->venue;
-        $event->location = $req->location;
-        $event->tickets = $req->tickets;
-        $event->link = $req->link;
-        $event->save();
-        return response()->json($event);
-    }
+    //     $event->date = $req->date;
+    //     $event->eventname = $req->eventname;
+    //     $event->venue = $req->venue;
+    //     $event->location = $req->location;
+    //     $event->tickets = $req->tickets;
+    //     $event->link = $req->link;
+    //     $event->save();
+    //     return response()->json($event);
+    // }
 
     /**
      * Remove the specified resource from storage.
@@ -153,10 +153,16 @@ class EventsController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function destroy($id)
-    {
-        $event = Event::find($id);
-        $event->delete();
-        return redirect()->back()->with('hapus','Item deleted successfully');
+    // delete item
+    public function deleteItem(Request $req) {
+      Event::find($req->id)->delete();
+      return response()->json();
     }
+
+    // public function destroy($id)
+    // {
+    //     $event = Event::find($id);
+    //     $event->delete();
+    //     return redirect()->back()->with('hapus','Item deleted successfully');
+    // }
 }

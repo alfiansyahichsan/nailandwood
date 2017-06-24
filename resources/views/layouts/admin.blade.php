@@ -18,7 +18,10 @@
                             <a href="{{URL::Route('slider')}}" @yield("nav2")><i class="fa fa-dashboard fa-fw"></i> Slider - Home</a>
                         </li>
                         <li>
-                            <a href="{{URL::Route('acara')}}" @yield("nav3")><i class="fa fa-dashboard fa-fw"></i> Events - Home</a>
+                            <a href="{{URL::Route('lmusic')}}" @yield("nav3")><i class="fa fa-dashboard fa-fw"></i> LMusic - Home</a>
+                        </li>
+                        <li>
+                            <a href="{{URL::Route('acara')}}" @yield("nav4")><i class="fa fa-dashboard fa-fw"></i> Events - Home</a>
                         </li>
                         <li>
                             <a href="{{URL::Route('socmed')}}" @yield("nav4")><i class="fa fa-dashboard fa-fw"></i> Socmed</a>

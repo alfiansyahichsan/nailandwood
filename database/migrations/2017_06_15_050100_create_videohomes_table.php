@@ -16,6 +16,7 @@ class CreateVideohomesTable extends Migration
         Schema::create('videohomes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('link');
+            $table->timestamps();
         });
     }
 

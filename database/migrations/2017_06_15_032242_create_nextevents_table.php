@@ -19,6 +19,7 @@ class CreateNexteventsTable extends Migration
             $table->string('logoeventpic');
             $table->string('datemax');
             $table->string('link');
+            $table->timestamps();
         });
     }
 

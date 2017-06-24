@@ -92,12 +92,13 @@ Biography
 				<div class="col-sm-7 col-sm-offset-1">
 					<div class="singleBlogForm">
 						<h2>Get in Touch</h2>
-						<form action="#" method="post" class="comment-form">
+						<form action="send" method="post" class="comment-form">
+						{{ csrf_field() }}
 							<input id="author" name="author" type="text" value="" aria-required="true" required="" placeholder="First Name *">
 							<input id="lastName" name="email" type="text" value="" aria-required="true" required="" placeholder="Last Name">
 							<input id="url" name="url" type="text" value="" placeholder="Subject* ">
 							<input id="address" name="url" type="text" value="" placeholder="Email Address* ">
-							<textarea name="comment" placeholder="Message..." rows="6" required=""></textarea>
+							<textarea id="message" name="comment" placeholder="Message..." rows="6" required=""></textarea>
 							<p class="form-submit">
 								<input name="submit" type="submit" id="submit" value="Send Email">
 							</p>

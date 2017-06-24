@@ -2,10 +2,10 @@
 
 
 @section('judul')
-Slider - Home
+Music - Home
 @stop
 
-@section('nav2')
+@section('nav3')
 class="active"
 @stop
 
@@ -14,21 +14,22 @@ class="active"
 <meta name="_token" content="{!! csrf_token() !!}" />
 <script src="{{asset('js/meeepo.js')}}"></script>
 
-@include("admin.slider.ajax")
+@include("admin.music.ajax")
 
 
 
 @endsection
 
 @section('konten')
-<p>Form untuk edit Slider pada HOME</p>
+<p>Form untuk edit Layout Music pada HOME</p>
 @if ($message = Session::get('success'))
 
         <div class="alert alert-success">
 
-            <p>{{ $message }}</p>
+            <p>{{ $message }}</p><br>
             <div>
-                <img src="/img/header/{{ Session::get('imageName') }}" style="max-width: 300px; max-height: 300px; margin-right: 20px;" />               
+                <img src="/img/albums/{{ Session::get('imageName') }}" style="max-width: 300px; max-height: 300px; margin-right: 20px;" />
+                <img src="/img/albums/{{ Session::get('imageName2') }}" style="max-width: 300px; max-height: 300px; margin-right: 20px;" />                
             </div>
 
         </div>
@@ -57,25 +58,27 @@ class="active"
       <table class="table table-borderless" id="table">
         <tr>
             <th>ID</th>
-            <th>Image</th>
-            <th>Text</th>
-            <th>Text Button</th>
+            <th>Image Path</th>
+            <th>Image Path 2</th>
+            <th>Title</th>
+            <th>Tag</th>
             <th colspan="3">Actions</th>
         </tr>
         {{ csrf_field() }}
 
-        @foreach(\App\Slider::imageSlider() as $slider)
-            <tr class="item{{$slider->id}}">
-                <td>{{ $slider->id }}</td>
-                <td>{{ $slider->imagepathslider }}</td>
-                <td>{{ $slider->text }}</td>
-                <td>{{ $slider->textbutton }}</td>
+        @foreach(\App\Lmusic::Lmusic() as $lmusic)
+            <tr class="item{{$lmusic->id}}">
+                <td>{{ $lmusic->id }}</td>
+                <td>{{ $lmusic->imgpath }}
+                <td>{{ $lmusic->imgpath2 }}
+                <td>{{ $lmusic->title }}</td>
+                <td>{{ $lmusic->tag }}</td>
                 <td>
 
-                <button class="edit-modal btn btn-primary" data-id="{{$slider->id}}" data-imagepathslider="{{$slider->imagepathslider}}" data-text="{{$slider->text}}" data-textbutton="{{$slider->textbutton}}">
+                <button class="edit-modal btn btn-primary" data-id="{{$lmusic->id}}" data-imgpath="{{$lmusic->imgpath}}" data-imgpath2="{{$lmusic->imgpath2}}" data-title="{{$lmusic->title}}" data-tag="{{$lmusic->tag}}">
                 <span class="glyphicon glyphicon-edit"></span> Edit
                 </button>
-                <button class="delete-modal btn btn-danger" data-id="{{$slider->id}}" data-imagepathslider="{{$slider->imagepathslider}}" data-text="{{$slider->text}}" data-textbutton="{{$slider->textbutton}}">
+                <button class="delete-modal btn btn-danger" data-id="{{$lmusic->id}}" data-imgpath="{{$lmusic->imgpath}}" data-imgpath2="{{$lmusic->imgpath2}}" data-title="{{$lmusic->title}}" data-tag="{{$lmusic->tag}}">
                 <span class="glyphicon glyphicon-trash"></span> Delete
                 </button>
 
@@ -91,19 +94,22 @@ class="active"
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Insert Data Slider</h4>
+                <h4 class="modal-title">Insert Data Music</h4>
             </div>
             <div class="modal-body" style="padding-left: 30px; padding-right: 35px;">
-                <form action="/admin/slider" method="POST" id="insert_form" enctype="multipart/form-data">
+                <form action="/admin/lmusic" method="POST" enctype="multipart/form-data" id="insert_form">
                 {{ csrf_field() }}
-                    <label>Image</label>
-                    <input type="file" name="imagepathslider" id="imagepathslider" class="form-control" required/>
+                    <label>Image Path</label>
+                    <input type="file" name="imgpath" id="imgpath" class="form-control" />
                     <br />
-                    <label>Text</label>
-                    <input type="text" name="text" id="text" class="form-control" required></input>
+                    <label>Image Path 2</label>
+                    <input type="file" name="imgpath2" id="imgpath2" class="form-control" />
                     <br />
-                    <label>Text Button</label>
-                    <input type="textbutton" name="textbutton" id="textbutton" class="form-control" required></input>
+                    <label>Title</label>
+                    <input type="title" name="title" id="title" class="form-control" required></input>
+                    <br />
+                    <label>Tag</label>
+                    <input type="tag" name="tag" id="tag" class="form-control" required></input>
                     <br />
 
                     <input type="submit" value="Submit" class="btn btn-success" />
@@ -133,29 +139,36 @@ class="active"
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="imagepathslider">Image</label>
+                    <label class="control-label col-sm-2" for="imagepath">Image Path</label>
                     <div class="col-sm-10">
                         <input type="name" class="form-control" id="a" disabled="">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="text">Text</label>
+                    <label class="control-label col-sm-2" for="imagepath2">Image Path 2</label>
                     <div class="col-sm-10">
-                        <input type="name" class="form-control" id="b">
+                        <input type="name" class="form-control" id="b" disabled="">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="textbutton">Text Button</label>
+                    <label class="control-label col-sm-2" for="title">Title</label>
                     <div class="col-sm-10">
                         <input type="name" class="form-control" id="c">
                     </div>
                 </div>
 
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="tag">Tag</label>
+                    <div class="col-sm-10">
+                        <input type="name" class="form-control" id="d">
+                    </div>
+                </div>
+
           </form>
             <div class="deleteContent">
-            Are you Sure you want to delete <span class="imagepathslider"></span> ?
+            Are you Sure you want to delete <span class="title"></span> ?
             <span class="hidden id"></span>
           </div>
           <div class="modal-footer">

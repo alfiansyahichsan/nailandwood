@@ -151,7 +151,8 @@ Home
 						<h2><a href="{{URL::route('music')}}">music</a></h2>
 						<span class="heading-b3"></span>
 					</div><!-- end sectionTtile -->
-					<div class="list-albums">
+					@foreach(\App\Lmusic::Lmusic() as $lmusic)
+					<div class="list-albums" style="padding-bottom: 40px;">
 						<ul class="list-feature col-md-12 col-xs-12 col-sm-12">
 						<li class="col-md-2" style="margin-left: 18px;">
 							
@@ -159,19 +160,20 @@ Home
 							<li class="col-md-3 col-sm-3 col-xs-12">
 								<div class="album-icon">
 									<span class="thumbs-album">
-										<a href="{{URL::Route('music')}}"><img width="270" height="270" src="img/albums/album.png" class="attachment-album-thumbnail wp-post-image" alt="album-cover-1"></a>
+										<a href="{{URL::Route('music')}}"><img width="270" height="270" src="{{asset('img/albums/'.$lmusic->imgpath)}}" class="attachment-album-thumbnail wp-post-image" alt="album-cover-1"></a>
 
 									</span>
-									<span class="disk"><img src="img/albums/qwe.png"></span>
+									<span class="disk"><img src="{{asset('img/albums/'.$lmusic->imgpath2)}}"></span>
 								</div><!-- END ALBUM ICON -->
 								<div class="name">
-									<h3>Proper Pause(EP)</h3>						
-									<p>Chillout</p>								
+									<h3>{{$lmusic->title}}</h3>						
+									<p>{{$lmusic->tag}}</p>								
 								</div><!-- end name -->
 							</li>
 
 						</ul>
 					</div><!-- end list-albums -->
+					@endforeach
 				</div><!-- end col-sm-12 -->
 
 				<div class="tableEvents col-sm-6" >

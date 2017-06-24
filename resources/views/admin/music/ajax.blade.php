@@ -12,31 +12,28 @@
     $('.deleteContent').hide();
     $('.form-horizontal').show();
     $('#fid').val($(this).data('id'));
-    $('#q').val($(this).data('date'));
-    $('#t').val($(this).data('eventname'));
-    $('#d').val($(this).data('venue'));
-    $('#a').val($(this).data('location'));
-    $('#s').val($(this).data('tickets'));
-    $('#e').val($(this).data('link'));
+    $('#a').val($(this).data('imgpath'));
+    $('#b').val($(this).data('imgpath2'));
+    $('#c').val($(this).data('title'));
+    $('#d').val($(this).data('tag'));
     $('#myModal').modal('show');
 });
   $('.modal-footer').on('click', '.edit', function() {
   $.ajax({
       type: 'post',
-      url: '/admin/event/editItem',
+      url: '/admin/lmusic/editItem',
       data: {
           '_token': $('input[name=_token]').val(),
           'id': $("#fid").val(),
-          'date': $("#q").val(),
-          'eventname': $('#t').val(),
-          'venue': $('#d').val(),
-          'location': $("#a").val(),
-          'tickets': $('#s').val(),
-          'link': $('#e').val()
+          'imgpath': $("#a").val(),
+          'imgpath2': $('#b').val(),
+          'title': $('#c').val(),
+          'tag': $('#d').val()
       },
       success: function(data) {
         console.log(data);
-          $('.item' + data.id).replaceWith("<tr class='item" + data.id + "'><td>" + data.id + "</td><td>" + data.date + "</td><td>" + data.eventname + "</td><td>" + data.venue + "</td><td>" + data.location + "</td><td>" + data.tickets + "</td><td>" + data.link + "</td><td><button class='edit-modal btn btn-primary' data-id='" + data.id + "' data-date='" + data.date + "' data-eventname='" + data.eventname + "' data-venue='" + data.venue + "' data-location='" + data.location + "'data-tickets='" + data.tickets + "'data-link='" + data.link + "'><span class='glyphicon glyphicon-edit'></span> Edit</button> <button class='delete-modal btn btn-danger' data-id='" + data.id + "' data-date='" + data.date + "' data-eventname='" + data.eventname + "' data-venue='" + data.venue +"' data-location='" + data.location +"' data-tickets='" + data.tickets +"' data-link='" + data.link + "'><span class='glyphicon glyphicon-trash'></span> Delete</button></td></tr>");
+          $('.item' + data.id).replaceWith("<tr class='item" + data.id + "'><td>" + data.id + "</td><td>" + data.imgpath + "</td><td>" + data.imgpath2 + "</td><td>" + data.title + "</td><td>" + data.tag + "</td><td><button class='edit-modal btn btn-primary' data-id='" + data.id + "' data-imgpath='" + data.imgpath + "' data-imgpath2='" + data.imgpath2 + "' data-title='" + data.title + "' data-tag='" + data.tag + "'><span class='glyphicon glyphicon-edit'> </span> Edit</button> <button class='delete-modal btn btn-danger' data-id='" + data.id + "' data-imgpath='" + data.imgpath + "' data-imgpath2='" + data.imgpath2 + "' data-title='" + data.title + "' data-tag='" + data.tag + "'><span class='glyphicon glyphicon-trash'> </span> Delete</button></td></tr>");
+
       }
   });
 });
@@ -53,14 +50,14 @@ $(document).on('click', '.delete-modal', function() {
   $('.id').text($(this).data('id'));
   $('.deleteContent').show();
   $('.form-horizontal').hide();
-  $('.eventname').html($(this).data('eventname'));
+  $('.title').html($(this).data('title'));
   $('#myModal').modal('show');
 });
 
 $('.modal-footer').on('click', '.delete', function() {
   $.ajax({
     type: 'post',
-    url: '/admin/event/deleteItem',
+    url: '/admin/lmusic/deleteItem',
     data: {
       '_token': $('input[name=_token]').val(),
       'id': $('.id').text()
@@ -72,3 +69,4 @@ $('.modal-footer').on('click', '.delete', function() {
 });
 
 </script>
+

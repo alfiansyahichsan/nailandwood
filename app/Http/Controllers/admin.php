@@ -11,7 +11,7 @@ class admin extends Controller
 	}
 
 	public function Slider(){
-		return view('admin.Slider.sliders');
+		return view('admin.slider.sliders');
 	}
 
 	public function Socmed(){
@@ -23,7 +23,11 @@ class admin extends Controller
 	}
 
 	public function Acara(){
-		return view('admin.Event.events');
+		return view('admin.event.events');
+	}
+
+	public function LMusic(){
+		return view('admin.music.musics');
 	}
 
 	// public function Create(){

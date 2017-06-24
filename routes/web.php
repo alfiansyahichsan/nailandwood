@@ -11,15 +11,26 @@
 |
 */
 
+Route::post('send','MailController@send');
+Route::get('biography','MailController@email');
+
 /* admin */
 Route::get('/admin/dashboard',array('as'=>'dashboard','uses'=>'admin@Dashboard'));
 
+Route::resource('admin/lmusic','LMusicController');
+Route::get('/admin/lmusic',array('as'=>'lmusic','uses'=>'admin@LMusic'));
+Route::post ( '/admin/lmusic/editItem', 'LMusicController@editItem' );
+Route::post ( '/admin/lmusic/deleteItem', 'LMusicController@deleteItem' );
+
 Route::resource('admin/acara','EventsController');
 Route::get('/admin/acara',array('as'=>'acara','uses'=>'admin@Acara'));
-Route::post ( '/admin/editItem', 'EventsController@editItem' );
+Route::post ( '/admin/event/editItem', 'EventsController@editItem' );
+Route::post ( '/admin/event/deleteItem', 'EventsController@deleteItem' );
 
 Route::resource('admin/slider','SlidersController');
 Route::get('/admin/slider',array('as'=>'slider','uses'=>'admin@Slider'));
+Route::post ( '/admin/slider/editItem', 'SlidersController@editItem' );
+Route::post ( '/admin/slider/deleteItem', 'SlidersController@deleteItem' );
 
 
 

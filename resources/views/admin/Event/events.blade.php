@@ -5,7 +5,7 @@
 Event - Home
 @stop
 
-@section('nav3')
+@section('nav4')
 class="active"
 @stop
 
@@ -64,10 +64,9 @@ class="active"
         </tr>
         {{ csrf_field() }}
 
-        <?php $no=1; ?>
         @foreach(\App\Event::Event() as $acara)
-          <tr>
-              <td>{{$no++}}</td>
+          <tr class="item{{$acara->id}}">
+              <td>{{ $acara->id }}</td>
               <td>{{ $acara->date }}</td>
               <td>{{ $acara->eventname }}</td>
               <td>{{ $acara->venue }}</td>
@@ -75,12 +74,17 @@ class="active"
               <td>{{ $acara->tickets }}</td>
               <td>{{ $acara->link }}</td>
               <td>
-              <button class="edit-modal btn btn-primary" data-id="{{$acara->id}}" data-date="{{$acara->date}}" data-eventname="{{$acara->eventname}}" data-venue="{{$acara->venue}}" data-location="{{$acara->location}}" data-tickets="{{$acara->tickets}}" data-link="{{$acara->link}}">Edit
-              </button>
-              <button class="btn btn-danger" role="button" data-toggle="modal" data-target="#modal-delete">Delete
-                                    </button>
-          </td>
-          </tr>
+              <!-- <button class="edit-modal btn btn-primary" data-id="{{$acara->id}}" data-date="{{$acara->date}}" data-eventname="{{$acara->eventname}}" data-venue="{{$acara->venue}}" data-location="{{$acara->location}}" data-tickets="{{$acara->tickets}}" data-link="{{$acara->link}}"><span class='glyphicon glyphicon-edit'></span> Edit</button>
+              <button class="delete-modal btn btn-danger" role="button" data-toggle="modal" data-target="#modal-delete"><span class='glyphicon glyphicon-trash'></span> Delete</button> -->
+
+                <button class="edit-modal btn btn-primary" data-id="{{$acara->id}}" data-date="{{$acara->date}}" data-eventname="{{$acara->eventname}}" data-venue="{{$acara->venue}}" data-location="{{$acara->location}}" data-tickets="{{$acara->tickets}}" data-link="{{$acara->link}}">
+                <span class="glyphicon glyphicon-edit"></span> Edit
+                </button>
+                <button class="delete-modal btn btn-danger" data-id="{{$acara->id}}" data-date="{{$acara->date}}" data-eventname="{{$acara->eventname}}" data-venue="{{$acara->venue}}" data-location="{{$acara->location}}" data-tickets="{{$acara->tickets}}" data-link="{{$acara->link}}">
+                <span class="glyphicon glyphicon-trash"></span> Delete
+                </button>
+              </td>
+            </tr>
         @endforeach
       </table>
     </div>
@@ -94,7 +98,7 @@ class="active"
                 <h4 class="modal-title">Insert Data Event</h4>
             </div>
             <div class="modal-body" style="padding-left: 30px; padding-right: 35px;">
-                <form action="/acara" method="POST" id="insert_form">
+                <form action="/admin/acara" method="POST" id="insert_form">
                 {{ csrf_field() }}
                     <label>Date</label>
                     <input type="date" name="date" id="date" class="form-control" required/>
@@ -126,6 +130,81 @@ class="active"
 </div>
 
 <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title"></h4>
+        </div>
+        <div class="modal-body">
+          <form class="form-horizontal" role="form">
+            <div class="form-group">
+                    <label class="control-label col-sm-2" for="id">ID</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="fid" disabled="">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="date">Date</label>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control" id="q">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="eventname">Event Name</label>
+                    <div class="col-sm-10">
+                        <input type="name" class="form-control" id="t">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="venue">Venue</label>
+                    <div class="col-sm-10">
+                        <input type="name" class="form-control" id="d">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="location">Location</label>
+                    <div class="col-sm-10">
+                        <input type="name" class="form-control" id="a">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="tickets">Tickets/Free</label>
+                    <div class="col-sm-10">
+                        <input type="name" class="form-control" id="s">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="link">Link</label>
+                    <div class="col-sm-10">
+                        <input type="name" class="form-control" id="e">
+                    </div>
+                </div>
+          </form>
+            <div class="deleteContent">
+            Are you Sure you want to delete <span class="eventname"></span> ?
+            <span class="hidden id"></span>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn actionBtn" data-dismiss="modal">
+              <span id="footer_action_button" class='glyphicon'> </span>
+            </button>
+            <button type="button" class="btn btn-warning" data-dismiss="modal">
+              <span class='glyphicon glyphicon-remove'></span> Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -185,13 +264,9 @@ class="active"
                 </div>
 
                 </form>
-                <div class="deleteContent">
-                Are you Sure you want to delete <span class="eventname"></span> ?
-                <span class="hidden id"></span>
-                </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn actionBtn" data-dismiss="modal">
-                    <span id="footer_action_button" class='glyphicon'> </span>
+                    <button type="button" class="btn btn-info actionBtn" data-dismiss="modal">
+                    <span id="footer_action_button" class='glyphicon'></span>
                     </button>
                     <button type="button" class="btn btn-warning" data-dismiss="modal">
                     <span class='glyphicon glyphicon-remove'></span> Close
@@ -200,9 +275,9 @@ class="active"
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
-{{-- Confirm Delete --}}
+<!-- {{-- Confirm Delete --}}
     <div class="modal fade" id="modal-delete" tabIndex="-1">
      <div class="modal-dialog">
         <div class="modal-content">
@@ -228,8 +303,7 @@ class="active"
             </div>
         </div>
     </div>
-  </div>
+  </div> -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
-@endsection
+@stop

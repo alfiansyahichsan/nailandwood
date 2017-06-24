@@ -1,3 +1,4 @@
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script>
     // Edit Data (Modal and function edit data)
     $(document).on('click', '.edit-modal', function() {
@@ -11,24 +12,26 @@
     $('.deleteContent').hide();
     $('.form-horizontal').show();
     $('#fid').val($(this).data('id'));
-    $('#q').val($(this).data('imagepathslider'));
-    $('#t').val($(this).data('text'));
-    $('#d').val($(this).data('textbutton'));
+    $('#a').val($(this).data('imagepathslider'));
+    $('#b').val($(this).data('text'));
+    $('#c').val($(this).data('textbutton'));
     $('#myModal').modal('show');
 });
   $('.modal-footer').on('click', '.edit', function() {
   $.ajax({
       type: 'post',
-      url: '/editItem',
+      url: '/admin/slider/editItem',
       data: {
           '_token': $('input[name=_token]').val(),
           'id': $("#fid").val(),
-          'imagepathslider': $("#q").val(),
-          'text': $('#t').val(),
-          'textbutton': $('#d').val()
+          'imagepathslider': $("#a").val(),
+          'text': $('#b').val(),
+          'textbutton': $('#c').val()
       },
       success: function(data) {
-          $('.item' + data.id).replaceWith("<tr><td>" + data.id + "</td><td>" + data.date + "</td><td>" + data.eventname + "</td><td>" + data.venue + "</td><td>" + data.location + "</td><td>" + data.tickets + "</td><td>" + data.link + "</td><td><button class='edit-modal btn btn-info' data-id='" + data.id + "' data-date='" + data.date + "' data-eventname='" + data.eventname + "' data-venue='" + data.venue + "' data-location='" + data.location + "'data-tickets='" + data.tickets + "'data-link='" + data.link + "'><span class='glyphicon glyphicon-edit'></span> Edit</button><button class='delete-modal btn btn-danger' data-id='" + data.id + "' data-date='" + data.date + "' data-eventname='" + data.eventname + "' data-venue='" + data.venue +"' data-location='" + data.location +"' data-tickets='" + data.tickets +"' data-link='" + data.link + "'><span class='glyphicon glyphicon-trash'></span> Delete</button></td></tr>");
+        console.log(data);
+          $('.item' + data.id).replaceWith("<tr class='item" + data.id + "'><td>" + data.id + "</td><td>" + data.imagepathslider + "</td><td>" + data.text + "</td><td>" + data.textbutton + "</td><td><button class='edit-modal btn btn-primary' data-id='" + data.id + "' data-imagepathslider='" + data.imagepathslider + "' data-text='" + data.text + "' data-textbutton='" + data.textbutton + "'><span class='glyphicon glyphicon-edit'> </span> Edit</button> <button class='delete-modal btn btn-danger' data-id='" + data.id + "' data-imagepathslider='" + data.imagepathslider + "' data-text='" + data.text + "' data-textbutton='" + data.textbutton + "'><span class='glyphicon glyphicon-trash'> </span> Delete</button></td></tr>");
+
       }
   });
 });
@@ -45,13 +48,14 @@ $(document).on('click', '.delete-modal', function() {
   $('.id').text($(this).data('id'));
   $('.deleteContent').show();
   $('.form-horizontal').hide();
+  $('.imagepathslider').html($(this).data('imagepathslider'));
   $('#myModal').modal('show');
 });
 
 $('.modal-footer').on('click', '.delete', function() {
   $.ajax({
     type: 'post',
-    url: '/deleteItem',
+    url: '/admin/slider/deleteItem',
     data: {
       '_token': $('input[name=_token]').val(),
       'id': $('.id').text()
@@ -63,3 +67,4 @@ $('.modal-footer').on('click', '.delete', function() {
 });
 
 </script>
+
