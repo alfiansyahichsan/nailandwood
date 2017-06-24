@@ -10,9 +10,9 @@ class admin extends Controller
 		return view('admin.dashboard');
 	}
 
-	public function Slider(){
-		return view('admin.slider.sliders');
-	}
+	// public function Slider(){
+	// 	return view('admin.slider.sliders');
+	// }
 
 	public function Socmed(){
 		return view('admin.socmed');
@@ -26,9 +26,13 @@ class admin extends Controller
 		return view('admin.event.events');
 	}
 
-	public function LMusic(){
-		return view('admin.music.musics');
-	}
+	// public function LMusic(){
+	// 	return view('admin.music.musics');
+	// }
+
+	// public function LVideo(){
+	// 	return view('admin.video.index');
+	// }
 
 	// public function Create(){
 	// 	return view('admin.Event.create');

@@ -6,10 +6,10 @@ Home
 
 	<!-- =============== START BREADCRUMB ================ -->
 	<section class="no-mb">
-	@foreach(\App\Slider::imageSlider() as $slider)
+	@foreach($slider as $sliders)
 		<div class="row">
 				<div class="breadcrumb-fullscreen-parent phone-menu-bg">
-					<div class="breadcrumb breadcrumb-fullscreen alignleft small-description overlay almost-black-overlay" style="background-image: url({{asset('img/header/'.$slider->imagepathslider)}});" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
+					<div class="breadcrumb breadcrumb-fullscreen alignleft small-description overlay almost-black-overlay" style="background-image: url({{asset('img/header/'.$sliders->imagepathslider)}});" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
 						<div id="home" style="position: absolute;left: 0;top: 0;">
 							<div class="intro-header">
 								<div class="js-height-full star" style="height: 955px;">
@@ -18,13 +18,13 @@ Home
 											<div>
 												<h1>
 								                	<a class="link link-yaku" href="{{URL::Route('music')}}" style="text-decoration: none;">
-								                		@foreach(explode(' ', $slider->text) as $text) 
+								                		@foreach(explode(' ', $sliders->text) as $text) 
 													    <span>{{$text}}</span>
 													  	@endforeach
 													</a>
 										        </h1>
 										        <div class="rmButton link" style="padding-top: 10px;">
-													<a href="{{URL::Route('shop')}}">{{$slider->textbutton}}</a>
+													<a href="{{URL::Route('shop')}}">{{$sliders->textbutton}}</a>
 												</div>
 											</div>
 						                </div>
@@ -151,7 +151,7 @@ Home
 						<h2><a href="{{URL::route('music')}}">music</a></h2>
 						<span class="heading-b3"></span>
 					</div><!-- end sectionTtile -->
-					@foreach(\App\Lmusic::Lmusic() as $lmusic)
+					@foreach($lmusic as $lm)
 					<div class="list-albums" style="padding-bottom: 40px;">
 						<ul class="list-feature col-md-12 col-xs-12 col-sm-12">
 						<li class="col-md-2" style="margin-left: 18px;">
@@ -160,14 +160,14 @@ Home
 							<li class="col-md-3 col-sm-3 col-xs-12">
 								<div class="album-icon">
 									<span class="thumbs-album">
-										<a href="{{URL::Route('music')}}"><img width="270" height="270" src="{{asset('img/albums/'.$lmusic->imgpath)}}" class="attachment-album-thumbnail wp-post-image" alt="album-cover-1"></a>
+										<a href="{{URL::Route('music')}}"><img width="270" height="270" src="{{asset('img/albums/'.$lm->imgpath)}}" class="attachment-album-thumbnail wp-post-image" alt="album-cover-1"></a>
 
 									</span>
-									<span class="disk"><img src="{{asset('img/albums/'.$lmusic->imgpath2)}}"></span>
+									<span class="disk"><img src="{{asset('img/albums/'.$lm->imgpath2)}}"></span>
 								</div><!-- END ALBUM ICON -->
 								<div class="name">
-									<h3>{{$lmusic->title}}</h3>						
-									<p>{{$lmusic->tag}}</p>								
+									<h3>{{$lm->title}}</h3>						
+									<p>{{$lm->tag}}</p>								
 								</div><!-- end name -->
 							</li>
 
@@ -191,7 +191,7 @@ Home
 								<th class="tickets">Tickets</th>
 								<th></th>
 							</tr>
-							@foreach(\App\Event::Event() as $acara)
+							@foreach($event as $acara)
 							<tr>
 								<td class="aqura-date"><a>{{$acara->date}}</a></td>
 								<td class="aqura-city"><a>{{$acara->eventname}}</a></td>
@@ -341,22 +341,28 @@ Home
 	        <!-- Carousel Slides / Quotes -->
 	        <div class="carousel-inner">
 	          <!-- Quote 1 -->
+	          @foreach($quote as $quote)
+	          @if($loop->first)
 	          <div class="item active">
 	              <div class="row">
 	                <div class="col-sm-12">
-	                  <p>"I don't listen to what art critics say. I don't know anybody who needs a critic to find out what art is."</p>
-	                  <small>Jean-Michel Basquiat</small>
+	                  <p>{{$quote->quote}}</p>
+	                  <small>{{$quote->by}}</small>
 	                </div>
 	              </div>
 	          </div>
-	          <div class="item">
-	              <div class="row">
-	                <div class="col-sm-12">
-	                  <p>"Knowledge speaks, but wisdom listens."</p>
-	                  <small>Jimi Hendrix</small>
-	                </div>
-	              </div>
-	          </div>
+	          @else($loop->remaining)
+	          	<div class="item">
+		              <div class="row">
+		                <div class="col-sm-12">
+		                  <p>{{$quote->quote}}</p>
+		                  <small>{{$quote->by}}</small>
+		                </div>
+		              </div>
+		          </div>
+	          @endif
+	          @endforeach
+	          
 	        </div>
 	        
 	        <!-- Carousel Buttons Next/Prev -->
@@ -380,64 +386,20 @@ Home
 				</div><!-- end sectionTtile -->
 				<div class="col-sm-2"></div>
 
-				@foreach(\App\Videohome::Videohome() as $video)
-				<div class="col-sm-8">
-					<iframe width="854" height="480" src="{{$video->link}}" frameborder="0" allowfullscreen></iframe>
-				</div>
+				@foreach($lvideo as $lvideo)
+					@if ($loop->first)
+					<div class="col-sm-8">
+						<iframe width="854" height="480" src="{{$lvideo->link}}" frameborder="0" allowfullscreen></iframe>
+					</div>
+					@endif
 				@endforeach
-
+				
 				<div class="col-sm-2"></div>
 			</div>
 		</div>
 	</section>
 	<!-- =============== END VIDEO SECTION ================ -->
 
-
-	<!-- =============== START HOME-SHOP SECTION ================ -->
-	<!-- <section class="shopHomePage shopHomePadding hide-section">
-		<div class="shopSection">
-			<div class="container-fluid">
-			<div class="shopContent">
-				<div class="sectionTitle paddingBottom">
-					<span class="heading-t3"></span>
-					<h2><a href="shop.html">Shop Online</a></h2>
-					<span class="heading-b3"></span> -->
-				<!-- </div> --><!-- end sectionTtile -->	
-				<!-- @foreach($products->chunk(4) as $productChunk)
-				<div class="row">
-					<nav class="shop-products col-sm-12">
-						<ul class="clearfix">
-						@foreach($productChunk as $product)
-							<li class="col-sm-3">
-								<figure>
-									<figcaption>
-										<img src="{{asset('img/shop/'.$product->imagepath)}}" alt="" style="max-width: 480; max-height: 475;">
-									</figcaption>
-									<div class="content">
-										<div class="shopHover">
-											<div class="price">
-												{{$product->price}}
-											</div>
-											<div  class="proTitle">
-												<a href="{{URL::route('detailshop')}}">{{$product->title}}</a>
-											</div>
-											<div class="product">Hoodie Aqura</div>
-											<a href="{{ route('product.addToCart', ['id' => $product->id]) }}" class="icon-button shopIcon"><i class="fa fa-shopping-cart"></i><span></span></a>
-											 <a href="shopSingle.html" class="icon-button shopIcon"><i class="fa fa-info"></i><span></span></a>
-										</div>
-									</div>
-								</figure>
-							</li>
-						@endforeach
-						</ul> -->
-					<!-- </nav> --><!-- end shop-products -->
-				<!-- </div> --><!-- end row -->
-				<!-- @endforeach -->
-			<!-- </div> --><!-- end shopContent -->
-		<!-- </div>
-		</div>
-	</section> 
-	<!-- =============== END HOME-SHOP SECTION ================ -->
 
 @section('script')
 @endsection()

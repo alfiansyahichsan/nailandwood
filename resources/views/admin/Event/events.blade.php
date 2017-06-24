@@ -64,7 +64,7 @@ class="active"
         </tr>
         {{ csrf_field() }}
 
-        @foreach(\App\Event::Event() as $acara)
+        @foreach($event as $acara)
           <tr class="item{{$acara->id}}">
               <td>{{ $acara->id }}</td>
               <td>{{ $acara->date }}</td>
@@ -74,8 +74,6 @@ class="active"
               <td>{{ $acara->tickets }}</td>
               <td>{{ $acara->link }}</td>
               <td>
-              <!-- <button class="edit-modal btn btn-primary" data-id="{{$acara->id}}" data-date="{{$acara->date}}" data-eventname="{{$acara->eventname}}" data-venue="{{$acara->venue}}" data-location="{{$acara->location}}" data-tickets="{{$acara->tickets}}" data-link="{{$acara->link}}"><span class='glyphicon glyphicon-edit'></span> Edit</button>
-              <button class="delete-modal btn btn-danger" role="button" data-toggle="modal" data-target="#modal-delete"><span class='glyphicon glyphicon-trash'></span> Delete</button> -->
 
                 <button class="edit-modal btn btn-primary" data-id="{{$acara->id}}" data-date="{{$acara->date}}" data-eventname="{{$acara->eventname}}" data-venue="{{$acara->venue}}" data-location="{{$acara->location}}" data-tickets="{{$acara->tickets}}" data-link="{{$acara->link}}">
                 <span class="glyphicon glyphicon-edit"></span> Edit
@@ -83,7 +81,8 @@ class="active"
                 <button class="delete-modal btn btn-danger" data-id="{{$acara->id}}" data-date="{{$acara->date}}" data-eventname="{{$acara->eventname}}" data-venue="{{$acara->venue}}" data-location="{{$acara->location}}" data-tickets="{{$acara->tickets}}" data-link="{{$acara->link}}">
                 <span class="glyphicon glyphicon-trash"></span> Delete
                 </button>
-              </td>
+
+                </td>
             </tr>
         @endforeach
       </table>
@@ -95,7 +94,7 @@ class="active"
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Insert Data Event</h4>
+                <h4 class="modal-title">Insert Data Slider</h4>
             </div>
             <div class="modal-body" style="padding-left: 30px; padding-right: 35px;">
                 <form action="/admin/acara" method="POST" id="insert_form">
@@ -203,107 +202,6 @@ class="active"
       </div>
     </div>
   </div>
-
-<!-- <div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title"></h4>
-            </div>
-        <div class="modal-body">
-            <form class="form-horizontal" role="form">
-            {{ csrf_field() }}
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="id">ID</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="fid" disabled="">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="date">Date</label>
-                    <div class="col-sm-10">
-                        <input type="date" class="form-control" id="q">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="eventname">Event Name</label>
-                    <div class="col-sm-10">
-                        <input type="name" class="form-control" id="t">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="venue">Venue</label>
-                    <div class="col-sm-10">
-                        <input type="name" class="form-control" id="d">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="location">Location</label>
-                    <div class="col-sm-10">
-                        <input type="name" class="form-control" id="a">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="tickets">Tickets/Free</label>
-                    <div class="col-sm-10">
-                        <input type="name" class="form-control" id="s">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="link">Link</label>
-                    <div class="col-sm-10">
-                        <input type="name" class="form-control" id="e">
-                    </div>
-                </div>
-
-                </form>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-info actionBtn" data-dismiss="modal">
-                    <span id="footer_action_button" class='glyphicon'></span>
-                    </button>
-                    <button type="button" class="btn btn-warning" data-dismiss="modal">
-                    <span class='glyphicon glyphicon-remove'></span> Close
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-<!-- {{-- Confirm Delete --}}
-    <div class="modal fade" id="modal-delete" tabIndex="-1">
-     <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Please Confirm</h4>
-            </div>
-            <div class="modal-body" style="padding-left: 30px; padding-right: 35px;">
-                <p>  
-                    Are you sure you want to delete this Event?
-                </p>
-          </div>
-          <div class="modal-footer">
-            <form method="POST" action="{{ route('acara.destroy', $acara->id) }}">
-              <input type="hidden" name="_token" value="{{ csrf_token() }}">
-              <input type="hidden" name="_method" value="DELETE">
-              <button type="button" class="btn btn-default"
-                      data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-danger">
-                <i class="fa fa-times-circle"></i> Yes
-              </button>
-            </form>
-            </div>
-        </div>
-    </div>
-  </div> -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 @stop

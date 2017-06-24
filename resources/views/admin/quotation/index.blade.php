@@ -2,10 +2,10 @@
 
 
 @section('judul')
-Music - Home
+Quotation - Home
 @stop
 
-@section('nav3')
+@section('nav5')
 class="active"
 @stop
 
@@ -14,23 +14,19 @@ class="active"
 <meta name="_token" content="{!! csrf_token() !!}" />
 <script src="{{asset('js/meeepo.js')}}"></script>
 
-@include("admin.music.ajax")
+@include("admin.quotation.ajax")
 
 
 
 @endsection
 
 @section('konten')
-<p>Form untuk edit Layout Music pada HOME</p>
+<p>Form untuk input data quote pada Home</p>
 @if ($message = Session::get('success'))
 
         <div class="alert alert-success">
 
-            <p>{{ $message }}</p><br>
-            <div>
-                <img src="/img/albums/{{ Session::get('imageName') }}" style="max-width: 300px; max-height: 300px; margin-right: 20px;" />
-                <img src="/img/albums/{{ Session::get('imageName2') }}" style="max-width: 300px; max-height: 300px; margin-right: 20px;" />                
-            </div>
+            <p>{{ $message }}</p>
 
         </div>
 
@@ -58,27 +54,23 @@ class="active"
       <table class="table table-borderless" id="table">
         <tr>
             <th>ID</th>
-            <th>Image Path</th>
-            <th>Image Path 2</th>
-            <th>Title</th>
-            <th>Tag</th>
+            <th>Quote</th>
+            <th>By Who</th>
             <th colspan="3">Actions</th>
         </tr>
         {{ csrf_field() }}
 
-        @foreach($lmusic as $lm)
-            <tr class="item{{$lm->id}}">
-                <td>{{ $lm->id }}</td>
-                <td>{{ $lm->imgpath }}
-                <td>{{ $lm->imgpath2 }}
-                <td>{{ $lm->title }}</td>
-                <td>{{ $lm->tag }}</td>
-                <td>
+        @foreach($quote as $q)
+          <tr class="item{{$q->id}}">
+              <td>{{ $q->id }}</td>
+              <td>{{ $q->quote }}</td>
+              <td>{{ $q->by }}</td>
+              <td>
 
-                <button class="edit-modal btn btn-primary" data-id="{{$lm->id}}" data-imgpath="{{$lm->imgpath}}" data-imgpath2="{{$lm->imgpath2}}" data-title="{{$lm->title}}" data-tag="{{$lm->tag}}">
+                <button class="edit-modal btn btn-primary" data-id="{{$q->id}}" data-quote="{{$q->quote}}" data-by="{{$q->by}}">
                 <span class="glyphicon glyphicon-edit"></span> Edit
                 </button>
-                <button class="delete-modal btn btn-danger" data-id="{{$lm->id}}" data-imgpath="{{$lm->imgpath}}" data-imgpath2="{{$lm->imgpath2}}" data-title="{{$lm->title}}" data-tag="{{$lm->tag}}">
+                <button class="delete-modal btn btn-danger" data-id="{{$q->id}}" data-quote="{{$q->quote}}" data-by="{{$q->by}}">
                 <span class="glyphicon glyphicon-trash"></span> Delete
                 </button>
 
@@ -94,22 +86,16 @@ class="active"
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Insert Data Music</h4>
+                <h4 class="modal-title">Insert Data Slider</h4>
             </div>
             <div class="modal-body" style="padding-left: 30px; padding-right: 35px;">
-                <form action="/admin/lmusic" method="POST" enctype="multipart/form-data" id="insert_form">
+                <form action="/admin/quotation" method="POST" id="insert_form">
                 {{ csrf_field() }}
-                    <label>Image Path</label>
-                    <input type="file" name="imgpath" id="imgpath" class="form-control" />
+                    <label>Quote</label>
+                    <textarea type="quote" name="quote" id="quote" class="form-control" required/></textarea> 
                     <br />
-                    <label>Image Path 2</label>
-                    <input type="file" name="imgpath2" id="imgpath2" class="form-control" />
-                    <br />
-                    <label>Title</label>
-                    <input type="title" name="title" id="title" class="form-control" required></input>
-                    <br />
-                    <label>Tag</label>
-                    <input type="tag" name="tag" id="tag" class="form-control" required></input>
+                    <label>By Who</label>
+                    <input type="by" name="by" id="by" class="form-control" required></input>
                     <br />
 
                     <input type="submit" value="Submit" class="btn btn-success" />
@@ -139,36 +125,22 @@ class="active"
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="imagepath">Image Path</label>
+                    <label class="control-label col-sm-2" for="quote">Quote</label>
                     <div class="col-sm-10">
-                        <input type="name" class="form-control" id="a" disabled="">
+                        <input type="text" class="form-control" id="q">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="imagepath2">Image Path 2</label>
+                    <label class="control-label col-sm-2" for="by">By Who</label>
                     <div class="col-sm-10">
-                        <input type="name" class="form-control" id="b" disabled="">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="title">Title</label>
-                    <div class="col-sm-10">
-                        <input type="name" class="form-control" id="c">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="tag">Tag</label>
-                    <div class="col-sm-10">
-                        <input type="name" class="form-control" id="d">
+                        <input type="name" class="form-control" id="t">
                     </div>
                 </div>
 
           </form>
             <div class="deleteContent">
-            Are you Sure you want to delete <span class="title"></span> ?
+            Are you Sure you want to delete quote by <span class="by"></span> ?
             <span class="hidden id"></span>
           </div>
           <div class="modal-footer">

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Lmusic extends Model
+class Quotation extends Model
 {
-    protected $table ='lmusics';
+    protected $table ='quotations';
 }

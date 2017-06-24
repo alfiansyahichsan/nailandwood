@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class page extends Controller
 {
@@ -12,7 +13,19 @@ class page extends Controller
 	}	
 
 	public function Home(){
-		return view('index');
+		$lvideo = \App\Lvideo::get();
+		$slider = \App\Slider::get();
+		$lmusic = \App\Lmusic::get();
+		$event = \App\Event::orderBy('id', 'DESC')->get();
+		$quote = \App\Quotation::get();
+		return view('index', [
+                'lvideo' => $lvideo,
+                'slider' => $slider,
+                'lmusic' => $lmusic,
+                'event' => $event,
+                'quote' => $quote
+
+            ]);
 	}
 
 	public function Biography(){
@@ -52,7 +65,11 @@ class page extends Controller
 	}
 
 	public function Video(){
-		return view('video');
+		$lvideo = \App\Lvideo::whereNotIn('id',[1])->get();
+		return view('video', [
+                'lvideo' => $lvideo
+
+            ]);
 	}
 
 	public function Checkout(){

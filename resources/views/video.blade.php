@@ -10,9 +10,9 @@ Video
             <div class="col-sm-12">
             	<div class="breadcrumb-fullscreen-parent phone-menu-bg">
 					<div class="breadcrumb breadcrumb-fullscreen alignleft small-description overlay almost-black-overlay" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
-						<div id="bgndVideo" class="player" data-property="{videoURL:'https://youtu.be/1tT2GYLKHLw',containment:'.player',autoPlay:true, mute:true, startAt:0, opacity:1}">
+						<!-- <div id="bgndVideo" class="player" data-property="{videoURL:'https://youtu.be/1tT2GYLKHLw',containment:'.player',autoPlay:true, mute:true, startAt:0, opacity:1}">
                     	    
-                    	</div>
+                    	</div> -->
 					</div>
 				</div><!--end bread  -->
             </div>
@@ -31,64 +31,34 @@ Video
 						
 					</div>
 					<div class="col-sm-8">
-						<div class="blogBox">	
-							    <iframe width="600" height="410" src="https://www.youtube.com/embed/oprHMhcpCqE" frameborder="0" allowfullscreen></iframe>
-							<div class="blogBoxContent">
-								<div class="blogHeader">
-									<h1><a>Lights and Motion</a></h1>
-								</div>
-								<div class="blogParagraph" style="margin-top: 5px;">
-									<input type="checkbox" class="read-more-state" id="post-1" />
-										<p class="read-more-wrap">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus hic nam voluptatem mollitia doloribus! Tempora neque pariatur saepe error esse soluta repellat laboriosam aperiam qui accusantium placeat, aspernatur maxime, 
-										<span class="read-more-target">Libero fuga facilis vel consectetur quos sapiente deleniti eveniet dolores tempore eos deserunt officia quis ab? Excepturi vero tempore minus beatae voluptatem!</span></p>
-									<label for="post-1" class="read-more-trigger rmButton" style="margin-top: 10px;"></label>
-									<hr style="margin-bottom: -20px;">
-
-									<!-- <label for="post-1" class="read-more-trigger rmButton" style="margin-top: 10px;"></label>
-									<button class="switch">Lights On</button>
-
-									<div id='persoff'></div>
-
-									<hr style="margin-bottom: -20px;"> -->
-									
-								</div><!--end blogParagraph  -->
-											
-							</div><!-- end blogBoxContent -->
+					@foreach($lvideo as $lvideo)
+					@if($loop->first)
+						<div class="blogBox" style="display: none;">	
+							
 						</div><!-- end blogBox -->
+					@else($loop->remaining)
 						<div class="blogBox">	
-							<iframe width="600" height="410" src="https://www.youtube.com/embed/01jcwGApTWA" frameborder="0" allowfullscreen></iframe>
+							<iframe width="600" height="410" src="{{$lvideo->link}}" frameborder="0" allowfullscreen></iframe>
 							<div class="blogBoxContent">
 								<div class="blogHeader">
-									<h1><a>Lights and Motion - Silver Lining</a></h1>
+								<h1><a>{{$lvideo->title}}</a></h1>
 								</div>
-								<div class="blogParagraph read-more-wrap" style="margin-top: 5px;">
-									<input type="checkbox" class="read-more-state" id="post-2" />
+							<div class="blogParagraph read-more-wrap" style="margin-top: 5px;">
+									<input type="checkbox" class="read-more-state" id="post-{{$lvideo->id}}" />
 										<p class="read-more-wrap">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus hic nam voluptatem mollitia doloribus! Tempora neque pariatur saepe error esse soluta repellat laboriosam aperiam qui accusantium placeat, aspernatur maxime, 
 										<span class="read-more-target">Libero fuga facilis vel consectetur quos sapiente deleniti eveniet dolores tempore eos deserunt officia quis ab? Excepturi vero tempore minus beatae voluptatem!</span></p>
 
-									<label for="post-2" class="read-more-trigger rmButton" style="margin-top: 10px;"></label>
-									<hr style="margin-bottom: -20px;">
-								</div><!--end blogParagraph  -->
-							</div><!-- end blogBoxContent -->
-						</div><!-- end blogBox -->
-						<div class="blogBox">	
-							<iframe width="854" height="480" src="https://www.youtube.com/embed/kYNRSa2DYp4" frameborder="0" allowfullscreen></iframe>
-							<div class="blogBoxContent">
-								<div class="blogHeader">
-									<h1><a>Lights and Motion - The March</a></h1>
-								</div>
-								<div class="blogParagraph read-more-wrap" style="margin-top: 5px;">
-									<input type="checkbox" class="read-more-state" id="post-3" />
-										<p class="read-more-wrap">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus hic nam voluptatem mollitia doloribus! Tempora neque pariatur saepe error esse soluta repellat laboriosam aperiam qui accusantium placeat, aspernatur maxime, 
-										<span class="read-more-target">Libero fuga facilis vel consectetur quos sapiente deleniti eveniet dolores tempore eos deserunt officia quis ab? Excepturi vero tempore minus beatae voluptatem!</span></p>
-
-									<label for="post-3" class="read-more-trigger rmButton" style="margin-top: 10px;"></label>
+									<label for="post-{{$lvideo->id}}" class="read-more-trigger rmButton" style="margin-top: 10px;"></label>
 									<hr style="margin-bottom: -20px;">
 									
 								</div><!--end blogParagraph  -->
+							
 							</div><!-- end blogBoxContent -->
 						</div><!-- end blogBox -->
-					</div>
+			          @endif
+						
+					@endforeach
+						
 					<div class="col-sm-2">
 
 					</div>

@@ -63,19 +63,19 @@ class="active"
             <th colspan="3">Actions</th>
         </tr>
         {{ csrf_field() }}
-
-        @foreach(\App\Slider::imageSlider() as $slider)
-            <tr class="item{{$slider->id}}">
-                <td>{{ $slider->id }}</td>
-                <td>{{ $slider->imagepathslider }}</td>
-                <td>{{ $slider->text }}</td>
-                <td>{{ $slider->textbutton }}</td>
+        
+        @foreach($slider as $sliders)
+            <tr class="item{{$sliders->id}}">
+                <td>{{ $sliders->id }}</td>
+                <td>{{ $sliders->imagepathslider }}</td>
+                <td>{{ $sliders->text }}</td>
+                <td>{{ $sliders->textbutton }}</td>
                 <td>
 
-                <button class="edit-modal btn btn-primary" data-id="{{$slider->id}}" data-imagepathslider="{{$slider->imagepathslider}}" data-text="{{$slider->text}}" data-textbutton="{{$slider->textbutton}}">
+                <button class="edit-modal btn btn-primary" data-id="{{$sliders->id}}" data-imagepathslider="{{$sliders->imagepathslider}}" data-text="{{$sliders->text}}" data-textbutton="{{$sliders->textbutton}}">
                 <span class="glyphicon glyphicon-edit"></span> Edit
                 </button>
-                <button class="delete-modal btn btn-danger" data-id="{{$slider->id}}" data-imagepathslider="{{$slider->imagepathslider}}" data-text="{{$slider->text}}" data-textbutton="{{$slider->textbutton}}">
+                <button class="delete-modal btn btn-danger" data-id="{{$sliders->id}}" data-imagepathslider="{{$sliders->imagepathslider}}" data-text="{{$sliders->text}}" data-textbutton="{{$sliders->textbutton}}">
                 <span class="glyphicon glyphicon-trash"></span> Delete
                 </button>
 
