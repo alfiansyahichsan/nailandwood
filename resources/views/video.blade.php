@@ -23,7 +23,7 @@ Video
 	<!-- ================================================== -->
 	<!-- =============== VIDEO GALLERY ================ -->
 	<!-- ================================================== -->
-	<section class="blogSidebarRight" id="content">
+	<section class="padding blogSidebarRight" id="content">
 		<div class="container">
 			<div class="row">
 				<div class="blog-sidebar-right qqwwee">

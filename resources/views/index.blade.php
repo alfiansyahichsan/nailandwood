@@ -270,7 +270,7 @@ Home
 				<div class="aduh col-sm-4">
 					<div class="blogBox">	
 						<div class="imgBox">
-							<img src="{{asset('img/news/'.$ne->imgpath)}}" alt="{{$ne->imgpath}}"></div>
+							<img src="{{asset('img/news/'.$ne->imgpath)}}" alt="{{$ne->imgpath}}" style="height: 240px; width: 100%;"></div>
 						<div class="blogBoxContent">
 							<div class="blogHeader">
 								<h1><a href="{{URL::route('blogsingle',$ne->id)}}">{{$ne->title}}</a></h1>
@@ -294,8 +294,9 @@ Home
 				@else
 					<div class="aduh col-sm-4"></div>
 					<div class="aduh col-sm-4">
-					<div class="blogBox">	
-						<div class="videoBox"><iframe width="600" height="410" src="{{$ne->linkvideo}}" frameborder="0" allowfullscreen></iframe></div>
+					<div class="blogBox">
+					<div class="imgBox">
+							<iframe width="600" height="345" src="{{$ne->linkvideo}}" frameborder="0" allowfullscreen></iframe></div>
 						<div class="blogBoxContent">
 							<div class="blogHeader">
 								<h1><a href="{{URL::route('blogsingle',$ne->id)}}">{{$ne->title}}</a></h1>
@@ -347,7 +348,7 @@ Home
 				@else
 				<div class="aduh col-sm-4">
 					<div class="blogBox">	
-						<div class="videoBox"><iframe width="600" height="380" src="{{$ne->linkvideo}}" frameborder="0" allowfullscreen></iframe></div>
+						<div class="videoBox"><iframe width="600" height="345" src="{{$ne->linkvideo}}" frameborder="0" allowfullscreen></iframe></div>
 						<div class="blogBoxContent">
 							<div class="blogHeader">
 								<h1><a href="{{URL::route('blogsingle',$ne->id)}}">{{$ne->title}}</a></h1>

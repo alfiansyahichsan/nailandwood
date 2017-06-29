@@ -5,7 +5,7 @@
 @section('content')
 
 <section class="padding blogSidebarRight" id="content">
-		<div class="container" style="margin-top: 20px;">
+		<div class="container" style="margin-top: -50px;">
 			<div class="row">
 				<div class="blog-sidebar-right">
 					<div class="col-sm-8">

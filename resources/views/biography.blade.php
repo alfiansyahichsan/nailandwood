@@ -32,7 +32,7 @@ Biography
 
 	<!-- =============== START BIOGRAPHY SECTION ================ -->
 	<section class="biography padding background-properties" id="content">
-		<div class="container" style="margin-top: 50px;">
+		<div class="container" style="margin-top: -50px;">
 			<div class="sectionTitle paddingBottom">
 				<span class="heading-t3"></span>
 				<h2><a href="albums.html">Biography</a></h2>

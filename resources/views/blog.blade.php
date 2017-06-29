@@ -33,7 +33,7 @@ Blog
 	<!-- =============== END BREADCRUMB ================ -->
 
 	<!-- =============== START BLOG SIDEBAR-RIGHT ================ -->
-	<section class="padding blogSidebarRight" id="content">
+	<section class="padding blogSidebarRight" id="content" style="margin-top: -50px;">
 		<div class="container">
 			<div class="row">
 				<div class="blog-sidebar-right">

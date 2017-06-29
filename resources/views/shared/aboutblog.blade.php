@@ -1,9 +1,9 @@
 <div class="blog-right">
 	<div class="col-sm-3 col-sm-offset-1">
 		<div class="blogSidebar">
-		@foreach($about as $aa)
 			<div class="widget">
 				<div class="widget kotak">
+			@foreach($about as $aa)
 				<p class="photoborder"><img src="{{asset('img/logo/'.$aa->imgpath)}}"></p>
 					<h3 class="widget-title" style="padding-top: 20px;">{{$aa->title}}</h3>
 					<ul style="padding-left: 20px; padding-right: 20px;"><a>{{$aa->text}}</a>
@@ -19,6 +19,7 @@
 						</ul>
 					</nav>
 				</div><!-- end widget -->
+				@endforeach
 			<div class="widget" style="text-align: center; padding-top: 20px; margin-top: 20px;">
 			<h3>Instagram</h3>
 			<span class="headen"></span>
@@ -46,7 +47,7 @@
 				<a class="twitter-timeline" href="https://twitter.com/UntoldFestival" data-widget-id="716220714324467712">Tweets by @UntoldFestival</a>
 				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 			</div><!-- end widget -->
-		@endforeach
+		
 		</div><!-- end blogSidebar -->
 	</div><!-- end col-sm03 -->
 </div><!-- end blog-right -->

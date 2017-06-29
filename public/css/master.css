@@ -18,7 +18,7 @@
   src: url(../fonts/codeLight.otf);
 }
 .padding {
-  padding: 5rem 0;
+  padding: 18rem 0;
 }
 .paddingBottom {
   padding-bottom: 8rem;
@@ -1797,8 +1797,6 @@ pre code {
 .containerblog {
   margin-right: auto;
   margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
 }
 .containerhome {
   margin-right: auto;
@@ -11546,7 +11544,7 @@ body > div.fusion-fullwidth.fullwidth-box.fusion-fullwidth-2.fusion-parallax-lef
     height: 0 !important;
   }
   .padding {
-    padding: 0rem 0!important;
+    padding: 12rem 0!important;
   }
   .paddingBottom {
     padding-bottom: 5rem!important;
