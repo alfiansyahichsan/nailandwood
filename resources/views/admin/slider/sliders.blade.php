@@ -58,8 +58,9 @@ class="active"
         <tr>
             <th>ID</th>
             <th>Image</th>
+            <th>Title</th>
             <th>Text</th>
-            <th>Text Button</th>
+            <th>Category</th>
             <th colspan="3">Actions</th>
         </tr>
         {{ csrf_field() }}
@@ -68,14 +69,15 @@ class="active"
             <tr class="item{{$sliders->id}}">
                 <td>{{ $sliders->id }}</td>
                 <td>{{ $sliders->imagepathslider }}</td>
+                <td>{{ $sliders->title }}</td>
                 <td>{{ $sliders->text }}</td>
-                <td>{{ $sliders->textbutton }}</td>
+                <td>{{ $sliders->category }}</td>
                 <td>
 
-                <button class="edit-modal btn btn-primary" data-id="{{$sliders->id}}" data-imagepathslider="{{$sliders->imagepathslider}}" data-text="{{$sliders->text}}" data-textbutton="{{$sliders->textbutton}}">
+                <button class="edit-modal btn btn-primary" data-id="{{$sliders->id}}" data-imagepathslider="{{$sliders->imagepathslider}}" data-title="{{$sliders->title}}" data-text="{{$sliders->text}}" data-category="{{$sliders->category}}">
                 <span class="glyphicon glyphicon-edit"></span> Edit
                 </button>
-                <button class="delete-modal btn btn-danger" data-id="{{$sliders->id}}" data-imagepathslider="{{$sliders->imagepathslider}}" data-text="{{$sliders->text}}" data-textbutton="{{$sliders->textbutton}}">
+                <button class="delete-modal btn btn-danger" data-id="{{$sliders->id}}" data-imagepathslider="{{$sliders->imagepathslider}}" data-title="{{$sliders->title}}" data-text="{{$sliders->text}}" data-category="{{$sliders->category}}">
                 <span class="glyphicon glyphicon-trash"></span> Delete
                 </button>
 
@@ -99,11 +101,21 @@ class="active"
                     <label>Image</label>
                     <input type="file" name="imagepathslider" id="imagepathslider" class="form-control" required/>
                     <br />
-                    <label>Text</label>
-                    <input type="text" name="text" id="text" class="form-control" required></input>
+                    <label>Title</label>
+                    <input type="title" name="title" id="title" class="form-control" required></input>
                     <br />
-                    <label>Text Button</label>
-                    <input type="textbutton" name="textbutton" id="textbutton" class="form-control" required></input>
+                    <label>Text</label>
+                    <textarea type="text" name="text" id="text" class="form-control"></textarea>
+                    <br />
+                    <label>Category</label>
+                    <select type="textbutton" name="category" id="category" class="form-control" required>
+                        <option value="0">--- Select ---</option>
+                        <option value="1">Home</option>
+                        <option value="2">Blog</option>
+                        <option value="3">Biography</option>
+                        <option value="4">Shop</option>
+                        <option value="5">Quotation</option>
+                    </select>
                     <br />
 
                     <input type="submit" value="Submit" class="btn btn-success" />
@@ -140,16 +152,30 @@ class="active"
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="text">Text</label>
+                    <label class="control-label col-sm-2" for="title">Title</label>
                     <div class="col-sm-10">
                         <input type="name" class="form-control" id="b">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="textbutton">Text Button</label>
+                    <label class="control-label col-sm-2" for="text">Text</label>
                     <div class="col-sm-10">
-                        <input type="name" class="form-control" id="c">
+                        <textarea type="name" class="form-control" id="c"></textarea> 
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="category">Category</label>
+                    <div class="col-sm-10">
+                    <select type="textbutton" name="category" id="d" class="form-control" required>
+                        <option value="0">--- Select ---</option>
+                        <option value="1">Home</option>
+                        <option value="2">Blog</option>
+                        <option value="3">Biography</option>
+                        <option value="4">Shop</option>
+                        <option value="5">Quotation</option>
+                    </select>
                     </div>
                 </div>
 

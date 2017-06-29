@@ -42,11 +42,52 @@ Route::get('/admin/quotation',array('as'=>'quotation','uses'=>'QuotationControll
 Route::post ( '/admin/quotation/editItem', 'QuotationController@editItem' );
 Route::post ( '/admin/quotation/deleteItem', 'QuotationController@deleteItem' );
 
+Route::resource('admin/gallery','GalleryController');
+Route::get('/admin/lgallery',array('as'=>'lgallery','uses'=>'GalleryController@index'));
+Route::post ( '/admin/gallery/editItem', 'GalleryController@editItem' );
+Route::post ( '/admin/gallery/deleteItem', 'GalleryController@deleteItem' );
+
 Route::get('/socmed',array('as'=>'socmed','uses'=>'admin@Socmed'));
 Route::get('/musicalbum',array('as'=>'musicalbum','uses'=>'admin@MusicAlbum'));
 Route::get('/news',array('as'=>'news','uses'=>'admin@News'));
 Route::get('/videos',array('as'=>'videos','uses'=>'admin@Videos'));
 Route::get('/playlist',array('as'=>'playlist','uses'=>'admin@Playlist'));
+
+Route::resource('admin/nevent','NextEventController');
+Route::get('/admin/nevent',array('as'=>'nevent','uses'=>'NextEventController@index'));
+Route::post ( '/admin/nevent/editItem', 'NextEventController@editItem' );
+Route::post ( '/admin/nevent/deleteItem', 'NextEventController@deleteItem' );
+
+Route::resource('admin/news','NewsController');
+Route::get('/admin/news',array('as'=>'news','uses'=>'NewsController@index'));
+Route::post ( '/admin/news/editItem', 'NewsController@editItem' );
+Route::post ( '/admin/news/deleteItem', 'NewsController@deleteItem' );
+
+Route::get('/news/{param}',array('as'=>'blogsingle','uses'=>'page@BlogSingle'));
+
+Route::resource('admin/blog','BlogsController');
+Route::get('/admin/blog',array('as'=>'lblog','uses'=>'BlogsController@index'));
+Route::post ( '/admin/blog/editItem', 'BlogsController@editItem' );
+Route::post ( '/admin/blog/deleteItem', 'BlogsController@deleteItem' );
+
+Route::get('/blog/{param}',array('as'=>'blogpersonal','uses'=>'page@Blogpersonal'));
+
+Route::resource('admin/biography','BiographyController');
+Route::get('/admin/biography',array('as'=>'lbiography','uses'=>'BiographyController@index'));
+Route::post ( '/admin/biography/editItem', 'BiographyController@editItem' );
+Route::post ( '/admin/biography/deleteItem', 'BlogsController@deleteItem' );
+
+Route::resource('admin/lshop','ShopController');
+Route::get('/admin/lshop',array('as'=>'lshop','uses'=>'ShopController@index'));
+Route::post ( '/admin/lshop/editItem', 'ShopController@editItem' );
+Route::post ( '/admin/lshop/deleteItem', 'ShopController@deleteItem' );
+
+Route::get('/shop/{param}',array('as'=>'detailshop','uses'=>'page@Detailshop'));
+
+Route::resource('admin/labout','AboutblogController');
+Route::get('/admin/labout',array('as'=>'labout','uses'=>'AboutblogController@index'));
+Route::post ( '/admin/labout/editItem', 'AboutblogController@editItem' );
+Route::post ( '/admin/labout/deleteItem', 'AboutblogController@deleteItem' );
 
 Route::get('/',array('as'=>'home','uses'=>'page@Home'));
 
@@ -57,12 +98,10 @@ Route::get('/gallerysingle',array('as'=>'gallerysingle','uses'=>'page@GallerySin
 Route::get('/music',array('as'=>'music','uses'=>'page@Music'));
 Route::get('/events',array('as'=>'events','uses'=>'page@Events'));
 Route::get('/shop',array('as'=>'shop','uses'=>'page@Shop'));
-Route::get('/detailshop',array('as'=>'detailshop','uses'=>'page@DetailShop'));
 Route::get('/blog',array('as'=>'blog','uses'=>'page@Blog'));
 Route::get('/video',array('as'=>'video','uses'=>'page@Video'));
 Route::get('/checkout',array('as'=>'checkout','uses'=>'page@Checkout'));
 Route::get('/viewcart',array('as'=>'viewcart','uses'=>'page@ViewCart'));
-Route::get('/blogsingle',array('as'=>'blogsingle','uses'=>'page@BlogSingle'));
 
 Route::get('/admin',array('as'=>'login','uses'=>'page@Login'));
 

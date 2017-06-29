@@ -70,6 +70,7 @@ class LMusicController extends Controller
         $lmusic->tag = $request->tag;
 
         $lmusic->save();
+
         $imageName = $request->file('imgpath')->getClientOriginalName();
 
         $request->file('imgpath')->move(
@@ -79,6 +80,7 @@ class LMusicController extends Controller
         $request->file('imgpath2')->move(
             base_path() . '/public/img/albums/', $imageName2);
         return redirect()->back()->with('success','Data has been saved successfully')->with('imageName',$imageName)->with('imageName2',$imageName2);
+        
     }
 
     /**

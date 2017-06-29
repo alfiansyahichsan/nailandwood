@@ -5,7 +5,7 @@
 Quotation - Home
 @stop
 
-@section('nav5')
+@section('nav7')
 class="active"
 @stop
 

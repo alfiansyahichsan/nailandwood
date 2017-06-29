@@ -1,4 +1,7 @@
 @extends('shared.layouts')
+@section('halaman')
+{{$shop->title}}
+@endsection
 @section('content')
 	<!-- =============== START SHOP-SINGLE SECTION ================ -->
 	<section class="paddingShopSingle">
@@ -6,32 +9,19 @@
 			<div class="row">
 				<div class="clothing">
 					<div class="col-sm-7 ">
-						<a href="img/shop/SingleShopProduct.png" class="lightbox"><img src="img/shop/singleShopProduct.png" alt=""></a>
-                         <div class="products">
-                            <a href="img/shop/smallProduct.png" class="lightbox"><img src="img/shop/smallProduct.png" alt=""></a>
-                            <a href="img/shop/smallProduct.png" class="lightbox"><img src="img/shop/smallProduct.png" alt=""></a>
-                        </div><!-- end products -->
+						<a href="{{asset('img/shop/'.$shop->imgpath)}}" class="lightbox"><img src="{{asset('img/shop/'.$shop->imgpath)}}" alt=""></a>
 					</div><!-- end col-sm-8 -->
 				</div><!-- end clothing -->
 				<div class="col-sm-5">
 					<div class="productDetails">
 						<nav>
-							<a href="#">Back to Shopping</a>
+							<a href="{{URL::route('shop')}}">Back to Shopping</a>
 							<i class="fa fa-angle-double-right"></i>
-							<a href="#">Air Jordan</a>
+							<a href="#">{{$shop->title}}</a>
 						</nav>
-						<h1>Air Jordan</h1>
+						<h1>{{$shop->title}}</h1>
 						<div class="productRating">
-							
-							<div class="starRate">
-								<a href="#" class="review">1 Review</a>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-							</div>
-							<p class="price">£ 15.99</p>
+							<p class="price">Idr {{$shop->price}}</p>
 						</div><!-- end productRating -->
 						<table class="variations" >
 							<tbody>
@@ -46,15 +36,7 @@
                                 Add to cart
                             </button>
                         </div><!-- end product-quantity -->
-						<div class="productMeta"> 
-							<span class="skuWrapper">SKU: <span class="sku">15121993</span>.</span>
-							<div class="meta-list">
-								<span class="metaListHead">Category: </span><a href="#">Hoodie unisex, Original T.Brothers.</a>
-							</div>
-							<div class="metaList">
-								<span class="metaListSpan">Tagged with: </span><a href="#">bookend,</a> <a href="#" rel="tag">furniture,</a> <a href="#">home</a>
-							</div>
-						</div><!-- end productMeta -->
+						
 					</div><!-- end productDetails -->
 				</div><!-- end col-sm-4 -->
 			</div><!-- end row -->
@@ -72,37 +54,11 @@
                           <!-- Nav tabs -->
                           <ul class="nav nav-tabs" role="tablist">
                             <li role="presentation" class="active firstTab"><a href="#home"  role="tab" data-toggle="tab">Description</a></li>
-                            <li role="presentation"><a href="#reviews" class="reviews"  role="tab" data-toggle="tab">Reviews ( 0 )</a></li>
                           </ul>
 
                           <!-- Tab panes -->
                           <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane active" id="home">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis optio ex quisquam quis. Explicabo cum omnis animi, doloribus veritatis architecto quaerat perspiciatis a velit ut tenetur, ullam ad, sint rerum quos perferendis, natus optio. Atque officia nulla distinctio ea, dignissimos at vel dolore quas assumenda officiis, commodi ut voluptatum vitae temporibus delectus, mollitia error harum.</div>
-                            <div role="tabpanel" class="tab-pane" id="reviews">
-                                <div class="col-sm-8">
-                                    <div class="formTitle">
-                                        <h4>Be the first to review "Hoddie Theme Brothers"</h4>
-                                    </div>
-                                    <div class="singleBlogForm">
-										<form action="#" method="post" class="comment-form">
-											<input id="author" name="author" type="text" value="" aria-required="true" required placeholder="Name...">
-											<input id="email" name="email" type="text" value="" aria-required="true" required placeholder="Email...">
-											<input id="rating" name="rate" type="text" value="" aria-required="true" required placeholder="Rating...">
-											<div class="starRate">
-												<i class="fa fa-star"></i>
-												<i class="fa fa-star"></i>
-												<i class="fa fa-star"></i>
-												<i class="fa fa-star"></i>
-												<i class="fa fa-star"></i>
-											</div>
-											<textarea name="comment" placeholder="Message..." rows="6" required></textarea>
-											<p class="form-submit">
-												<input name="submit" type="submit" id="submit" value="Post Comment">
-											</p>
-										</form>
-									</div>
-                                </div>
-                            </div>
+                            <div role="tabpanel" class="tab-pane active" id="home">{{$shop->detail}}</div>
                           </div>
                         </div>
                     </div><!-- end col-sm-12 -->

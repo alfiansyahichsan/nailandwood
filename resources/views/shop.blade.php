@@ -4,18 +4,19 @@ Shop
 @endsection
 @section('content')
 	<!-- =============== START BREADCRUMB ================ -->
+	@foreach($slider as $s)
 	<section class="no-mb">
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="before-FullscreenSlider"></div>
 				<div class="breadcrumb-fullscreen-parent phone-menu-bg">
-					<div class="breadcrumb breadcrumb-fullscreen alignleft small-description overlay almost-black-overlay" style="background-image: url('img/shop/7.jpg');" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
+					<div class="breadcrumb breadcrumb-fullscreen alignleft small-description overlay almost-black-overlay" style="background-image: url({{asset('img/header/'.$s->imagepathslider)}});" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
 						<div class="breadTxt">
                             <h1>
-                                New Arrival 2017
+                                {{$s->title}}
                             </h1>
                             <p>
-                                There's an old saying, 'That what doesn't kill you, makes you stronger' I don't believe that. <br> I think the things that try to kill you make you angry and sad. Strength comes<br> from the good things - your family, your friends,<br> the satisfaction of hard work.
+                                {{$s->text}}
                             </p>
                             <a href="#content" data-easing="easeInOutQuint" data-scroll="" data-speed="900" data-url="false">
                                 View More <i class="fa fa-angle-down"></i>
@@ -26,6 +27,7 @@ Shop
 			</div>
 		</div>
 	</section>
+	@endforeach
 	<!-- =============== END BREADCRUMB ================ -->
 
 	<!-- =============== START SHOP SECTION ================ -->
@@ -46,147 +48,33 @@ Shop
                         <div class="row">
                             <nav class="shop-products">
                                 <ul class="clearfix">
+                                @foreach($shop as $sh)
+                                @if($sh->category == 1)
                                     <li class="col-sm-4 apparel">
+                                @else
+                                	<li class="col-sm-4 cd">
+                                @endif
 		                                <figure>
 		                                    <figcaption>
-		                                        <img src="img/shop/2.jpg" alt="">
+		                                        <img src="{{asset('img/shop/'.$sh->imgpath)}}" alt="">
 		                                    </figcaption>
 		                                    <div class="item content">
 		                                        <div class="shopHover">
 		                                            <div class="price">
-		                                                &pound; 15,99
+		                                                &pound; {{$sh->price}}
 		                                            </div>
 		                                            <div class="proTitle">
-		                                                <a href="{{URL::route('detailshop')}}">Adidas</a>
+		                                                <a href="{{URL::route('detailshop',$sh->id)}}">{{$sh->title}}</a>
 		                                            </div>
 		                                            <div class="product"></div>
 		                                            <a href="{{URL::route('shop')}}" class="icon-button shopIcon"><i class="fa fa-shopping-cart"></i><span></span></a>
-		                                             <a href="shopSingle.html" class="icon-button shopIcon"><i class="fa fa-info"></i><span></span></a>
-		                                        </div>
-		                                    </div>
-		                                </figure>
-		                            </li>
-                                    <li class="col-sm-4 apparel">
-		                                <figure>
-		                                    <figcaption>
-		                                        <img src="img/shop/3.jpg" alt="">
-		                                    </figcaption>
-		                                    <div class="content">
-		                                        <div class="shopHover">
-		                                            <div class="price">
-		                                                &pound; 150000
-		                                            </div>
-		                                            <div class="proTitle">
-		                                                <a href="shopSingle.html">Adidas</a>
-		                                            </div>
-		                                            <div class="product">Hoodie Aqura</div>
-		                                            <a href="shopSingle.html" class="icon-button shopIcon"><i class="fa fa-shopping-cart"></i><span></span></a>
-		                                             <a href="shopSingle.html" class="icon-button shopIcon"><i class="fa fa-info"></i><span></span></a>
-		                                        </div>
-		                                    </div>
-		                                </figure>
-		                            </li>
-		                            <li class="col-sm-4 apparel">
-		                                <figure>
-		                                    <figcaption>
-		                                        <img src="img/shop/4.jpg" alt="">
-		                                    </figcaption>
-		                                    <div class="content">
-		                                        <div class="shopHover">
-		                                            <div class="price">
-		                                                &pound; 150000
-		                                            </div>
-		                                            <div class="proTitle">
-		                                                <a href="shopSingle.html">Adidas</a>
-		                                            </div>
-		                                            <div class="product">Hoodie Aqura</div>
-		                                            <a href="shopSingle.html" class="icon-button shopIcon"><i class="fa fa-shopping-cart"></i><span></span></a>
-		                                             <a href="shopSingle.html" class="icon-button shopIcon"><i class="fa fa-info"></i><span></span></a>
-		                                        </div>
-		                                    </div>
-		                                </figure>
-		                            </li>
-		                            <li class="col-sm-4 apparel">
-		                                <figure>
-		                                    <figcaption>
-		                                        <img src="img/shop/4.jpg" alt="">
-		                                    </figcaption>
-		                                    <div class="content">
-		                                        <div class="shopHover">
-		                                            <div class="price">
-		                                                &pound; 150000
-		                                            </div>
-		                                            <div class="proTitle">
-		                                                <a href="shopSingle.html">Adidas</a>
-		                                            </div>
-		                                            <div class="product">Hoodie Aqura</div>
-		                                            <a href="shopSingle.html" class="icon-button shopIcon"><i class="fa fa-shopping-cart"></i><span></span></a>
-		                                             <a href="shopSingle.html" class="icon-button shopIcon"><i class="fa fa-info"></i><span></span></a>
-		                                        </div>
-		                                    </div>
-		                                </figure>
-		                            </li>
-		                            <li class="col-sm-4 apparel">
-		                                <figure>
-		                                    <figcaption>
-		                                        <img src="img/shop/2.jpg" alt="">
-		                                    </figcaption>
-		                                    <div class="content">
-		                                        <div class="shopHover">
-		                                            <div class="price">
-		                                                &pound; 15,99
-		                                            </div>
-		                                            <div class="proTitle">
-		                                                <a href="shopSingle.html">Original T. Brothers</a>
-		                                            </div>
-		                                            <div class="product">Hoodie Aqura</div>
-		                                            <a href="shopSingle.html" class="icon-button shopIcon"><i class="fa fa-shopping-cart"></i><span></span></a>
-		                                             <a href="shopSingle.html" class="icon-button shopIcon"><i class="fa fa-info"></i><span></span></a>
-		                                        </div>
-		                                    </div>
-		                                </figure>
-		                            </li>
-		                            <li class="col-sm-4 apparel">
-		                                <figure>
-		                                    <figcaption>
-		                                        <img src="img/shop/5.jpg" alt="">
-		                                    </figcaption>
-		                                    <div class="content">
-		                                        <div class="shopHover">
-		                                            <div class="price">
-		                                                &pound; 15,99
-		                                            </div>
-		                                            <div class="proTitle">
-		                                                <a href="shopSingle.html">Original T. Brothers</a>
-		                                            </div>
-		                                            <div class="product">Hoodie Aqura</div>
-		                                            <a href="shopSingle.html" class="icon-button shopIcon"><i class="fa fa-shopping-cart"></i><span></span></a>
-		                                             <a href="shopSingle.html" class="icon-button shopIcon"><i class="fa fa-info"></i><span></span></a>
+		                                             <a href="{{URL::route('detailshop',$sh->id)}}" class="icon-button shopIcon"><i class="fa fa-info"></i><span></span></a>
 		                                        </div>
 		                                    </div>
 		                                </figure>
 		                            </li>
 
-		                            <li class="col-sm-4 cd">
-		                                <figure>
-		                                    <figcaption>
-		                                        <img src="img/shop/9.jpg" alt="">
-		                                    </figcaption>
-		                                    <div class="content">
-		                                        <div class="shopHover">
-		                                            <div class="price">
-		                                                &pound; 35000
-		                                            </div>
-		                                            <div class="proTitle">
-		                                                <a href="shopSingle.html">Adidas</a>
-		                                            </div>
-		                                            <div class="product">Hoodie Aqura</div>
-		                                            <a href="shopSingle.html" class="icon-button shopIcon"><i class="fa fa-shopping-cart"></i><span></span></a>
-		                                             <a href="shopSingle.html" class="icon-button shopIcon"><i class="fa fa-info"></i><span></span></a>
-		                                        </div>
-		                                    </div>
-		                                </figure>
-		                            </li>
+		                            @endforeach
 
                                 </ul>
                             </nav>

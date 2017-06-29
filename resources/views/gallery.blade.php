@@ -30,7 +30,7 @@ Gallery
         <div class="container">
             <div class="row">
 
-            @foreach(\App\Gallery::Gallery() as $pict)
+            @foreach($gallery as $pict)
             <div class="aduh col-sm-4">
                 <div class="blogBox">   
                     <div class="gallerySection">
@@ -39,9 +39,9 @@ Gallery
                             <figcaption>
                                 <!-- Single Album Image -->
                                 <div class="hovereffect">
-                                    <img class="img-responsive" src="{{asset('img/blog/'.$pict->imgpath)}}" alt="{{$pict->title}}">
+                                    <img class="img-responsive" src="{{asset('img/gallery/'.$pict->imgpath)}}" alt="{{$pict->title}}">
                                     <div class="overlay">
-                                       <a class="info lightbox" href="{{asset('img/blog/'.$pict->imgpath)}}"></a>
+                                       <a class="info lightbox" href="{{asset('img/gallery/'.$pict->imgpath)}}"></a>
                                     </div>
                                 </div>
                             </figcaption>
@@ -58,85 +58,4 @@ Gallery
         </div><!-- end row -->  
     </section>
 
-    <!-- <section class="albumSingle padding background-properties">
-        <div class="gallerySection" style="margin-top: 20px; background-color: yellow;">
-            <div class="container-fluid">
-                <div class="col-sm-12">
-                    <div class="content-container clearfix">
-                        <div class="single-photo-album-container col-sm-12">
-                            <div class="row">
-                                <article class="col-sm-4 col-xs-12">
-                                    <figure>
-                                        <figcaption>
-                                            <div class="hovereffect">
-                                                <img class="img-responsive" src="img/blog/1.png" alt="">
-                                                <div class="overlay">
-                                                   <a class="info lightbox" href="img/blog/1.png"></a>
-                                                </div>
-                                            </div>
-                                        </figcaption>
-                                        
-                                    </figure>
-                                </article>
-                                <article class="col-sm-4 col-xs-12">
-                                    <figure>
-                                        <figcaption>
-                                            <div class="hovereffect">
-                                            <img class="img-responsive" src="img/blog/2.jpg" alt="">
-                                            <div class="overlay">
-                                               <a class="info lightbox" href="img/blog/2.jpg"></a>
-                                            </div>
-                                        </div>
-                                        </figcaption>
-                                    </figure>
-                                </article>
-                                <article class="col-sm-4 col-xs-12">
-                                    <figure>
-                                        <figcaption>
-                                            <div class="hovereffect">
-                                            <img class="img-responsive" src="img/blog/3.jpg" alt="">
-                                            <div class="overlay">
-                                               <a class="info lightbox" href="img/blog/3.jpg"></a>
-                                            </div>
-                                        </div>
-                                        </figcaption>
-                                    </figure>
-                                </article>
-                                <article class="col-sm-4 col-xs-12">
-                                    <figure>
-                                        <figcaption>
-                                            <div class="hovereffect">
-                                            <img class="img-responsive" src="img/blog/4.jpg" alt="">
-                                            <div class="overlay">
-                                               <a class="info lightbox" href="img/blog/4.jpg"></a>
-                                            </div>
-                                        </div>
-                                        </figcaption>
-                                    </figure>
-                                </article>
-                                <article class="col-sm-4 col-xs-12">
-                                    
-                                    <figure>
-                                        
-                                        <figcaption>
-                                            <div class="hovereffect">
-                                            <img class="img-responsive" src="img/blog/5.png" alt="">
-                                            <div class="overlay">
-                                               <a class="info lightbox" href="img/blog/5.png"></a>
-                                            </div>
-                                        </div>
-                                        </figcaption>
-                                    </figure>
-                                </article>  
-                                
-                                 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    <!-- =============== END GALLERY SECTION ================ -->
-    
 @endsection

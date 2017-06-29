@@ -5,7 +5,7 @@
 Lvideo - Home
 @stop
 
-@section('nav6')
+@section('nav8')
 class="active"
 @stop
 

@@ -18,13 +18,13 @@ Home
 											<div>
 												<h1>
 								                	<a class="link link-yaku" href="{{URL::Route('music')}}" style="text-decoration: none;">
-								                		@foreach(explode(' ', $sliders->text) as $text) 
+								                		@foreach(explode(' ', $sliders->title) as $text) 
 													    <span>{{$text}}</span>
 													  	@endforeach
 													</a>
 										        </h1>
 										        <div class="rmButton link" style="padding-top: 10px;">
-													<a href="{{URL::Route('shop')}}">{{$sliders->textbutton}}</a>
+													<a href="{{URL::Route('shop')}}">{{$sliders->text}}</a>
 												</div>
 											</div>
 						                </div>
@@ -209,14 +209,14 @@ Home
 
 
 	<!-- =============== START EVENTS SECTION-2 ================ -->
-	@foreach(\App\Nextevent::NextEvent() as $nEvent)
+	@foreach($nevent as $nEvent)
 	<section class="padding hide-section countdownSection background-properties" style="background-image: url({{asset('img/events/'.$nEvent->backgroundpic)}});">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="countdownTitle">
 						<h4>Next Event</h4>
-						<a href="{{$nEvent->link}}"><img src="{{asset('img/events/'.$nEvent->logoeventpic)}}" style="width: 320px; height: 80px;" alt="Event"></a>
+						<a href="{{$nEvent->link}}"><img src="{{asset('img/events/'.$nEvent->logoeventpic)}}" style="width: 320px; height: 80px;" alt=""></a>
 					</div>
 					<div class="sm-countdown sm_content_element sm-style2" id="sm_countdown-19" data-date="{{$nEvent->datemax}}">
 						<div class="displayCounter">
@@ -255,28 +255,59 @@ Home
 
 	<!-- =============== START HOME-BLOG SECTION ================ -->	
 	<section class="padding hide-section background-properties blogHomeSection">	
-		<div class="container">
+		<div class="containerhome">
 			<div class="row">
 				<div class="sectionTitle paddingBottom">
 					<span class="heading-t3"></span>
 					<h2><a href="blogGrid.html">News</a></h2>
 					<span class="heading-b3"></span>
 				</div><!-- end sectionTtile -->
+				
+				@foreach($news as $ne)
+				@if(count($news) < 2)
+				@if($ne->category == 1)
+				<div class="aduh col-sm-4"></div>
 				<div class="aduh col-sm-4">
 					<div class="blogBox">	
-						<div class="imgBox"><img src="img/blog/1.png" alt="box-img"></div>
+						<div class="imgBox">
+							<img src="{{asset('img/news/'.$ne->imgpath)}}" alt="{{$ne->imgpath}}"></div>
 						<div class="blogBoxContent">
 							<div class="blogHeader">
-								<h1><a href="{{URL::route('blogsingle')}}">Gallery Post</a></h1>
+								<h1><a href="{{URL::route('blogsingle',$ne->id)}}">{{$ne->title}}</a></h1>
 							</div>
 							<div class="admin-list clearfix">
 								<ul>
-									<li><a href="#">08 dec 2016</a>&nbsp;/&nbsp;</li>
+									<li><a href="#">{{date('d M Y', strtotime($ne->created_at))}}</a>&nbsp;/&nbsp;</li>
 									<li><a href="https://www.instagram.com/pakudankayu/">Paku & Kayu</a></li>
 								</ul>
 							</div><!-- end admin-list -->
 							<div class="blogParagraph">
-								<p>Chillwave forage Echo Park butcher banh mi, street art cred locavore kale chips. Before they sold out YOLO street art drinking vinegar, umami hella.</p>
+								{!! $ne->text !!}
+							</div><!--end blogParagraph  -->
+							<div class="rmButton">
+								<a href="{{URL::route('blogsingle',$ne->id)}}">Read More</a>
+							</div>			
+						</div><!-- end blogBoxContent -->
+					</div><!-- end blogBox -->
+				</div><!-- end col-sm-4 -->	
+					<div class="aduh col-sm-4"></div>
+				@else
+					<div class="aduh col-sm-4"></div>
+					<div class="aduh col-sm-4">
+					<div class="blogBox">	
+						<div class="videoBox"><iframe width="600" height="410" src="{{$ne->linkvideo}}" frameborder="0" allowfullscreen></iframe></div>
+						<div class="blogBoxContent">
+							<div class="blogHeader">
+								<h1><a href="{{URL::route('blogsingle',$ne->id)}}">{{$ne->title}}</a></h1>
+							</div>
+							<div class="admin-list clearfix">
+								<ul>
+									<li><a href="#">{{date('d M Y', strtotime($ne->created_at))}}</a>&nbsp;/&nbsp;</li>
+									<li><a href="https://www.instagram.com/pakudankayu/">Paku & Kayu</a></li>
+								</ul>
+							</div><!-- end admin-list -->
+							<div class="blogParagraph">
+								{!! $ne->text !!}
 							</div><!--end blogParagraph  -->
 							<div class="rmButton">
 								<a href="#">Read More</a>
@@ -284,21 +315,51 @@ Home
 						</div><!-- end blogBoxContent -->
 					</div><!-- end blogBox -->
 				</div><!-- end col-sm-4 -->	
+				<div class="aduh col-sm-4"></div>
+				@endif
+
+				@else
+
+				@if($ne->category == 1)
 				<div class="aduh col-sm-4">
 					<div class="blogBox">	
-						<div class="videoBox"><iframe width="600" height="410" src="https://www.youtube.com/embed/01jcwGApTWA" frameborder="0" allowfullscreen></iframe></div>
+						<div class="imgBox">
+							<img src="{{asset('img/news/'.$ne->imgpath)}}" alt="{{$ne->imgpath}}" style="height: 240px; width: 100%;"></div>
 						<div class="blogBoxContent">
 							<div class="blogHeader">
-								<h1><a href="blogSingle.html">Video Post</a></h1>
+								<h1><a href="{{URL::route('blogsingle',$ne->id)}}">{{$ne->title}}</a></h1>
 							</div>
 							<div class="admin-list clearfix">
 								<ul>
-									<li><a href="#">28 apr 2016</a>&nbsp;/&nbsp;</li>
+									<li><a href="#">{{date('d M Y', strtotime($ne->created_at))}}</a>&nbsp;/&nbsp;</li>
 									<li><a href="https://www.instagram.com/pakudankayu/">Paku & Kayu</a></li>
 								</ul>
 							</div><!-- end admin-list -->
 							<div class="blogParagraph">
-								<p>Chillwave forage Echo Park butcher banh mi, street art cred locavore kale chips. Before they sold out YOLO street art drinking vinegar, umami hella.</p>
+								{!! $ne->text !!}
+							</div><!--end blogParagraph  -->
+							<div class="rmButton">
+								<a href="{{URL::route('blogsingle',$ne->id)}}">Read More</a>
+							</div>			
+						</div><!-- end blogBoxContent -->
+					</div><!-- end blogBox -->
+				</div><!-- end col-sm-4 -->	
+				@else
+				<div class="aduh col-sm-4">
+					<div class="blogBox">	
+						<div class="videoBox"><iframe width="600" height="380" src="{{$ne->linkvideo}}" frameborder="0" allowfullscreen></iframe></div>
+						<div class="blogBoxContent">
+							<div class="blogHeader">
+								<h1><a href="{{URL::route('blogsingle',$ne->id)}}">{{$ne->title}}</a></h1>
+							</div>
+							<div class="admin-list clearfix">
+								<ul>
+									<li><a href="#">{{date('d M Y', strtotime($ne->created_at))}}</a>&nbsp;/&nbsp;</li>
+									<li><a href="https://www.instagram.com/pakudankayu/">Paku & Kayu</a></li>
+								</ul>
+							</div><!-- end admin-list -->
+							<div class="blogParagraph">
+								<p>{{$ne->text}}</p>
 							</div><!--end blogParagraph  -->
 							<div class="rmButton">
 								<a href="#">Read More</a>
@@ -306,28 +367,9 @@ Home
 						</div><!-- end blogBoxContent -->
 					</div><!-- end blogBox -->
 				</div><!-- end col-sm-4 -->	
-				<div class="aduh col-sm-4">
-					<div class="blogBox">	
-						<div class="soundcloudBox"><iframe height="203" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/286037966&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe></div>
-						<div class="blogBoxContent">
-							<div class="blogHeader">
-								<h1><a href="blogSingle.html">Soundcloud Post</a></h1>
-							</div>
-							<div class="admin-list clearfix">
-								<ul>
-									<li><a href="#">08 dec 2016</a>&nbsp;/&nbsp;</li>
-									<li><a href="https://www.instagram.com/pakudankayu/">Paku & Kayu</a></li>
-								</ul>
-							</div><!-- end admin-list -->
-							<div class="blogParagraph">
-								<p>Chillwave forage Echo Park butcher banh mi, street art cred locavore kale chips. Before they sold out YOLO street art drinking vinegar, umami hella.</p>
-							</div><!--end blogParagraph  -->
-							<div class="rmButton">
-								<a href="#">Read More</a>
-							</div>			
-						</div><!-- end blogBoxContent -->
-					</div><!-- end blogBox -->
-				</div><!-- end col-sm-4 -->	
+				@endif
+				@endif
+				@endforeach
 			</div><!-- end container -->	
 		</div><!-- end row -->	
 	</section>
@@ -337,7 +379,9 @@ Home
 	<div class="quote">
 	  <div class="row">
 	    <div class="col-md-12" >
-	      <div class="carousel slide" data-ride="carousel" id="quote-carousel">
+	    @foreach($quotation as $q)
+	      <div class="carousel slide" data-ride="carousel" id="quote-carousel" style="background-image: url({{asset('img/header/'.$q->imagepathslider)}}); width: 100%; height: 150px;">
+	      @endforeach
 	        <!-- Carousel Slides / Quotes -->
 	        <div class="carousel-inner">
 	          <!-- Quote 1 -->

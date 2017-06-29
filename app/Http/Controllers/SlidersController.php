@@ -29,8 +29,9 @@ class SlidersController extends Controller
         $slider = Slider::find ($req->input('id'));
 
         $slider->imagepathslider = $req->imagepathslider;
+        $slider->title = $req->title;
         $slider->text = $req->text;
-        $slider->textbutton = $req->textbutton;
+        $slider->category = $req->category;
         $slider->save();
         return response()->json($slider);
     }
@@ -55,15 +56,16 @@ class SlidersController extends Controller
     {
         $this->validate($request, [
             'imagepathslider' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'text' => 'required',
-            'textbutton' => 'required',
+            'title' => 'required',
+            'category' => 'required',
         ]);
 
         $slider = new Slider;
 
         $slider->imagepathslider = $request->imagepathslider->getClientOriginalName();
+        $slider->title = $request->title;
         $slider->text = $request->text;
-        $slider->textbutton = $request->textbutton;
+        $slider->category = $request->category;
 
         $slider->save();
         $imageName = $request->file('imagepathslider')->getClientOriginalName();

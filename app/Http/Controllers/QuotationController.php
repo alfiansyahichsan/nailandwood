@@ -59,6 +59,7 @@ class QuotationController extends Controller
         $quote->by = $request->by;
 
         $quote->save();
+
         return redirect()->back()->with('success','Data has been saved successfully');
     }
 

@@ -18,7 +18,7 @@
 					<div class="cartContainer">
 						<div class="myCart">
 							<ul>
-								<li class="cartTitle"><img src="img/shop/cart.png" alt=""><span>0</span></li>
+								<li class="cartTitle"><img src="{{ asset('img/shop/cart.png')}}" alt=""><span>0</span></li>
 							</ul>
 						</div><!-- end myCart -->
 						<div class="cartParent">
@@ -26,7 +26,7 @@
 								<ul>
 									<li>
 										<div class="priceCart">
-											<img src="img/shop/cartContainer.png" alt="">
+											<img src="{{ asset('img/shop/cartContainer.png')}}" alt="">
 											<a href="#">Hoodie T.Brothers <!-- <span><i class="fa fa-times"></i></span> --></a>
 											<p>Price:&nbsp;<span>&pound;15,99</span></p>
 											<p class="quantity">Quantity: <span>1</span></p>
@@ -34,7 +34,7 @@
 									</li>
 									<li>
 										<div class="priceCart">
-											<img src="img/shop/cartContainer.png" alt="">
+											<img src="{{ asset('img/shop/cartContainer.png')}}" alt="">
 											<a href="#">Hoodie T.Brothers <!-- <span><i class="fa fa-times"></i></span> --></a>
 											<p>Price:&nbsp;<span>&pound;15,99</span></p>
 											<p class="quantity">Quantity: <span>1</span></p>
@@ -142,7 +142,7 @@
 			</div>
 			<!-- =============== STAR LOGO ================ -->
 			<div class="logo-container-top">
-				<a href="{{URL::route('home')}}"><img src="img/logo/1.png" alt="pakukayu"></a>
+				<a href="{{URL::route('home')}}"><img src="{{ asset('img/logo/1.png')}}" alt="pakukayu"></a>
 			</div><!-- end logo-container-top -->
 			<!-- =============== END LOGO ================ -->
 		</div><!-- end topHeader -->

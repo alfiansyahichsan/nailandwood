@@ -8,7 +8,7 @@
 	<link rel="icon" href="img/content/pakukayu.png">
 @yield('css')
 	<!-- ========== CSS INCLUDES ========== -->
-	<link rel="stylesheet" href="css/master.css">
+	<link rel="stylesheet" href="{{ asset('css/master.css') }}">
 </head>
 <body>
 	<div class="page-loader">
@@ -21,12 +21,12 @@
 	<!-- ================================================== -->
 	<!-- =============== START JQUERY SCRIPTS ================ -->
 	<!-- ================================================== -->
-	<script src="js/jquery.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="assets/jplayer/jplayer/jquery.jplayer.js"></script>
-	<script src="js/jPlayer.js"></script>
-	<script src="js/plugins.js"></script>
-	<script src="js/main.js"></script>
+	<script src="{{ asset('js/jquery.js') }}"></script>
+	<script src="{{ asset('js/bootstrap.min.js')}}"></script>
+	<script type="text/javascript" src="{{ asset('jplayer/jplayer/jquery.jplayer.js') }}"></script>
+	<script src="{{ asset('js/jPlayer.js')}}"></script>
+	<script src="{{ asset('js/plugins.js')}}"></script>
+	<script src="{{ asset('js/main.js')}}"></script>
 	<!-- <script src="js/app.js"></script>
     <script src="js/script.js"></script> -->
 	<!-- <script src="js/map.js"></script> -->

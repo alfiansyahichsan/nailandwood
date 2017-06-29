@@ -22,9 +22,9 @@ class admin extends Controller
 		return view('admin.musicalbum');
 	}
 
-	public function Acara(){
-		return view('admin.event.events');
-	}
+	// public function Acara(){
+	// 	return view('admin.event.events');
+	// }
 
 	// public function LMusic(){
 	// 	return view('admin.music.musics');
@@ -38,9 +38,9 @@ class admin extends Controller
 	// 	return view('admin.Event.create');
 	// }
 
-	public function News(){
-		return view('admin.news');
-	}
+	// public function News(){
+	// 	return view('admin.news');
+	// }
 
 	public function Videos(){
 		return view('admin.video');

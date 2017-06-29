@@ -14,26 +14,42 @@ class page extends Controller
 
 	public function Home(){
 		$lvideo = \App\Lvideo::get();
-		$slider = \App\Slider::get();
+		$slider = \App\Slider::where('category', 1)->get();
+		$quotation = \App\Slider::where('category', 5)->get();
 		$lmusic = \App\Lmusic::get();
 		$event = \App\Event::orderBy('id', 'DESC')->get();
 		$quote = \App\Quotation::get();
+		$nevent = \App\Nextevent::get();
+		$news = \App\News::get();
 		return view('index', [
                 'lvideo' => $lvideo,
                 'slider' => $slider,
                 'lmusic' => $lmusic,
                 'event' => $event,
-                'quote' => $quote
+                'quote' => $quote,
+                'nevent' => $nevent,
+                'news' => $news,
+                'quotation' => $quotation
 
             ]);
 	}
 
 	public function Biography(){
-		return view('biography');
+		$slider = \App\Slider::where('category', 3)->get();
+		$bio = \App\Biography::get();
+		return view('biography', [
+                'slider' => $slider,
+                'bio' => $bio
+
+            ]);
 	}
 
 	public function Gallery(){
-		return view('gallery');
+		$gallery = \App\Gallery::get();
+		return view('gallery', [
+                'gallery' => $gallery
+
+            ]);
 	}
 
 	public function GallerySingle(){
@@ -49,11 +65,21 @@ class page extends Controller
 	}
 
 	public function Shop(){
-		return view('shop');
+		$slider = \App\Slider::where('category', 4)->get();
+		$shop = \App\Shop::get();
+		return view('shop', [
+                'slider' => $slider,
+                'shop' => $shop
+
+            ]);
 	}
 
-	public function DetailShop(){
-		return view('detailshop');
+	public function Detailshop($param){
+		$shop = \App\Shop::where('id',$param)->first();
+		return view('detailshop', [
+                'shop' => $shop
+
+            ]);
 	}
 
 	public function DetailEvent(){
@@ -61,7 +87,15 @@ class page extends Controller
 	}
 
 	public function Blog(){
-		return view('blog');
+		$slider = \App\Slider::where('category', 2)->get();
+		$about = \App\Aboutblog::get();
+		$blogs = \App\Blog::get();
+		return view('blog', [
+                'slider' => $slider,
+                'blogs' => $blogs,
+                'about' => $about
+
+            ]);
 	}
 
 	public function Video(){
@@ -79,8 +113,22 @@ class page extends Controller
 	public function ViewCart(){
 		return view('viewcart');
 	}
+	
+	public function BlogSingle($param){
+		$news = \App\News::where('id',$param)->first();
+		return view('blogsingle', [
+                'news' => $news
 
-	public function BlogSingle(){
-		return view('blogsingle');
+            ]);
+	}
+
+	public function Blogpersonal($param){
+		$blogs = \App\Blog::where('id',$param)->first();
+		$about = \App\Aboutblog::get();
+		return view('blogpersonal', [
+                'blogs' => $blogs,
+                'about' => $about
+
+            ]);
 	}
 }

@@ -24,10 +24,31 @@
                             <a href="{{URL::Route('acara')}}" @yield("nav4")><i class="fa fa-dashboard fa-fw"></i> Events - Home</a>
                         </li>
                         <li>
-                            <a href="{{URL::Route('quotation')}}" @yield("nav5")><i class="fa fa-dashboard fa-fw"></i> Quotation - Home</a>
+                            <a href="{{URL::Route('nevent')}}" @yield("nav5")><i class="fa fa-dashboard fa-fw"></i> Next Event - Home</a>
+                        </li>
+                        <li>
+                            <a href="{{URL::Route('news')}}" @yield("nav6")><i class="fa fa-dashboard fa-fw"></i> News - Home</a>
+                        </li>
+                        <li>
+                            <a href="{{URL::Route('quotation')}}" @yield("nav7")><i class="fa fa-dashboard fa-fw"></i> Quotation - Home</a>
                         </li> 
                         <li>
-                            <a href="{{URL::Route('lvideo')}}" @yield("nav6")><i class="fa fa-dashboard fa-fw"></i> Video - Home</a>
+                            <a href="{{URL::Route('lvideo')}}" @yield("nav8")><i class="fa fa-dashboard fa-fw"></i> Video - Home/Page</a>
+                        </li> 
+                        <li>
+                            <a href="{{URL::Route('lgallery')}}" @yield("nav9")><i class="fa fa-dashboard fa-fw"></i> Gallery - Page</a>
+                        </li> 
+                        <li>
+                            <a href="{{URL::Route('lblog')}}" @yield("nav10")><i class="fa fa-dashboard fa-fw"></i> Blog - Page</a>
+                        </li> 
+                        <li>
+                            <a href="{{URL::Route('lbiography')}}" @yield("nav11")><i class="fa fa-dashboard fa-fw"></i> Biography - Page</a>
+                        </li>  
+                        <li>
+                            <a href="{{URL::Route('lshop')}}" @yield("nav12")><i class="fa fa-dashboard fa-fw"></i> Shop - Page</a>
+                        </li>
+                        <li>
+                            <a href="{{URL::Route('labout')}}" @yield("nav13")><i class="fa fa-dashboard fa-fw"></i> About - Blog Page</a>
                         </li>                        
                         
                     </ul>

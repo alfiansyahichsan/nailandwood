@@ -13,8 +13,9 @@
     $('.form-horizontal').show();
     $('#fid').val($(this).data('id'));
     $('#a').val($(this).data('imagepathslider'));
-    $('#b').val($(this).data('text'));
-    $('#c').val($(this).data('textbutton'));
+    $('#b').val($(this).data('title'));
+    $('#c').val($(this).data('text'));
+    $('#d').val($(this).data('category'));
     $('#myModal').modal('show');
 });
   $('.modal-footer').on('click', '.edit', function() {
@@ -25,12 +26,13 @@
           '_token': $('input[name=_token]').val(),
           'id': $("#fid").val(),
           'imagepathslider': $("#a").val(),
-          'text': $('#b').val(),
-          'textbutton': $('#c').val()
+          'title': $('#b').val(),
+          'text': $('#c').val(),
+          'category': $('#d').val()
       },
       success: function(data) {
         console.log(data);
-          $('.item' + data.id).replaceWith("<tr class='item" + data.id + "'><td>" + data.id + "</td><td>" + data.imagepathslider + "</td><td>" + data.text + "</td><td>" + data.textbutton + "</td><td><button class='edit-modal btn btn-primary' data-id='" + data.id + "' data-imagepathslider='" + data.imagepathslider + "' data-text='" + data.text + "' data-textbutton='" + data.textbutton + "'><span class='glyphicon glyphicon-edit'> </span> Edit</button> <button class='delete-modal btn btn-danger' data-id='" + data.id + "' data-imagepathslider='" + data.imagepathslider + "' data-text='" + data.text + "' data-textbutton='" + data.textbutton + "'><span class='glyphicon glyphicon-trash'> </span> Delete</button></td></tr>");
+          $('.item' + data.id).replaceWith("<tr class='item" + data.id + "'><td>" + data.id + "</td><td>" + data.imagepathslider + "</td><td>" + data.title + "</td><td>" + data.text + "</td><td>" + data.category + "</td><td><button class='edit-modal btn btn-primary' data-id='" + data.id + "' data-imagepathslider='" + data.imagepathslider + "' data-title='" + data.title + "' data-text='" + data.text + "' data-category='" + data.category + "'><span class='glyphicon glyphicon-edit'> </span> Edit</button> <button class='delete-modal btn btn-danger' data-id='" + data.id + "' data-imagepathslider='" + data.imagepathslider + "' data-title='" + data.title + "' data-text='" + data.text + "' data-category='" + data.category + "'><span class='glyphicon glyphicon-trash'> </span> Delete</button></td></tr>");
 
       }
   });

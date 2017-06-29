@@ -142,7 +142,7 @@
 			</div>
 			<!-- =============== STAR LOGO ================ -->
 			<div class="logo-container-top">
-				<a href="{{URL::route('home')}}"><img src="img/logo/1.png" alt="pakukayu"></a>
+				<a href="{{URL::route('home')}}"><img src="{{ asset('img/logo/1.png')}}" alt="pakukayu"></a>
 			</div><!-- end logo-container-top -->
 			<!-- =============== END LOGO ================ -->
 		</div><!-- end topHeader -->
