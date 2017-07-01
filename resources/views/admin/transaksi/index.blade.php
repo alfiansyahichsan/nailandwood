@@ -2,10 +2,10 @@
 
 
 @section('judul')
-About - Blog Page
+Transaksi
 @stop
 
-@section('nav13')
+@section('nav14')
 class="active"
 @stop
 
@@ -14,14 +14,13 @@ class="active"
 <meta name="_token" content="{!! csrf_token() !!}" />
 <script src="{{asset('js/meeepo.js')}}"></script>
 
-@include("admin.about.ajax")
+@include("admin.transaksi.ajax")
 
 
 
 @endsection
 
 @section('konten')
-<p>Form untuk input gallery pada page Gallery</p>
 @if ($message = Session::get('success'))
 
         <div class="alert alert-success">
@@ -44,66 +43,98 @@ class="active"
         </div>
 
     @endif
-<div class="row">
-    <div class="col-md-12">
-        <div align="left" style=" margin-bottom: 20px;">
-            <button type="button" name="age" id="age" data-toggle="modal" data-target="#add_data_Modal" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add</button>
-        </div>
-    </div>
-</div>
 
+<h4>Transaksi Berhasil</h4>
   <div class="row">
     <div class="table-responsive">
       <table class="table table-borderless" id="table">
-        <tr>
-            <th>ID</th>
-            <th>Image</th>
-            <th>Title</th>
-            <th>Text</th>
-            <th colspan="3">Actions</th>
-        </tr>
+          <tr>
+
+              <th>ID Transaksi</th>
+              <th>Tanggal</th>
+              <th>Nama</th>
+              <th>Alamat</th>
+              <th>Telepon</th>
+              <th>Status</th>
+              <th>GrandTotal</th>
+
+          </tr>
         {{ csrf_field() }}
-        
-        @foreach($about as $ab)
-            <tr class="item{{$ab->id}}">
-                <td>{{ $ab->id }}</td>
-                <td>{{ $ab->imgpath }}</td>
-                <td>{{ $ab->title }}</td>
-                <td>{{ $ab->text }}</td>
-                <td>
 
-                <button class="edit-modal btn btn-primary" data-id="{{$ab->id}}" data-imgpath="{{$ab->imgpath}}" data-title="{{$ab->title}}" data-text="{{$ab->text}}">
-                <span class="glyphicon glyphicon-edit"></span> Edit
-                </button>
-                <button class="delete-modal btn btn-danger" data-id="{{$ab->id}}" data-imgpath="{{$ab->imgpath}}" data-title="{{$ab->title}}" data-text="{{$ab->text}}">
-                <span class="glyphicon glyphicon-trash"></span> Delete
-                </button>
-
-                </td>
-            </tr>
-        @endforeach
+          @foreach(\App\Order::TransaksiSelesai() as $trp)
+              <tr>
+                  <td>{{$trp->id}}</td>
+                  <td>{{date_format($trp->created_at,"d F Y")}}</td>
+                  <td>{{$trp->nama}}</td>
+                  <td>{{$trp->alamat }}</td>
+                  <td>{{$trp->telepon}}</td>
+                  <td>{{$trp->status}}</td>
+                  <td>{{$trp->grandtotal}}</td>
+              </tr>
+          @endforeach
       </table>
     </div>
   </div>
 
+<h4>Transaksi Pending</h4>
+<div class="row">
+    <div class="table-responsive">
+        <table class="table table-borderless" id="table">
+            <tr>
+                <th>ID Transaksi</th>
+                <th>Tanggal</th>
+                <th>Nama</th>
+                <th>Alamat</th>
+                <th>Telepon</th>
+                <th>Status</th>
+                <th>GrandTotal</th>
+                <th colspan="3">Actions</th>
+            </tr>
+            {{ csrf_field() }}
+
+            @foreach(\App\Order::TransaksiPending() as $trp)
+                <tr>
+                    <td>{{$trp->id}}</td>
+                    <td>{{date_format($trp->created_at,"d F Y")}}</td>
+                    <td>{{$trp->nama}}</td>
+                    <td>{{$trp->alamat }}</td>
+                    <td>{{$trp->telepon}}</td>
+                    <td>{{$trp->status}}</td>
+                    <td>{{$trp->grandtotal}}</td>
+                    <td>
+
+                            <a href="{{URL::Route('admin.transaksi.detail', $trp->id)}}">
+                                <button class="btn btn-sm btn-primary">Lihat Bukti</button>
+                            </a>
+
+                    </td>
+
+                </tr>
+            @endforeach
+        </table>
+    </div>
+</div>
 <div id="add_data_Modal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Insert Gallery</h4>
+                <h4 class="modal-title">Insert Bank</h4>
             </div>
             <div class="modal-body" style="padding-left: 30px; padding-right: 35px;">
-                <form action="{{URL::Route('labout')}}" method="POST" id="insert_form" enctype="multipart/form-data">
+                <form action="{{URL::Route('bank')}}" method="POST" id="insert_form" enctype="multipart/form-data">
                 {{ csrf_field() }}
                     <label>Image</label>
                     <input type="file" name="imgpath" id="imgpath" class="form-control" required/>
                     <br />
-                    <label>Title</label>
-                    <input type="text" name="title" id="title" class="form-control" required></input>
+                    <label>Bank</label>
+                    <input type="text" name="bank" id="bank" class="form-control" required></input>
                     <br />
-                    <label>Text</label>
-                    <input type="text" name="text" id="text" class="form-control" required></input>
+                    <label>No Rekening</label>
+                    <input type="number" name="norek" id="norek" class="form-control" required></input>
+                    <br />
+                    <label>Nama</label>
+                    <input type="text" name="nama" id="nama" class="form-control" required></input>
                     <br />
 
                     <input type="submit" value="Submit" class="btn btn-success" />
@@ -140,18 +171,24 @@ class="active"
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="title">Title</label>
+                    <label class="control-label col-sm-2" for="bank">Bank</label>
                     <div class="col-sm-10">
                         <input type="name" class="form-control" id="b">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="text">Text</label>
+                    <label class="control-label col-sm-2" for="norek">No Rek</label>
                     <div class="col-sm-10">
                         <input type="name" class="form-control" id="c">
                     </div>
                 </div>
+              <div class="form-group">
+                  <label class="control-label col-sm-2" for="nama">Nama</label>
+                  <div class="col-sm-10">
+                      <input type="name" class="form-control" id="d">
+                  </div>
+              </div>
 
           </form>
             <div class="deleteContent">

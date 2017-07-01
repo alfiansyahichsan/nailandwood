@@ -2,10 +2,10 @@
 
 
 @section('judul')
-Shop - Page
+Bank
 @stop
 
-@section('nav12')
+@section('nav14')
 class="active"
 @stop
 
@@ -14,21 +14,21 @@ class="active"
 <meta name="_token" content="{!! csrf_token() !!}" />
 <script src="{{asset('js/meeepo.js')}}"></script>
 
-@include("admin.shop.ajax")
+@include("admin.bank.ajax")
 
 
 
 @endsection
 
 @section('konten')
-<p>Form untuk input product pada page shop</p>
+<p>Bank</p>
 @if ($message = Session::get('success'))
 
         <div class="alert alert-success">
 
             <p>{{ $message }}</p>
             <div>
-                <img src="/img/shop/{{ Session::get('imageName') }}" style="max-width: 300px; max-height: 300px; margin-right: 20px;" />               
+                <img src="/img/gallery/{{ Session::get('imageName') }}" style="max-width: 300px; max-height: 300px; margin-right: 20px;" />               
             </div>
 
         </div>
@@ -58,30 +58,26 @@ class="active"
         <tr>
             <th>ID</th>
             <th>Image</th>
-            <th>Title</th>
-            <th>Detail</th>
-            <th>Price</th>
-            <th>Stok</th>
-            <th>Category</th>
+            <th>Bank</th>
+            <th>No Rek</th>
+            <th>Nama</th>
             <th colspan="3">Actions</th>
         </tr>
         {{ csrf_field() }}
         
-        @foreach($shop as $sh)
-            <tr class="item{{$sh->id}}">
-                <td>{{ $sh->id }}</td>
-                <td>{{ $sh->imgpath }}</td>
-                <td>{{ $sh->title }}</td>
-                <td>{{ $sh->detail }}</td>
-                <td>{{ $sh->price }}</td>
-                <td>{{ $sh->stok }}</td>
-                <td>{{ $sh->category }}</td>
+        @foreach($bank as $ab)
+            <tr class="item{{$ab->id_bank}}">
+                <td>{{ $ab->id_bank }}</td>
+                <td><img src="{{asset('img/bank/'.$ab->gambar)  }}" width="300"></td>
+                <td>{{ $ab->bank }}</td>
+                <td>{{ $ab->norek }}</td>
+                <td>{{ $ab->nama }}</td>
                 <td>
 
-                <button class="edit-modal btn btn-primary" data-id="{{$sh->id}}" data-imgpath="{{$sh->imgpath}}" data-title="{{$sh->title}}" data-detail="{{$sh->detail}}" data-price="{{$sh->price}}" data-stok="{{$sh->stok}}" data-category="{{$sh->category}}">
+                <button class="edit-modal btn btn-primary" data-id="{{$ab->id_bank}}" data-imgpath="{{$ab->gambar}}" data-bank="{{$ab->bank}}" data-norek="{{$ab->norek}}" data-nama="{{$ab->nama}}">
                 <span class="glyphicon glyphicon-edit"></span> Edit
                 </button>
-                <button class="delete-modal btn btn-danger" data-id="{{$sh->id}}" data-imgpath="{{$sh->imgpath}}" data-title="{{$sh->title}}" data-detail="{{$sh->detail}}" data-price="{{$sh->price}}" data-stok="{{$sh->stok}}" data-category="{{$sh->category}}">
+                <button class="delete-modal btn btn-danger" data-id="{{$ab->id_bank}}" data-imgpath="{{$ab->gambar}}" data-bank="{{$ab->bank}}" data-norek="{{$ab->norek}}" data-nama="{{$ab->nama}}">
                 <span class="glyphicon glyphicon-trash"></span> Delete
                 </button>
 
@@ -97,32 +93,22 @@ class="active"
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Insert Product</h4>
+                <h4 class="modal-title">Insert Bank</h4>
             </div>
             <div class="modal-body" style="padding-left: 30px; padding-right: 35px;">
-                <form action="/admin/lshop" method="POST" id="insert_form" enctype="multipart/form-data">
+                <form action="{{URL::Route('bank')}}" method="POST" id="insert_form" enctype="multipart/form-data">
                 {{ csrf_field() }}
                     <label>Image</label>
                     <input type="file" name="imgpath" id="imgpath" class="form-control" required/>
                     <br />
-                    <label>Title</label>
-                    <input type="text" name="title" id="title" class="form-control" required></input>
+                    <label>Bank</label>
+                    <input type="text" name="bank" id="bank" class="form-control" required></input>
                     <br />
-                    <label>Detail</label>
-                    <input type="text" name="detail" id="detail" class="form-control" required></input>
+                    <label>No Rekening</label>
+                    <input type="number" name="norek" id="norek" class="form-control" required></input>
                     <br />
-                    <label>Price</label>
-                    <input type="text" name="price" id="price" class="form-control" required></input>
-                    <br />
-                    <label>Stok</label>
-                    <input type="text" name="stok" id="stok" class="form-control" required></input>
-                    <br />
-                    <label>Category</label>
-                    <select type="textbutton" name="category" id="category" class="form-control" required>
-                        <option value="0">--- Select ---</option>
-                        <option value="1">Apparel</option>
-                        <option value="2">CD</option>
-                    </select>
+                    <label>Nama</label>
+                    <input type="text" name="nama" id="nama" class="form-control" required></input>
                     <br />
 
                     <input type="submit" value="Submit" class="btn btn-success" />
@@ -159,47 +145,28 @@ class="active"
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="title">Title</label>
+                    <label class="control-label col-sm-2" for="bank">Bank</label>
                     <div class="col-sm-10">
                         <input type="name" class="form-control" id="b">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="detail">Detail Product</label>
+                    <label class="control-label col-sm-2" for="norek">No Rek</label>
                     <div class="col-sm-10">
                         <input type="name" class="form-control" id="c">
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="price">Price</label>
-                    <div class="col-sm-10">
-                        <input type="name" class="form-control" id="d">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="stok">Stok</label>
-                    <div class="col-sm-10">
-                        <input type="name" class="form-control" id="e">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="category">Category</label>
-                    <div class="col-sm-10">
-                        <select type="textbutton" name="category" id="f" class="form-control" required>
-                        <option value="0">--- Select ---</option>
-                        <option value="1">Apparel</option>
-                        <option value="2">CD</option>
-                    </select>
-                    </div>
-                </div>
+              <div class="form-group">
+                  <label class="control-label col-sm-2" for="nama">Nama</label>
+                  <div class="col-sm-10">
+                      <input type="name" class="form-control" id="d">
+                  </div>
+              </div>
 
           </form>
             <div class="deleteContent">
-            Are you Sure you want to delete <span class="title"></span> ?
+            Are you Sure you want to delete ?
             <span class="hidden id"></span>
           </div>
           <div class="modal-footer">

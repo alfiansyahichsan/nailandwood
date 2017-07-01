@@ -48,6 +48,12 @@
                             <a href="{{URL::Route('lshop')}}" @yield("nav12")><i class="fa fa-dashboard fa-fw"></i> Shop - Page</a>
                         </li>
                         <li>
+                            <a href="{{URL::Route('bank')}}" @yield("nav14")><i class="fa fa-dashboard fa-fw"></i> Bank</a>
+                        </li>
+                        <li>
+                            <a href="{{URL::Route('transaksi')}}" @yield("nav15")><i class="fa fa-dashboard fa-fw"></i> Transaksi</a>
+                        </li>
+                        <li>
                             <a href="{{URL::Route('labout')}}" @yield("nav13")><i class="fa fa-dashboard fa-fw"></i> About - Blog Page</a>
                         </li>                        
                         

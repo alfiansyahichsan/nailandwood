@@ -89,6 +89,13 @@ Route::get('/admin/labout',array('as'=>'labout','uses'=>'AboutblogController@ind
 Route::post ( '/admin/labout/editItem', 'AboutblogController@editItem' );
 Route::post ( '/admin/labout/deleteItem', 'AboutblogController@deleteItem' );
 
+
+Route::resource('admin/bank','BankController');
+Route::get('/admin/bank',array('as'=>'bank','uses'=>'BankController@index'));
+Route::post ( '/admin/bank/editItem', 'BankController@editItem' );
+Route::post ( '/admin/bank/deleteItem', 'BankController@deleteItem' );
+
+
 Route::get('/',array('as'=>'home','uses'=>'page@Home'));
 
 
@@ -109,3 +116,27 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+
+
+// Transaksi
+
+
+Route::get('/cart',array('as' => 'cart', 'uses' => 'CartController@ListCart'));
+Route::post('/cart/tambah', array('as'=>'cart.add','uses'=>'CartController@postAddToCart'));
+Route::post('/cart/tambah/produk/',array('as' => 'cart.tambah', 'uses' => 'CartController@TambahCart'));
+Route::get('/cart/hapus', array('as'=>'cart.hapus','uses'=>'CartController@getDelete'));
+
+
+Route::get('/form',array('as' => 'form', 'uses' => 'CartController@Formdata'));
+Route::post('/form',array('as' => 'buatorder', 'uses' => 'CartController@BuatOrder'));
+Route::get('/order/{telepon}',array('as' => 'order', 'uses' => 'OrderController@GetOrder'));
+Route::get('/order/hapus/{telepon}', array('as'=>'order.hapus','uses'=>'OrderController@GetDelete'));
+Route::post('/order/konfirmasi', array('as'=>'order.konfirmasi','uses'=>'OrderController@KonfirmasiPembayaran'));
+Route::post('/order/',array('as' => 'cariorder', 'uses' => 'OrderController@CariOrder'));
+
+Route::get('/konfirmasi',array('as' => 'konfirmasi', 'uses' => 'PagesController@Konfirmasi'));
+
+
+Route::get('/admin/transaksi',array('as' => 'transaksi', 'uses' => 'TransaksiController@Transaksi'));
+Route::get('/admin/transaksi/{transaksi}',array('as' => 'admin.transaksi.detail', 'uses' => 'TransaksiController@DetailTransaksi'));
+Route::post('/admin/transaksi/',array('as' => 'admin.transaksi.detail.konfirmasi', 'uses' => 'TransaksiController@KonfirmasiTransaksi'));

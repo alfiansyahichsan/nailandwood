@@ -12,31 +12,32 @@ Checkout
 							<span class="heading-t3"></span>
 							<h2><a>Checkout</a></h2>
 							<span class="heading-b3"></span>
-							<p style="padding-top: 50px;">Total Idr 250.000</p>
+							<p style="padding-top: 50px;">Total Rp. {{number_format( \App\Cart::Total(), 0 , '' , '.' )}}</p>
 						</div><!-- end sectionTtile -->
 					</div>
+					{!! Form::open(['method'=>'POST','action'=>'CartController@BuatOrder']) !!}
 					<div class="singleBlogForm col-sm-6" style="margin-top: -50px;">
 						<h3>Your Details</h3>
-							<form action="#" method="post" class="comment-form">
-								<input id="author" name="author" type="text" value="" aria-required="true" required placeholder="Name...">
-								<input id="author" name="author" type="text" value="" aria-required="true" required placeholder="Email...">
-								<input id="author" name="author" type="text" value="" aria-required="true" required placeholder="Phone...">
-							</form>
+
+								<input id="nama" name="nama" type="text" value="" aria-required="true" required placeholder="Nama...">
+								<input id="telepon" name="telepon" type="text" value="" aria-required="true" required placeholder="Telepon...">
+								<input id="email" name="email" type="text" value="" aria-required="true" required placeholder="Email...">
+
 					</div>
 					<div class="singleBlogForm col-sm-6" style="margin-top: -50px;">
 						<h3>Shipping Address</h3>
-							<form action="#" method="post" class="comment-form">
-								<input id="url" name="url" type="text" value="" placeholder="City...">
-								<input id="url" name="url" type="text" value="" placeholder="Address..." required></input>
-								<input id="email" name="email" type="text" value="" aria-required="true" required placeholder="Country...">
-								<textarea name="comment" placeholder="Remarks..." rows="6" required></textarea>
+								<textarea id="alamat" name="alamat" placeholder="Alamat..." rows="6" required></textarea>
+								<input id="kota" name="kota" type="text" value="" placeholder="Kota...">
+								<input id="kodepos" name="kodepos" type="text" value="" placeholder="Kode Pos..." required></input>
+
 								
-							</form>
+
 							<table style="border: none;">
-								<td class="aqura-vips" style="border: none;float:"><a href="">Confirm Your Order</a></td>
+								<td class="aqura-vips" style="border: none;float:"><button class="button btn-continue" title="Continue Shopping" type="submit"><span>Confirm Your Order</span></button></td>
 								<td class="aqura-vips" style="border: none;float: right;"><a href="{{URL::route('viewcart')}}">Back to Cart</a></td>
 							</table>
 					</div>
+					{!! Form::close() !!}
 				</div><!-- end row -->
 			</div><!-- end container -->
 		</div><!-- end tableEvents -->

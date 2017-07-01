@@ -28,15 +28,19 @@
 								<tr><td class="label"><label for="size">Size</label></td><td class="value"><select id="size" name="attribute_size" data-attribute_name="attribute_size"><option value="">Choose an option…</option> <option value="small" class="attached enabled">S</option><option value="medium" class="attached enabled">M</option><option value="large" class="attached enabled">L</option></select></td></tr><tr><td class="label"><label for="colors">Colors</label></td><td class="value"><select id="colors" name="attribute_colors" data-attribute_name="attribute_colors"><option value="">Choose an option…</option> <option value="black" class="attached enabled">Purple</option><option value="yellow" class="attached enabled">Rust-coloured</option></select></td></tr>
 							</tbody>
 						</table>
+                        {!! Form::open(['method'=>'POST','action'=>'CartController@TambahCart']) !!}
+                        <input type="hidden" name="book" value="{{$shop->id}}" />
+
+
 						<div class="product-quantity woocommerce cart shop_table">
                             <div class="quantity buttons_added">
-                                <input type="number" step="1" min="1" name="quantity" value="1" title="Qty" class="input-text qty text">
+                                <input type="number" step="1" min="1" name="amount" value="1" title="Qty" class="input-text qty text">
                             </div>
-                            <button class="single_add_to_cart_button button alt buttonTT">
+                            <button type="submit" class="single_add_to_cart_button button alt buttonTT">
                                 Add to cart
                             </button>
                         </div><!-- end product-quantity -->
-						
+                        {!! Form::close() !!}
 					</div><!-- end productDetails -->
 				</div><!-- end col-sm-4 -->
 			</div><!-- end row -->

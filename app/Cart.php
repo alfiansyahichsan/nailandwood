@@ -2,35 +2,39 @@
 
 namespace App;
 
-class Cart 
-{
-    public $items;
-    public $totalQty = 0;
-    public $totalPrice = 0;
 
-    public function __construct($oldCart)
-    {
-    	if ($oldCart) {
-    		$this->$items = $oldCart->items;
-    		$this->$totalQty = $oldCart->totalQty;
-    		$this->$totalPrice = $oldCart->totalPrice;
-    	}
+use Illuminate\Database\Eloquent\Model;
+use Session;
+
+class Cart  extends Model
+{
+    protected $fillable = array('username','session','id_product','jumlah','total');
+
+    public function Products(){
+
+        return $this->belongsTo('Product','id_product');
+
     }
 
-    public function add($item, $id) {
-    	$storedItem = ['qty' => 0, 'price' => $item->price, 'item' => $item];
-    	if ($this->$item) {
-    		if (array_key_exists($id, $this->items)) {
-    			$storedItem = $this->items[$id];
-    		} else {
-                $this->$items = null;
-            }
-    	}
-    	$storedItem['qty']++;
-    	$storedItem['price'] = $item->price * $storedItem['qty'];
-    	$this->items[$id] = $storedItem;
-    	$this->totalQty++;
-    	$this->totalPrice += $item->price;
+    static function JumlahItem()
+    {
+        $item = Cart::where('session',Session::getId())->count();
+//        $jumlah = 5;
+        return $item;
+    }
+
+    static function Total()
+    {
+        $item = Cart::where('session',Session::getId())->sum('total');
+//        $jumlah = 5;
+        return $item;
+    }
+
+    static function Item()
+    {
+        $item = Cart::where('session',Session::getId())->get();
+//        $jumlah = 5;
+        return $item;
     }
 }
 

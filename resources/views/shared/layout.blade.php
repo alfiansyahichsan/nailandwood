@@ -24,34 +24,31 @@
 						<div class="cartParent">
 							<div class="cartItems">
 								<ul>
+                                    <?php foreach (\App\Cart::Item() as $item) { ?>
 									<li>
 										<div class="priceCart">
-											<img src="img/shop/cartContainer.png" alt="">
-											<a href="#">Hoodie T.Brothers <!-- <span><i class="fa fa-times"></i></span> --></a>
-											<p>Price:&nbsp;<span>&pound;15,99</span></p>
-											<p class="quantity">Quantity: <span>1</span></p>
+											<img src="{{asset('/img/shop/'.\App\Shop::GambarProduk($item->id))}}" alt="">
+											<a href="#">{{\App\Shop::NamaProduk($item->id)}}}}</a>
+											<p>Price:&nbsp;<span>Rp. {{number_format( \App\Shop::HargaProduk($item->id_product), 0 , '' , '.' )}}</span></p>
+											<p class="quantity">Quantity: <span>{{$item->jumlah}}</span></p>
 										</div>
 									</li>
-									<li>
-										<div class="priceCart">
-											<img src="img/shop/cartContainer.png" alt="">
-											<a href="#">Hoodie T.Brothers <!-- <span><i class="fa fa-times"></i></span> --></a>
-											<p>Price:&nbsp;<span>&pound;15,99</span></p>
-											<p class="quantity">Quantity: <span>1</span></p>
-										</div>						
-									</li>
+                                        <?php } ?>
+
 									<li>
 										<div class="total">
-											<a href="#">Sub Total<span>31,98&pound;</span></a>
+											<a href="#">Sub Total<span>Rp. {{number_format( \App\Cart::Total(), 0 , '' , '.' )}} </span></a>
 										</div>
 									</li>
 								</ul>
+								@if(count(\App\Cart::Item())>0)
 								<button type="submit" class="single_add_to_cart_button button alt buttonView">
 									<a href="{{URL::route('viewcart')}}">View Cart</a>
 								</button>
 								<button type="submit" class="single_add_to_cart_button button alt buttonCheck">
 									<a href="{{URL::route('checkout')}}">Checkout</a>
 								</button>
+								@endif
 							</div><!-- end cartItems -->
 						</div><!-- end cartParent -->
 					</div><!--end cartContainer  -->
