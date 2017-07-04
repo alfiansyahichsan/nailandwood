@@ -5,7 +5,7 @@
 Blog - Home
 @stop
 
-@section('nav10')
+@section('nav11')
 class="active"
 @stop
 
@@ -15,28 +15,7 @@ class="active"
 <script src="{{asset('js/meeepo.js')}}"></script>
 <script type="text/javascript" src="{{asset('/ckeditor/ckeditor.js')}}"></script>
 <script>
-     CKEDITOR.replace( 'editor1' );
-     CKEDITOR.config.editor = [
-        { name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
-        { name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
-        { name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] },
-        { name: 'forms', groups: [ 'forms' ] },
-        
-        { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
-        { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] },
-        { name: 'links', groups: [ 'links' ] },
-        { name: 'insert', groups: [ 'insert' ] },
-        { name: 'styles', groups: [ 'styles' ] },
-        { name: 'colors', groups: [ 'colors' ] },
-        { name: 'tools', groups: [ 'tools' ] },
-        { name: 'others', groups: [ 'others' ] },
-        { name: 'about', groups: [ 'about' ] }
-    ];
-
-    CKEDITOR.config.removeButtons = 'Save,blwPage,Preview,Print,Templates,PasteText,PasteFromWord,Replace,Find,SelectAll,Scayt,Form,Checkbox,Radio,TextField,Button,Textarea,Select,ImageButton,HiddenField,RemoveFormat,Outdent,Indent,CreateDiv,BidiLtr,BidiRtl,Language,Anchor,Image,Flash,Table,HorizontalRule,Iframe,PageBreak,Format,Maximize,About,ShowBlocks';
-
-</script>
-<script>
+    CKEDITOR.replace( 'editor1' );
      CKEDITOR.replace( 'editor2' );
      CKEDITOR.config.editor = [
         { name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
@@ -113,10 +92,10 @@ class="active"
         @foreach($blogs as $bl)
             <tr class="item{{$bl->id}}">
                 <td>{{ $bl->id }}</td>
-                <td>{{ $bl->imgpath }}
-                <td>{{ $bl->linkvideo }}
-                <td>{{ $bl->title }}</td>
-                <td>{{ $bl->text }}</td>
+                <td>{!! str_limit($bl->imgpath,20) !!}</td>
+                <td>{!! str_limit($bl->linkvideo,20) !!}</td>
+                <td>{!! str_limit($bl->title,20) !!}</td>
+                <td>{!! str_limit($bl->text,20) !!}</td>
                 <td>{{ $bl->category }}</td>
                 <td>
 
@@ -139,13 +118,13 @@ class="active"
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Insert Data Music</h4>
+                <h4 class="modal-title">Insert Data Blog</h4>
             </div>
             <div class="modal-body" style="padding-left: 30px; padding-right: 35px;">
                 <form action="/admin/blog" method="POST" enctype="multipart/form-data" id="insert_form">
                 {{ csrf_field() }}
                     <label>Image</label>
-                    <input type="file" name="imgpath" id="imgpath" class="form-control" />
+                    <input type="file" name="imgpath" id="imgpath" class="form-control" onChange="validateJPG(this)" />
                     <br />
                     <label>Link Video</label>
                     <input type="text" name="linkvideo" id="linkvideo" class="form-control" />
@@ -154,7 +133,7 @@ class="active"
                     <input type="text" name="title" id="title" class="form-control" required></input>
                     <br />
                     <label>Text</label>
-                    <textarea type="text" name="text" id="text" class="form-control" required></textarea>
+                    <textarea type="text" name="text" id="editor1" class="form-control" required></textarea>
                     <br />
                     <label>Category</label>
                     <select type="textbutton" name="category" id="category" class="form-control" required>
@@ -214,7 +193,7 @@ class="active"
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="text">Text</label>
                     <div class="col-sm-10">
-                        <input type="name" class="form-control" id="d"> 
+                        <input type="name" class="form-control" id="editor2"> 
                     </div>
                 </div>
 

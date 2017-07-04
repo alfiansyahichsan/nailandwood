@@ -5,7 +5,7 @@
 Lvideo - Home
 @stop
 
-@section('nav8')
+@section('nav9')
 class="active"
 @stop
 
@@ -13,7 +13,30 @@ class="active"
 @section('js')
 <meta name="_token" content="{!! csrf_token() !!}" />
 <script src="{{asset('js/meeepo.js')}}"></script>
+<script type="text/javascript" src="{{asset('/ckeditor/ckeditor.js')}}"></script>
+<script>
+     CKEDITOR.replace( 'editor1' );
+     CKEDITOR.replace( 'editor2' );
+     CKEDITOR.config.editor = [
+        { name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
+        { name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
+        { name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] },
+        { name: 'forms', groups: [ 'forms' ] },
+        
+        { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+        { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] },
+        { name: 'links', groups: [ 'links' ] },
+        { name: 'insert', groups: [ 'insert' ] },
+        { name: 'styles', groups: [ 'styles' ] },
+        { name: 'colors', groups: [ 'colors' ] },
+        { name: 'tools', groups: [ 'tools' ] },
+        { name: 'others', groups: [ 'others' ] },
+        { name: 'about', groups: [ 'about' ] }
+    ];
 
+    CKEDITOR.config.removeButtons = 'Save,NewPage,Preview,Print,Templates,PasteText,PasteFromWord,Replace,Find,SelectAll,Scayt,Form,Checkbox,Radio,TextField,Button,Textarea,Select,ImageButton,HiddenField,RemoveFormat,Outdent,Indent,CreateDiv,BidiLtr,BidiRtl,Language,Anchor,Image,Flash,Table,HorizontalRule,Iframe,PageBreak,Format,Maximize,About,ShowBlocks';
+
+</script>
 @include("admin.video.ajax")
 
 
@@ -64,9 +87,9 @@ class="active"
         @foreach($lvideo as $v)
           <tr class="item{{$v->id}}">
               <td>{{ $v->id }}</td>
-              <td>{{ $v->link }}</td>
-              <td>{{ $v->title }}</td>
-              <td>{{ $v->story }}</td>
+              <td>{!! str_limit($v->link,20) !!}</td>
+              <td>{!! str_limit($v->title,20) !!}</td>
+              <td>{!! str_limit($v->story,20) !!}</td>
               <td>
 
                 <button class="edit-modal btn btn-primary" data-id="{{$v->id}}" data-link="{{$v->link}}" data-title="{{$v->title}}" data-story="{{$v->story}}">
@@ -100,7 +123,7 @@ class="active"
                     <input type="text" name="title" id="title" class="form-control" required></input>
                     <br />
                     <label>Story</label>
-                    <input type="text" name="story" id="story" class="form-control" required></input>
+                    <textarea type="text" name="story" id="editor1" class="form-control" required></textarea>
                     <br />
 
                     <input type="submit" value="Submit" class="btn btn-success" />
@@ -146,7 +169,7 @@ class="active"
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="story">Story</label>
                     <div class="col-sm-10">
-                        <input type="name" class="form-control" id="d">
+                        <input type="name" class="form-control" id="editor2">
                     </div>
                 </div>
 

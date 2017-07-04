@@ -14,7 +14,7 @@
     $('#fid').val($(this).data('id'));
     $('#q').val($(this).data('link'));
     $('#t').val($(this).data('title'));
-    $('#d').val($(this).data('story'));
+    CKEDITOR.instances.editor2.setData($(this).data('story'));
     $('#myModal').modal('show');
 });
   $('.modal-footer').on('click', '.edit', function() {
@@ -26,7 +26,7 @@
           'id': $("#fid").val(),
           'link': $("#q").val(),
           'title': $("#t").val(),
-          'story': $('#d').val()
+          'story': CKEDITOR.instances.editor2.getData($(this).data('story'))
       },
       success: function(data) {
         console.log(data);

@@ -18,7 +18,7 @@ class CreateBlogsTable extends Migration
             $table->string('imgpath')->nullable();
             $table->string('linkvideo')->nullable();
             $table->string('title');
-            $table->string('text');
+            $table->text('text');
             $table->string('category');
             $table->timestamps();
         });

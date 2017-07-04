@@ -84,6 +84,11 @@ Route::post ( '/admin/lshop/deleteItem', 'ShopController@deleteItem' );
 
 Route::get('/shop/{param}',array('as'=>'detailshop','uses'=>'page@Detailshop'));
 
+Route::resource('admin/lplaylist','PlaylistController');
+Route::get('/admin/lplaylist',array('as'=>'lplaylist','uses'=>'PlaylistController@index'));
+Route::post ( '/admin/lplaylist/editItem', 'PlaylistController@editItem' );
+Route::post ( '/admin/lplaylist/deleteItem', 'PlaylistController@deleteItem' );
+
 Route::resource('admin/labout','AboutblogController');
 Route::get('/admin/labout',array('as'=>'labout','uses'=>'AboutblogController@index'));
 Route::post ( '/admin/labout/editItem', 'AboutblogController@editItem' );

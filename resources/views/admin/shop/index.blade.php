@@ -5,7 +5,7 @@
 Shop - Page
 @stop
 
-@section('nav12')
+@section('nav13')
 class="active"
 @stop
 
@@ -13,7 +13,30 @@ class="active"
 @section('js')
 <meta name="_token" content="{!! csrf_token() !!}" />
 <script src="{{asset('js/meeepo.js')}}"></script>
+<script type="text/javascript" src="{{asset('/ckeditor/ckeditor.js')}}"></script>
+<script>
+     CKEDITOR.replace( 'editor1' );
+     CKEDITOR.replace( 'editor2' );
+     CKEDITOR.config.editor = [
+        { name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
+        { name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
+        { name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] },
+        { name: 'forms', groups: [ 'forms' ] },
+        
+        { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+        { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] },
+        { name: 'links', groups: [ 'links' ] },
+        { name: 'insert', groups: [ 'insert' ] },
+        { name: 'styles', groups: [ 'styles' ] },
+        { name: 'colors', groups: [ 'colors' ] },
+        { name: 'tools', groups: [ 'tools' ] },
+        { name: 'others', groups: [ 'others' ] },
+        { name: 'about', groups: [ 'about' ] }
+    ];
 
+    CKEDITOR.config.removeButtons = 'Save,NewPage,Preview,Print,Templates,PasteText,PasteFromWord,Replace,Find,SelectAll,Scayt,Form,Checkbox,Radio,TextField,Button,Textarea,Select,ImageButton,HiddenField,RemoveFormat,Outdent,Indent,CreateDiv,BidiLtr,BidiRtl,Language,Anchor,Image,Flash,Table,HorizontalRule,Iframe,PageBreak,Format,Maximize,About,ShowBlocks';
+
+</script>
 @include("admin.shop.ajax")
 
 
@@ -72,7 +95,7 @@ class="active"
                 <td>{{ $sh->id }}</td>
                 <td>{{ $sh->imgpath }}</td>
                 <td>{{ $sh->title }}</td>
-                <td>{{ $sh->detail }}</td>
+                <td>{!! str_limit($sh->detail,20) !!}</td>
                 <td>{{ $sh->price }}</td>
                 <td>{{ $sh->stok }}</td>
                 <td>{{ $sh->category }}</td>
@@ -103,13 +126,13 @@ class="active"
                 <form action="/admin/lshop" method="POST" id="insert_form" enctype="multipart/form-data">
                 {{ csrf_field() }}
                     <label>Image</label>
-                    <input type="file" name="imgpath" id="imgpath" class="form-control" required/>
+                    <input type="file" name="imgpath" id="imgpath" class="form-control" onChange="validateJPG(this)" required/>
                     <br />
                     <label>Title</label>
                     <input type="text" name="title" id="title" class="form-control" required></input>
                     <br />
                     <label>Detail</label>
-                    <input type="text" name="detail" id="detail" class="form-control" required></input>
+                    <textarea type="text" name="detail" id="editor1" class="form-control" required></textarea>
                     <br />
                     <label>Price</label>
                     <input type="text" name="price" id="price" class="form-control" required></input>
@@ -168,7 +191,7 @@ class="active"
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="detail">Detail Product</label>
                     <div class="col-sm-10">
-                        <input type="name" class="form-control" id="c">
+                        <textarea type="name" class="form-control" id="editor2"></textarea>
                     </div>
                 </div>
 

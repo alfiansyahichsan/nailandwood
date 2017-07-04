@@ -5,7 +5,7 @@
 Gallery - Page
 @stop
 
-@section('nav9')
+@section('nav10')
 class="active"
 @stop
 
@@ -66,8 +66,8 @@ class="active"
         @foreach($gallery as $g)
             <tr class="item{{$g->id}}">
                 <td>{{ $g->id }}</td>
-                <td>{{ $g->imgpath }}</td>
-                <td>{{ $g->title }}</td>
+                <td>{!! str_limit($g->imgpath,20) !!}</td>
+                <td>{!! str_limit($g->title,20) !!}</td>
                 <td>
 
                 <button class="edit-modal btn btn-primary" data-id="{{$g->id}}" data-imgpath="{{$g->imgpath}}" data-title="{{$g->title}}">
@@ -95,7 +95,7 @@ class="active"
                 <form action="/admin/gallery" method="POST" id="insert_form" enctype="multipart/form-data">
                 {{ csrf_field() }}
                     <label>Image</label>
-                    <input type="file" name="imgpath" id="imgpath" class="form-control" required/>
+                    <input type="file" name="imgpath" id="imgpath" class="form-control" onChange="validateJPG(this)" required/>
                     <br />
                     <label>Title</label>
                     <input type="text" name="title" id="title" class="form-control" required></input>

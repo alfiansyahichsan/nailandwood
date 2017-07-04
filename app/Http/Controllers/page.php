@@ -21,6 +21,7 @@ class page extends Controller
 		$quote = \App\Quotation::get();
 		$nevent = \App\Nextevent::get();
 		$news = \App\News::get();
+		$playlist = \App\Playlists::get();
 		return view('index', [
                 'lvideo' => $lvideo,
                 'slider' => $slider,
@@ -29,6 +30,7 @@ class page extends Controller
                 'quote' => $quote,
                 'nevent' => $nevent,
                 'news' => $news,
+                'playlist' => $playlist,
                 'quotation' => $quotation
 
             ]);

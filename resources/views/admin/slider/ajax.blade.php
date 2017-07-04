@@ -14,7 +14,7 @@
     $('#fid').val($(this).data('id'));
     $('#a').val($(this).data('imagepathslider'));
     $('#b').val($(this).data('title'));
-    $('#c').val($(this).data('text'));
+    CKEDITOR.instances.editor2.setData($(this).data('text'));
     $('#d').val($(this).data('category'));
     $('#myModal').modal('show');
 });
@@ -27,7 +27,7 @@
           'id': $("#fid").val(),
           'imagepathslider': $("#a").val(),
           'title': $('#b').val(),
-          'text': $('#c').val(),
+          'text': CKEDITOR.instances.editor2.getData($(this).data('text')),
           'category': $('#d').val()
       },
       success: function(data) {
@@ -68,5 +68,20 @@ $('.modal-footer').on('click', '.delete', function() {
   });
 });
 
+function validateJPG(objFileControl) {
+     var file = objFileControl.value;
+     var len = file.length;
+     var size = objFileControl.files[0].size;
+     var ext = file.slice(len - 4, len);
+
+     if (ext.toUpperCase() != ".JPG" && ext.toUpperCase() != ".PNG" && ext.toUpperCase() != ".JPEG") {
+         alert("Only picture files allowed.");
+         objFileControl.value=""
+     } else if (size > 2000000) {
+         alert("File size maximum 2MB");
+        objFileControl.value=""
+     }
+  }
+  
 </script>
 

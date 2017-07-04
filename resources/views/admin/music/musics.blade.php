@@ -5,7 +5,7 @@
 Music - Home
 @stop
 
-@section('nav3')
+@section('nav4')
 class="active"
 @stop
 
@@ -100,10 +100,10 @@ class="active"
                 <form action="/admin/lmusic" method="POST" enctype="multipart/form-data" id="insert_form">
                 {{ csrf_field() }}
                     <label>Image Path</label>
-                    <input type="file" name="imgpath" id="imgpath" class="form-control" />
+                    <input type="file" name="imgpath" id="imgpath" class="form-control" onChange="validateJPG(this)" />
                     <br />
                     <label>Image Path 2</label>
-                    <input type="file" name="imgpath2" id="imgpath2" class="form-control" />
+                    <input type="file" name="imgpath2" id="imgpath2" class="form-control" onChange="validateJPG(this)" />
                     <br />
                     <label>Title</label>
                     <input type="title" name="title" id="title" class="form-control" required></input>

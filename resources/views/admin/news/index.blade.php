@@ -5,7 +5,7 @@
 News - Home
 @stop
 
-@section('nav6')
+@section('nav7')
 class="active"
 @stop
 
@@ -16,27 +16,6 @@ class="active"
 <script type="text/javascript" src="{{asset('/ckeditor/ckeditor.js')}}"></script>
 <script>
      CKEDITOR.replace( 'editor1' );
-     CKEDITOR.config.editor = [
-        { name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
-        { name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
-        { name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] },
-        { name: 'forms', groups: [ 'forms' ] },
-        
-        { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
-        { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] },
-        { name: 'links', groups: [ 'links' ] },
-        { name: 'insert', groups: [ 'insert' ] },
-        { name: 'styles', groups: [ 'styles' ] },
-        { name: 'colors', groups: [ 'colors' ] },
-        { name: 'tools', groups: [ 'tools' ] },
-        { name: 'others', groups: [ 'others' ] },
-        { name: 'about', groups: [ 'about' ] }
-    ];
-
-    CKEDITOR.config.removeButtons = 'Save,NewPage,Preview,Print,Templates,PasteText,PasteFromWord,Replace,Find,SelectAll,Scayt,Form,Checkbox,Radio,TextField,Button,Textarea,Select,ImageButton,HiddenField,RemoveFormat,Outdent,Indent,CreateDiv,BidiLtr,BidiRtl,Language,Anchor,Image,Flash,Table,HorizontalRule,Iframe,PageBreak,Format,Maximize,About,ShowBlocks';
-
-</script>
-<script>
      CKEDITOR.replace( 'editor2' );
      CKEDITOR.config.editor = [
         { name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
@@ -113,10 +92,10 @@ class="active"
         @foreach($news as $ne)
             <tr class="item{{$ne->id}}">
                 <td>{{ $ne->id }}</td>
-                <td>{{ $ne->imgpath }}
-                <td>{{ $ne->linkvideo }}
-                <td>{{ $ne->title }}</td>
-                <td>{{ $ne->text }}</td>
+                <td>{!! str_limit($ne->imgpath,20) !!}</td>
+                <td>{!! str_limit($ne->linkvideo,20) !!}</td>
+                <td>{!! str_limit($ne->title,20) !!}</td>
+                <td>{!! str_limit($ne->text,20) !!}</td>
                 <td>{{ $ne->category }}</td>
                 <td>
 
@@ -145,7 +124,7 @@ class="active"
                 <form action="/admin/news" method="POST" enctype="multipart/form-data" id="insert_form">
                 {{ csrf_field() }}
                     <label>Image</label>
-                    <input type="file" name="imgpath" id="imgpath" class="form-control" />
+                    <input type="file" name="imgpath" id="imgpath" class="form-control" onChange="validateJPG(this)"/>
                     <br />
                     <label>Link Video</label>
                     <input type="text" name="linkvideo" id="linkvideo" class="form-control" />
@@ -213,7 +192,7 @@ class="active"
 
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="text">Text</label>
-                    <div id="d" class="col-sm-10">
+                    <div class="col-sm-10">
                         <textarea type="text" name="text" id="editor2" class="form-control" required></textarea> 
                     </div>
                 </div>
@@ -221,7 +200,7 @@ class="active"
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="category">Category</label>
                     <div class="col-sm-10">
-                    <select type="textbutton" name="category" id="e" class="form-control" required>
+                    <select type="textbutton" name="category" id="e" class="form-control" required disabled="">
                         <option value="0">--- Select ---</option>
                         <option value="1">Image Post</option>
                         <option value="2">Video Post</option>

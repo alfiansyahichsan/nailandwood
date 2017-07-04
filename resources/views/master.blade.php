@@ -5,7 +5,7 @@
 	<meta name="HandheldFriendly" content="true" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<title>@yield('halaman') - Paku dan Kayu | Indonesia</title>
-	<link rel="icon" href="img/content/pakukayu.png">
+	<link rel="icon" href="{{ asset('img/content/pakukayu.png')}}">
 @yield('css')
 	<!-- ========== CSS INCLUDES ========== -->
 	<link rel="stylesheet" href="{{ asset('css/master.css') }}">

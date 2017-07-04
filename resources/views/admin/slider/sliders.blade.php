@@ -13,7 +13,30 @@ class="active"
 @section('js')
 <meta name="_token" content="{!! csrf_token() !!}" />
 <script src="{{asset('js/meeepo.js')}}"></script>
+<script type="text/javascript" src="{{asset('/ckeditor/ckeditor.js')}}"></script>
+<script>
+     CKEDITOR.replace( 'editor1' );
+     CKEDITOR.replace( 'editor2' );
+     CKEDITOR.config.editor = [
+        { name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
+        { name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
+        { name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] },
+        { name: 'forms', groups: [ 'forms' ] },
+        
+        { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+        { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] },
+        { name: 'links', groups: [ 'links' ] },
+        { name: 'insert', groups: [ 'insert' ] },
+        { name: 'styles', groups: [ 'styles' ] },
+        { name: 'colors', groups: [ 'colors' ] },
+        { name: 'tools', groups: [ 'tools' ] },
+        { name: 'others', groups: [ 'others' ] },
+        { name: 'about', groups: [ 'about' ] }
+    ];
 
+    CKEDITOR.config.removeButtons = 'Save,NewPage,Preview,Print,Templates,PasteText,PasteFromWord,Replace,Find,SelectAll,Scayt,Form,Checkbox,Radio,TextField,Button,Textarea,Select,ImageButton,HiddenField,RemoveFormat,Outdent,Indent,CreateDiv,BidiLtr,BidiRtl,Language,Anchor,Image,Flash,Table,HorizontalRule,Iframe,PageBreak,Format,Maximize,About,ShowBlocks';
+
+</script>
 @include("admin.slider.ajax")
 
 
@@ -69,8 +92,8 @@ class="active"
             <tr class="item{{$sliders->id}}">
                 <td>{{ $sliders->id }}</td>
                 <td>{{ $sliders->imagepathslider }}</td>
-                <td>{{ $sliders->title }}</td>
-                <td>{{ $sliders->text }}</td>
+                <td>{!! str_limit($sliders->title,20) !!}</td>
+                <td>{!! str_limit($sliders->text,20) !!}</td>
                 <td>{{ $sliders->category }}</td>
                 <td>
 
@@ -99,13 +122,13 @@ class="active"
                 <form action="/admin/slider" method="POST" id="insert_form" enctype="multipart/form-data">
                 {{ csrf_field() }}
                     <label>Image</label>
-                    <input type="file" name="imagepathslider" id="imagepathslider" class="form-control" required/>
+                    <input type="file" name="imagepathslider" id="imagepathslider" class="form-control" onChange="validateJPG(this)" required/>
                     <br />
                     <label>Title</label>
                     <input type="title" name="title" id="title" class="form-control" required></input>
                     <br />
                     <label>Text</label>
-                    <textarea type="text" name="text" id="text" class="form-control"></textarea>
+                    <textarea type="text" name="text" id="editor1" class="form-control"></textarea>
                     <br />
                     <label>Category</label>
                     <select type="textbutton" name="category" id="category" class="form-control" required>
@@ -161,7 +184,7 @@ class="active"
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="text">Text</label>
                     <div class="col-sm-10">
-                        <textarea type="name" class="form-control" id="c"></textarea> 
+                        <textarea type="name" class="form-control" id="editor2"></textarea> 
                     </div>
                 </div>
 

@@ -16,7 +16,7 @@ Shop
                                 {{$s->title}}
                             </h1>
                             <p>
-                                {{$s->text}}
+                                {!!$s->text!!}
                             </p>
                             <a href="#content" data-easing="easeInOutQuint" data-scroll="" data-speed="900" data-url="false">
                                 View More <i class="fa fa-angle-down"></i>

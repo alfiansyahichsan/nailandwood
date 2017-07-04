@@ -15,7 +15,7 @@ class CreateBiographysTable extends Migration
     {
         Schema::create('biographys', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('text');
+            $table->text('text');
             $table->string('alamat');
             $table->string('email');
             $table->string('phone');

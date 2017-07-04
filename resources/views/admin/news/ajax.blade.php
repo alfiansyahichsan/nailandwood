@@ -2,7 +2,7 @@
 <script>
     // Edit Data (Modal and function edit data)
     $(document).on('click', '.edit-modal', function() {
-    $('#footer_action_button').text(" Update");
+        $('#footer_action_button').text(" Update");
     $('#footer_action_button').addClass('glyphicon-check');
     $('#footer_action_button').removeClass('glyphicon-trash');
     $('.actionBtn').addClass('btn-success');
@@ -15,9 +15,10 @@
     $('#a').val($(this).data('imgpath'));
     $('#b').val($(this).data('linkvideo'));
     $('#c').val($(this).data('title'));
-    $('#d').val($(this).data('text'));
+    CKEDITOR.instances.editor2.setData($(this).data('text'));
     $('#e').val($(this).data('category'));
     $('#myModal').modal('show');
+    
 });
   $('.modal-footer').on('click', '.edit', function() {
   $.ajax({
@@ -29,7 +30,7 @@
           'imgpath': $("#a").val(),
           'linkvideo': $('#b').val(),
           'title': $('#c').val(),
-          'text': $('#d').val(),
+          'text': CKEDITOR.instances.editor2.getData($(this).data('text')),
           'category': $('#e').val()
       },
       success: function(data) {
@@ -68,6 +69,21 @@ $('.modal-footer').on('click', '.delete', function() {
     }
   });
 });
+
+function validateJPG(objFileControl) {
+     var file = objFileControl.value;
+     var len = file.length;
+     var size = objFileControl.files[0].size;
+     var ext = file.slice(len - 4, len);
+
+     if (ext.toUpperCase() != ".JPG" && ext.toUpperCase() != ".PNG" && ext.toUpperCase() != ".JPEG") {
+         alert("Only picture files allowed.");
+         objFileControl.value=""
+     } else if (size > 2000000) {
+         alert("File size maximum 2MB");
+        objFileControl.value=""
+     }
+  }
 
 </script>
 

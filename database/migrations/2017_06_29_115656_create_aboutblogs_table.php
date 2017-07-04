@@ -17,7 +17,7 @@ class CreateAboutblogsTable extends Migration
             $table->increments('id');
             $table->string('imgpath');
             $table->string('title');
-            $table->string('text');
+            $table->text('text');
             $table->timestamps();
         });
     }

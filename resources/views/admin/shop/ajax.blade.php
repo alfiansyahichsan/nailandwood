@@ -14,7 +14,7 @@
     $('#fid').val($(this).data('id'));
     $('#a').val($(this).data('imgpath'));
     $('#b').val($(this).data('title'));
-    $('#c').val($(this).data('detail'));
+    CKEDITOR.instances.editor2.setData($(this).data('detail'));
     $('#d').val($(this).data('price'));
     $('#e').val($(this).data('stok'));
     $('#f').val($(this).data('category'));
@@ -29,7 +29,7 @@
           'id': $("#fid").val(),
           'imgpath': $("#a").val(),
           'title': $('#b').val(),
-          'detail': $("#c").val(),
+          'detail': CKEDITOR.instances.editor2.getData($(this).data('detail')),
           'price': $('#d').val(),
           'stok': $("#e").val(),
           'category': $('#f').val()
@@ -71,6 +71,21 @@ $('.modal-footer').on('click', '.delete', function() {
     }
   });
 });
+
+function validateJPG(objFileControl) {
+     var file = objFileControl.value;
+     var len = file.length;
+     var size = objFileControl.files[0].size;
+     var ext = file.slice(len - 4, len);
+
+     if (ext.toUpperCase() != ".JPG" && ext.toUpperCase() != ".PNG" && ext.toUpperCase() != ".JPEG") {
+         alert("Only picture files allowed.");
+         objFileControl.value=""
+     } else if (size > 2000000) {
+         alert("File size maximum 2MB");
+        objFileControl.value=""
+     }
+  }
 
 </script>
 

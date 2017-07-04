@@ -18,7 +18,7 @@
   src: url(../fonts/codeLight.otf);
 }
 .padding {
-  padding: 18rem 0;
+  padding: 15rem 0;
 }
 .paddingBottom {
   padding-bottom: 8rem;
@@ -11544,7 +11544,7 @@ body > div.fusion-fullwidth.fullwidth-box.fusion-fullwidth-2.fusion-parallax-lef
     height: 0 !important;
   }
   .padding {
-    padding: 12rem 0!important;
+    padding: 8rem 0!important;
   }
   .paddingBottom {
     padding-bottom: 5rem!important;

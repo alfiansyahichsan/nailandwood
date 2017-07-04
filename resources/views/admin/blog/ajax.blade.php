@@ -15,7 +15,7 @@
     $('#a').val($(this).data('imgpath'));
     $('#b').val($(this).data('linkvideo'));
     $('#c').val($(this).data('title'));
-    $('#d').val($(this).data('text'));
+    CKEDITOR.instances.editor2.setData($(this).data('text'));
     $('#e').val($(this).data('category'));
     $('#myModal').modal('show');
 });
@@ -29,7 +29,7 @@
           'imgpath': $("#a").val(),
           'linkvideo': $('#b').val(),
           'title': $('#c').val(),
-          'text': $('#d').val(),
+          'text': CKEDITOR.instances.editor2.getData($(this).data('text')),
           'category': $('#e').val()
       },
       success: function(data) {
@@ -68,6 +68,21 @@ $('.modal-footer').on('click', '.delete', function() {
     }
   });
 });
+
+function validateJPG(objFileControl) {
+     var file = objFileControl.value;
+     var len = file.length;
+     var size = objFileControl.files[0].size;
+     var ext = file.slice(len - 4, len);
+
+     if (ext.toUpperCase() != ".JPG" && ext.toUpperCase() != ".PNG" && ext.toUpperCase() != ".JPEG") {
+         alert("Only picture files allowed.");
+         objFileControl.value=""
+     } else if (size > 2000000) {
+         alert("File size maximum 2MB");
+        objFileControl.value=""
+     }
+  }
 
 </script>
 

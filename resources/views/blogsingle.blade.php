@@ -9,7 +9,7 @@
 	<!-- =============== END BREADCRUMB ================ -->
 
 	<!-- =============== START BLOG FILTER ================ -->
-	<section class="blogSingle padding" id="content" style="margin-top: 80px;">
+	<section class="blogSingle padding" id="content">
 		<div class="containerblog">
 			<div class="row">
 				<div class="blog-left">
@@ -31,7 +31,7 @@
 						<div class="title">
 							<h2>{{$news->title}}</h2>
 						</div>
-						<div class="paragraph"  style="margin-bottom: 30px;">
+						<div class="paragraph" style="margin-bottom: 30px; word-wrap: break-word;">
 							{!! $news->text !!}
 						</div>
 

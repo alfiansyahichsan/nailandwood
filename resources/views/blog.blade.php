@@ -14,10 +14,10 @@ Blog
 					<div class="breadcrumb breadcrumb-fullscreen alignleft small-description overlay almost-black-overlay" style="background-image: url({{asset('img/header/'.$s->imagepathslider)}});" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
 						<div class="breadTxt">
                             <h1>
-                                {{$s->text}}
+                                {{$s->title}}
                             </h1>
                             <p>
-                                {{$s->text}}
+                                {!!$s->text!!}
                             </p>
                             <a href="#content" data-easing="easeInOutQuint" data-scroll="" data-speed="900" data-url="false">
                                 View More <i class="fa fa-angle-down"></i>
@@ -56,8 +56,8 @@ Blog
 										<li><a href="#">By Admin</a>&nbsp;&nbsp;</li>
 									</ul>
 								</div>
-								<div class="blogParagraph">
-									<p>{{$bl->text}}</p>
+								<div class="blogParagraph" style="word-wrap: break-word;">
+									{!! str_limit($bl->text,300) !!}
 								</div><!--end blogParagraph  -->
 								<div class="rmButton">
 									<a href="{{URL::route('blogpersonal',$bl->id)}}">Read More</a>

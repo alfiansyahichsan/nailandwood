@@ -12,7 +12,7 @@
     $('.deleteContent').hide();
     $('.form-horizontal').show();
     $('#fid').val($(this).data('id'));
-    $('#q').val($(this).data('quote'));
+    CKEDITOR.instances.editor2.setData($(this).data('quote'));
     $('#t').val($(this).data('by'));
     $('#myModal').modal('show');
 });
@@ -23,7 +23,7 @@
       data: {
           '_token': $('input[name=_token]').val(),
           'id': $("#fid").val(),
-          'quote': $("#q").val(),
+          'quote': CKEDITOR.instances.editor2.getData($(this).data('quote')),
           'by': $('#t').val()
       },
       success: function(data) {

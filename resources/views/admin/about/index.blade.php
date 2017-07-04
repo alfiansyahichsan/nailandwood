@@ -5,7 +5,7 @@
 About - Blog Page
 @stop
 
-@section('nav13')
+@section('nav16')
 class="active"
 @stop
 
@@ -28,7 +28,7 @@ class="active"
 
             <p>{{ $message }}</p>
             <div>
-                <img src="/img/gallery/{{ Session::get('imageName') }}" style="max-width: 300px; max-height: 300px; margin-right: 20px;" />               
+                <img src="/img/logo/{{ Session::get('imageName') }}" style="max-width: 300px; max-height: 300px; margin-right: 20px;" />               
             </div>
 
         </div>
@@ -67,9 +67,9 @@ class="active"
         @foreach($about as $ab)
             <tr class="item{{$ab->id}}">
                 <td>{{ $ab->id }}</td>
-                <td>{{ $ab->imgpath }}</td>
-                <td>{{ $ab->title }}</td>
-                <td>{{ $ab->text }}</td>
+                <td>{!! str_limit($ab->imgpath,20) !!}</td>
+                <td>{!! str_limit($ab->title,20) !!}</td>
+                <td>{!! str_limit($ab->text,20) !!}</td>
                 <td>
 
                 <button class="edit-modal btn btn-primary" data-id="{{$ab->id}}" data-imgpath="{{$ab->imgpath}}" data-title="{{$ab->title}}" data-text="{{$ab->text}}">
@@ -97,13 +97,13 @@ class="active"
                 <form action="{{URL::Route('labout')}}" method="POST" id="insert_form" enctype="multipart/form-data">
                 {{ csrf_field() }}
                     <label>Image</label>
-                    <input type="file" name="imgpath" id="imgpath" class="form-control" required/>
+                    <input type="file" name="imgpath" id="imgpath" class="form-control" onChange="validateJPG(this)" required/>
                     <br />
                     <label>Title</label>
                     <input type="text" name="title" id="title" class="form-control" required></input>
                     <br />
                     <label>Text</label>
-                    <input type="text" name="text" id="text" class="form-control" required></input>
+                    <textarea type="text" name="text" id="text" class="form-control" required></textarea>
                     <br />
 
                     <input type="submit" value="Submit" class="btn btn-success" />
@@ -149,7 +149,7 @@ class="active"
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="text">Text</label>
                     <div class="col-sm-10">
-                        <input type="name" class="form-control" id="c">
+                         <textarea type="text" name="text" id="c" class="form-control" required></textarea>
                     </div>
                 </div>
 

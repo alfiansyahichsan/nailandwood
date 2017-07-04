@@ -26,8 +26,8 @@
 										<li><a href="#">By Admin</a>&nbsp;&nbsp;</li>
 									</ul>
 								</div>
-								<div class="blogParagraph">
-									<p>{{$blogs->text}}</p>
+								<div class="blogParagraph" style="word-wrap: break-word;">
+									{!! $blogs->text !!}
 								</div><!--end blogParagraph  -->
 								<hr>			
 							</div><!-- end blogBoxContent -->
@@ -41,7 +41,7 @@
 			</div><!-- end row -->
 		</div><!-- end container -->
 		<!-- =============== START PAGINATION ================ -->
-	<div class="section-block  bkg-grey-ultralight pagination-2" style="margin-top: 40px;">
+	<div class="section-block  bkg-grey-ultralight pagination-2">
 		<div class="row full-width ">
 			<div class="col-sm-6 leftHover" style="background-image: url('img/header/koc.jpg');">
 				<a href="/news/35" class="pagination-previous">
@@ -58,8 +58,6 @@
 		</div>
 	</div>
 	<!-- =============== END PAGINATION ================ -->
-	</section>
-	<!-- =============== END BLOG SIDEBAR-RIGHT ================ -->
 
 
 @endsection

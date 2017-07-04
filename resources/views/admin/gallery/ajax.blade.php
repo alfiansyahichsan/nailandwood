@@ -64,5 +64,20 @@ $('.modal-footer').on('click', '.delete', function() {
   });
 });
 
+function validateJPG(objFileControl) {
+     var file = objFileControl.value;
+     var len = file.length;
+     var size = objFileControl.files[0].size;
+     var ext = file.slice(len - 4, len);
+
+     if (ext.toUpperCase() != ".JPG" && ext.toUpperCase() != ".PNG" && ext.toUpperCase() != ".JPEG") {
+         alert("Only picture files allowed.");
+         objFileControl.value=""
+     } else if (size > 2000000) {
+         alert("File size maximum 2MB");
+        objFileControl.value=""
+     }
+  }
+  
 </script>
 

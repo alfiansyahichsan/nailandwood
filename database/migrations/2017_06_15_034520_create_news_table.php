@@ -17,8 +17,8 @@ class CreateNewsTable extends Migration
             $table->increments('id');
             $table->string('imgpath')->nullable();
             $table->string('linkvideo')->nullable();
-            $table->string('title');
-            $table->string('text');
+            $table->text('title');
+            $table->text('text');
             $table->string('category');
             $table->timestamps();
         });

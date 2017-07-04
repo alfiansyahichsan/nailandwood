@@ -78,7 +78,6 @@ class NewsController extends Controller
         }
         if($request->hasFile('imgpath')){
             $news->imgpath = $request->imgpath->getClientOriginalName();
-            $news->linkvideo = $request->linkvideo;
             $news->title = $request->title;
             $news->text = $request->text;
             $news->category = $request->category;
@@ -98,9 +97,9 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(News $news)
     {
-       
+       return response()->json($news);
     }
 
     /**

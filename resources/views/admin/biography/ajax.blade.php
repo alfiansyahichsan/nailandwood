@@ -12,7 +12,7 @@
     $('.deleteContent').hide();
     $('.form-horizontal').show();
     $('#fid').val($(this).data('id'));
-    $('#a').val($(this).data('text'));
+    CKEDITOR.instances.editor2.setData($(this).data('text'));
     $('#b').val($(this).data('alamat'));
     $('#c').val($(this).data('email'));
     $('#d').val($(this).data('phone'));
@@ -25,7 +25,7 @@
       data: {
           '_token': $('input[name=_token]').val(),
           'id': $("#fid").val(),
-          'text': $("#a").val(),
+          'text': CKEDITOR.instances.editor2.getData($(this).data('text')),
           'alamat': $('#b').val(),
           'email': $('#c').val(),
           'phone': $('#d').val()

@@ -8,8 +8,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="clothing">
-					<div class="col-sm-7 ">
-						<a href="{{asset('img/shop/'.$shop->imgpath)}}" class="lightbox"><img src="{{asset('img/shop/'.$shop->imgpath)}}" alt=""></a>
+					<div class="col-sm-7">
+						<a href="{{asset('img/shop/'.$shop->imgpath)}}" class="lightbox"><img src="{{asset('img/shop/'.$shop->imgpath)}}" alt="{{$shop->title}}"></a>
 					</div><!-- end col-sm-8 -->
 				</div><!-- end clothing -->
 				<div class="col-sm-5">
@@ -62,7 +62,7 @@
 
                           <!-- Tab panes -->
                           <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane active" id="home">{{$shop->detail}}</div>
+                            <div role="tabpanel" class="tab-pane active" id="home">{!! $shop->detail !!}</div>
                           </div>
                         </div>
                     </div><!-- end col-sm-12 -->

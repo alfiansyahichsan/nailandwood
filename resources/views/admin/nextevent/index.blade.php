@@ -5,7 +5,7 @@
 Next Event - Home
 @stop
 
-@section('nav5')
+@section('nav6')
 class="active"
 @stop
 
@@ -99,10 +99,10 @@ class="active"
                 <form action="/admin/nevent" method="POST" enctype="multipart/form-data" id="insert_form">
                 {{ csrf_field() }}
                     <label>Background</label>
-                    <input type="file" name="backgroundpic" id="backgroundpic" class="form-control" />
+                    <input type="file" name="backgroundpic" id="backgroundpic" class="form-control" onChange="validateJPG(this)" />
                     <br />
                     <label>Logo Event</label>
-                    <input type="file" name="logoeventpic" id="logoeventpic" class="form-control" />
+                    <input type="file" name="logoeventpic" id="logoeventpic" class="form-control" onChange="validateJPG(this)" />
                     <br />
                     <label>Date</label>
                     <input type="date" name="datemax" id="datemax" class="form-control" required></input>

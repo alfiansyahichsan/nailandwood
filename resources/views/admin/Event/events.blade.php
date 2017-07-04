@@ -5,7 +5,7 @@
 Event - Home
 @stop
 
-@section('nav4')
+@section('nav5')
 class="active"
 @stop
 
@@ -68,11 +68,11 @@ class="active"
           <tr class="item{{$acara->id}}">
               <td>{{ $acara->id }}</td>
               <td>{{ $acara->date }}</td>
-              <td>{{ $acara->eventname }}</td>
-              <td>{{ $acara->venue }}</td>
-              <td>{{ $acara->location }}</td>
+              <td>{!! str_limit($acara->eventname,20) !!}</td>
+              <td>{!! str_limit($acara->venue,20) !!}</td>
+              <td>{!! str_limit($acara->location,20) !!}</td>
               <td>{{ $acara->tickets }}</td>
-              <td>{{ $acara->link }}</td>
+              <td>{!! str_limit($acara->link,20) !!}</td>
               <td>
 
                 <button class="edit-modal btn btn-primary" data-id="{{$acara->id}}" data-date="{{$acara->date}}" data-eventname="{{$acara->eventname}}" data-venue="{{$acara->venue}}" data-location="{{$acara->location}}" data-tickets="{{$acara->tickets}}" data-link="{{$acara->link}}">

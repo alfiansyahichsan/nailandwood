@@ -5,7 +5,7 @@
 Biography - Page
 @stop
 
-@section('nav11')
+@section('nav12')
 class="active"
 @stop
 
@@ -15,7 +15,7 @@ class="active"
 <script src="{{asset('js/meeepo.js')}}"></script>
 <script type="text/javascript" src="{{asset('/ckeditor/ckeditor.js')}}"></script>
 <script>
-     CKEDITOR.replace( 'editor1' );
+     CKEDITOR.replace( 'editor2' );
      CKEDITOR.config.editor = [
         { name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
         { name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
@@ -80,8 +80,8 @@ class="active"
         @foreach($bio as $bi)
             <tr class="item{{$bi->id}}">
                 <td>{{ $bi->id }}</td>
-                <td>{{ $bi->text }}
-                <td>{{ $bi->alamat }}
+                <td>{!! str_limit($bi->text,20) !!}</td>
+                <td>{!! str_limit($bi->alamat,20) !!}</td>
                 <td>{{ $bi->email }}</td>
                 <td>{{ $bi->phone }}</td>
                 <td>
@@ -116,7 +116,7 @@ class="active"
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="text">Text</label>
                     <div class="col-sm-10">
-                        <input type="name" class="form-control" id="a" required="">
+                        <input type="name" class="form-control" id="editor2" required="">
                     </div>
                 </div>
 

@@ -17,7 +17,7 @@ class CreateShopsTable extends Migration
             $table->increments('id');
             $table->string('imgpath');
             $table->string('title');
-            $table->string('detail');
+            $table->text('detail');
             $table->string('price');
             $table->string('stok');
             $table->string('category');

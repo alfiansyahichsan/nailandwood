@@ -13,10 +13,10 @@ Biography
 					<div class="breadcrumb breadcrumb-fullscreen alignleft small-description overlay almost-black-overlay" style="background-image: url({{asset('img/header/'.$s->imagepathslider)}});" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
 						<div class="breadTxt">
                             <h1>
-                                {{$s->title}}
+                                {!! $s->title !!}
                             </h1>
                             <p>
-                                {{$s->text}}
+                                {!! $s->text !!}
                             </p>
                             <a href="#content" data-easing="easeInOutQuint" data-scroll="" data-speed="900" data-url="false">
                                 View More <i class="fa fa-angle-down"></i>
@@ -41,7 +41,7 @@ Biography
 			@foreach($bio as $bi)
 			<div class="row">
 				<div class="col-sm-12">
-					<p>{{$bi->text}}</p>
+					{!! $bi->text !!}
 				</div>
 			</div>
 		</div><!-- end container -->
