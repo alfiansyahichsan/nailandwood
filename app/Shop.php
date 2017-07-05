@@ -47,4 +47,5 @@ class Shop extends Model
 
 
     }
+
 }

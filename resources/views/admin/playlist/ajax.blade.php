@@ -81,5 +81,19 @@ function validateJPG(objFileControl) {
      }
   }
 
+function validateMP3 (objFileControl) {
+     var file = objFileControl.value;
+     var len = file.length;
+     var size = objFileControl.files[0].size;
+     var ext = file.slice(len - 4, len);
+
+     if (ext.toUpperCase() != ".MP3") {
+         alert("Only mp3 files allowed.");
+         objFileControl.value=""
+     } else if (size > 10000000) {
+         alert("File size maximum 10MB");
+        objFileControl.value=""
+     }
+  }
 </script>
 

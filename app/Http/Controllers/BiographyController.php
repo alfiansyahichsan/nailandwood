@@ -7,6 +7,8 @@ use App\Http\Requests;
 use App\Biography;
 use Validator;
 use Response;
+use Mail;
+use Session;
 use Illuminate\Support\Facades\Input;
 
 class BiographyController extends Controller
@@ -70,6 +72,31 @@ class BiographyController extends Controller
 
         $bio->save();
         return redirect()->back()->with('success','Data has been saved successfully');    
+    }
+
+    public function postContact(Request $request)
+    {
+        $this->validate($request, [
+            'email' => 'required|email',
+            'firstname' => 'required',
+            'subject' => 'required|min:3',
+            'message' => 'required|min:7']);
+
+        $data = array(
+            'email' => $request->email,
+            'firstname' => $request->firstname,
+            'subject' => $request->subject,
+            'bodyMessage' => $request->message
+            );
+
+        Mail::send('mail', $data, function($message) use ($data){
+            $message->from($data['email']);
+            $message->to('sundfor0@gmail.com');
+            $message->subject($data['subject']);
+        });
+
+        Session::flash('success','Your email has been sent');
+        return redirect('biography');
     }
 
     /**

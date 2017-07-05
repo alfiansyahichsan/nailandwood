@@ -5,9 +5,10 @@
 @section('content')
 
 <section class="padding blogSidebarRight" id="content">
-		<div class="container" style="margin-top: -50px;">
+		<div class="container" style="margin-top: -30px;">
 			<div class="row">
 				<div class="blog-sidebar-right">
+
 					<div class="col-sm-8">
 					@if($blogs->category == 1)
 						<div class="item"><img src="{{asset('img/blog/'.$blogs->imgpath)}}" alt="{{$blogs->imgpath}}"></div>
@@ -40,6 +41,7 @@
 
 			</div><!-- end row -->
 		</div><!-- end container -->
+	</section>
 		<!-- =============== START PAGINATION ================ -->
 	<div class="section-block  bkg-grey-ultralight pagination-2">
 		<div class="row full-width ">

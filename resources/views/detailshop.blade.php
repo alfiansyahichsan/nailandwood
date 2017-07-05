@@ -79,52 +79,33 @@
 			<div class="shopContent">
 				<div class="sectionTitle paddingBottom">
 					<span class="heading-t3"></span>
-					<h2><a href="shop.html">Related Product</a></h2>
+					<h2><a href="{{URL::route('shop')}}">Other Product</a></h2>
 					<span class="heading-b3"></span>
 				</div><!-- end sectionTtile -->	
 				<div class="row">
 					<nav class="shop-products">
                         <ul class="clearfix">
+                        @foreach($related as $r)
                             <li class="col-sm-3">
                                 <figure>
                                     <figcaption>
-                                        <img src="img/shop/shopProduct.png" alt="">
+                                        <img src="{{asset('img/shop/'.$r->imgpath)}}" alt="{{$r->title}}" style="padding: 0 10px 0 10px;">
                                     </figcaption>
                                     <div class="content">
                                         <div class="shopHover">
                                             <div class="price">
-                                                &pound; 15,99
+                                                {{$r->price}}
                                             </div>
                                             <div class="proTitle">
-                                                <a href="#">Original T. Brothers</a>
+                                                <a href="{{URL::route('detailshop',$r->id)}}">{{$r->title}}</a>
                                             </div>
-                                            <div class="product">Hoodie Aqura</div>
                                             <a href="#" class="icon-button shopIcon"><i class="fa fa-shopping-cart"></i><span></span></a>
-                                             <a href="#" class="icon-button shopIcon"><i class="fa fa-info"></i><span></span></a>
+                                             <a href="{{URL::route('detailshop',$r->id)}}" class="icon-button shopIcon"><i class="fa fa-info"></i><span></span></a>
                                         </div>
                                     </div>
                                 </figure>
                             </li>
-                            <li class="col-sm-3">
-                                <figure>
-                                    <figcaption>
-                                        <img src="img/shop/shopProduct.png" alt="">
-                                    </figcaption>
-                                    <div class="content">
-                                        <div class="shopHover">
-                                            <div class="price">
-                                                &pound; 15,99
-                                            </div>
-                                            <div class="proTitle">
-                                                <a href="#">Original T. Brothers</a>
-                                            </div>
-                                            <div class="product">Hoodie Aqura</div>
-                                            <a href="#" class="icon-button shopIcon"><i class="fa fa-shopping-cart"></i><span></span></a>
-                                             <a href="#" class="icon-button shopIcon"><i class="fa fa-info"></i><span></span></a>
-                                        </div>
-                                    </div>
-                                </figure>
-                            </li>
+                        @endforeach
                         </ul>
                     </nav><!-- end shop-products -->
 				</div><!-- end row -->

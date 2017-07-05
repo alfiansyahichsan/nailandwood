@@ -5,7 +5,7 @@
 News - Home
 @stop
 
-@section('nav7')
+@section('nav8')
 class="active"
 @stop
 

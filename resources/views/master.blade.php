@@ -21,12 +21,12 @@
 	<!-- ================================================== -->
 	<!-- =============== START JQUERY SCRIPTS ================ -->
 	<!-- ================================================== -->
-	<script src="{{ asset('js/jquery.js') }}"></script>
-	<script src="{{ asset('js/bootstrap.min.js')}}"></script>
+	<script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('js/bootstrap.min.js')}}"></script>
 	<script type="text/javascript" src="{{ asset('jplayer/jplayer/jquery.jplayer.js') }}"></script>
-	<script src="{{ asset('js/jPlayer.js')}}"></script>
-	<script src="{{ asset('js/plugins.js')}}"></script>
-	<script src="{{ asset('js/main.js')}}"></script>
+	<script type="text/javascript" src="{{ asset('js/jPlayer.js')}}"></script>
+	<script type="text/javascript" src="{{ asset('js/plugins.js')}}"></script>
+	<script type="text/javascript" src="{{ asset('js/main.js')}}"></script>
 	<!-- <script src="js/app.js"></script>
     <script src="js/script.js"></script> -->
 	<!-- <script src="js/map.js"></script> -->

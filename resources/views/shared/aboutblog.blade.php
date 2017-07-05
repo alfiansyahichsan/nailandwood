@@ -30,17 +30,16 @@
 				</div>
 			</div>
 			</div><!-- end widget -->
+			
 			<div class="widget">
 				<h3 class="widget-title">Recent Posts</h3>
 				<ul>
-					<li><a href="#">About Last Night</a></li>
-					<li><a href="#">Video Post</a></li>
-					<li><a href="#">Soundcloud</a></li>
-					<li><a href="#">Post With Audio Tracks</a></li>
-					<li><a href="#">Soundcloud Post</a></li>
-					<li><a href="#">Standard Post</a></li>
+				@foreach($recent as $re)
+					<li><a href="{{URL::route('blogpersonal',$re->id)}}">{{$re->title}}</a></li>
+				@endforeach
 				</ul>
 			</div><!-- end widget -->
+
 			<div class="widget" style="margin-bottom: 40px;">
 				<h3 class="widget-title">Tweets</h3>
 				<!-- twitter -->

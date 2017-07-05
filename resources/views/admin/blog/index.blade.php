@@ -5,7 +5,7 @@
 Blog - Home
 @stop
 
-@section('nav11')
+@section('nav12')
 class="active"
 @stop
 

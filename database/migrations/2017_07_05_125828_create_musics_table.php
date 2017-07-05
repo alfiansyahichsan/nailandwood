@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSlidersTable extends Migration
+class CreateMusicsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateSlidersTable extends Migration
      */
     public function up()
     {
-        Schema::create('sliders', function (Blueprint $table) {
+        Schema::create('musics', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('imagepathslider');
-            $table->text('title')->nullable();
-            $table->text('text')->nullable();
-            $table->string('category');
+            $table->string('title');
+            $table->string('release');
+            $table->string('label');
+            $table->string('format');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateSlidersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sliders');
+        Schema::dropIfExists('musics');
     }
 }

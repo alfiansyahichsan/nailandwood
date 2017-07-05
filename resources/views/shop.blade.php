@@ -56,12 +56,12 @@ Shop
                                 @endif
 		                                <figure>
 		                                    <figcaption>
-		                                        <img src="{{asset('img/shop/'.$sh->imgpath)}}" alt="">
+		                                        <img src="{{asset('img/shop/'.$sh->imgpath)}}" alt="{{$sh->title}}" style="padding: 0 10px 0 10px;">
 		                                    </figcaption>
 		                                    <div class="item content">
 		                                        <div class="shopHover">
 		                                            <div class="price">
-		                                                &pound; {{$sh->price}}
+		                                                {{$sh->price}}
 		                                            </div>
 		                                            <div class="proTitle">
 		                                                <a href="{{URL::route('detailshop',$sh->id)}}">{{$sh->title}}</a>
@@ -73,9 +73,7 @@ Shop
 		                                    </div>
 		                                </figure>
 		                            </li>
-
-		                            @endforeach
-
+                            	@endforeach
                                 </ul>
                             </nav>
                         </div>

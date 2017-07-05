@@ -32,6 +32,11 @@ Route::get('/admin/acara',array('as'=>'acara','uses'=>'EventsController@index'))
 Route::post ( '/admin/event/editItem', 'EventsController@editItem' );
 Route::post ( '/admin/event/deleteItem', 'EventsController@deleteItem' );
 
+Route::resource('admin/musics','MusicsController');
+Route::get('/admin/musics',array('as'=>'musics','uses'=>'MusicsController@index'));
+Route::post ( '/admin/musics/editItem', 'MusicsController@editItem' );
+Route::post ( '/admin/musics/deleteItem', 'MusicsController@deleteItem' );
+
 Route::resource('admin/lvideo','LVideoController');
 Route::get('/admin/lvideo',array('as'=>'lvideo','uses'=>'LVideoController@index'));
 Route::post ( '/admin/lvideo/editItem', 'LVideoController@editItem' );
@@ -103,6 +108,7 @@ Route::post ( '/admin/bank/deleteItem', 'BankController@deleteItem' );
 
 Route::get('/',array('as'=>'home','uses'=>'page@Home'));
 
+Route::post ( '/biography', 'BiographyController@postContact' );
 
 Route::get('/biography',array('as'=>'biography','uses'=>'page@Biography'));
 Route::get('/gallery',array('as'=>'gallery','uses'=>'page@Gallery'));

@@ -5,7 +5,7 @@
 Shop - Page
 @stop
 
-@section('nav13')
+@section('nav14')
 class="active"
 @stop
 

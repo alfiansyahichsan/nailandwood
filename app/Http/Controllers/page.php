@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use File;
 
 class page extends Controller
 {
@@ -59,7 +60,15 @@ class page extends Controller
 	}
 
 	public function Music(){
-		return view('music');
+		$slider = \App\Slider::where('category', 6)->get();
+		$playlist = \App\Playlists::get();
+		$musics = \App\Musics::get();
+		return view('music', [
+				'slider' => $slider,
+                'playlist' => $playlist,
+                'musics' => $musics
+                
+            ]);
 	}
 
 	public function Events(){
@@ -78,8 +87,10 @@ class page extends Controller
 
 	public function Detailshop($param){
 		$shop = \App\Shop::where('id',$param)->first();
+		$related = \App\Shop::whereNotIn('id', [$param])->get();
 		return view('detailshop', [
-                'shop' => $shop
+                'shop' => $shop,
+                'related' => $related
 
             ]);
 	}
@@ -126,10 +137,13 @@ class page extends Controller
 
 	public function Blogpersonal($param){
 		$blogs = \App\Blog::where('id',$param)->first();
+		$recent = \App\Blog::whereNotIn('id', [$param])->get();
 		$about = \App\Aboutblog::get();
 		return view('blogpersonal', [
                 'blogs' => $blogs,
+                'recent' => $recent,
                 'about' => $about
+
 
             ]);
 	}

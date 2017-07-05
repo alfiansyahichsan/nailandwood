@@ -56,8 +56,8 @@ class SlidersController extends Controller
     {
         $this->validate($request, [
             'imagepathslider' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'title' => 'required',
-            'category' => 'required',
+            'title' => '',
+            'category' => '',
         ]);
 
         $slider = new Slider;

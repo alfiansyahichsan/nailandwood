@@ -131,8 +131,30 @@ Home
 				</time>
 			</div>
 			@else
-			<div class="trak-item" style="display: none;">
-				
+			<div class="trak-item" data-audio="{{asset('audio/'.$playlist->audiopath)}}" data-artist="Paku dan Kayu" data-thumbnail="{{asset('img/player/'.$playlist->imgthumbnailpath)}}" data-id="{{$playlist->id}}">
+				<audio preload="metadata" src="{{asset('audio/'.$playlist->audiopath)}}" title="{{$playlist->title}}"></audio>
+				<div class="additional-button">
+					<div class="center-y-table">
+						<a href="#">
+							<i class="fa fa-spotify"></i>
+						</a>
+					</div>
+				</div>
+				<div class="play-pause-button">
+					<div class="center-y-table">
+						<i class="fa fa-play"></i>
+					</div>
+				</div>
+				<div class="name-artist">
+					<div class="center-y-table">
+						<h2>
+							
+						</h2>
+					</div>
+				</div>
+				<time class="trak-duration">
+					00:00
+				</time>
 			</div>
 			@endif
 			
@@ -219,7 +241,6 @@ Home
 						<h4>Next Event</h4>
 						<a href="{{$nEvent->link}}"><img src="{{asset('img/events/'.$nEvent->logoeventpic)}}" style="width: 320px; height: 80px;" alt=""></a>
 					</div>
-					@if(Carbon\Carbon::now()->format('YYYY-MM-DD') > date('YYYY-MM-DD', strtotime($nEvent->datemax)))
 					<div class="sm-countdown sm_content_element sm-style2" id="sm_countdown-19" data-date="{{$nEvent->datemax}}">
 						<div class="displayCounter">
 							<div class="column">
@@ -248,36 +269,6 @@ Home
 							</div>
 						</div>
 					</div><!-- end sm-countdown -->
-					@elseif(Carbon\Carbon::now()->format('YYYY-MM-DD') < date('DD-MM-YYYY', strtotime($nEvent->datemax)))
-						<div class="sm-countdown sm_content_element sm-style2" id="sm_countdown-19" data-date="{{$nEvent->datemax}}">
-						<div class="displayCounter">
-							<div class="column">
-								<div class="sm_countdown_inner">
-									<input class="element days" readonly="readonly" data-min="0" data-max="365" data-width="200" data-height="200" data-thickness="0.15" data-fgcolor="#fff" data-bgcolor="#8e8d8d" data-angleoffset="180">
-									<span class="unit days-title">days</span>
-								</div>
-							</div>	
-							<div class="column">
-								<div class="sm_countdown_inner">
-									<input class="element hour" readonly="readonly" data-min="0" data-max="24" data-width="200" data-height="200" data-thickness="0.15" data-fgcolor="#fff" data-bgcolor="#8e8d8d" data-angleoffset="180">
-									<span class="unit hours-title">hrs</span>
-								</div>
-							</div>	
-							<div class="column"> 
-								<div class="sm_countdown_inner">
-									<input class="element minute" readonly="readonly" data-min="0" data-max="60" data-width="200" data-height="200" data-thickness="0.15" data-fgcolor="#fff" data-bgcolor="#8e8d8d" data-angleoffset="180">
-									<span class="unit mins-title">min</span>
-								</div>
-							</div>
-							<div class="column"> 
-								<div class="sm_countdown_inner">
-									<input class="element second" readonly="readonly" data-min="0" data-max="60" data-width="200" data-height="200" data-thickness="0.15" data-fgcolor="#fff" data-bgcolor="#8e8d8d" data-angleoffset="180">
-									<span class="unit secs-title">sec</span>
-								</div>
-							</div>
-						</div>
-					</div><!-- end sm-countdown -->
-					@endif
 				</div>
 			</div>
 		</div>

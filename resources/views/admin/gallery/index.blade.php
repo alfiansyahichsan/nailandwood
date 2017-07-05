@@ -5,7 +5,7 @@
 Gallery - Page
 @stop
 
-@section('nav10')
+@section('nav11')
 class="active"
 @stop
 

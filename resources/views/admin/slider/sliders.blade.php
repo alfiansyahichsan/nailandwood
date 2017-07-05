@@ -91,7 +91,7 @@ class="active"
         @foreach($slider as $sliders)
             <tr class="item{{$sliders->id}}">
                 <td>{{ $sliders->id }}</td>
-                <td>{{ $sliders->imagepathslider }}</td>
+                <td>{!! str_limit($sliders->imagepathslider,20) !!}</td>
                 <td>{!! str_limit($sliders->title,20) !!}</td>
                 <td>{!! str_limit($sliders->text,20) !!}</td>
                 <td>{{ $sliders->category }}</td>
@@ -125,7 +125,7 @@ class="active"
                     <input type="file" name="imagepathslider" id="imagepathslider" class="form-control" onChange="validateJPG(this)" required/>
                     <br />
                     <label>Title</label>
-                    <input type="title" name="title" id="title" class="form-control" required></input>
+                    <input type="title" name="title" id="title" class="form-control"></input>
                     <br />
                     <label>Text</label>
                     <textarea type="text" name="text" id="editor1" class="form-control"></textarea>
@@ -138,6 +138,7 @@ class="active"
                         <option value="3">Biography</option>
                         <option value="4">Shop</option>
                         <option value="5">Quotation</option>
+                        <option value="6">Music</option>
                     </select>
                     <br />
 
@@ -198,6 +199,7 @@ class="active"
                         <option value="3">Biography</option>
                         <option value="4">Shop</option>
                         <option value="5">Quotation</option>
+                        <option value="6">Music</option>
                     </select>
                     </div>
                 </div>

@@ -5,7 +5,7 @@
 Biography - Page
 @stop
 
-@section('nav12')
+@section('nav13')
 class="active"
 @stop
 

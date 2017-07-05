@@ -67,16 +67,24 @@ Biography
 				<div class="col-sm-7 col-sm-offset-1">
 					<div class="singleBlogForm">
 						<h2>Get in Touch</h2>
-						<form action="send" method="post" class="comment-form">
+						<form action="/biography" method="POST" class="comment-form">
 						{{ csrf_field() }}
-							<input id="author" name="author" type="text" value="" aria-required="true" required="" placeholder="First Name *">
-							<input id="lastName" name="email" type="text" value="" aria-required="true" required="" placeholder="Last Name">
-							<input id="url" name="url" type="text" value="" placeholder="Subject* ">
-							<input id="address" name="url" type="text" value="" placeholder="Email Address* ">
-							<textarea id="message" name="comment" placeholder="Message..." rows="6" required=""></textarea>
+							<input id="email" name="email" type="email" value="" placeholder="Email Address* " required=""><br>
+							<input id="firstname" name="firstname" type="text" value="" placeholder="Your First Name* " required="">
+							<input id="subject" name="subject" type="text" value="" placeholder="Subject* " required="">
+							<textarea id="message" name="message" placeholder="Message..." rows="8" required=""></textarea>
 							<p class="form-submit">
 								<input name="submit" type="submit" id="submit" value="Send Email">
 							</p>
+							@if ($message = Session::get('success'))
+
+						        <div class="alert alert-success">
+
+						            <p>{{ $message }}</p><br>
+
+						        </div>
+
+						    @endif
 						</form>
 					</div><!-- end contactForm -->
 				</div><!-- end col-sm-7 col-sm-offset-1 -->

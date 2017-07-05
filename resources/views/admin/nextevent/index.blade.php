@@ -5,7 +5,7 @@
 Next Event - Home
 @stop
 
-@section('nav6')
+@section('nav7')
 class="active"
 @stop
 

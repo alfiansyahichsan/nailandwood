@@ -5,7 +5,7 @@
 About - Blog Page
 @stop
 
-@section('nav16')
+@section('nav17')
 class="active"
 @stop
 

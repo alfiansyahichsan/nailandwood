@@ -60,25 +60,28 @@ Music
 <!-- =============== END PLAYER ================ -->
 
 	<!-- =============== START BREADCRUMB ================ -->
+	@foreach($slider as $sliders)
 	<section class="no-mb">
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="before-FullscreenSlider"></div>
 				<div class="breadcrumb-fullscreen-parent phone-menu-bg">
-					<div class="breadcrumb breadcrumb-fullscreen alignleft small-description overlay almost-black-overlay" style="background-image: url('img/header/aaa.png');" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
+					<div class="breadcrumb breadcrumb-fullscreen alignleft small-description overlay almost-black-overlay" style="background-image: url({{asset('img/header/'.$sliders->imagepathslider)}});" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+	@endforeach
 	<!-- =============== END BREADCRUMB ================ -->
 
 	<!-- =============== START ALBUM SINGLE ================ -->
 	<section class="albumSingle padding background-properties">
 		<div class="container">
+		@foreach($musics as $mu)
 			<div class="sectionTitle paddingBottom">
 				<span class="heading-t3"></span>
-				<h2><a href="albumsSingle1.html">Proper Pause(EP)</a></h2>
+				<h2><a href="albumsSingle1.html">{{$mu->title}}</a></h2>
 				<span class="heading-b3"></span>
 			</div><!-- end sectionTtile -->
 			<div class="row">
@@ -88,25 +91,7 @@ Music
 							<span class="about-name">NAME</span>
 							<span class="about-length">LENGTH</span>
 						</div>
-						<div class="trak-item" data-audio="" data-artist="Paku dan Kayu" data-thumbnail="img/albums/thumbnail.png">
-							<audio preload="metadata" src="" title="Not Stay Within"></audio>
-							<div class="play-pause-button">
-								<div class="center-y-table">
-									<i class="fa fa-play"></i>
-								</div>
-							</div>
-							<div class="name-artist">
-								<div class="center-y-table">
-									<h2>										
-										Not Stay Within
-									</h2>
-								</div>
-							</div>
-							<time class="trak-duration">
-								00:00
-							</time>
-						</div>
-						@foreach(\App\Playlists::Playlists() as $playlist)
+						@foreach($playlist as $playlist)
 						<div class="trak-item" data-audio="{{asset('audio/'.$playlist->audiopath)}}" data-artist="Paku dan Kayu" data-thumbnail="{{asset('img/player/'.$playlist->imgthumbnailpath)}}" data-id="{{$playlist->id}}">
 							<audio preload="metadata" src="{{asset('audio/'.$playlist->audiopath)}}" title="{{$playlist->title}}"></audio>
 							<div class="play-pause-button">
@@ -126,43 +111,6 @@ Music
 							</time>
 						</div>
 						@endforeach
-
-						<div class="trak-item" data-audio="" data-artist="Paku dan Kayu" data-thumbnail="img/albums/thumbnail.png">
-							<audio preload="metadata" src="" title="Kelabu"></audio>
-							<div class="play-pause-button">
-								<div class="center-y-table">
-									<i class="fa fa-play"></i>
-								</div>
-							</div>
-							<div class="name-artist">
-								<div class="center-y-table">
-									<h2>
-										Kelabu
-									</h2>
-								</div>
-							</div>
-							<time class="trak-duration">
-								00:00
-							</time>
-						</div>
-						<div class="trak-item" data-audio="" data-artist="Paku dan Kayu" data-thumbnail="img/albums/thumbnail.png">
-							<audio preload="metadata" src="" title="Limitation"></audio>
-							<div class="play-pause-button">
-								<div class="center-y-table">
-									<i class="fa fa-play"></i>
-								</div>
-							</div>
-							<div class="name-artist">
-								<div class="center-y-table">
-									<h2>										
-										Limitation
-									</h2>
-								</div>
-							</div>
-							<time class="trak-duration">
-								00:00
-							</time>
-						</div>
 					</div>
 				</div><!-- end-col-sm-8 -->
 				<div class="col-sm-3 col-sm-offset-1">
@@ -170,9 +118,9 @@ Music
 						<div class="widget">
 							<h3>Details</h3>
 							<ul>
-								<li>Release Date:<span>September 5, 2016 </span></li>
-								<li>Label:<span>Why Production </span></li>
-								<li>Fomat:<span>cd </span></li>
+								<li>Release Date:<span>{{$mu->release}} </span></li>
+								<li>Label:<span>{{$mu->label}} </span></li>
+								<li>Fomat:<span>{{$mu->format}} </span></li>
 							</ul>
 						</div><!-- end widget -->
 						<div class="widget">
@@ -205,6 +153,7 @@ Music
 					</div><!-- end sidebarAlbum -->
 				</div><!-- end col-sm-3 col-sm-offset-1 -->
 			</div><!-- end row -->
+			@endforeach
 		</div><!-- end container -->
 	</section>
 	<!-- =============== END ALBUM SINGLE ================ -->

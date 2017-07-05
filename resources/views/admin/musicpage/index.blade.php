@@ -2,10 +2,10 @@
 
 
 @section('judul')
-Playlist - Home/Page
+Music - Page
 @stop
 
-@section('nav3')
+@section('nav5')
 class="active"
 @stop
 
@@ -13,22 +13,20 @@ class="active"
 @section('js')
 <meta name="_token" content="{!! csrf_token() !!}" />
 <script src="{{asset('js/meeepo.js')}}"></script>
-@include("admin.playlist.ajax")
+
+@include("admin.musicpage.ajax")
 
 
 
 @endsection
 
 @section('konten')
-<p>Form untuk add playlist/lagu pada HOME/PAGE MUSIC</p>
+<p>Form untuk input data Music di PAGE</p>
 @if ($message = Session::get('success'))
 
         <div class="alert alert-success">
 
             <p>{{ $message }}</p>
-            <div>
-                <img src="/img/player/{{ Session::get('imageName') }}" style="max-width: 300px; max-height: 300px; margin-right: 20px;" />               
-            </div>
 
         </div>
 
@@ -43,13 +41,6 @@ class="active"
         </div>
 
     @endif
-<div class="row">
-    <div class="col-md-12">
-        <div align="left" style=" margin-bottom: 20px;">
-            <button type="button" name="age" id="age" data-toggle="modal" data-target="#add_data_Modal" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add</button>
-        </div>
-    </div>
-</div>
 
   <div class="row">
     <div class="table-responsive">
@@ -57,25 +48,24 @@ class="active"
         <tr>
             <th>ID</th>
             <th>Title</th>
-            <th>Audio</th>
-            <th>Image</th>
+            <th>Release Date</th>
+            <th>Label</th>
+            <th>Format</th>
             <th colspan="3">Actions</th>
         </tr>
         {{ csrf_field() }}
-        
-        @foreach($playlist as $p)
-            <tr class="item{{$p->id}}">
-                <td>{{ $p->id }}</td>
-                <td>{!! str_limit($p->title,20) !!}</td>
-                <td>{!! str_limit($p->audiopath,20) !!}</td>
-                <td>{!! str_limit($p->imgthumbnailpath,20) !!}</td>
-                <td>
 
-                <button class="edit-modal btn btn-primary" data-id="{{$p->id}}" data-title="{{$p->title}}" data-audiopath="{{$p->audiopath}}" data-imgthumbnailpath="{{$p->imgthumbnailpath}}">
-                <span class="glyphicon glyphicon-trash"></span> Edit
-                </button>
-                <button class="delete-modal btn btn-danger" data-id="{{$p->id}}" data-title="{{$p->title}}" data-audiopath="{{$p->audiopath}}" data-imgthumbnailpath="{{$p->imgthumbnailpath}}">
-                <span class="glyphicon glyphicon-trash"></span> Delete
+        @foreach($musics as $mu)
+          <tr class="item{{$mu->id}}">
+              <td>{{ $mu->id }}</td>
+              <td>{!! str_limit($mu->title,20) !!}</td>
+              <td>{!! str_limit($mu->release,20) !!}</td>
+              <td>{!! str_limit($mu->label,20) !!}</td>
+              <td>{!! str_limit($mu->format) !!}</td>
+              <td>
+
+                <button class="edit-modal btn btn-primary" data-id="{{$mu->id}}" data-title="{{$mu->title}}" data-release="{{$mu->release}}" data-label="{{$mu->label}}" data-format="{{$mu->format}}">
+                <span class="glyphicon glyphicon-edit"></span> Edit
                 </button>
 
                 </td>
@@ -90,19 +80,22 @@ class="active"
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Insert Audio</h4>
+                <h4 class="modal-title">Insert Data Slider</h4>
             </div>
             <div class="modal-body" style="padding-left: 30px; padding-right: 35px;">
-                <form action="/admin/lplaylist" method="POST" id="insert_form" enctype="multipart/form-data">
+                <form action="/admin/musics" method="POST" id="insert_form">
                 {{ csrf_field() }}
                     <label>Title</label>
-                    <input type="title" name="title" id="title" class="form-control" required></input>
+                    <input type="text" name="title" id="title" class="form-control" required></input>
                     <br />
-                    <label>Audio</label>
-                    <input type="file" name="audiopath" id="audiopath" class="form-control" onChange="validateMP3(this)"></input>
+                    <label>Release Date</label>
+                    <input type="date" name="release" id="release" class="form-control" required></input>
                     <br />
-                    <label>Image</label>
-                    <input type="file" name="imgthumbnailpath" id="imgthumbnailpath" class="form-control" onChange="validateJPG(this)"/>
+                    <label>Label</label>
+                    <input type="text" name="label" id="label" class="form-control" required />
+                    <br />  
+                    <label>Format</label>
+                    <input type="text" name="format" id="format" class="form-control" required/>
                     <br />
 
                     <input type="submit" value="Submit" class="btn btn-success" />
@@ -134,35 +127,38 @@ class="active"
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="title">Title</label>
                     <div class="col-sm-10">
-                        <input type="name" class="form-control" id="a">
+                        <input type="text" class="form-control" id="q">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="audiopath">Audio</label>
+                    <label class="control-label col-sm-2" for="release">Release Date</label>
                     <div class="col-sm-10">
-                        <input type="name" name="audiopath" id="b" class="form-control" disabled=""></input> 
+                        <input type="date" class="form-control" id="t">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="imgthumbnailpath">Image</label>
+                    <label class="control-label col-sm-2" for="label">Label</label>
                     <div class="col-sm-10">
-                        <input type="name" class="form-control" id="c" disabled="">
+                        <input type="text" class="form-control" id="d">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="format">Format</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="a">
                     </div>
                 </div>
 
           </form>
-            <div class="deleteContent">
-            Are you Sure you want to delete ?
-            <span class="hidden id"></span>
-          </div>
-          <div class="modal-footer">
+            <div class="modal-footer">
             <button type="button" class="btn actionBtn" data-dismiss="modal">
-              <span id="footer_action_button" class='glyphicon'> </span>
+            <span id="footer_action_button" class='glyphicon'> </span>
             </button>
             <button type="button" class="btn btn-warning" data-dismiss="modal">
-              <span class='glyphicon glyphicon-remove'></span> Close
+            <span class='glyphicon glyphicon-remove'></span> Close
             </button>
           </div>
         </div>
