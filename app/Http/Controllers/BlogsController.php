@@ -65,6 +65,8 @@ class BlogsController extends Controller
 
         $blogs = new Blog;
 
+        $b = rand(11111, 99999);
+        
         $validation = Validator::make($request->except('_token'), $rules);
         if ($validation->passes()) {
         
@@ -75,12 +77,12 @@ class BlogsController extends Controller
             $blogs->category = $request->category;
         }
         if($request->hasFile('imgpath')){
-            $blogs->imgpath = $request->imgpath->getClientOriginalName();
+            $blogs->imgpath = $b."-".$request->imgpath->getClientOriginalName();
             $blogs->linkvideo = $request->linkvideo;
             $blogs->title = $request->title;
             $blogs->text = $request->text;
             $blogs->category = $request->category;
-            $imageName = $request->file('imgpath')->getClientOriginalName();
+            $imageName = $b."-".$request->file('imgpath')->getClientOriginalName();
 
             $request->file('imgpath')->move(
                 base_path() . '/public/img/blog/', $imageName);

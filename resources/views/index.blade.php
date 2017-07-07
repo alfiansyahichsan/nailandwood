@@ -24,7 +24,7 @@ Home
 													</a>
 										        </h1>
 										        <div class="rmButton link" style="padding-top: 10px;">
-													<a href="{{URL::Route('shop')}}">Order</a>
+													<p><a href="{{URL::Route('shop')}}">{!!$sliders->text!!}</a></p>
 												</div>
 											</div>
 						                </div>

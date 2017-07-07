@@ -62,13 +62,15 @@ class SlidersController extends Controller
 
         $slider = new Slider;
 
-        $slider->imagepathslider = $request->imagepathslider->getClientOriginalName();
+        $b = rand(11111, 99999);
+
+        $slider->imagepathslider = $b."-".$request->imagepathslider->getClientOriginalName();
         $slider->title = $request->title;
         $slider->text = $request->text;
         $slider->category = $request->category;
 
         $slider->save();
-        $imageName = $request->file('imagepathslider')->getClientOriginalName();
+        $imageName = $b."-".$request->file('imagepathslider')->getClientOriginalName();
 
         $request->file('imagepathslider')->move(
             base_path() . '/public/img/header/', $imageName);
@@ -76,58 +78,21 @@ class SlidersController extends Controller
         return redirect()->back()->with('success','Data has been saved successfully')->with('imageName',$imageName);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         return response()->json($event);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    // public function edit($id)
-    // {
-    //     //
-    // }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    // public function update(Request $request, $id)
-    // {
-    //     //
-    // }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-
     public function deleteItem(Request $req) {
       $slider = Slider::find($req->id);
-      unlink(public_path('img/header/'.$slider->imagepathslider));
-      $slider->delete();
-      return response()->json();
-    }
 
-    // public function destroy($id)
-    // {
-    //     $slider = Slider::find($id);
-    //     $slider->delete();
-    //     return redirect()->back()->with('hapus','Item deleted successfully');
-    // }
+      $directory = public_path('img/header/' . $slider->imagepathslider);
+
+      if (file_exists($directory)) {
+            unlink(public_path('img/header/'.$slider->imagepathslider));
+            }
+      
+      $slider->delete();
+      return redirect()->back()->withErrors(['berhasil' => '1']);
+    }
 }

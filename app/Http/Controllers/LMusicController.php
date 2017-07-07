@@ -64,18 +64,20 @@ class LMusicController extends Controller
 
         $lmusic = new Lmusic;
 
-        $lmusic->imgpath = $request->imgpath->getClientOriginalName();
-        $lmusic->imgpath2 = $request->imgpath2->getClientOriginalName();
+        $b = rand(11111, 99999);
+
+        $lmusic->imgpath = $b."-".$request->imgpath->getClientOriginalName();
+        $lmusic->imgpath2 = $b."-".$request->imgpath2->getClientOriginalName();
         $lmusic->title = $request->title;
         $lmusic->tag = $request->tag;
 
         $lmusic->save();
 
-        $imageName = $request->file('imgpath')->getClientOriginalName();
+        $imageName = $b."-".$request->file('imgpath')->getClientOriginalName();
 
         $request->file('imgpath')->move(
             base_path() . '/public/img/albums/', $imageName);
-        $imageName2 = $request->file('imgpath2')->getClientOriginalName();
+        $imageName2 = $b."-".$request->file('imgpath2')->getClientOriginalName();
 
         $request->file('imgpath2')->move(
             base_path() . '/public/img/albums/', $imageName2);
@@ -94,46 +96,21 @@ class LMusicController extends Controller
         return response()->json($lmusic);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    // public function edit($id)
-    // {
-    //     //
-    // }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    // public function update(Request $request, $id)
-    // {
-    //     //
-    // }
-
     // delete item
     public function deleteItem(Request $req) {
-      $lmusic = Lmusic::find($req->id);
-      unlink(public_path('img/albums/'.$lmusic->imgpath));
-      unlink(public_path('img/albums/'.$lmusic->imgpath2));
-      $lmusic->delete();
-      return response()->json();
-    }
+        $lmusic = Lmusic::find($req->id);
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    // public function destroy($id)
-    // {
-    //     //
-    // }
+        $directory = public_path('img/albums/' . $lmusic->imgpath);
+        $directory2 = public_path('img/albums/' . $lmusic->imgpath2);
+
+        if (file_exists($directory)) {
+            unlink(public_path('img/albums/'.$lmusic->imgpath));
+            }
+        elseif(file_exists($directory2)){
+            unlink(public_path('img/albums/'.$lmusic->imgpath2));
+        } 
+            
+      $lmusic->delete();
+      return redirect()->back()->withErrors(['berhasil' => '1']);
+    }
 }

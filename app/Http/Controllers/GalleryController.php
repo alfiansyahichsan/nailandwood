@@ -59,11 +59,13 @@ class GalleryController extends Controller
 
         $gallery = new Gallery;
 
-        $gallery->imgpath = $request->imgpath->getClientOriginalName();
+        $b = rand(11111, 99999);
+
+        $gallery->imgpath = $b."-".$request->imgpath->getClientOriginalName();
         $gallery->title = $request->title;
 
         $gallery->save();
-        $imageName = $request->file('imgpath')->getClientOriginalName();
+        $imageName = $b."-".$request->file('imgpath')->getClientOriginalName();
 
         $request->file('imgpath')->move(
             base_path() . '/public/img/gallery/', $imageName);
@@ -83,9 +85,15 @@ class GalleryController extends Controller
     }
 
     public function deleteItem(Request $req) {
-      $gallery = Gallery::find($req->id);
-      unlink(public_path('img/gallery/'.$gallery->imgpath));
-      $gallery->delete();
-      return response()->json();
+        $gallery = Gallery::find($req->id);
+
+        $directory = public_path('img/gallery/' . $gallery->imgpath);
+
+        if (file_exists($directory)) {
+            unlink(public_path('img/gallery/'.$gallery->imgpath));
+            }
+
+        $gallery->delete();
+        return redirect()->back()->withErrors(['berhasil' => '1']);
     }
 }

@@ -63,12 +63,14 @@ class AboutblogController extends Controller
 
         $about = new Aboutblog;
 
-        $about->imgpath = $request->imgpath->getClientOriginalName();
+        $b = rand(11111, 99999);
+
+        $about->imgpath = $b."-".$request->imgpath->getClientOriginalName();
         $about->title = $request->title;
         $about->text = $request->text;
 
         $about->save();
-        $imageName = $request->file('imgpath')->getClientOriginalName();
+        $imageName = $b."-".$request->file('imgpath')->getClientOriginalName();
 
         $request->file('imgpath')->move(
             base_path() . '/public/img/logo/', $imageName);
@@ -88,9 +90,15 @@ class AboutblogController extends Controller
     }
 
     public function deleteItem(Request $req) {
-      $about = Aboutblog::find($req->id);
-      unlink(public_path('img/logo/'.$about->imgpath));
+        $about = Aboutblog::find($req->id);
+
+        $directory = public_path('img/logo/' . $about->imgpath);
+
+        if (file_exists($directory)) {
+            unlink(public_path('img/logo/'.$about->imgpath));
+        }
+      
       $about->delete();
-      return response()->json();
+      return redirect()->back()->withErrors(['berhasil' => '1']);
     }
 }

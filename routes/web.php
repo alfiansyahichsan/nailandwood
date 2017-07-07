@@ -70,6 +70,7 @@ Route::post ( '/admin/news/deleteItem', 'NewsController@deleteItem' );
 
 Route::get('/news/{param}',array('as'=>'blogsingle','uses'=>'page@BlogSingle'));
 
+
 Route::resource('admin/blog','BlogsController');
 Route::get('/admin/blog',array('as'=>'lblog','uses'=>'BlogsController@index'));
 Route::post ( '/admin/blog/editItem', 'BlogsController@editItem' );

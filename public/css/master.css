@@ -13,6 +13,65 @@
   font-family: codeBold;
   src: url(../fonts/codeBold.otf);
 }
+.spinner {
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  margin: auto;
+  width: 50px;
+  height: 40px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.spinner > div {
+  background-color: #bb9b69;
+  height: 100%;
+  width: 6px;
+  display: inline-block;
+  
+  -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+  animation: sk-stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+.spinner .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+@-webkit-keyframes sk-stretchdelay {
+  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+  20% { -webkit-transform: scaleY(1.0) }
+}
+
+@keyframes sk-stretchdelay {
+  0%, 40%, 100% { 
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }  20% { 
+    transform: scaleY(1.0);
+    -webkit-transform: scaleY(1.0);
+  }
+}
+
 @font-face {
   font-family: codeLight;
   src: url(../fonts/codeLight.otf);
@@ -10303,6 +10362,9 @@ body {
 /***********************************************************************************************/
 /* END HOME-ALBUM-COVER */
 /***********************************************************************************************/
+.rmButton p:hover{
+  text-decoration: none;
+}
 .rmButton a{
   color: white;
 }
@@ -11913,7 +11975,7 @@ body > div.fusion-fullwidth.fullwidth-box.fusion-fullwidth-2.fusion-parallax-lef
   padding-bottom: 2rem;
 }
 @media (max-width: 800px) {
-  .blogSingle .paragraph p {
+  /*.blogSingle .paragraph p {
   padding: 0 15px 0 15px;
   }
   .blogSingle .admin-list ul {
@@ -11922,7 +11984,7 @@ body > div.fusion-fullwidth.fullwidth-box.fusion-fullwidth-2.fusion-parallax-lef
   }
   .title h2{
     padding-left: 15px;
-  }
+  }*/
 }
 .blogSingle .paragraph p:last-child {
   padding-bottom: 0;

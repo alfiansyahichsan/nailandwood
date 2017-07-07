@@ -67,6 +67,8 @@ class NewsController extends Controller
 
         $news = new News;
 
+        $b = rand(11111, 99999);
+
         $validation = Validator::make($request->except('_token'), $rules);
         if ($validation->passes()) {
         
@@ -77,11 +79,11 @@ class NewsController extends Controller
             $news->category = $request->category;
         }
         if($request->hasFile('imgpath')){
-            $news->imgpath = $request->imgpath->getClientOriginalName();
+            $news->imgpath = $b."-".$request->imgpath->getClientOriginalName();
             $news->title = $request->title;
             $news->text = $request->text;
             $news->category = $request->category;
-            $imageName = $request->file('imgpath')->getClientOriginalName();
+            $imageName = $b."-".$request->file('imgpath')->getClientOriginalName();
 
             $request->file('imgpath')->move(
                 base_path() . '/public/img/news/', $imageName);
@@ -97,9 +99,9 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(News $news)
+    public function show($id)
     {
-       return response()->json($news);
+        
     }
 
     /**
@@ -138,15 +140,4 @@ class NewsController extends Controller
       $news->delete();
       return response()->json();
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    // public function destroy($id)
-    // {
-    //     //
-    // }
 }

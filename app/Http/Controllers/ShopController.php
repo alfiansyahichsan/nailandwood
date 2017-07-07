@@ -48,12 +48,6 @@ class ShopController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -67,7 +61,9 @@ class ShopController extends Controller
 
         $shop = new Shop;
 
-        $shop->imgpath = $request->imgpath->getClientOriginalName();
+        $b = rand(11111, 99999);
+
+        $shop->imgpath = $b."-".$request->imgpath->getClientOriginalName();
         $shop->title = $request->title;
         $shop->detail = $request->detail;
         $shop->price = $request->price;
@@ -75,7 +71,7 @@ class ShopController extends Controller
         $shop->category = $request->category;
 
         $shop->save();
-        $imageName = $request->file('imgpath')->getClientOriginalName();
+        $imageName = $b."-".$request->file('imgpath')->getClientOriginalName();
 
         $request->file('imgpath')->move(
             base_path() . '/public/img/shop/', $imageName);
@@ -96,8 +92,14 @@ class ShopController extends Controller
 
     public function deleteItem(Request $req) {
       $shop = Shop::find($req->id);
-      unlink(public_path('img/shop/'.$shop->imgpath));
+
+      $directory = public_path('img/shop/' . $shop->imgpath);
+
+      if (file_exists($directory)) {
+            unlink(public_path('img/shop/'.$shop->imgpath));
+            }
+            
       $shop->delete();
-      return response()->json();
+      return redirect()->back()->withErrors(['berhasil' => '1']);
     }
 }

@@ -64,18 +64,20 @@ class NextEventController extends Controller
 
         $nevent = new Nextevent;
 
-        $nevent->backgroundpic = $request->backgroundpic->getClientOriginalName();
-        $nevent->logoeventpic = $request->logoeventpic->getClientOriginalName();
+        $b = rand(11111, 99999);
+
+        $nevent->backgroundpic = $b."-".$request->backgroundpic->getClientOriginalName();
+        $nevent->logoeventpic = $b."-".$request->logoeventpic->getClientOriginalName();
         $nevent->datemax = $request->datemax;
         $nevent->link = $request->link;
 
         $nevent->save();
-        $imageName = $request->file('backgroundpic')->getClientOriginalName();
+        $imageName = $b."-".$request->file('backgroundpic')->getClientOriginalName();
 
         $request->file('backgroundpic')->move(
             base_path() . '/public/img/events/', $imageName);
 
-        $imageName2 = $request->file('logoeventpic')->getClientOriginalName();
+        $imageName2 = $b."-".$request->file('logoeventpic')->getClientOriginalName();
 
         $request->file('logoeventpic')->move(
             base_path() . '/public/img/events/', $imageName2);
@@ -93,46 +95,21 @@ class NextEventController extends Controller
         return response()->json($nevent);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    // public function edit($id)
-    // {
-    //     //
-    // }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    // public function update(Request $request, $id)
-    // {
-    //     //
-    // }
-
     // delete item
     public function deleteItem(Request $req) {
-      $nevent = Nextevent::find($req->id);
-      unlink(public_path('img/events/'.$nevent->backgroundpic));
-      unlink(public_path('img/events/'.$nevent->logoeventpic));
-      $nevent->delete();
-      return response()->json();
-    }
+        $nevent = Nextevent::find($req->id);
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    // public function destroy($id)
-    // {
-    //     //
-    // }
+        $directory = public_path('img/events/' . $nevent->backgroundpic);
+        $directory2 = public_path('img/events/' . $nevent->logoeventpic);
+
+        if (file_exists($directory)) {
+            unlink(public_path('img/events/'.$nevent->backgroundpic));
+        }
+        elseif(file_exists($directory2)){
+            unlink(public_path('img/events/'.$nevent->logoeventpic));
+        }
+
+      $nevent->delete();
+      return redirect()->back()->withErrors(['berhasil' => '1']);
+    }
 }

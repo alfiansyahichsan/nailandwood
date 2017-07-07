@@ -129,8 +129,12 @@ class page extends Controller
 	
 	public function BlogSingle($param){
 		$news = \App\News::where('id',$param)->first();
+		$next = \App\News::where('id','>',$param)->first();
+		$previous = \App\News::where('id','<',[$param])->first();
 		return view('blogsingle', [
-                'news' => $news
+                'news' => $news,
+                'next' => $next,
+                'previous' => $previous
 
             ]);
 	}
@@ -139,10 +143,14 @@ class page extends Controller
 		$blogs = \App\Blog::where('id',$param)->first();
 		$recent = \App\Blog::whereNotIn('id', [$param])->get();
 		$about = \App\Aboutblog::get();
+		$next = \App\News::where('id','>',$param)->first();
+		$previous = \App\News::where('id','<',[$param])->first();
 		return view('blogpersonal', [
                 'blogs' => $blogs,
                 'recent' => $recent,
-                'about' => $about
+                'about' => $about,
+                'next' => $next,
+                'previous' => $previous
 
 
             ]);

@@ -56,13 +56,15 @@ class PlaylistController extends Controller
     {
         $rules = [
         	'title' => 'required',
-        	'audiopath' => 'mimes:mpga',
+        	'audiopath' => 'mimes:mpga|max:10240',
             'imgthumbnailpath' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             
         ];
 
         $playlist = new Playlists;
-           
+        
+        $b = rand(11111, 99999);
+
         $playlist->title = $request->title;
 
         $validation = Validator::make($request->except('_token'), $rules);
@@ -79,9 +81,9 @@ class PlaylistController extends Controller
 
         if($request->hasFile('imgthumbnailpath')){
             $playlist->title = $request->title;
-            $playlist->imgthumbnailpath = $request->imgthumbnailpath->getClientOriginalName();
+            $playlist->imgthumbnailpath = $b."-".$request->imgthumbnailpath->getClientOriginalName();
 
-            $imageName = $request->file('imgthumbnailpath')->getClientOriginalName();
+            $imageName = $b."-".$request->file('imgthumbnailpath')->getClientOriginalName();
 
             $request->file('imgthumbnailpath')->move(
             base_path() . '/public/img/player/', $imageName);
