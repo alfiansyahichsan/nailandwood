@@ -28,7 +28,7 @@
 									<li>
 										<div class="priceCart">
 											<img src="{{asset('/img/shop/'.\App\Shop::GambarProduk($item->id))}}" alt="">
-											<a href="#">{{\App\Shop::NamaProduk($item->id)}}}}</a>
+											<a href="#">{{\App\Shop::NamaProduk($item->id_product)}}}}</a>
 											<p>Price:&nbsp;<span>Rp. {{number_format( \App\Shop::HargaProduk($item->id_product), 0 , '' , '.' )}}</span></p>
 											<p class="quantity">Quantity: <span>{{$item->jumlah}}</span></p>
 										</div>
