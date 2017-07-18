@@ -11424,6 +11424,11 @@ body > div.fusion-fullwidth.fullwidth-box.fusion-fullwidth-2.fusion-parallax-lef
 /***********************************************************************************************/
 /* START HOME GALLERY SECTION */
 /***********************************************************************************************/
+.object-fit_contain { object-fit: cover }
+.object-fit_fill { object-fit: fill }
+.object-fit_cover { object-fit: contain }
+.object-fit_none { object-fit: none }
+.object-fit_scale-down { object-fit: scale-down }
 @media only screen and (max-width: 768) {
   .gallerySection{
     margin-left: 0;
@@ -12729,7 +12734,6 @@ body > div.fusion-fullwidth.fullwidth-box.fusion-fullwidth-2.fusion-parallax-lef
   text-align: center;
   width: 150px;
   height: 150px;
-  background: red;
   -moz-border-radius: 75px;
   -webkit-border-radius: 75px;
   border-radius: 50%;

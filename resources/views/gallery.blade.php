@@ -39,7 +39,7 @@ Gallery
                             <figcaption>
                                 <!-- Single Album Image -->
                                 <div class="hovereffect">
-                                    <img class="img-responsive" src="{{asset('img/gallery/'.$pict->imgpath)}}" alt="{{$pict->title}}">
+                                    <img class="img-responsive object-fit_contain" src="{{asset('img/gallery/'.$pict->imgpath)}}" alt="{{$pict->title}}">
                                     <div class="overlay">
                                        <a class="info lightbox" href="{{asset('img/gallery/'.$pict->imgpath)}}"></a>
                                     </div>

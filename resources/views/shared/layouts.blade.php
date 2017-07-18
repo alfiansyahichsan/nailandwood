@@ -4,6 +4,16 @@
 	<div class="row">
 		<div class="topHeader col-md-12" style="background-color: black; height: 67px;">
 			<div class="header">
+				@if(count($errors) > 0)
+					<div class="alert alert-danger" role="alert" style="text-align: center; margin: 0 auto;">
+					    <strong>Error : </strong>
+					    <ul>
+					        @foreach($errors->all() as $error)
+					        <li>{{ $error }}</li>
+					        @endforeach
+					    </ul>
+					</div>
+				@endif
 				<div class="rightTopHeader">
 					<nav class="social-iconsss">
 						<ul>
@@ -155,22 +165,7 @@
 			<div class="container">
 				<div class="subscribefooter">
 					<a>Join our mailing list for the latest news, upcoming events</a>
-					@if ($message = Session::get('success'))
-
-				       <div id="add_data_Modal" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body" style="padding-left: 30px; padding-right: 35px;">
-            <p>{{$message}}</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-				    @endif
+					
 					{{ csrf_field() }}
 					<form action="/subscribe" method="post" class="comment-form">
 					{{ csrf_field() }}

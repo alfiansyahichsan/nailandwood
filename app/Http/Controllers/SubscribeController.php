@@ -29,8 +29,13 @@ class SubscribeController extends Controller
         $subscribe->email = $request->email;
 
         $subscribe->save();
+        echo "success";
+        $notification = array(
+            'message' => 'Thanks for submitting.', 
+            'alert-type' => 'success'
+        );
 
-        return redirect()->back()->with('success',"thanks for submiting!!");
+        return back()->with($notification);
     }
 
     // delete item

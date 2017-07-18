@@ -12,6 +12,7 @@
 @yield('css')
 	<!-- ========== CSS INCLUDES ========== -->
 	<link rel="stylesheet" href="{{ asset('css/master.css') }}">
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
 </head>
 <body>
 	<div class="page-loader">
@@ -34,6 +35,8 @@
 	<script type="text/javascript" src="{{ asset('js/jPlayer.js')}}"></script>
 	<script type="text/javascript" src="{{ asset('js/plugins.js')}}"></script>
 	<script type="text/javascript" src="{{ asset('js/main.js')}}"></script>
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
 	<script>
 		$(document).ready(function() {
     // Configure/customize these variables.
@@ -71,6 +74,29 @@
         return false;
     });
 });
+	</script>
+	<script>
+	@if(Session::has('message'))
+	var type = "{{ Session::get('alert-type', 'info') }}";
+	switch(type){
+	    case 'info':
+	        toastr.info("{{ Session::get('message') }}");
+	        break;
+	    
+	    case 'warning':
+	        toastr.warning("{{ Session::get('message') }}");
+	        break;
+	    case 'success':
+	        toastr.success("{{ Session::get('message') }}");
+	        break;
+	    case 'error':
+	        toastr.error("{{ Session::get('message') }}");
+	        break;
+	}
+	@endif
+	</script>
+	<script>
+		$('div.alert').delay(2000).slideUp(300);
 	</script>
 	<!-- <script src="js/app.js"></script>
     <script src="js/script.js"></script> -->
