@@ -13,6 +13,16 @@
   font-family: codeBold;
   src: url(../fonts/codeBold.otf);
 }
+.morecontent span {
+    display: none;
+    font-family: 'Karla', sans-serif;
+    color: #4e4e4e;
+    text-decoration: none;
+}
+.morelink {
+    display: block;
+}
+
 .spinner {
   position: absolute;
   top:0;
@@ -9756,7 +9766,7 @@ html body {
   font-weight: 700;
 }
 .productDetails .price {
-  padding: 4.5rem 0;
+  padding: 1rem 0;
   font-size: 3.1rem;
   color: #fa5264;
   font-weight: 700;
@@ -9914,6 +9924,9 @@ html body {
 .product-quantity {
   padding-bottom: 6.5rem;
 }
+.clothing .col-sm-7{
+  padding-right: 40px;
+}
 .clothing .products {
   padding-top: 10rem;
 }
@@ -10003,7 +10016,10 @@ html body {
     padding-left: 10rem;
   }
   .clothing {
-    padding-bottom: 8rem;
+    padding-bottom: 4rem;
+  }
+  .clothing .col-sm-7{
+    padding-right: 0;
   }
   .paddingTop {
     padding-top: 5rem;
@@ -10401,7 +10417,7 @@ body {
   justify-content:center;
 }
 .item p{
-  margin-top: 40px;
+  margin-top: 15px;
 }
 /* Control buttons  */
 #quote-carousel .carousel-control
@@ -10410,7 +10426,7 @@ body {
   color: #222;
   font-size: 1.4em;
   text-shadow: none;
-  margin-top: 60px;
+  padding-top: 45px;
 }
 
 /* Previous button  */
@@ -13485,11 +13501,12 @@ body > div.fusion-fullwidth.fullwidth-box.fusion-fullwidth-2.fusion-parallax-lef
 .rightTopHeader .cartItems ul li .priceCart img {
   margin-right: 1.5rem;
   float: left;
+  height: 90px;
+  width: 90px;
 }
 .rightTopHeader .cartItems ul li .priceCart a {
   padding: 0;
   margin: 0;
-  display: block;
   font-size: 1.5rem;
   font-family: 'Karla', sans-serif;
   font-weight: 600;
@@ -13497,7 +13514,6 @@ body > div.fusion-fullwidth.fullwidth-box.fusion-fullwidth-2.fusion-parallax-lef
   position: relative;
 }
 .rightTopHeader .cartItems ul li .priceCart a:before {
-  content: '\f00d';
   position: absolute;
   font-family: FontAwesome;
   top: 0;
@@ -15664,6 +15680,7 @@ body.boxed .pagination-2 {
   color: #9e9e9e;
   height: 150px;
   width: 100%;
+  display: inline-block;
 }
 p {
   font-weight: 500;

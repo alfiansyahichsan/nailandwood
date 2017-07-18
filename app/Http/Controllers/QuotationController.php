@@ -49,8 +49,8 @@ class QuotationController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'quote' => 'required',
-            'by' => 'required',
+            'quote' => 'required|max:255',
+            'by' => 'required|max:45',
         ]);
 
         $quote = new Quotation;

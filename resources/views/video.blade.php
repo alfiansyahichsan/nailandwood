@@ -9,11 +9,11 @@ Video
         <div class="row qwerty">
             <div class="col-sm-12">
             	<div class="breadcrumb-fullscreen-parent phone-menu-bg">
-					<div class="breadcrumb breadcrumb-fullscreen alignleft small-description overlay almost-black-overlay" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
+					<!-- <div class="breadcrumb breadcrumb-fullscreen alignleft small-description overlay almost-black-overlay" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
 						<div id="bgndVideo" class="player" data-property="{videoURL:'https://youtu.be/1tT2GYLKHLw',containment:'.player',autoPlay:true, mute:true, startAt:0, opacity:1}">
                     	    
                     	</div>
-					</div>
+					</div> -->
 				</div>
             </div> 
         </div>
@@ -31,20 +31,19 @@ Video
 						
 					</div>
 					<div class="col-sm-8">
-					@foreach($lvideo as $lvideo)
+					@if(!empty($lvideo) && $lvideo->count())
+					@foreach($lvideo as $lvideos)
 					@if($loop->first)
 						<div class="blogBox">	
-							<iframe width="600" height="410" src="{{$lvideo->link}}" frameborder="0" allowfullscreen></iframe>
+							<iframe width="600" height="410" src="{{$lvideos->link}}" frameborder="0" allowfullscreen></iframe>
 							<div class="blogBoxContent">
 								<div class="blogHeader">
-								<h1><a>{{$lvideo->title}}</a></h1>
+								<h1><a>{{$lvideos->title}}</a></h1>
 								</div>
-							<div class="blogParagraph read-more-wrap" style="margin-top: 5px;">
-									<input type="checkbox" class="read-more-state" id="post-{{$lvideo->id}}" />
-										<p class="read-more-wrap">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus hic nam voluptatem mollitia doloribus! Tempora neque pariatur saepe error esse soluta repellat laboriosam aperiam qui accusantium placeat, aspernatur maxime, 
-										<span class="read-more-target">Libero fuga facilis vel consectetur quos sapiente deleniti eveniet dolores tempore eos deserunt officia quis ab? Excepturi vero tempore minus beatae voluptatem!</span></p>
+								<div class="blogParagraph read-more-wrap" style="margin-top: 5px;">
+									<input type="checkbox" class="read-more-state" id="post-{{$lvideos->id}}" />
+										<p class="read-more-wrap more">{{ $lvideos["story"] }}</p>
 
-									<label for="post-{{$lvideo->id}}" class="read-more-trigger rmButton" style="margin-top: 10px;"></label>
 									<hr style="margin-bottom: -20px;">
 									
 								</div><!--end blogParagraph  -->
@@ -53,26 +52,26 @@ Video
 						</div><!-- end blogBox -->
 					@else($loop->remaining)
 						<div class="blogBox">	
-							<iframe width="600" height="410" src="{{$lvideo->link}}" frameborder="0" allowfullscreen></iframe>
+							<iframe width="600" height="410" src="{{$lvideos->link}}" frameborder="0" allowfullscreen></iframe>
 							<div class="blogBoxContent">
 								<div class="blogHeader">
-								<h1><a>{{$lvideo->title}}</a></h1>
+								<h1><a>{{$lvideos->title}}</a></h1>
 								</div>
 							<div class="blogParagraph read-more-wrap" style="margin-top: 5px;">
-									<input type="checkbox" class="read-more-state" id="post-{{$lvideo->id}}" />
-										<p class="read-more-wrap">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus hic nam voluptatem mollitia doloribus! Tempora neque pariatur saepe error esse soluta repellat laboriosam aperiam qui accusantium placeat, aspernatur maxime, 
-										<span class="read-more-target">Libero fuga facilis vel consectetur quos sapiente deleniti eveniet dolores tempore eos deserunt officia quis ab? Excepturi vero tempore minus beatae voluptatem!</span></p>
-
-									<label for="post-{{$lvideo->id}}" class="read-more-trigger rmButton" style="margin-top: 10px;"></label>
+									<input type="checkbox" class="read-more-state" id="post-{{$lvideos->id}}" />
+										<p class="read-more-wrap more">{{ $lvideos["story"] }}</p>
 									<hr style="margin-bottom: -20px;">
 									
 								</div><!--end blogParagraph  -->
 							
 							</div><!-- end blogBoxContent -->
 						</div><!-- end blogBox -->
-			          @endif
-						
+			          @endif						
 					@endforeach
+					@endif
+					<div class="paginate" style="text-align: center;">
+			          	{{ $lvideo->render() }}
+			         </div>
 						
 					<div class="col-sm-2">
 

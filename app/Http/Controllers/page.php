@@ -14,7 +14,7 @@ class page extends Controller
 	}	
 
 	public function Home(){
-		$lvideo = \App\Lvideo::get();
+		$lvideo = \App\Lvideo::first()->get();
 		$slider = \App\Slider::where('category', 1)->get();
 		$quotation = \App\Slider::where('category', 5)->get();
 		$lmusic = \App\Lmusic::get();
@@ -48,7 +48,7 @@ class page extends Controller
 	}
 
 	public function Gallery(){
-		$gallery = \App\Gallery::get();
+		$gallery = \App\Gallery::orderBy('created_at','DESC')->paginate(9);
 		return view('gallery', [
                 'gallery' => $gallery
 
@@ -102,7 +102,7 @@ class page extends Controller
 	public function Blog(){
 		$slider = \App\Slider::where('category', 2)->get();
 		$about = \App\Aboutblog::get();
-		$blogs = \App\Blog::get();
+		$blogs = \App\Blog::orderBy('created_at','DESC')->paginate(5);
 		return view('blog', [
                 'slider' => $slider,
                 'blogs' => $blogs,
@@ -112,7 +112,7 @@ class page extends Controller
 	}
 
 	public function Video(){
-		$lvideo = \App\Lvideo::whereNotIn('id',[1])->get();
+		$lvideo = \App\Lvideo::orderBy('created_at','DESC')->paginate(4);
 		return view('video', [
                 'lvideo' => $lvideo
 

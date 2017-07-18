@@ -50,9 +50,9 @@ Shop
                                 <ul class="clearfix">
                                 @foreach($shop as $sh)
                                 @if($sh->category == 1)
-                                    <li class="col-sm-4 apparel">
+                                    <li class="col-sm-3 apparel"  style="padding-bottom: 30px;">
                                 @else
-                                	<li class="col-sm-4 cd">
+                                	<li class="col-sm-3 cd" style="padding-bottom: 30px;">
                                 @endif
 		                                <figure>
 		                                    <figcaption>

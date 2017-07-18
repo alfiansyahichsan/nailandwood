@@ -58,16 +58,17 @@ class LMusicController extends Controller
         $this->validate($request, [
             'imgpath' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'imgpath2' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'title' => 'required',
-            'tag' => 'required',
+            'title' => 'required|max:45',
+            'tag' => 'required|max:45',
         ]);
 
         $lmusic = new Lmusic;
 
         $b = rand(11111, 99999);
+        $c = rand(11111, 99999);
 
         $lmusic->imgpath = $b."-".$request->imgpath->getClientOriginalName();
-        $lmusic->imgpath2 = $b."-".$request->imgpath2->getClientOriginalName();
+        $lmusic->imgpath2 = $c."-".$request->imgpath2->getClientOriginalName();
         $lmusic->title = $request->title;
         $lmusic->tag = $request->tag;
 
@@ -77,7 +78,7 @@ class LMusicController extends Controller
 
         $request->file('imgpath')->move(
             base_path() . '/public/img/albums/', $imageName);
-        $imageName2 = $b."-".$request->file('imgpath2')->getClientOriginalName();
+        $imageName2 = $c."-".$request->file('imgpath2')->getClientOriginalName();
 
         $request->file('imgpath2')->move(
             base_path() . '/public/img/albums/', $imageName2);

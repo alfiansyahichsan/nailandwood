@@ -12,8 +12,10 @@
 					<div class="col-sm-8">
 					@if($blogs->category == 1)
 						<div class="item"><img src="{{asset('img/blog/'.$blogs->imgpath)}}" alt="{{$blogs->imgpath}}"></div>
-					@else
+					@elseif($blogs->category == 2)
 						<iframe width="600" height="410" src="{{$blogs->linkvideo}}" frameborder="0" allowfullscreen></iframe>
+					@else
+					
 					@endif
 						<div class="blogBox">	
 							    

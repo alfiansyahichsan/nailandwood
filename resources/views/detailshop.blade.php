@@ -31,12 +31,11 @@
                         {!! Form::open(['method'=>'POST','action'=>'CartController@TambahCart']) !!}
                         <input type="hidden" name="book" value="{{$shop->id}}" />
 
-
 						<div class="product-quantity woocommerce cart shop_table">
                             <div class="quantity buttons_added">
                                 <input type="number" step="1" min="1" name="amount" value="1" title="Qty" class="input-text qty text">
                             </div>
-                            <button type="submit" class="single_add_to_cart_button button alt buttonTT">
+                            <button class="single_add_to_cart_button button alt buttonTT">
                                 Add to cart
                             </button>
                         </div><!-- end product-quantity -->
@@ -88,8 +87,8 @@
                         @foreach($related as $r)
                             <li class="col-sm-3">
                                 <figure>
-                                    <figcaption>
-                                        <img src="{{asset('img/shop/'.$r->imgpath)}}" alt="{{$r->title}}" style="padding: 0 10px 0 10px;">
+                                    <figcaption">
+                                        <img src="{{asset('img/shop/'.$r->imgpath)}}" alt="{{$r->title}}" style="padding: 0 10px 10px 10px;">
                                     </figcaption>
                                     <div class="content">
                                         <div class="shopHover">

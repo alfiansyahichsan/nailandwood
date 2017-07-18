@@ -27,7 +27,7 @@ class BiographyController extends Controller
 
     // edit data function
     public function editItem(Request $req) {
-
+        
         $bio = Biography::find ($req->input('id'));
 
         $bio->text = $req->text;
@@ -58,9 +58,9 @@ class BiographyController extends Controller
     {
         $this->validate($request, [
             'text' => 'required',
-            'alamat' => 'required',
-            'email' => 'required',
-            'phone' => 'required',
+            'alamat' => 'required|max:45',
+            'email' => 'required|email|max:45',
+            'phone' => 'required|numeric',
         ]);
 
         $bio = new Biography;

@@ -13,30 +13,6 @@ class="active"
 @section('js')
 <meta name="_token" content="{!! csrf_token() !!}" />
 <script src="{{asset('js/meeepo.js')}}"></script>
-<script type="text/javascript" src="{{asset('/ckeditor/ckeditor.js')}}"></script>
-<script>
-     CKEDITOR.replace( 'editor1' );
-     CKEDITOR.replace( 'editor2' );
-     CKEDITOR.config.editor = [
-        { name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
-        { name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
-        { name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] },
-        { name: 'forms', groups: [ 'forms' ] },
-        
-        { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
-        { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] },
-        { name: 'links', groups: [ 'links' ] },
-        { name: 'insert', groups: [ 'insert' ] },
-        { name: 'styles', groups: [ 'styles' ] },
-        { name: 'colors', groups: [ 'colors' ] },
-        { name: 'tools', groups: [ 'tools' ] },
-        { name: 'others', groups: [ 'others' ] },
-        { name: 'about', groups: [ 'about' ] }
-    ];
-
-    CKEDITOR.config.removeButtons = 'Save,NewPage,Preview,Print,Templates,PasteText,PasteFromWord,Replace,Find,SelectAll,Scayt,Form,Checkbox,Radio,TextField,Button,Textarea,Select,ImageButton,HiddenField,RemoveFormat,Outdent,Indent,CreateDiv,BidiLtr,BidiRtl,Language,Anchor,Image,Flash,Table,HorizontalRule,Iframe,PageBreak,Format,Maximize,About,ShowBlocks';
-
-</script>
 @include("admin.video.ajax")
 
 
@@ -64,6 +40,16 @@ class="active"
         </div>
 
     @endif
+@if(count($errors) > 0)
+<div class="alert alert-danger" role="alert">
+    <strong>Error : </strong>
+    <ul>
+        @foreach($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
 <div class="row">
     <div class="col-md-12">
         <div align="left" style=" margin-bottom: 20px;">
@@ -123,7 +109,7 @@ class="active"
                     <input type="text" name="title" id="title" class="form-control" required></input>
                     <br />
                     <label>Story</label>
-                    <textarea type="text" name="story" id="editor1" class="form-control" required></textarea>
+                    <textarea type="text" name="story" id="story" class="form-control" required></textarea>
                     <br />
 
                     <input type="submit" value="Submit" class="btn btn-success" />
@@ -169,7 +155,7 @@ class="active"
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="story">Story</label>
                     <div class="col-sm-10">
-                        <input type="name" class="form-control" id="editor2">
+                        <textarea type="text" class="form-control" id="d"></textarea>
                     </div>
                 </div>
 

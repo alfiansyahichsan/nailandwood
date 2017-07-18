@@ -59,10 +59,10 @@ class EventsController extends Controller
     {
         $this->validate($request, [
             'date' => 'required',
-            'eventname' => 'required',
-            'venue' => 'required',
-            'location' => 'required',
-            'tickets' => 'required',
+            'eventname' => 'required|max:45',
+            'venue' => 'required|max:45',
+            'location' => 'required|max:45',
+            'tickets' => 'required|max:10',
         ]);
 
         $event = new Event;

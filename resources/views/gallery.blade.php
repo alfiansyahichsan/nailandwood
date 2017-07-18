@@ -54,7 +54,10 @@ Gallery
             </div><!-- end col-sm-4 --> 
             @endforeach
                                
-            </div><!-- end container -->    
+            </div><!-- end container -->
+            <div class="paginate" style="text-align: center;">
+        {{ $gallery->links() }}
+    </div>
         </div><!-- end row -->  
     </section>
 

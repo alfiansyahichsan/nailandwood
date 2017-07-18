@@ -20,7 +20,7 @@ class BlogsController extends Controller
     {
         $blogs = Blog::get();
         // show data to our view
-        return view('admin.blog.index')->with('blogs',$blogs);
+        return view('admin.blog.index',['blogs' => $blogs]);
     }
 
     // edit data function
@@ -58,7 +58,7 @@ class BlogsController extends Controller
         $rules = [
             'imgpath' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'linkvideo' => '',
-            'title' => 'required',
+            'title' => 'required|max:45',
             'text' => 'required',
             'category' => 'required',
         ];
@@ -89,6 +89,12 @@ class BlogsController extends Controller
             $blogs->save();
             return redirect()->back()->with('success','Data has been saved successfully')->with('imageName',$imageName);
         }
+        else{
+            $blogs->title = $request->title;
+            $blogs->text = $request->text;
+            $blogs->category = $request->category;
+        }
+            
         $blogs->save();
             return redirect()->back()->with('success','Data has been saved successfully');
         }         

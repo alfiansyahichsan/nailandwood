@@ -131,31 +131,7 @@ Home
 				</time>
 			</div>
 			@else
-			<div class="trak-item" data-audio="{{asset('audio/'.$playlist->audiopath)}}" data-artist="Paku dan Kayu" data-thumbnail="{{asset('img/player/'.$playlist->imgthumbnailpath)}}" data-id="{{$playlist->id}}">
-				<audio preload="metadata" src="{{asset('audio/'.$playlist->audiopath)}}" title="{{$playlist->title}}"></audio>
-				<div class="additional-button">
-					<div class="center-y-table">
-						<a href="#">
-							<i class="fa fa-spotify"></i>
-						</a>
-					</div>
-				</div>
-				<div class="play-pause-button">
-					<div class="center-y-table">
-						<i class="fa fa-play"></i>
-					</div>
-				</div>
-				<div class="name-artist">
-					<div class="center-y-table">
-						<h2>
-							
-						</h2>
-					</div>
-				</div>
-				<time class="trak-duration">
-					00:00
-				</time>
-			</div>
+				
 			@endif
 			
 			@endforeach
@@ -405,7 +381,7 @@ Home
 	  <div class="row">
 	    <div class="col-md-12" >
 	    @foreach($quotation as $q)
-	      <div class="carousel slide" data-ride="carousel" id="quote-carousel" style="background-image: url({{asset('img/header/'.$q->imagepathslider)}}); width: 100%; height: 150px;">
+	      <div class="carousel slide" data-ride="carousel" id="quote-carousel" style="background-image: url({{asset('img/header/'.$q->imagepathslider)}}); width: 100%; padding-bottom: 20px;">
 	      @endforeach
 	        <!-- Carousel Slides / Quotes -->
 	        <div class="carousel-inner">

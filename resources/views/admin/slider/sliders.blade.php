@@ -67,6 +67,17 @@ class="active"
         </div>
 
     @endif
+@if(count($errors) > 0)
+<div class="alert alert-danger" role="alert">
+    <strong>Error : </strong>
+    <ul>
+        @foreach($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
+
 <div class="row">
     <div class="col-md-12">
         <div align="left" style=" margin-bottom: 20px;">
@@ -142,7 +153,7 @@ class="active"
                     </select>
                     <br />
 
-                    <input type="submit" value="Submit" class="btn btn-success" />
+                    <input id="submitButton" type="submit" value="Submit" class="btn btn-success" />
                 </form>
             </div>
             <div class="modal-footer">

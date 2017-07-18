@@ -61,7 +61,10 @@
                         </li>
                         <li>
                             <a href="{{URL::Route('labout')}}" @yield("nav17")><i class="fa fa-dashboard fa-fw"></i> About - Blog Page</a>
-                        </li>                        
+                        </li> 
+                        <li>
+                            <a href="{{URL::Route('subscriber')}}" @yield("nav18")><i class="fa fa-dashboard fa-fw"></i> Subscriber</a>
+                        </li>                         
                         
                     </ul>
                 </div>

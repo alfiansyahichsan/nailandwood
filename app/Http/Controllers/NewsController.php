@@ -60,7 +60,7 @@ class NewsController extends Controller
         $rules = [
             'imgpath' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'linkvideo' => '',
-            'title' => 'required',
+            'title' => 'required|max:45',
             'text' => 'required',
             'category' => 'required',
         ];

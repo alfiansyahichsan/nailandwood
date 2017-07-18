@@ -50,9 +50,9 @@ class="active"
         <div class="alert alert-success">
 
             <p>{{ $message }}</p><br>
-            <!-- <div>
+            <div>
                 <img src="/img/news/{{ Session::get('imageName') }}" style="max-width: 300px; max-height: 300px; margin-right: 20px;" />               
-            </div> -->
+            </div>
 
         </div>
 
@@ -67,6 +67,16 @@ class="active"
         </div>
 
     @endif
+@if(count($errors) > 0)
+<div class="alert alert-danger" role="alert">
+    <strong>Error : </strong>
+    <ul>
+        @foreach($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
 <div class="row">
     <div class="col-md-12">
         <div align="left" style=" margin-bottom: 20px;">

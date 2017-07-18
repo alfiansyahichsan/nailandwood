@@ -55,7 +55,7 @@ class PlaylistController extends Controller
     public function store(Request $request)
     {
         $rules = [
-        	'title' => 'required',
+        	'title' => 'required|max:45',
         	'audiopath' => 'mimes:mpga|max:10240',
             'imgthumbnailpath' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             

@@ -67,6 +67,16 @@ class="active"
         </div>
 
     @endif
+    @if(count($errors) > 0)
+<div class="alert alert-danger" role="alert">
+    <strong>Error : </strong>
+    <ul>
+        @foreach($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
 <div class="row">
     <div class="col-md-12">
         <div align="left" style=" margin-bottom: 20px;">
@@ -140,6 +150,7 @@ class="active"
                         <option value="0">--- Select ---</option>
                         <option value="1">Image Post</option>
                         <option value="2">Video Post</option>
+                        <option value="3">Standard Post</option>
                     </select>
                     <br />
 
@@ -204,6 +215,7 @@ class="active"
                         <option value="0">--- Select ---</option>
                         <option value="1">Image Post</option>
                         <option value="2">Video Post</option>
+                        <option value="3">Standard Post</option>
                     </select>
                     </div>
                 </div>

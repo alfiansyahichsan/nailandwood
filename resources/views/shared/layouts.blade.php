@@ -27,13 +27,13 @@
                                     <?php foreach (\App\Cart::Item() as $item) { ?>
 									<li>
 										<div class="priceCart">
-											<img src="{{asset('/img/shop/'.\App\Shop::GambarProduk($item->id))}}" alt="">
-											<a href="#">{{\App\Shop::NamaProduk($item->id)}}</a>
+											<img src="{{asset('/img/shop/'.\App\Shop::GambarProduk($item->id_product))}}" alt="">
+											<a href="">{{\App\Shop::NamaProduk($item->id_product)}}</a><a href="{{URL::route('cart.hapus', $item->id_product)}}" style="float: right; top: 0; display: inline-block; ">X</a>
 											<p>Price:&nbsp;<span>Rp. {{number_format( \App\Shop::HargaProduk($item->id_product), 0 , '' , '.' )}}</span></p>
 											<p class="quantity">Quantity: <span>{{$item->jumlah}}</span></p>
 										</div>
 									</li>
-                                    <?php } ?>
+                                        <?php } ?>
 
 									<li>
 										<div class="total">
@@ -155,7 +155,25 @@
 			<div class="container">
 				<div class="subscribefooter">
 					<a>Join our mailing list for the latest news, upcoming events</a>
-					<form action="#" method="post" class="comment-form">
+					@if ($message = Session::get('success'))
+
+				       <div id="add_data_Modal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body" style="padding-left: 30px; padding-right: 35px;">
+            <p>{{$message}}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+				    @endif
+					{{ csrf_field() }}
+					<form action="/subscribe" method="post" class="comment-form">
+					{{ csrf_field() }}
 						<input id="email" name="email" type="text" value="" aria-required="true" required placeholder="Email...">
 						<p class="form-submit">
 							<input name="submit" type="submit" id="submit" value="Submit">

@@ -90,7 +90,7 @@ class CartController extends Controller
 
         $cart = Cart::where('session',Session::getId())->delete();
 
-        return Redirect::route('cart');
+        return redirect()->back();
     }
 
     public static function getSession()

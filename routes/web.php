@@ -106,6 +106,11 @@ Route::get('/admin/bank',array('as'=>'bank','uses'=>'BankController@index'));
 Route::post ( '/admin/bank/editItem', 'BankController@editItem' );
 Route::post ( '/admin/bank/deleteItem', 'BankController@deleteItem' );
 
+Route::resource('subscribe','SubscribeController');
+Route::get('/admin/subscribe',array('as'=>'subscriber','uses'=>'SubscribeController@index'));
+Route::post ( '/admin/subscribe/deleteItem', 'SubscribeController@deleteItem' );
+
+
 
 Route::get('/',array('as'=>'home','uses'=>'page@Home'));
 

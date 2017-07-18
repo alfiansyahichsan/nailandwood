@@ -28,7 +28,7 @@
 									<li>
 										<div class="priceCart">
 											<img src="{{asset('/img/shop/'.\App\Shop::GambarProduk($item->id_product))}}" alt="">
-											<a href="#">{{\App\Shop::NamaProduk($item->id_product)}}}}</a>
+											<a href="{{URL::route('detailshop', $item->id_product)}}">{{\App\Shop::NamaProduk($item->id_product)}}</a><a href="{{URL::route('cart.hapus', $item->id_product)}}" style="float: right; top: 0; display: inline-block; ">X</a>
 											<p>Price:&nbsp;<span>Rp. {{number_format( \App\Shop::HargaProduk($item->id_product), 0 , '' , '.' )}}</span></p>
 											<p class="quantity">Quantity: <span>{{$item->jumlah}}</span></p>
 										</div>
@@ -155,10 +155,32 @@
 			<div class="container">
 				<div class="subscribefooter">
 					<a>Join our mailing list for the latest news, upcoming events</a>
-					<form action="#" method="post" class="comment-form">
+					@if ($message = Session::get('success'))
+
+				        <div class="alert alert-success">
+
+				            <p>{{ $message }}</p>
+
+				        </div>
+
+				    @endif
+				    @if(count($errors) > 0)
+					<div class="alert alert-danger" role="alert">
+					    <strong>Error : </strong>
+					    <ul>
+					        @foreach($errors->all() as $error)
+					        <li>{{ $error }}</li>
+					        @endforeach
+					    </ul>
+					</div>
+					@endif
+
+					{{ csrf_field() }}
+					<form action="/subscribe" method="post" class="comment-form">
+					{{ csrf_field() }}
 						<input id="email" name="email" type="text" value="" aria-required="true" required placeholder="Email...">
 						<p class="form-submit">
-							<input name="submit" type="submit" id="submit" value="Submit">
+							<input name="submit" type="submit" id="submit" value="Submit" data-toggle="modal" data-target="#add_data_Modal">
 						</p>
 					</form>
 				</div>

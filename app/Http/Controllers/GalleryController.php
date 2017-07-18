@@ -54,7 +54,7 @@ class GalleryController extends Controller
     {
         $this->validate($request, [
             'imgpath' => 'required|image|mimes:jpeg,png,jpg|max:2048',
-            'title' => 'required',
+            'title' => 'required|max:255',
         ]);
 
         $gallery = new Gallery;

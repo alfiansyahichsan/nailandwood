@@ -39,12 +39,15 @@ Blog
 				<div class="blog-sidebar-right">
 
 					<div class="col-sm-8">
+				@if(!empty($blogs) && $blogs->count())
 					@foreach($blogs as $bl)
 						<div class="blogBox">
 					@if($bl->category == 1)	
 							    <div class="item"><img src="{{asset('img/blog/'.$bl->imgpath)}}" alt=""></div>
-					@else
+					@elseif($bl->category == 2)
 						<iframe width="600" height="410" src="{{$bl->linkvideo}}" frameborder="0" allowfullscreen></iframe>
+					@else
+					
 					@endif
 							<div class="blogBoxContent">
 								<div class="blogHeader">
@@ -64,8 +67,16 @@ Blog
 								</div>			
 							</div><!-- end blogBoxContent -->
 						</div><!-- end blogBox -->
+				
 					@endforeach
-						
+				@else
+					<div class="blogHeader">
+						<h3>No Post Yet !!</h3>
+					</div>
+					@endif
+						<div class="paginate" style="text-align: center;">
+		{{ $blogs->links() }}
+	</div>
 					</div><!-- end col-sm-8 -->
 				</div><!-- end blog-left -->
 
@@ -73,7 +84,7 @@ Blog
 					<div class="col-sm-3 col-sm-offset-1">
 						<div class="blogSidebar">
 							<div class="widget">
-								<div class="widget kotak">
+								<div class="widget kotak" style="word-wrap: break-word;">
 							@foreach($about as $aa)
 								<p class="photoborder"><img src="{{asset('img/logo/'.$aa->imgpath)}}"></p>
 									<h3 class="widget-title" style="padding-top: 20px;">{{$aa->title}}</h3>
@@ -116,6 +127,5 @@ Blog
 		</div><!-- end container -->
 	</section>
 	<!-- =============== END BLOG SIDEBAR-RIGHT ================ -->
-
 
 @endsection

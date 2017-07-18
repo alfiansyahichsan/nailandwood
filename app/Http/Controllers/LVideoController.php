@@ -56,7 +56,7 @@ class LVideoController extends Controller
     {
         $this->validate($request, [
             'link' => 'required',
-            'title' => 'required',
+            'title' => 'required|max:45',
             'story' => 'required',
         ]);
 
