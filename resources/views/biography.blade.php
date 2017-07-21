@@ -76,15 +76,15 @@ Biography
 							<p class="form-submit">
 								<input name="submit" type="submit" id="submit" value="Send Email">
 							</p>
-							@if ($message = Session::get('success'))
+							{{--@if ($message = Session::get('success'))--}}
 
-						        <div class="alert alert-success">
+						        {{--<div class="alert alert-success">--}}
 
-						            <p>{{ $message }}</p><br>
+						            {{--<p>{{ $message }}</p><br>--}}
 
-						        </div>
+						        {{--</div>--}}
 
-						    @endif
+						    {{--@endif--}}
 						</form>
 					</div><!-- end contactForm -->
 				</div><!-- end col-sm-7 col-sm-offset-1 -->
