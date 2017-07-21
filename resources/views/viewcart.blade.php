@@ -26,13 +26,13 @@ Cart
 							</tr>
                             <?php foreach (\App\Cart::Item() as $item) { ?>
 							<tr>
-								<td><a style="max-height: 200px; max-width: 200px;"><img width="300" src="{{asset('/img/shop/'.\App\Shop::GambarProduk($item->id))}}"></a></td>
-								<td><a>{{\App\Shop::NamaProduk($item->id)}}</a>
-								<br>{{\App\Shop::DetailProduk($item->id)}}</td>
+								<td><a style="max-height: 200px; max-width: 200px;"><img width="300" src="{{asset('/img/shop/'.\App\Shop::GambarProduk($item->id_product))}}"></a></td>
+								<td><a>{{\App\Shop::NamaProduk($item->id_product)}}</a>
+								<br>{{\App\Shop::DetailProduk($item->id_product)}}</td>
 
 								<td><a>{{$item->jumlah}}</a></td>
 								<td></td>
-								<td><a>Rp. {{number_format( \App\Shop::HargaProduk($item->id), 0 , '' , '.' )}}</a></td>
+								<td><a>Rp. {{number_format( \App\Shop::HargaProduk($item->id_product), 0 , '' , '.' )}}</a></td>
 								<td class="aqura-vip" style="float: right;border: none;"><a href="#">X</a></td>
 							</tr>
                             <?php } ?>
