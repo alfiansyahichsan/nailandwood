@@ -67,8 +67,13 @@ Shop
 		                                                <a href="{{URL::route('detailshop',$sh->id)}}">{{$sh->title}}</a>
 		                                            </div>
 		                                            <div class="product"></div>
-		                                            <a href="{{URL::route('shop')}}" class="icon-button shopIcon"><i class="fa fa-shopping-cart"></i><span></span></a>
-		                                             <a href="{{URL::route('detailshop',$sh->id)}}" class="icon-button shopIcon"><i class="fa fa-info"></i><span></span></a>
+													{!! Form::open(['method'=>'POST','action'=>'CartController@TambahCart']) !!}
+													<input type="hidden" name="book" value="{{$sh->id}}" />
+													<input type="hidden" name="amount" value="1" />
+		                                            <a   class="icon-button shopIcon"><i onclick="$(this).closest('form').submit()" class="fa fa-shopping-cart"></i><span></span></a>
+													<a href="{{URL::route('detailshop',$sh->id)}}" class="icon-button shopIcon"><i class="fa fa-info"></i><span></span></a>
+													{!! Form::close() !!}
+
 		                                        </div>
 		                                    </div>
 		                                </figure>

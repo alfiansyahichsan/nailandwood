@@ -68,7 +68,7 @@ class CartController extends Controller
                 $update->total = $update->jumlah*$product->price;
                 $update->save();
 
-                return Redirect::back()->withErrors(['berhasil'=>'1']);
+                return Redirect::back();
             }
 
         }
@@ -86,9 +86,9 @@ class CartController extends Controller
 
     }
 
-    public function getDelete(){
+    public function getDelete($idproduct){
 
-        $cart = Cart::where('session',Session::getId())->delete();
+        $cart = Cart::where('session',Session::getId())->where('id_product',$idproduct)->delete();
 
         return redirect()->back();
     }
@@ -104,7 +104,7 @@ class CartController extends Controller
     {
         $cart = Cart::where('session',Session::getId())->get();
 
-        return view('pages.shopping_cart')->with('cart',$cart);
+        return view('viewcart')->with('cart',$cart);
     }
 
     public function Formdata()

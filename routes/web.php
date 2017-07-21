@@ -141,7 +141,7 @@ Route::get('/home', 'HomeController@index');
 Route::get('/cart',array('as' => 'cart', 'uses' => 'CartController@ListCart'));
 Route::post('/cart/tambah', array('as'=>'cart.add','uses'=>'CartController@postAddToCart'));
 Route::post('/cart/tambah/produk/',array('as' => 'cart.tambah', 'uses' => 'CartController@TambahCart'));
-Route::get('/cart/hapus', array('as'=>'cart.hapus','uses'=>'CartController@getDelete'));
+Route::get('/cart/hapus/{produk}', array('as'=>'cart.hapus','uses'=>'CartController@getDelete'));
 
 
 Route::get('/form',array('as' => 'form', 'uses' => 'CartController@Formdata'));

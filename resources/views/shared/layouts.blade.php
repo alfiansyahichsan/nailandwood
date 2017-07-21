@@ -28,7 +28,7 @@
 					<div class="cartContainer">
 						<div class="myCart">
 							<ul>
-								<li class="cartTitle"><img src="{{ asset('img/shop/cart.png')}}" alt=""><span>0</span></li>
+								<li class="cartTitle"><img src="{{ asset('img/shop/cart.png')}}" alt=""><span>{{\App\Cart::JumlahItem()}}</span></li>
 							</ul>
 						</div><!-- end myCart -->
 						<div class="cartParent">
