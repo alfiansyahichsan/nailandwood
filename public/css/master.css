@@ -1985,6 +1985,9 @@ pre code {
   .container {
     width: 1170px;
   }
+  .container col-sm-6 {
+    width: 100%;
+  }
 }
 .container-fluid {
   margin-right: auto;
@@ -7545,7 +7548,7 @@ button[type=submit]:hover:after {
 table {
   width: 100%;
   max-width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 0;
 }
 table > thead > tr > th,
 table > tbody > tr > th,
@@ -10610,6 +10613,12 @@ body {
 /***********************************************************************************************/
 /* START TABLE EVENTS */
 /***********************************************************************************************/
+.viewcarttable th{
+  text-align: center;
+}
+.viewcarttable td{
+  text-align: center;
+}
 .tableEvents table {
   width: 100%;
 }
@@ -11809,6 +11818,9 @@ body > div.fusion-fullwidth.fullwidth-box.fusion-fullwidth-2.fusion-parallax-lef
 .social-iconssss ul{
   display: none;
 }
+.rightTopHeader .cartContainer:hover .cartParent {
+  display: none;
+}
 @media (max-width: 500px) {
   .aduh, .col-sm-4{
     padding: 0;
@@ -11870,7 +11882,7 @@ body > div.fusion-fullwidth.fullwidth-box.fusion-fullwidth-2.fusion-parallax-lef
     top: 4.5rem!important;
   }
   .cartContainer {
-    display: none;
+    
   }
   .topHeader {
     padding-top: 6rem;
@@ -12087,7 +12099,7 @@ body > div.fusion-fullwidth.fullwidth-box.fusion-fullwidth-2.fusion-parallax-lef
   line-height: 1.8;
   padding-bottom: 2rem;
 }
-@media (max-width: 800px) {
+@media (min-width: 700px) {
   /*.blogSingle .paragraph p {
   padding: 0 15px 0 15px;
   }
@@ -12098,6 +12110,9 @@ body > div.fusion-fullwidth.fullwidth-box.fusion-fullwidth-2.fusion-parallax-lef
   .title h2{
     padding-left: 15px;
   }*/
+  .rightTopHeader .cartContainer:hover .cartParent {
+  display: block;
+  }
 }
 .blogSingle .paragraph p:last-child {
   padding-bottom: 0;
@@ -13564,9 +13579,7 @@ body > div.fusion-fullwidth.fullwidth-box.fusion-fullwidth-2.fusion-parallax-lef
   position: relative;
   top: 0;
 }
-.rightTopHeader .cartContainer:hover .cartParent {
-  display: block;
-}
+
 .rightTopHeader .cartParent {
   position: absolute;
   top: 100%;
@@ -15735,9 +15748,8 @@ body.boxed .pagination-2 {
 }
 .leftHover a:hover span,
 .leftHover a:hover small {
-  visibility: hidden;
-  background-color: #bb9b69;
   border-color: #bb9b69;
+  color: #bb9b69;
 }
 .rightHover {
   padding: 0;
@@ -15751,9 +15763,8 @@ body.boxed .pagination-2 {
 }
 .rightHover a:hover span,
 .rightHover a:hover small {
-  visibility: hidden;
-  background-color: #bb9b69;
   border-color: #bb9b69;
+  color: #bb9b69;
 }
 .bottomSection {
   padding: 18rem 0;

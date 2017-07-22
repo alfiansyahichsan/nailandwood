@@ -89,7 +89,7 @@ class NewsController extends Controller
                 base_path() . '/public/img/news/', $imageName);
         }
         $news->save();
-            return redirect()->back()->with('success','Data has been saved successfully');
+            return redirect()->back()->with('success','Data has been saved successfully')->with('imageName',$imageName);
         }         
     }
 

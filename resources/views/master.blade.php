@@ -72,21 +72,22 @@
         }
  
     });
- 
-    $(".morelink").click(function(){
-        if($(this).hasClass("less")) {
-            $(this).removeClass("less");
-            $(this).html(moretext);
-        } else {
-            $(this).addClass("less");
-            $(this).html(lesstext);
-        }
-        $(this).parent().prev().toggle();
-        $(this).prev().toggle();
-        return false;
-    });
-});
+	 
+	    $(".morelink").click(function(){
+	        if($(this).hasClass("less")) {
+	            $(this).removeClass("less");
+	            $(this).html(moretext);
+	        } else {
+	            $(this).addClass("less");
+	            $(this).html(lesstext);
+	        }
+	        $(this).parent().prev().toggle();
+	        $(this).prev().toggle();
+	        return false;
+	    });
+	});
 	</script>
+
 	<script>
 	@if(Session::has('message'))
 	var type = "{{ Session::get('alert-type', 'info') }}";
@@ -107,14 +108,11 @@
 	}
 	@endif
 	</script>
+
 	<script>
-		$('div.alert').delay(2000).slideUp(300);
+	$('div.alert').delay(3500).slideUp(300);
 	</script>
-	<!-- <script src="js/app.js"></script>
-    <script src="js/script.js"></script> -->
-	<!-- <script src="js/map.js"></script> -->
-	<!-- <script type='text/javascript' src='http://theme-fusion.com/avada/architecture/wp-content/themes/Avada/assets/js/main.min.js?ver=3.8.8' async></script> -->
-    <!-- <script src="assets/js/mainScrollGalleryJs.js"></script> -->
+
 	<!--[if lte IE 9 ]>
 		<script src="js/placeholder.js"></script>
 		<script>

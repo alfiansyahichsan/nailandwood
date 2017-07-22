@@ -2,7 +2,7 @@
 	<div class="col-sm-3 col-sm-offset-1">
 		<div class="blogSidebar">
 			<div class="widget">
-				<div class="widget kotak">
+				<div class="widget kotak" style="word-wrap: break-word;">
 			@foreach($about as $aa)
 				<p class="photoborder"><img src="{{asset('img/logo/'.$aa->imgpath)}}"></p>
 					<h3 class="widget-title" style="padding-top: 20px;">{{$aa->title}}</h3>
@@ -31,11 +31,11 @@
 			</div>
 			</div><!-- end widget -->
 			
-			<div class="widget">
+			<div class="widget" style="word-wrap: break-word;">
 				<h3 class="widget-title">Recent Posts</h3>
 				<ul>
 				@foreach($recent as $re)
-					<li><a href="{{URL::route('blogpersonal',$re->id)}}">{{$re->title}}</a></li>
+					<li style="padding-bottom: 10px;"><a href="{{URL::route('blogpersonal',$re->id)}}" style="text-transform: uppercase;">{{date('d M Y', strtotime($re->created_at))}} <br> {{str_limit($re['title'],25)}}</a></li>
 				@endforeach
 				</ul>
 			</div><!-- end widget -->

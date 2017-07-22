@@ -46,7 +46,7 @@ Music
 				</div>
 				<div class="right-player-side">
 					<div class="mesh-thumbnail">
-						<img src="img/player/thumbnail.jpg" alt="">
+						<img src="{{asset('img/player/thumbnail.png')}}" alt="">
 					</div>
 					<div class="mesh-title">
 					</div>

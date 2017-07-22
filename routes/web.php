@@ -127,7 +127,7 @@ Route::get('/video',array('as'=>'video','uses'=>'page@Video'));
 Route::get('/checkout',array('as'=>'checkout','uses'=>'page@Checkout'));
 Route::get('/viewcart',array('as'=>'viewcart','uses'=>'page@ViewCart'));
 
-Route::get('/admin',array('as'=>'login','uses'=>'page@Login'));
+Route::get('/uy4kn&dUk4p',array('as'=>'login','uses'=>'page@Login'));
 
 Auth::routes();
 

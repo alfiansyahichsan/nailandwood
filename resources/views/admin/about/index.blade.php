@@ -24,16 +24,16 @@ class="active"
 <p>Form untuk input gallery pada page Gallery</p>
 @if ($message = Session::get('success'))
 
-        <div class="alert alert-success">
+    <div class="alert alert-success">
 
-            <p>{{ $message }}</p>
-            <div>
-                <img src="/img/logo/{{ Session::get('imageName') }}" style="max-width: 300px; max-height: 300px; margin-right: 20px;" />               
-            </div>
-
+        <p>{{ $message }}</p>
+        <div>
+            <img src="/img/logo/{{ Session::get('imageName') }}" style="max-width: 300px; max-height: 300px; margin-right: 20px;" />               
         </div>
 
-    @endif
+    </div>
+
+@endif
 
 @if ($message = Session::get('hapus'))
 

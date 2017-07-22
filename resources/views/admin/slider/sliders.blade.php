@@ -150,6 +150,7 @@ class="active"
                         <option value="4">Shop</option>
                         <option value="5">Quotation</option>
                         <option value="6">Music</option>
+                        <option value="7">Video</option>
                     </select>
                     <br />
 
@@ -211,6 +212,7 @@ class="active"
                         <option value="4">Shop</option>
                         <option value="5">Quotation</option>
                         <option value="6">Music</option>
+                        <option value="7">Video</option>
                     </select>
                     </div>
                 </div>

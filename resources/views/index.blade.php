@@ -5,35 +5,45 @@ Home
 @section('content')
 
 	<!-- =============== START BREADCRUMB ================ -->
+	@if(count($errors) > 0)
+		<div class="alert alert-warning" role="alert" style="text-align: center; margin: 0 auto;">
+		    <strong>Error : </strong>
+		    <ul>
+		        @foreach($errors->all() as $error)
+		        <li>{{ $error }}</li>
+		        @endforeach
+		    </ul>
+		</div>
+	@endif
 	<section class="no-mb">
 	@foreach($slider as $sliders)
 		<div class="row">
-				<div class="breadcrumb-fullscreen-parent phone-menu-bg">
-					<div class="breadcrumb breadcrumb-fullscreen alignleft small-description overlay almost-black-overlay" style="background-image: url({{asset('img/header/'.$sliders->imagepathslider)}});" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
-						<div id="home" style="position: absolute;left: 0;top: 0;">
-							<div class="intro-header">
-								<div class="js-height-full star" style="height: 955px;">
-									<div class="star-pattern-1 js-height-full" style="height: 1080px;"></div>
-										<div class="grid_item" style="width: 100%;">
-											<div>
-												<h1>
-								                	<a class="link link-yaku" href="{{URL::Route('music')}}" style="text-decoration: none;">
-								                		@foreach(explode(' ', $sliders->title) as $text) 
-													    <span>{{$text}}</span>
-													  	@endforeach
-													</a>
-										        </h1>
-										        <div class="rmButton link" style="padding-top: 10px;">
-													<p><a href="{{URL::Route('shop')}}">{!!$sliders->text!!}</a></p>
-												</div>
+			<div class="breadcrumb-fullscreen-parent phone-menu-bg">
+				<div class="breadcrumb breadcrumb-fullscreen alignleft small-description overlay almost-black-overlay" style="background-image: url({{asset('img/header/'.$sliders->imagepathslider)}});" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
+					<div id="home" style="position: absolute;left: 0;top: 0;">
+						<div class="intro-header">
+							<div class="js-height-full star" style="height: 955px;">
+								<div class="star-pattern-1 js-height-full" style="height: 1080px;"></div>
+									<div class="grid_item" style="width: 100%;">
+										<div>
+											<h1>
+							                	<a class="link link-yaku" href="{{URL::Route('music')}}" style="text-decoration: none;">
+							                		@foreach(explode(' ', $sliders->title) as $text) 
+												    <span>{{$text}}</span>
+												  	@endforeach
+												</a>
+									        </h1>
+									        <div class="rmButton link" style="padding-top: 10px;">
+												<p><a href="{{URL::Route('shop')}}">{!!$sliders->text!!}</a></p>
 											</div>
-						                </div>
-									<canvas class="cover" width="1920" height="1080"></canvas>
-								</div>
-	   						</div>
-						</div>
+										</div>
+					                </div>
+								<canvas class="cover" width="1920" height="1080"></canvas>
+							</div>
+   						</div>
 					</div>
 				</div>
+			</div>
 		</div>
 	@endforeach
 	</section>
@@ -81,7 +91,7 @@ Home
 					</div>
 					<div class="right-player-side">
 						<div class="mesh-thumbnail">
-							<img src="img/player/thumbnail.jpg" alt="">
+							<img src="{{asset('img/player/thumbnail.png')}}" alt="">
 						</div>
 						<div class="mesh-title">
 						</div>
@@ -104,7 +114,7 @@ Home
 			</div>
 
 			@foreach($playlist as $playlist)
-			@if(file_exists(public_path('audio/'.$playlist->audiopath)))
+			@if(!empty($playlist->audiopath))
 				<div class="trak-item" data-audio="{{asset('audio/'.$playlist->audiopath)}}" data-artist="Paku dan Kayu" data-thumbnail="{{asset('img/player/'.$playlist->imgthumbnailpath)}}" data-id="{{$playlist->id}}">
 				<audio preload="metadata" src="{{asset('audio/'.$playlist->audiopath)}}" title="{{$playlist->title}}"></audio>
 				<div class="additional-button">
@@ -129,9 +139,7 @@ Home
 				<time class="trak-duration">
 					00:00
 				</time>
-			</div>
-			@else
-				
+			</div>				
 			@endif
 			
 			@endforeach
@@ -209,6 +217,7 @@ Home
 
 	<!-- =============== START EVENTS SECTION-2 ================ -->
 	@foreach($nevent as $nEvent)
+	@if($nEvent->datemax > date('Y-m-d'))
 	<section class="padding hide-section countdownSection background-properties" style="background-image: url({{asset('img/events/'.$nEvent->backgroundpic)}});">
 		<div class="container">
 			<div class="row">
@@ -249,12 +258,26 @@ Home
 			</div>
 		</div>
 	</section>
+	@else
+	<section class="padding hide-section countdownSection background-properties" style="background-image: url({{asset('img/events/'.$nEvent->backgroundpic)}});">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="countdownTitle">
+						<a href="{{$nEvent->link}}"><img src="{{asset('img/events/'.$nEvent->logoeventpic)}}" style="width: 320px; height: 80px;" alt=""></a>
+						<h3>show time</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	@endif
 	@endforeach
 	<!-- =============== END EVENTS SECTION-2 ================ -->
 
 	<!-- =============== START HOME-BLOG SECTION ================ -->	
 	<section class="padding hide-section background-properties blogHomeSection">	
-		<div class="containerhome">
+		<div class="container">
 			<div class="row">
 				<div class="sectionTitle paddingBottom">
 					<span class="heading-t3"></span>
@@ -445,7 +468,7 @@ Home
 	</section>
 	<!-- =============== END VIDEO SECTION ================ -->
 
-
 @section('script')
-@endsection()
+
+@endsection
 @endsection()

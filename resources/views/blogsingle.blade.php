@@ -42,37 +42,37 @@
 	<!-- =============== END BLOG SINGLE ================ -->
 
 	<!-- =============== START PAGINATION ================ -->
-	<div class="section-block  bkg-grey-ultralight pagination-2">
-		<div class="row full-width ">
+	<div class="section-block bkg-grey-ultralight pagination-2">
+	<div class="row full-width ">
 
 			@if($previous)
-			<div class="col-sm-6 leftHover" style="background-image: url({{asset('img/header/koc.jpg')}});">
+			<div class="col-sm-6 leftHover">
 				<a href="{{URL::route('blogsingle',$previous['id'])}}" class="pagination-previous">
 					<small>Prev</small>
-					<span>Blog</span>
+					<span>{{str_limit($previous['title'],16)}}</span>
 				</a>
 			</div>
 			@else
-			<div class="col-sm-6 leftHover" style="background-image: url({{asset('img/header/koc.jpg')}});">
+			<div class="col-sm-6 leftHover">
 				<a href="#" class="pagination-previous">
-					<small>Prev</small>
-					<span>Blog</span>
+					<small>This is</small>
+					<span>FIRST</span>
 				</a>
 			</div>
 			@endif
 
 			@if($next)
-			<div class="col-sm-6 rightHover" style="background-image: url({{asset('img/header/koc.jpg')}});">
+			<div class="col-sm-6 rightHover">
 				<a href="{{URL::route('blogsingle',$next['id'])}}" class="pagination-next ">
 					<small>Next</small>
-					<span>Blog</span>
+					<span>{{str_limit($next['title'],16)}}</span>
 				</a>
 			</div>
 			@else
-			<div class="col-sm-6 leftHover" style="background-image: url({{asset('img/header/koc.jpg')}});">
-				<a href="#" class="pagination-previous">
-					<small>Prev</small>
-					<span>Blog</span>
+			<div class="col-sm-6 leftHover">
+				<a href="#" class="pagination-next">
+					<small>This is</small>
+					<span>LAST</span>
 				</a>
 			</div>
 			@endif

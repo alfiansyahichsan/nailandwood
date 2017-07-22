@@ -91,7 +91,7 @@ class BiographyController extends Controller
 
         Mail::send('mail', $data, function($message) use ($data){
             $message->from($data['email']);
-            $message->to('sundfor0@gmail.com');
+            $message->to('alfiansyah.ichsan@gmail.com');
             $message->subject($data['subject']);
         });
 

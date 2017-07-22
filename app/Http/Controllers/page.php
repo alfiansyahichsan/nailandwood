@@ -14,7 +14,7 @@ class page extends Controller
 	}	
 
 	public function Home(){
-		$lvideo = \App\Lvideo::first()->get();
+		$lvideo = \App\Lvideo::orderBy('created_at','DESC')->get();
 		$slider = \App\Slider::where('category', 1)->get();
 		$quotation = \App\Slider::where('category', 5)->get();
 		$lmusic = \App\Lmusic::get();
@@ -113,8 +113,10 @@ class page extends Controller
 
 	public function Video(){
 		$lvideo = \App\Lvideo::orderBy('created_at','DESC')->paginate(4);
+		$slider = \App\Slider::where('category', 7)->get();
 		return view('video', [
-                'lvideo' => $lvideo
+                'lvideo' => $lvideo,
+                'slider' => $slider
 
             ]);
 	}
@@ -130,7 +132,7 @@ class page extends Controller
 	public function BlogSingle($param){
 		$news = \App\News::where('id',$param)->first();
 		$next = \App\News::where('id','>',$param)->first();
-		$previous = \App\News::where('id','<',[$param])->first();
+		$previous = \App\News::where('id','<',$param)->first();
 		return view('blogsingle', [
                 'news' => $news,
                 'next' => $next,
@@ -143,8 +145,8 @@ class page extends Controller
 		$blogs = \App\Blog::where('id',$param)->first();
 		$recent = \App\Blog::whereNotIn('id', [$param])->get();
 		$about = \App\Aboutblog::get();
-		$next = \App\News::where('id','>',$param)->first();
-		$previous = \App\News::where('id','<',[$param])->first();
+		$next = \App\Blog::where('id','>',$param)->first();
+		$previous = \App\Blog::where('id','<',$param)->first();
 		return view('blogpersonal', [
                 'blogs' => $blogs,
                 'recent' => $recent,

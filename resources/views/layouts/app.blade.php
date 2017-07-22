@@ -17,6 +17,7 @@
     <link href="{{ asset('sbadmin/dist/css/sb-admin-2.css') }}" rel="stylesheet">
     <link href="{{ asset('sbadmin/vendor/morrisjs/morris.css') }}" rel="stylesheet">
     <link href="{{ asset('sbadmin/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <link rel="icon" href="{{ asset('img/content/pakukayu.png')}}">
 
     <!-- Scripts -->
     <script>
@@ -107,7 +108,9 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="sbadmin/dist/js/sb-admin-2.js') }}"></script>
-
+    <script>
+    $('div.alert').delay(1500).slideUp(300);
+    </script>
     @yield("js")
 </body>
 </html>

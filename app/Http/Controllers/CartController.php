@@ -152,6 +152,15 @@ class CartController extends Controller
 
     public function BuatOrder(Request $request)
     {
+        $this->validate($request, [
+            'nama' => 'required',
+            'alamat' => 'required',
+            'kota' => 'required|max:45',
+            'kodepos' => 'required|numeric',
+            'email' => 'required|email',
+            'telepon' => 'required|numeric',
+        ]);
+
         $input = $request->all();
         $transaksi = Order::where('telepon',$input['telepon'])->where('status','unpaid')->count();;
         if ($transaksi>0)

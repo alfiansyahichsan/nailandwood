@@ -8,6 +8,7 @@ use App\Playlists;
 use Validator;
 use Response;
 use Illuminate\Support\Facades\Input;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class PlaylistController extends Controller
 {
@@ -57,7 +58,7 @@ class PlaylistController extends Controller
         $rules = [
         	'title' => 'required|max:45',
         	'audiopath' => 'mimes:mpga|max:10240',
-            'imgthumbnailpath' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'imgthumbnailpath' => 'image|mimes:jpeg,png,jpg|max:2048',
             
         ];
 
@@ -88,12 +89,10 @@ class PlaylistController extends Controller
             $request->file('imgthumbnailpath')->move(
             base_path() . '/public/img/player/', $imageName);
 
-            $playlist->save();
-            return redirect()->back()->with('success','Data has been saved successfully')->with('imageName',$imageName);
         }
 
         $playlist->save();
-        return redirect()->back()->with('success','Data has been saved successfully');
+        return redirect()->back()->with('success','Data has been saved successfully')->with('imageName',$imageName);
 
         }
         
@@ -112,10 +111,10 @@ class PlaylistController extends Controller
 
     public function deleteItem(Request $req) {
       $playlist = Playlists::find($req->id);
-      if(is_null($playlist->audiopath)){
-
+      if(empty($playlist->audiopath)){
+       
       }
-      elseif($playlist->audiopath){
+      else{
         unlink(public_path('/audio/'.$playlist->audiopath));
         unlink(public_path('/img/player/'.$playlist->imgthumbnailpath));
       }
