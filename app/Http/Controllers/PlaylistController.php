@@ -57,7 +57,7 @@ class PlaylistController extends Controller
     {
         $rules = [
         	'title' => 'required|max:45',
-        	'audiopath' => 'mimes:mpga|max:10240',
+        	'audiopath' => 'mimes:mpga|max:10000',
             'imgthumbnailpath' => 'image|mimes:jpeg,png,jpg|max:2048',
             
         ];

@@ -90,8 +90,8 @@ function validateMP3 (objFileControl) {
      if (ext.toUpperCase() != ".MP3") {
          alert("Only mp3 files allowed.");
          objFileControl.value=""
-     } else if (size > 10000000) {
-         alert("File size maximum 10MB");
+     } else if (size > 6000000) {
+         alert("File size maximum 6MB");
         objFileControl.value=""
      }
   }
