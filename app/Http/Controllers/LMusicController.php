@@ -77,11 +77,11 @@ class LMusicController extends Controller
         $imageName = $b."-".$request->file('imgpath')->getClientOriginalName();
 
         $request->file('imgpath')->move(
-            base_path() . '/public/img/albums/', $imageName);
+            public_path() . '/img/albums/', $imageName);
         $imageName2 = $c."-".$request->file('imgpath2')->getClientOriginalName();
 
         $request->file('imgpath2')->move(
-            base_path() . '/public/img/albums/', $imageName2);
+            public_path() . '/img/albums/', $imageName2);
         return redirect()->back()->with('success','Data has been saved successfully')->with('imageName',$imageName)->with('imageName2',$imageName2);
         
     }

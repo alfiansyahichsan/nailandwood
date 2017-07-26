@@ -74,7 +74,7 @@ class ShopController extends Controller
         $imageName = $b."-".$request->file('imgpath')->getClientOriginalName();
 
         $request->file('imgpath')->move(
-            base_path() . '/public/img/shop/', $imageName);
+            public_path() . '/img/shop/', $imageName);
 
         return redirect()->back()->with('success','Data has been saved successfully')->with('imageName',$imageName);
     }

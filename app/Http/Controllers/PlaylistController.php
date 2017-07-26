@@ -77,7 +77,7 @@ class PlaylistController extends Controller
 
             $audio = $request->file('audiopath')->getClientOriginalName();
             $request->file('audiopath')->move(
-            base_path() . '/public/audio/', $audio);
+            public_path() . '/audio/', $audio);
         }
 
         if($request->hasFile('imgthumbnailpath')){
@@ -87,7 +87,7 @@ class PlaylistController extends Controller
             $imageName = $b."-".$request->file('imgthumbnailpath')->getClientOriginalName();
 
             $request->file('imgthumbnailpath')->move(
-            base_path() . '/public/img/player/', $imageName);
+            public_path() . '/img/player/', $imageName);
 
         }
 

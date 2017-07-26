@@ -68,7 +68,7 @@ class GalleryController extends Controller
         $imageName = $b."-".$request->file('imgpath')->getClientOriginalName();
 
         $request->file('imgpath')->move(
-            base_path() . '/public/img/gallery/', $imageName);
+            public_path() . '/img/gallery/', $imageName);
 
         return redirect()->back()->with('success','Data has been saved successfully')->with('imageName',$imageName);
     }

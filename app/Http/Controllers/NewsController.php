@@ -86,7 +86,7 @@ class NewsController extends Controller
             $imageName = $b."-".$request->file('imgpath')->getClientOriginalName();
 
             $request->file('imgpath')->move(
-                base_path() . '/public/img/news/', $imageName);
+                public_path() . '/img/news/', $imageName);
         }
         $news->save();
             return redirect()->back()->with('success','Data has been saved successfully')->with('imageName',$imageName);

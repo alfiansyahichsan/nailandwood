@@ -31,7 +31,7 @@
                         {!! Form::open(['method'=>'POST','action'=>'CartController@TambahCart']) !!}
                         <input type="hidden" name="book" value="{{$shop->id}}" />
 
-						<div class="product-quantity woocommerce cart shop_table">
+						<div class="product-quantity woocommerce cart shop_table" style="margin-top: 20px;">
                             <div class="quantity buttons_added">
                                 <input type="number" step="1" min="1" name="amount" value="1" title="Qty" class="input-text qty text">
                             </div>
@@ -60,7 +60,7 @@
                           </ul>
 
                           <!-- Tab panes -->
-                          <div class="tab-content">
+                          <div class="tab-content" style="word-wrap: break-word;">
                             <div role="tabpanel" class="tab-pane active" id="home">{!! $shop->detail !!}</div>
                           </div>
                         </div>

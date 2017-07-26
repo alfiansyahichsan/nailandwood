@@ -73,7 +73,7 @@ class SlidersController extends Controller
         $imageName = $b."-".$request->file('imagepathslider')->getClientOriginalName();
 
         $request->file('imagepathslider')->move(
-            base_path() . '/public/img/header/', $imageName);
+            public_path() . '/img/header/', $imageName);
 
         return redirect()->back()->with('success','Data has been saved successfully')->with('imageName',$imageName);
     }

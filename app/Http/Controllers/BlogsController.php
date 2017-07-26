@@ -85,7 +85,7 @@ class BlogsController extends Controller
             $imageName = $b."-".$request->file('imgpath')->getClientOriginalName();
 
             $request->file('imgpath')->move(
-                base_path() . '/public/img/blog/', $imageName);
+                public_path() . '/img/blog/', $imageName);
             $blogs->save();
             return redirect()->back()->with('success','Data has been saved successfully')->with('imageName',$imageName);
         }

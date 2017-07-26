@@ -50,7 +50,7 @@ Blog
 					
 					@endif
 							<div class="blogBoxContent">
-								<div class="blogHeader">
+								<div class="blogHeader" style="word-wrap: break-word;">
 									<h1><a href="{{URL::route('blogpersonal',$bl->id)}}">{{$bl->title}}</a></h1>
 								</div>
 								<div class="admin-list clearfix">

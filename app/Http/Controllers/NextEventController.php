@@ -75,12 +75,12 @@ class NextEventController extends Controller
         $imageName = $b."-".$request->file('backgroundpic')->getClientOriginalName();
 
         $request->file('backgroundpic')->move(
-            base_path() . '/public/img/events/', $imageName);
+            public_path() . '/img/events/', $imageName);
 
         $imageName2 = $b."-".$request->file('logoeventpic')->getClientOriginalName();
 
         $request->file('logoeventpic')->move(
-            base_path() . '/public/img/events/', $imageName2);
+            public_path() . '/img/events/', $imageName2);
         return redirect()->back()->with('success','Data has been saved successfully')->with('imageName',$imageName)->with('imageName2',$imageName2);
     }
 
